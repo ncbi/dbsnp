@@ -1,5 +1,6 @@
 dbSNP (https://www.ncbi.nlm.nih.gov/snp)
-Database of single nucleotide polymorphisms (SNPs) and multiple small-scale variations 
+
+The database of single nucleotide polymorphisms (SNPs) and multiple small-scale variations 
 that include insertions/deletions, microsatellites, and non-polymorphic variants.
 ============================
 
