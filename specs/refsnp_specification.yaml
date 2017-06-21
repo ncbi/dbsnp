@@ -1,0 +1,1110 @@
+definitions:
+
+  refsnp_snapshot:
+    type: object
+    required: [ refsnp_id, create_date, update_date, update_revision, status,
+      merges, splits, placements_with_allele, allele_annotations, genes,
+      citations, support, anchor, variant_type]
+    description: >-
+      The characteristics of a single group of short variants equivalent by
+      type and position over several sequences as calculated based on the
+      information available at a particular point in time. It is a snapshot at
+      a particular point in time of the ever-evolving knowledge of a particular
+      class of variants.
+    properties:
+      refsnp_id:
+        type: string
+        format: uint64
+        description: >-
+          A 64 bit positive integer that is uniquely and forever assigned to
+          this RefSNP object.
+      create_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the RefSNP was created.
+        example: >-
+          2001-01-15T00:00Z
+      update_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the RefSNP was last updated.
+          Same as create date if never updated.
+        example: >-
+          2001-01-15T00:00Z
+      update_revision:
+        type: string
+        format: ascii
+        description: >-
+          The last dbSNP revision in which this RefSNP was created or updated
+      status:
+        type: string
+        format: ascii
+        description: |
+          The status of this RefSNP. It is possible (though unlikely) that
+          other statuses may be added in the future.
+
+          live - the normal condition for a RefSNP.
+
+          merged - improvements in sequence alignments or reference sequences
+          caused two RefSNPs to share the same RsAnchor, so they were merged
+          and this id was retired.
+
+          suppressed - the RefSNP was released but is problematic and should
+          not be used in future work.
+        enum:
+          - live
+          - suppressed
+          - merged
+      merges:
+        type: array
+        description: >-
+          Record of each time another RefSNP objects merged into this RefSNP
+          because the RsAnchors of each were the same.  If the recipient of
+          a merge then merges into yet a third RefSNP, the list is flattened.
+        items:
+          $ref: '#/definitions/merge_event'
+      splits:
+        type: array
+        description: >-
+          Record of times the alleles of this or other RefSNP objects moved
+          independently of their current RefSNP anchor.
+        items:
+          $ref: '#/definitions/split_event'
+      placements_with_allele:
+        type: array
+        description: >-
+         List of all placements, each containing a list of the alleles
+         in the context of that reference region. Includes both nucleotide
+         and protein placements.
+
+         For all placements, the list of alleles is the same length and in the same
+         order.  They represent the alleles on the preferred, top level
+         placeemnt (PTLP) in sorted order.  So, on a given placement, the first
+         allele is how the first allele on the PTLP appears upon mapping to
+         the given placement.  Similarly for the second allele, and so on.
+        items:
+          $ref: '#/definitions/placement_with_allele'
+      allele_annotations:
+        type: array
+        description: >-
+         Each element holds the annotations associated with a particular variant
+
+         This list of annotation lists has the same order and length as the list
+         of alleles in each placement. This order associates each allele
+         with its corresponding annotation list.  If an allele was not associated
+         with any annotations, the corresponding annotation set will have only empty
+         lists.
+        items:
+          $ref: '#/definitions/allele_annotation_list'
+      genes:
+        type: array
+        description: >-
+          Set of genes that coincide or nearly coincide with this RefSNP.  Genes
+          are included if the gene start is 2KB upstream or gene stop is 500 bp
+          downstream of the variant.
+        items:
+          $ref: '#/definitions/gene'
+      citations:
+        type: array
+        description: >-
+          Set of Pubmed IDs (PMIDs) for this RefSNP or its supporting submissions
+        items:
+          type: integer
+      support:
+        type: array
+        description: >-
+          The observations that support the existence of a variant at
+          this particular location and type. Supporting observations can come from
+          submissions to dbSNP or from external data sources like ClinVar.
+        items:
+          $ref: '#/definitions/support'
+      anchor:
+        type: string
+        format: ascii
+        description: >-
+          The location and type of the variant, in format
+          'Acc.Ver:From:DeletionLength:Type',
+          which defines the RefSNP.  The Acc.Ver is the preferred top level
+          placement chosen from all of the placements the RefSNP maps to in a given
+          alignment data set.  There is a 1:1 relationship between live RefSNP
+          objects and the set of anchors.
+      variant_type:
+        type: string
+        format: ascii
+        description: >-
+          The type of change the variant causes, relative to the reference sequence.
+        enum:
+          - snv
+          - mnv
+          - ins
+          - del
+          - delins
+          - identity
+
+  merge_event:
+    type: object
+    required: [merged_rsid, revision, merge_date]
+    description: >-
+      Record of one RefSNP merging into another.
+
+      Due to curatorial changes or a change in input alignment data sets,
+      a RefSNP may change anchor such that it now coincides with
+      second RefSNP.  Only one 'live' RefSNP is allowed at a given anchor.
+      To resolve this conflict, dbSNP chooses one RefSNP as 'live',
+      and merges the data from the other RefSNP into it.  DbSNP gives preference
+      to the clinical RefSNP and if that is not sufficient it chooses the oldest
+      RefSNP, the one with the lowest ID.
+    properties:
+      merged_rsid:
+        type: string
+        format: uint64
+        description: >-
+          The RefSNP ID of the RefSNP object that was merged into the now live RefSNP
+      revision:
+        type: string
+        format: ascii
+        description: >-
+          The revision in which the merge took place
+      merge_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date and time the RefSNP was merged.
+        example: >-
+          2001-01-15T00:00Z
+
+  split_event:
+    type: object
+    required: [revision, split_date, split_from_id, split_to_ids]
+    description: >-
+      Record of alleles of a RefSNP mapping to different anchors.
+
+      Due to curatorial changes or a change input alignment data sets,
+      alleles that once shared an anchor may begin to map to
+      different anchors, and thus belong in different RefSNPs.  This object is a
+      record of that split of alleles, and when possible is recorded in *both*
+      the originating RefSNP and target RefSNP objects.
+
+      Not all such changes are recorded.
+    properties:
+      revision:
+        type: string
+        format: ascii
+        description: >-
+          The revision in which the split took place
+      split_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the RefSNP alleles split
+        example: >-
+          2001-01-15T00:00Z
+      split_from_id:
+        type: string
+        format: uint64
+        description: >-
+          The RefSNP ID that had at least one allele split off of it
+      split_to_ids:
+        type: array
+        description: >-
+          The set of RefSNP IDs which the split alleles now support, including the split_from_id
+        items:
+          type: string
+          format: uint64
+
+  placement_with_allele:
+    type: object
+    required: [seq_id, is_ptlp, placement_annot, alleles]
+    description: >-
+      For nucleotide placements, each allele in this placement is stored as a SPDI.
+      Each SPDI contains a reference sequence identifier.  For the set of alleles
+      in SPDI syntax, they must all have the same reference sequence identifier,
+      that matches the seq_id attribute.
+
+      For protein placements, the allele is either in SPDI syntax, or gives a general
+      description of a frameshift.
+    properties:
+      seq_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+      is_ptlp:
+        type: boolean
+        description: >-
+          True if this placement is the preferred top level placement (PTLP)
+          under the alignment data set which generated this RefSnp cluster
+      placement_annot:
+        $ref: '#/definitions/placement_annot'
+      alleles:
+        type: array
+        description: >-
+          A RefSnp can describe 1 to N alleles.
+
+          While for the PTLP, all alleles (in SPDI syntax) are the same type
+          and length, non-PTLP Placements (i.e. all other Placements), the allele
+          in SPDI syntax may have different types, lengths and start positions,
+          and in some rare cases, may not even overlap. But they are all on
+          this placement's Sequence.
+        items:
+          $ref: '#/definitions/placement_annotated_allele'
+
+  placement_annot:
+    type: object
+    required: [seq_type, mol_type, location_ontology, seq_id_traits_by_assembly,
+      is_aln_opposite_orientation, is_mismatch]
+    description: >-
+      Annotation about this sequence
+    properties:
+      seq_type:
+        type: string
+        format: ascii
+        description: >-
+          The associated sequence's type
+        enum:
+          - refseq_chromosome
+          - refseq_contig
+          - gpipe_chromosome
+          - contig
+          - refseq_genomic
+          - refseq_mrna
+          - refseq_mrna_pred
+          - mrna
+          - refseq_ncrna
+          - refseq_ncrna_pred
+          - ncrna
+          - refseq_prot
+          - genbank
+          - embl
+          - ddbj
+      mol_type:
+        type: string
+        format: ascii
+        description: >-
+          The associated sequence's molecule type
+        enum:
+          - unknown
+          - genomic
+          - cdna
+          - rna
+          - protein
+          - mitochondrion
+          - choloplast
+          - nucleic_acid
+      location_ontology:
+        type: array
+        description: >-
+          Set of Location Sequence Ontology terms that describe this placement
+        items:
+          $ref: '#/definitions/so_term'
+      seq_id_traits_by_assembly:
+        type: array
+        description: >-
+          The relationships between this sequence and the genomic assemblies in which
+          it participates (if any)
+        items:
+          $ref: '#/definitions/seq_id_trait_by_assembly'
+      is_aln_opposite_orientation:
+        type: boolean
+        description: >-
+          True if this sequence is aligned reverse to the PTLP sequence.  Thus,
+          the PTLP sequence's is_aln_opposite_orientation attribute is always
+          false.
+      is_mismatch:
+        type: boolean
+        description: >-
+          True if this sequence's residues are different than the PTLP
+          sequence at this locus.  Thus, the PTLP sequence's is_mismatch
+          attribute is always false.
+
+  placement_annotated_allele:
+    type: object
+    required: [allele, hgvs]
+    description: >-
+      Description of a particular allele on a paritcular sequence.
+
+      The cdna-protein and protein-annot fields cannot both be present
+      and may both be absent. They provide additional information for
+      cDNA and protein placements respectively.
+
+      The cdna-protein field gives the allele corresponding to this one
+      (which must be a transcript allele) on the protein sequence.
+
+      The protein-annot field gives extra information only available for
+      protein placements.
+    properties:
+      allele:
+        $ref: '#/definitions/allele'
+      hgvs:
+        type: string
+        format: ascii
+        description: >-
+          The HGVS expression for this allele on this placement
+      cdna_protein:
+        $ref: '#/definitions/allele'
+      protein_annot:
+        $ref: '#/definitions/protein_allele_annotation'
+
+  protein_allele_annotation:
+    type: object
+    required: [consequences, frame]
+    description: >-
+      All protein variants occur in a particular frame, and have an associated
+      set of consequences, described using Sequence Ontology Terms.
+    properties:
+      consequences:
+        type: array
+        items:
+          $ref: '#/definitions/so_term'
+      frame:
+        type: integer
+        description: >-
+          0-based position of the first variant nucleotide
+          in the associated protein codon.
+        enum:
+          - 0
+          - 1
+          - 2
+
+  seq_id_trait_by_assembly:
+    type: object
+    required: [assembly_name, assembly_accession, is_top_level, is_alt, is_patch, is_chromosome]
+    description: >-
+      Sequences in general and contigs and chromosomes in particular
+      may have different roles in different genomic assemblies. This object
+      describes the role of a sequence in a particular assembly.
+    properties:
+      assembly_name:
+        type: string
+        format: unicode
+        description: >-
+          The name of the assembly these traits reference
+      assembly_accession:
+        type: string
+        format: ascii
+        description: >-
+          The Genomic Collections accession for this assembly.  For more information,
+          see, for example, http://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.34/
+      is_top_level:
+        type: boolean
+        description: >-
+          True if the sequence is top-level (the most highly assembled sequences
+          in a genome assembly).
+      is_alt:
+        type: boolean
+        description: >-
+          True if this placement's sequence is an alternative loci (a sequence
+          that provides an alternate representation of a locus found in a
+          largely haploid assembly)
+      is_patch:
+        type: boolean
+        description: >-
+          True if this placement's sequence is a patch sequence (a contig
+          sequence that is released outside of the full assembly release cycle.
+          These sequences are meant to add information to the assembly without
+          disrupting the stable coordinate system)
+      is_chromosome:
+        type: boolean
+        description: >-
+          True if this placement's sequence is a chromosome sequence (a relatively
+          complete pseudo-molecule assembled from smaller sequences (components)
+          that represent a biological chromosome)
+
+  allele:
+    type: object
+    description: >-
+      An allele object describes the sequence change in either nucleotide or
+      amino acid sequence at a particular position on a particular sequence. Exactly
+      one of the spdi and frameshift fields will be present.
+
+      Most alleles can be modeled as defined breakpoint changes (SPDI data model).
+      However, indel nucleotide changes can create frameshift changes in proteins,
+      which are difficult to model this way. Therefore this allele object is a
+      choice between either a SPDI representation (when the breakpoints are known)
+      or protein frameshifts (where the final breakpoint is not known).
+    properties:
+      spdi:
+        $ref: '#/definitions/spdi'
+      frameshift:
+        $ref: '#/definitions/frameshift'
+
+  frameshift:
+    type: object
+    description: >-
+      A length poloymorphism in a nucleotide sequence, that coincides with an open
+      reading frame, produces a frameshift in protein sequence.
+    required: [seq_id, position]
+    properties:
+      seq_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the protein reference sequence
+        example: >-
+          NP_000198.1
+      position:
+        type: integer
+        description: >-
+          The 0-based boundary position where the frameshift starts. That
+          is, position 0 starts the frameshift immediately before
+          the first amino acid and position 1 starts the frameshift
+          between the first and second amino acid.
+
+  so_term:
+    type: object
+    description: >-
+      Nucleotide and amino acid changes are catagorized into Sequence Ontology
+      terms.  For more information, see
+      https://www.ncbi.nlm.nih.gov/variation/docs/glossary/
+    required: [name, accession]
+    properties:
+      name:
+        type: string
+        format: unicode
+        description: >-
+          The name of the SO-term
+        example: >-
+          insertion
+      accession:
+        type: string
+        format: ascii
+        description: >-
+          The accession of the SO-term
+        example: >-
+          SO:0000667
+
+  support:
+    type: object
+    required: [id, revision_added, create_date, submitter_handle]
+    description: >-
+      Record of a submission that supports this RefSNPs.  RefSNPs are
+      insantiated when a variant submission exists at the RefSNP's
+      location and type (aka anchor).
+    properties:
+      id:
+        $ref: '#/definitions/support_id'
+      revision_added:
+        type: string
+        format: ascii
+        description: >-
+          The revision in which this support was added to this RefSNP
+      create_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date this support was added to this RefSNP
+        example: >-
+          2001-01-15T00:00Z
+      submitter_handle:
+        type: string
+        format: unicode
+        description: >-
+          The unique, dbSNP-registered name of the submitter
+
+  support_id:
+    type: object
+    required: [type, value]
+    description: >-
+      The id of the variant that supports this RefSNP.
+    properties:
+      type:
+        type: string
+        format: ascii
+        description: >-
+          The kind of supporting data. This list can expand.
+        enum:
+          - subsnp
+          - frequency
+          - clinvar
+      value:
+        type: string
+        format: unicode
+        description: >-
+          The submitted variant ID. The id's structure is determined by its source.
+        example:
+          - SubSNP: ss12345
+          - ClinVar: 12345
+          - Frequency: '1000 Genomes Phase III'
+
+  gene:
+    type: object
+    required: [id, symbol, is_r5_region, is_r3_region, is_pseudo]
+    description: >-
+      Information about a gene's relation to a particular variant
+    properties:
+        id:
+          type: integer
+          description: >-
+            The NCBI GeneID
+        symbol:
+          type: string
+          format: ascii
+          description: >-
+            The NCBI Gene Symbol
+          example: >-
+            BRCA1
+        is_pseudo:
+          type: boolean
+          description: >-
+            True, if the gene is labeled a Pseudo-gene by NCBI Gene Resource at
+            the time this revision is built.
+        is_r5_region:
+          type: boolean
+          description: >-
+            True, if the variant is within 2KB upstream of the start of the gene's
+            annotation on the chromosome, which, depending on the gene,
+            may or may not include the 5' UTR.
+        is_r3_region:
+          type: boolean
+          description: >-
+            True, if the variant is within 500 bp downstream of the end of the gene's
+            annotation on the chromosome, which, depending on the gene,
+            may or may not include the 3' UTR.
+
+  allele_annotation_list:
+    type: object
+    required: [frequency, clinical, submissions, assembly_annotation]
+    description: >-
+      Clinical, frequency, and submission information that apply to a particular
+      allele independent of its placement.
+    properties:
+      frequency:
+        type: array
+        description: >-
+          Selected frequency attributes for each large genotype/frequency study
+          (if any) in which the allele has been reported.  One frequency_data object
+          per study.
+        items:
+          $ref: '#/definitions/frequency_data'
+      clinical:
+        type: array
+        description: >-
+          Select clinical attributes for each NCBI ClinVar RCV of which this
+          allele is a member.
+        items:
+          $ref: '#/definitions/clinvar_data'
+      submissions:
+        type: array
+        description: >-
+          The particular SubSNP ids that support this allele are reported here
+        items:
+          type: string
+          format: uint64
+          description: >-
+            SubSNP Ids
+      assembly_annotation:
+        type: array
+        description:
+          For this particular allele, the set of Annotation Releases and associated
+          sequences for which Genes, RNAs and Coding Regions are annotated.
+        items:
+          $ref: '#/definitions/assembly_annot_for_allele'
+
+  assembly_annot_for_allele:
+    type: object
+    description: >-
+      NCBI Annotation Releases calculate Gene, RNA and Coding Regions on
+      top level assembly sequence molecules.  Sometimes, a sequence molecule
+      may have more than one Annotation Release associated with it.  We report
+      the effect of the variant in relation to these regions *per* Annotation
+      Release *and* Sequence-id pair.
+      A tuple is then associated with a tree of annotations, consisting of
+      genes, their directly associated RNAs and Protein products, and any protein
+      products associated with those RNAs.
+    required: [seq_id, annotation_release, genes]
+    properties:
+      seq_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+      annotation_release:
+        type: string
+        format: ascii
+        description: >-
+          The name of the annotation release
+      genes:
+        type: array
+        description: >-
+          The set of genes annotated on the associated assembly
+          and sequence, for which this allele overlaps.
+        items:
+          $ref: '#/definitions/gene_annot_for_allele'
+
+  gene_annot_for_allele:
+    type: object
+    description: >-
+      Each Gene consists of a tree of RNAs and Coding Regions (Proteins)
+      and associated SO-terms
+    required: [name, id, orientation, sequence_ontology, rnas]
+    properties:
+      name:
+        type: string
+        format: ascii
+        description: >-
+          The name of the Gene
+      id:
+        type: integer
+        description: >-
+          The NCBI GeneId
+      orientation:
+        type: string
+        description: >-
+          The orientation of the gene relative to the parent assembly sequence
+          upon which it is annotated.  This orientation applies to all children
+          RNAs and Proteins as well
+        enum:
+          - plus
+          - minus
+      sequence_ontology:
+        type: array
+        description: >-
+          The description of the variant in respect to its
+          location relative to this gene
+        items:
+          $ref: '#/definitions/so_term'
+      rnas:
+        type: array
+        description: >-
+          The set of RNAs annotated on this gene.  In the case of mitochondria,
+          the chromosome coordinate is repeated, as it is the stand-in
+          for the RNA
+        items:
+          $ref: '#/definitions/rna_annot_for_allele'
+
+  rna_annot_for_allele:
+    type: object
+    description: >-
+      Represents the manifestation of a particular allele on a particular RNA
+      If product_id is absent, this is a non-coding RNA
+    required: [id, sequence_ontology]
+    properties:
+      id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+        example: >-
+          NC_000001.23
+      transcript_change:
+        $ref: '#/definitions/transcript_change'
+      sequence_ontology:
+        type: array
+        description: >-
+          The description of the variant in respect to its
+          location relative to this RNA
+        items:
+          $ref: '#/definitions/so_term'
+      product_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+        example: >-
+          NC_000001.23
+      protein:
+        $ref: '#/definitions/protein_annot_for_allele'
+
+  protein_annot_for_allele:
+    type: object
+    description: >-
+      Represents the manifestation of a particular allele on a particular protein
+    required: [variant, sequence_ontology]
+    properties:
+      variant:
+        $ref: '#/definitions/protein_variant'
+      sequence_ontology:
+        type: array
+        description: >-
+          The description the protein consequence of this variant
+        items:
+          $ref: '#/definitions/so_term'
+
+  protein_variant:
+    type: object
+    description: >-
+      A choice of either a protein change with known endpoints (spdi) or
+      a frameshift variant (frameshift)
+    properties:
+      spdi:
+        $ref: '#/definitions/spdi'
+      frameshift:
+        $ref: '#/definitions/frameshift'
+
+  frequency_data:
+    type: object
+    description: >-
+      Metadata and allele counts for an allele in a particular study/project.
+    required: [project_name, create_date, update_date, allele_count, total_count, common]
+    properties:
+      project_name:
+        type: string
+        format: unicode
+        description: >-
+          The name of the project that provided the frequency data for this allele
+        example: >-
+          1000 Genomes Phase III
+      create_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the project was submitted to NCBI's Genotype Archive
+        example: >-
+          2001-01-15T00:00Z
+      update_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the project was updated in NCBI's Genotype Archive.
+          If never updated, then same as create-date.
+        example: >-
+          2001-01-15T00:00Z
+      allele_count:
+        type: integer
+        description: >-
+          The number of chromosomes in the study where this allele was observed
+      total_count:
+        type: integer
+        description: >-
+          The number of chromosomes in the study
+      common:
+        type: boolean
+        description: >-
+          True if this allele is 'common'
+          Common is defined as at least one sub-population that has greater
+          than 1% frequency and appeared in at least 2 samples.
+          NB: Many reports tag entire SNPs with 'common', which is a
+          statement that the minor allele (the second-most common allele)
+          is common.
+
+  clinvar_data:
+    type: object
+    description: >-
+      Metadata and clinical attributes for an allele in the ClinVar database.  For
+      more information about ClinVar's data model, and ClinVar SCV/RCV accessions, see
+      http://www.ncbi.nlm.nih.gov/clinvar/docs/help/
+    required: [accession_version, allele_id, measure_set_id, variant_identifiers,
+      refsnp_id, create_date, update_date, review_status, disease_names,
+      clinical_significances, disease_ids, origins, collection_method, citations, gene_ids]
+    properties:
+      accession_version:
+        type: string
+        format: ascii
+        description: >-
+          The ClinVar RCV record that links this particular
+          allele to this particular phenotype.  For more information, see
+          http://www.ncbi.nlm.nih.gov/clinvar/intro/
+      allele_id:
+        type: integer
+        description: >-
+          ClinVar's identifier for this allele.  For more information, see
+          http://www.ncbi.nlm.nih.gov/clinvar/docs/help/
+      measure_set_id:
+        type: integer
+        description: >-
+          ClinVar's identifer for a set of variants that may influence the
+          phenotype together, such as in a haplotype.  A measure-set aggregates
+          together several allele_ids
+      variant_identifiers:
+        type: array
+        description: >-
+          External variant identifers, simliar to RS numbers.  They are
+          independent of RCV's altogether.  They should be the same for every
+          RCV in a RefSnp.  Formerly 'source-link'.
+        items:
+          $ref: '#/definitions/external_ref'
+      refsnp_id:
+        type: string
+        format: uint64
+        description: >-
+          The associated RefSnp ID according to ClinVar at time of dbSNP
+          revision creation.
+      create_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date and time the ClinVar RCV was created
+        example: >-
+          2001-01-15T00:00Z
+      update_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the ClinVar RCV was last updated. If never updated,
+          then same as create-date.
+        example: >-
+          2001-01-15T00:00Z
+      review_status:
+        type: string
+        format: ascii
+        description: >-
+          The status of the RCV
+        enum:
+          - no_assertion_provided
+          - no_assertion_criteria_provided
+          - criteria_provided_single_submitter
+          - criteria_provided_multiple_submitters_no_conflicts
+          - criteria_provided_conflicting_interpretations
+          - reviewed_by_expert_panel
+          - practice_guideline
+      disease_names:
+        type: array
+        description: >-
+          Each RCV record is associated with one or more preferred disease names
+        items:
+          type: string
+          format: unicode
+      clinical_significances:
+        type: array
+        description: >-
+          The signifiances of this allele in the context of this disease
+        items:
+          type: string
+          format: ascii
+          enum:
+            - not_provided
+            - pathogenic
+            - likely_pathogenic
+            - benign
+            - likely_benign
+            - drug_response
+            - confers_sensitivity
+            - risk_factor
+            - association
+            - protective
+            - conflicting_interpretations_of_pathogenicity
+            - uncertain_significance
+            - affects
+            - association_not_found
+            - other
+      disease_ids:
+        type: array
+        description: >-
+          There are zero or more disease-ids per RCV
+        items:
+          $ref: '#/definitions/external_ref'
+      origins:
+        type: array
+        description: >-
+          The biological origins of the allele. Each SCV can have many values
+          for this field and this reports their aggregate (taken from the RCV),
+          with duplicates removed.
+        items:
+          type: string
+          format: ascii
+          enum:
+            - unknown
+            - germline
+            - somatic
+            - de_novo
+            - inherited
+            - maternal
+            - paternal
+            - uniparental
+            - biparental
+            - not_reported
+            - tested_inconclusive
+            - not_applicable
+            - experimentally_generated
+      collection_method:
+        type: array
+        description: >-
+          How each SCV was collected.  Each SCV can have many values
+          for this field and this reports their aggregate (taken from the RCV),
+          with duplicates removed.
+        items:
+          type: string
+          format: unicode
+      citations:
+        type: array
+        description: >-
+          Set of PubMed IDs (PMIDs) associated with this RCV
+        items:
+          type: integer
+      gene_ids:
+        type: array
+        description: >-
+          Set of ClinVar reported genes associated with this RCV
+        items:
+          type: string
+          format: ascii
+
+  external_ref:
+    type: object
+    required: [organization, accession]
+    description: >-
+      An organization outside of dbSNP will also accession variants and annotation.
+      This object provides the name of that organization, and associated accession.
+      The organization together with the accession provide a globally unique
+      identifier.
+    properties:
+      organization:
+        type: string
+        format: unicode
+        description: >-
+          The name of the organization that has provided an accession.
+      accession:
+        type: string
+        format: unicode
+        description: >-
+          The accession provided by the organization.
+
+  error:
+    type: object
+    description: >-
+      Description of a catastrophic failure
+    required: [ error ]
+    properties:
+      error:
+        type: object
+        description: "Remember that these fields are all optional."
+        properties:
+          code:
+            type: integer
+            description: >-
+              Represents the code for this error. This property value will
+              represent the HTTP response code. If there are multiple errors,
+              code will be the error code for the first error.
+          message:
+            type: string
+            format: unicode
+            description: >-
+              A human readable message providing more details about the error.
+              If there are multiple errors, message will be the message for the
+              first error.
+          errors:
+            type: array
+            description: >-
+              Container for any additional information regarding the error.
+              If the service returns multiple errors, each element in the
+              errors array represents a different error.
+            items:
+              $ref: "#/definitions/detailed_error"
+
+  detailed_error:
+    type: object
+    description: >-
+      Description of a catastrophic failure
+    properties:
+      reason:
+        type: string
+        format: ascii
+        description: >-
+          Unique identifier for this error. Different from the error.code
+          property in that this is not an http response code.
+        enum:
+          - Other
+      message:
+        type: string
+        format: unicode
+        description: >-
+          A human readable message providing more details about the error.
+          If there is only one error, this field will match error.message.
+
+  transcript_change:
+    type: object
+    required: [ seq_id, position, deletion_sequence, inserted_sequence ]
+    description: >-
+      A single allele in SPDI notation, expanded to include all affected
+      codons.
+    properties:
+      seq_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+        example: >-
+          NC_000001.23
+      position:
+        type: integer
+        description: >-
+          The 0-based boundary position where the deletion starts. That
+          is, position 0 starts the deletion immediately before
+          the first nucleotide and position 1 starts the deletion
+          between the first and second nucleotides.
+      deletion_sequence:
+        type: string
+        format: ascii
+        description: >-
+          The IUPAC sequence of nucleotides/amino-acids to delete from the
+          reference. This can be empty, which is how a pure insertion is
+          represented.
+      inserted_sequence:
+        type: string
+        format: ascii
+        description: >-
+          The IUPAC sequence of nucleotides/amino-acids to insert
+          after perforing the deletion. Amino-acids use the
+          single character encoding. All nucleotide codes including the
+          ones for ambiguity are allowed.
+
+
+  spdi:
+    type: object
+    required: [ seq_id, position, deletion-sequence, inserted-sequence ]
+    description: >-
+      A single contextual allele in SPDI notation. Contextual allele
+      means that applying the Blossom Precision Correction Algorithm
+      would leave the fields unchanged
+    properties:
+      seq_id:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference sequence
+        example: >-
+          NC_000001.23
+      position:
+        type: integer
+        description: >-
+          The 0-based boundary position where the deletion starts. That
+          is, position 0 starts the deletion immediately before
+          the first nucleotide and position 1 starts the deletion
+          between the first and second nucleotides.
+      deletion-sequence:
+        type: string
+        format: ascii
+        description: >-
+          The IUPAC sequence of nucleotides/amino-acids to delete from the
+          reference. This can be empty, which is how a pure insertion is
+          represented.
+      inserted-sequence:
+        type: string
+        format: ascii
+        description: >-
+          The IUPAC sequence of nucleotides/amino-acids to insert
+          after perforing the deletion. Amino-acids use the
+          single character encoding. All nucleotide codes including the
+          ones for ambiguity are allowed.
+      warnings:
+        $ref: "#/definitions/warnings"
+
+  warnings:
+    type: array
+    description: >-
+      Text intended for human consumption listing all
+      warnings associated with generating this object. Absent
+      if no warnings were generated.
+    items:
+      $ref: '#/definitions/warning'
+
+  warning:
+    type: object
+    description: >-
+      An entry in the array of warnings.
+    required: [reason, message]
+    properties:
+      reason:
+        type: string
+        format: ascii
+        description: >-
+          Unique identifier for this warning.
+        enum:
+          - Other
+      message:
+        type: string
+        format: unicode
+        description: >-
+          The human-readable text of the warning.
