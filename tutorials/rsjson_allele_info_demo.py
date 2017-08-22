@@ -98,11 +98,13 @@ for line in sys.stdin:
         idx = 0
         for a in rs['alleles']:
             #print(a)
-            rnas = a['refseq_annot']['rnas']
-            gene_symbol = a['refseq_annot']['locus']
-            gene_name = a['refseq_annot']['name']
-            for r in rnas:
-                mrna = r['transcript_change']
-                protein = r['protein']['variant']['spdi']
-                print( "\t".join([rs['id'], a['allele'], gene_name, gene_symbol, mrna['seq_id'], mrna['deleted_sequence'], str(mrna['position']),mrna['deleted_sequence'] ,protein['seq_id'], protein['deleted_sequence'], str(protein['position']),protein['deleted_sequence']]))
- 
+            if 'refseq_annot' in a:
+                rnas = a['refseq_annot']['rnas']
+                gene_symbol = a['refseq_annot']['locus']
+                gene_name = a['refseq_annot']['name']
+                for r in rnas:
+                    if 'transcript_change' in r:
+                        mrna = r['transcript_change']
+                        protein = r['protein']['variant']['spdi']
+                        print( "\t".join([rs['id'], a['allele'], gene_name, gene_symbol, mrna['seq_id'], mrna['deleted_sequence'], str(mrna['position']),mrna['deleted_sequence'] ,protein['seq_id'], protein['deleted_sequence'], str(protein['position']),protein['deleted_sequence']]))
+     
