@@ -25,7 +25,7 @@
 # Script name: rsjson_allele_info_demo.py
 # Description: a demo script to parse dbSNP RS JSON object.  The script will
 # produce tab-delimited output containing tthe assembly version, sequence ID,
-# position, reference allele, variant allele and ClinVar clinical significance
+# position, mrna and protein SPDI reference allele (inserted) and variant (deleted) sequence, and ClinVar clinical significance
 # if available.
 # Author:  Lon Phan  lonphan@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
