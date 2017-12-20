@@ -61,9 +61,9 @@ def printPlacements(info):
 
             for a in alleleinfo['alleles']:
                 spdi = a['allele']['spdi']
-                if spdi['inserted-sequence'] != spdi['deletion-sequence']:
-                    (ref, alt, pos, seq_id) = (spdi['deletion-sequence'],
-                                               spdi['inserted-sequence'],
+                if spdi['inserted_sequence'] != spdi['deleted_sequence']:
+                    (ref, alt, pos, seq_id) = (spdi['deleted_sequence'],
+                                               spdi['inserted_sequence'],
                                                spdi['position'],
                                                spdi['seq_id'])
                     break
