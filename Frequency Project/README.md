@@ -1,15 +1,15 @@
 # dbSNP (https://www.ncbi.nlm.nih.gov/snp)
-## ****This work is subject to change due to work in progress.  Please follow this space for updates.****
+## ****This project is subject to change due to work in progress.  Please follow this space for updates.****
 
 dbSNP aggregate allele frequency data from multiple sources including:
 
-HapMap
-1000 Genomes
-GO-ESP
-ExAC
-GNOMAD
-TOPMED
-and many others
+* HapMap
+* 1000 Genomes
+* GO-ESP
+* ExAC
+* GnomAD
+* TOPMED
+* and many others
 
 Example: (https://www.ncbi.nlm.nih.gov/snp/rs328#frequency_tab) 
  
