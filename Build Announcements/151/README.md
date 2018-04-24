@@ -69,23 +69,7 @@ dbSNP human build 151 for both GRCh38.p7 and GRCh37.p13 assemblies is now availa
 			GRCh38.p7
 			[ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606_b151_GRCh38p7](ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606_b151_GRCh38p7)
 
-## NOTES
-dbSNP have several projects planned to analyze its content to identify attributes to aid variant discovery, annotation, prioritization, and interpretation for later release.   The proposed analysis includes: 
-###	Different reference allele between GRCh37 and GRCh38
-###	Variant type (SNV, INDEL, etc.) change due to assembly differences
-###	Reference allele is the minor allele on GRCh37 or GRCh38
-###	RS has non-reciprocal mapping between GRCh37 and GRCh38
-###	Identify suspect variants including paralogous SNV
-###	Identify singleton variants (variants observed in 1 sample)
-###	Add new genomic feature annotations:	
-				o	segmental duplication
-				o	pseudogene
-				o	promoter
-				o	enhancer
-				o	CpG island
-				o	methylation site
-				
-We will post progress and the results here and on GitHub (https://github.com/ncbi/dbsnp).    
+
 
 Please email snp-admin@ncbi.nlm.nih.gov for any questions, suggestions, and comments.
 
