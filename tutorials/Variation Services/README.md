@@ -1,6 +1,7 @@
 ## Sample Python script for querying and retrieving dbSNP data from NCBI SPDI service (https://api.ncbi.nlm.nih.gov/variation/v0/)
 ## ================================================
 ### Annotate VCF with RS ID  
+## ================================================
 ```python spdi_batch.py -i test_vcf.vcf -t VCF```
 #### Input
 ``` 
@@ -17,6 +18,7 @@ NC_000001.11    10043   rs1008829651    T       A       .       .       RS=10088
 ```
 ## ================================================
 ### Convert HGVS to SPDI 
+## ================================================
 ```python spdi_batch.py -i test_hgvs.txt -t HGVS```
 #### Input
 ``` 
@@ -34,6 +36,7 @@ NM_000237.2:c.1421C>G   NM_000237.2:1790:C:G
 ```
 ## ================================================
 ### Convert HGVS to RS ID
+## ================================================
 ```python spdi_batch.py -i test_hgvs.txt -t HGVS_RS```
  #### Input
 ``` 
@@ -49,8 +52,9 @@ NC_000008.11:g.19962213C>G      NC_000008.11:19962212:C:G       328
 NG_008855.1:g.28143C>G  NG_008855.1:28142:C:G   328
 NM_000237.2:c.1421C>G   NM_000237.2:1790:C:G    328
 ```
- ## ================================================
+## ================================================
 ### Retrieve RS JSON objects
+## ================================================
 ```python spdi_batch.py -i test_rs.txt -t RS```
 #### Input
 ``` 
