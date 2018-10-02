@@ -94,12 +94,12 @@ rs ID handle type ss or RCV
 5. Retrieve a set of attributes across all rs (entire JSON)
 Due to the large size of data, this task is suggested to be done with Hadoop MapReduce. Please see the 
 Steps to take
-Step 1: You will need access to a hadoop cluster. Either request permission to use hadoop cluster with your system admin or set up your own (https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html).
-Step 2: Install mrjob module (https://pythonhosted.org/mrjob/)
-Step 3: If the input files are not in hadoop file system yet, need to transfer: $>hdfs dfs -put path/to/your/input path/to/hadoop
-Step 4: Sample code can be downloaded from in the tutorial directory : https://github.com/ncbi/dbsnp/edit/master/tutorials/ 
-Step 5: Follow the README to check out and install the sample code.
-Step 6: To run: json_mr.py -r hadoop hdfs://path/to/input -o hdfs://path/to/output --no-output --jobconf mapreduce.job.name=test.mrjob --jobconf mapreduce.job.reduces=100 
+	Step 1: You will need access to a hadoop cluster. Either request permission to use hadoop cluster with your system admin or set up your own (https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/ClusterSetup.html).
+	Step 2: Install mrjob module (https://pythonhosted.org/mrjob/)
+	Step 3: If the input files are not in hadoop file system yet, need to transfer: $>hdfs dfs -put path/to/your/input path/to/hadoop
+	Step 4: Sample code can be downloaded from in the tutorial directory : https://github.com/ncbi/dbsnp/edit/master/tutorials/ 
+	Step 5: Follow the README to check out and install the sample code.
+	Step 6: To run: json_mr.py -r hadoop hdfs://path/to/input -o hdfs://path/to/output --no-output --jobconf mapreduce.job.name=test.mrjob --jobconf mapreduce.job.reduces=100 
 
 6. Retrieve list of attributes (rs, attribute) from full JSON object
 	Install jq tool from https://stedolan.github.io/jq/
