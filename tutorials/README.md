@@ -6,7 +6,8 @@ JSON Alpha release files based on dbSNP build 150 are available on the FTP site 
 ### directory layout
 
     .
-    ├── refsnp-sample.json.gz                # Sample data containing one RefSNP JSON example for rs268 for testing rsjson_demo.py  
+    ├── Variation Services                   # Tutorial for working with SPDI Variation Service
+    ├── refsnp-sample.json.gz                # Sample data containing one RefSNP JSON example for rs268 for testing             rsjson_demo.py  
     ├── rsjson_demo.py                       # Sample Python script to parse RefSNP (rs) JSON object.   The script
     |                                          produces a tab-delimited output containing the assembly version, sequence ID, 
     |                                          position, reference allele, variant allele and ClinVar clinical significance, 
