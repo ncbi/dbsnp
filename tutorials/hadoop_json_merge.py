@@ -1,5 +1,4 @@
 
-#!/opt/python-3.4/bin/python
 # ===========================================================================
 #
 #                            PUBLIC DOMAIN NOTICE
@@ -23,13 +22,18 @@
 #  Please cite the author in any work or product based on this material.
 #
 # ===========================================================================
-# Script name: hadoop_json_merge.py 
-# Description: a demo script to parse dbSNP RS JSON object and obtain the records 
-# of rs merge history.  The script will produce tab-delimited output containing 
-# current snp_id, merged snp_id, build_id, and merge date.
+# Script name: hadoop_json_merge.py
+# Description: a demo script to parse dbSNP RS JSON object and obtain the
+# records of rs merge history.  The script will produce tab-delimited output
+# containing current snp_id, merged snp_id, build_id, and merge date.
 #
 # Sample use:
-# python hadoop_json_merge.py -r hadoop hdfs:///path/to/input -o hdfs:///path/to/output --no-output --jobconf mapreduce.job.name=test.mrjob --jobconf mapreduce.job.reduces=100
+# python hadoop_json_merge.py                 \
+#     -r hadoop hdfs:///path/to/input         \
+#     -o hdfs:///path/to/output               \
+#     --no-output                             \
+#     --jobconf mapreduce.job.name=test.mrjob \
+#     --jobconf mapreduce.job.reduces=100
 #
 # Author:  Qiang Wang  wangq2@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
@@ -38,27 +42,25 @@
 # ---------------------------------------------------------------------------
 
 
-import os
 import json
 
 from mrjob.job import MRJob
 
-        
+
 class MRJsonProcessor(MRJob):
 
     def mapper(self, _, line):
 
         data = json.loads(line)
 
-        snp_id=data["refsnp_id"]
+        snp_id = data["refsnp_id"]
 
-
-        merges=data["dbsnp1_merges"]
+        merges = data["dbsnp1_merges"]
 
         for m in merges:
-            values=(snp_id, m["merged_rsid"], m["revision"], m["merge_date"])
+            values = (snp_id, m["merged_rsid"], m["revision"], m["merge_date"])
             print("\t".join(values))
-      
-                
+
+
 if __name__ == '__main__':
     MRJsonProcessor.run()

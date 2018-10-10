@@ -1,5 +1,4 @@
 
-#!/opt/python-3.4/bin/python
 # ===========================================================================
 #
 #                            PUBLIC DOMAIN NOTICE
@@ -23,15 +22,21 @@
 #  Please cite the author in any work or product based on this material.
 #
 # ===========================================================================
-# Script name: hadoop_json_annotation.py 
-# Description: a demo script to parse dbSNP RS JSON object and extract clinical 
-# rs data.  The script will produce tab-delimited output containing 
-# accession_version, allele_id,measure_set_id,organization, accession, snp_id, 
-# create_date,update_date,last_evaluated_date,review_status,disease_names,clinical_significances,
-# disease_ids_organization,disease_ids_accession, origins, collection_method, citations, and gene_ids.
+# Script name: hadoop_json_annotation.py
+# Description: a demo script to parse dbSNP RS JSON object and extract clinical
+# rs data.  The script will produce tab-delimited output containing
+# accession_version, allele_id, measure_set_id, organization, accession,
+# snp_id, create_date, update_date, last_evaluated_date, review_status,
+# disease_names, clinical_significances, disease_ids_organization,
+# disease_ids_accession, origins, collection_method, citations, and gene_ids.
 #
 # Sample use:
-# python hadoop_json_clinical.py -r hadoop hdfs:///path/to/input -o hdfs:///path/to/output --no-output --jobconf mapreduce.job.name=test.mrjob --jobconf mapreduce.job.reduces=100
+# python hadoop_json_clinical.py
+#     -r hadoop hdfs:///path/to/input         \
+#     -o hdfs:///path/to/output               \
+#     --no-output                             \
+#     --jobconf mapreduce.job.name=test.mrjob \
+#     --jobconf mapreduce.job.reduces=100     \
 #
 # Author:  Qiang Wang  wangq2@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
@@ -39,52 +44,60 @@
 #
 # ---------------------------------------------------------------------------
 
-import os
 import json
 
 from mrjob.job import MRJob
 
-        
+
 class MRJsonProcessor(MRJob):
 
     def mapper(self, _, line):
 
         data = json.loads(line)
 
-        snp_id=data["refsnp_id"]
+        snp_id = data["refsnp_id"]
 
-        annotations=data["primary_snapshot_data"]["allele_annotations"]
-        
+        annotations = data["primary_snapshot_data"]["allele_annotations"]
+
         for a in annotations:
-            clinical=a["clinical"]
+            clinical = a["clinical"]
 
             for c in clinical:
-                accession_version=c["accession_version"]
-                allele_id=str(c["allele_id"])
-                measure_set_id=str(c["measure_set_id"])
-                variant_identifiers=c["variant_identifiers"]
-                organization=";".join([vi["organization"] for vi in variant_identifiers])
-                accession=";".join([vi["accession"] for vi in variant_identifiers])
-                snp_id=c["refsnp_id"]
-                create_date=c["create_date"]
-                update_date=c["update_date"]
+                accession_version = c["accession_version"]
+                allele_id = str(c["allele_id"])
+                measure_set_id = str(c["measure_set_id"])
+                variant_identifiers = c["variant_identifiers"]
+                organization = ";".join(
+                    [vi["organization"] for vi in variant_identifiers])
+                accession = ";".join(
+                    [vi["accession"] for vi in variant_identifiers])
+                snp_id = c["refsnp_id"]
+                create_date = c["create_date"]
+                update_date = c["update_date"]
 
                 if "last_evaluated_date" in c:
-                    last_evaluated_date=c["last_evaluated_date"]
+                    last_evaluated_date = c["last_evaluated_date"]
                 else:
-                    last_evaluated_date=""
+                    last_evaluated_date = ""
 
-                review_status=c["review_status"]
-                disease_names=";".join(c["disease_names"])
-                clinical_significances=";".join(c["clinical_significances"])
-                disease_ids=c["disease_ids"]
-                disease_ids_organization=";".join([di["organization"] for di in disease_ids])
-                disease_ids_accession=";".join([di["accession"] for di in disease_ids])
-                origins=";".join(c["origins"])
-                collection_method=";".join(c["collection_method"])
-                citations=";".join([str(i) for i in c["citations"]])
-                gene_ids=";".join(c["gene_ids"])
-                values=[accession_version, allele_id,measure_set_id,organization, accession, str(snp_id), create_date,update_date,last_evaluated_date,review_status,disease_names,clinical_significances,disease_ids_organization,disease_ids_accession,origins, collection_method,citations,gene_ids]
+                review_status = c["review_status"]
+                disease_names = ";".join(c["disease_names"])
+                clinical_significances = ";".join(c["clinical_significances"])
+                disease_ids = c["disease_ids"]
+                disease_ids_organization = ";".join(
+                    [di["organization"] for di in disease_ids])
+                disease_ids_accession = ";".join(
+                    [di["accession"] for di in disease_ids])
+                origins = ";".join(c["origins"])
+                collection_method = ";".join(c["collection_method"])
+                citations = ";".join([str(i) for i in c["citations"]])
+                gene_ids = ";".join(c["gene_ids"])
+                values = [accession_version, allele_id, measure_set_id,
+                          organization, accession, str(snp_id), create_date,
+                          update_date, last_evaluated_date, review_status,
+                          disease_names, clinical_significances,
+                          disease_ids_organization, disease_ids_accession,
+                          origins, collection_method, citations, gene_ids]
                 print("\t".join(values))
 
 
