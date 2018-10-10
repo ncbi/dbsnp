@@ -24,7 +24,8 @@
 # ===========================================================================
 # Script name: rsjson_allele_info_demo.py
 # Description: a demo script to parse dbSNP RS JSON object.  The script will
-# produce tab-delimited output containing rs number, handle (if available), type (subsnp|clinvar), and id (dbSNP ss|clinvar rcv)
+# produce tab-delimited output containing rs number, handle (if available),
+# type (subsnp|clinvar), and id (dbSNP ss|clinvar rcv)
 # Author:  Lon Phan  lonphan@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
 #
@@ -34,17 +35,18 @@
 
 import sys
 import json
-import re
 
-    
+
 def getSsInfo(rs, obj):
     for ss in obj:
         id = ss['id']
-        print("\t".join([str(rs), ss['submitter_handle'], id['type'], id['value']]))
+        print("\t".join([str(rs), ss['submitter_handle'],
+                        id['type'], id['value']]))
 
 
 for line in sys.stdin:
     rs_obj = json.loads(line)
     if 'primary_snapshot_data' in rs_obj:
         print("\t".join(["rs", "handle", "type", "ss or RCV"]))
-        getSsInfo(rs_obj['refsnp_id'], rs_obj['primary_snapshot_data']['support'])
+        getSsInfo(rs_obj['refsnp_id'],
+                  rs_obj['primary_snapshot_data']['support'])
