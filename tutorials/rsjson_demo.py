@@ -37,6 +37,7 @@ import argparse
 import json
 import gzip
 
+
 def printAllele_annotations(primary_refsnp):
     '''
     rs clinical significance
@@ -44,7 +45,7 @@ def printAllele_annotations(primary_refsnp):
     for annot in primary_refsnp['allele_annotations']:
         for clininfo in annot['clinical']:
             print(",".join(clininfo['clinical_significances']))
-            
+
 
 def printPlacements(info):
     '''
@@ -54,10 +55,11 @@ def printPlacements(info):
     for alleleinfo in info:
         # has top level placement (ptlp) and assembly info
         if alleleinfo['is_ptlp'] and \
-                len(alleleinfo['placement_annot']['seq_id_traits_by_assembly']) > 0:
-            assembly_name = alleleinfo['placement_annot'] \
-                                      ['seq_id_traits_by_assembly'] \
-                                      [0]['assembly_name']
+                len(alleleinfo['placement_annot']
+                    ['seq_id_traits_by_assembly']) > 0:
+            assembly_name = (alleleinfo['placement_annot']
+                                       ['seq_id_traits_by_assembly']
+                                       [0]['assembly_name'])
 
             for a in alleleinfo['alleles']:
                 spdi = a['allele']['spdi']
@@ -70,9 +72,11 @@ def printPlacements(info):
             print("\t".join([assembly_name, seq_id, str(pos), ref, alt]))
 
 
-
-parser = argparse.ArgumentParser(description='Example of parsing JSON RefSNP Data')
-parser.add_argument('-i', dest='input_fn', required=True, help='The name of the input file to parse')
+parser = argparse.ArgumentParser(
+    description='Example of parsing JSON RefSNP Data')
+parser.add_argument(
+    '-i', dest='input_fn', required=True,
+    help='The name of the input file to parse')
 
 args = parser.parse_args()
 
@@ -82,12 +86,13 @@ with gzip.open(args.input_fn, 'rb') as f_in:
     for line in f_in:
         rs_obj = json.loads(line.decode('utf-8'))
         print(rs_obj['refsnp_id'] + "\t")  # rs ID
-        
+
         if 'primary_snapshot_data' in rs_obj:
-            printPlacements(rs_obj['primary_snapshot_data']['placements_with_allele'])
+            printPlacements(
+                rs_obj['primary_snapshot_data']['placements_with_allele'])
             printAllele_annotations(rs_obj['primary_snapshot_data'])
             print("\n")
-            
+
         cnt = cnt + 1
         if (cnt > 1000):
             break
