@@ -1,5 +1,3 @@
-
-#!/opt/python-3.4/bin/python
 # ===========================================================================
 #
 #                            PUBLIC DOMAIN NOTICE
@@ -23,13 +21,19 @@
 #  Please cite the author in any work or product based on this material.
 #
 # ===========================================================================
-# Script name: hadoop_json_placement.py 
-# Description: a demo script to parse dbSNP RS JSON object and extract the records 
-# of rs placement.  The script will produce tab-delimited output containing 
-# snp_id, seq_id, is_ptlp, is_aln_opposite_orientation, is_mismatch, position, deleted_sequence, inserted_sequence, and hgvs.
+# Script name: hadoop_json_placement.py
+# Description: a demo script to parse dbSNP RS JSON object and extract the
+# records of rs placement.  The script will produce tab-delimited output
+# containing snp_id, seq_id, is_ptlp, is_aln_opposite_orientation,
+# is_mismatch, position, deleted_sequence, inserted_sequence, and hgvs.
 #
 # Sample use:
-# python hadoop_json_placement.py -r hadoop hdfs:///path/to/input -o hdfs:///path/to/output --no-output --jobconf mapreduce.job.name=test.mrjob --jobconf mapreduce.job.reduces=100
+# python hadoop_json_placement.py             \
+#     -r hadoop hdfs:///path/to/input         \
+#     -o hdfs:///path/to/output               \
+#     --no-output                             \
+#     --jobconf mapreduce.job.name = test.mrjob \
+#     --jobconf mapreduce.job.reduces=100     \
 #
 # Author:  Qiang Wang  wangq2@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
@@ -38,7 +42,6 @@
 # ---------------------------------------------------------------------------
 
 
-import os
 import json
 
 from mrjob.job import MRJob
@@ -50,24 +53,34 @@ class MRJsonProcessor(MRJob):
 
         data = json.loads(line)
 
-        snp_id=data["refsnp_id"]
+        snp_id = data["refsnp_id"]
 
-
-        placements=data["primary_snapshot_data"]["placements_with_allele"]
+        placements = data["primary_snapshot_data"]["placements_with_allele"]
 
         for p in placements:
-            is_ptlp=str(int(p["is_ptlp"]=="true"))
-            is_aln_opposite_orientation=str(int(p["placement_annot"]["is_aln_opposite_orientation"]=="true"))
-            is_mismatch=str(int(p["placement_annot"]["is_mismatch"]=="true"))
+            is_ptlp = str(int(p["is_ptlp"] == "true"))
+            is_aln_opposite_orientation = str(int(
+                p["placement_annot"]["is_aln_opposite_orientation"] == "true"))
+            is_mismatch = str(
+                int(p["placement_annot"]["is_mismatch"] == "true"))
             for a in p["alleles"]:
                 if "spdi" in a["allele"]:
-                    spdi=a["allele"]["spdi"]
-                    hgvs=a["hgvs"]
-                    values=(snp_id, p["seq_id"],is_ptlp, is_aln_opposite_orientation, is_mismatch, str(spdi["position"]), spdi["deleted_sequence"], spdi["inserted_sequence"], hgvs)
+                    spdi = a["allele"]["spdi"]
+                    hgvs = a["hgvs"]
+                    values = (
+                        snp_id, p["seq_id"], is_ptlp,
+                        is_aln_opposite_orientation, is_mismatch,
+                        str(spdi["position"]),
+                        spdi["deleted_sequence"],
+                        spdi["inserted_sequence"], hgvs)
                 else:
-                    frameshift=a["allele"]["frameshift"]
-                    hgvs=a["hgvs"]
-                    values=(snp_id, p["seq_id"],is_ptlp, is_aln_opposite_orientation, is_mismatch, str(frameshift["position"]), "", "", hgvs)
+                    frameshift = a["allele"]["frameshift"]
+                    hgvs = a["hgvs"]
+                    values = (
+                        snp_id, p["seq_id"], is_ptlp,
+                        is_aln_opposite_orientation,
+                        is_mismatch,
+                        str(frameshift["position"]), "", "", hgvs)
                 print("\t".join(values))
 
 

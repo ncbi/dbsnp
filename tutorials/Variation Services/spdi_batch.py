@@ -23,7 +23,8 @@
 #
 # ===========================================================================
 # Script name: spdi_batch.py
-# Description: a demo script to perform batch query to ncbi spdi service using VCF, HGVS, or dbSNP rs IDs
+# Description: a demo script to perform batch query to ncbi spdi service using
+# VCF, HGVS, or dbSNP rs IDs
 #
 # Sample use:
 # ---Annotate VCF with RS ID and INFO
@@ -32,7 +33,7 @@
 # ---Retrieve RS JSON objects
 # python spdi_batch.py -i test_rs.txt -t RS
 #
-# ---Convert HGVS to SPDI 
+# ---Convert HGVS to SPDI
 # python spdi_batch.py -i test_hgvs.txt -t HGVS
 #
 # ---Convert HGVS to RS
@@ -51,99 +52,115 @@ from itertools import islice, chain
 
 
 parser = argparse.ArgumentParser(description='batch process SPDI requests')
-parser.add_argument('-i', dest='input_file', required=True, help='The name of the input file to parse (VCF, HGVS or rs list, etc.)')
-parser.add_argument('-t', dest='input_format', required=True, help='The input file format (VCF, HGVS, or RS')
+parser.add_argument(
+    '-i', dest='input_file', required=True,
+    help='The name of the input file to parse (VCF, HGVS or rs list, etc.)')
+parser.add_argument(
+    '-t', dest='input_format', required=True,
+    help='The input file format (VCF, HGVS, or RS')
 api_rootURL = 'https://api.ncbi.nlm.nih.gov/variation/v0/'
 
+
 def apiRequest(url):
-	try:
-		r = requests.get(url)
-	except requests.exceptions.Timeout:
-		# Maybe set up for a retry, or continue in a retry loop
-		print ("ERROR: Timeout")
-	except requests.exceptions.TooManyRedirects:
-		# Tell the user their URL was bad and try a different one
-		print ("ERROR: bad url =" + url)
-	except requests.exceptions.RequestException as e:
-		# catastrophic error. bail.
-		print (e)
-		sys.exit(1)
-	if (r.status_code == 200):
-		return r
-	else:
-		print ("ERROR: status code = " + str(r.status_code))
-		return None
-		#sys.exit(1)
+    try:
+        r = requests.get(url)
+    except requests.exceptions.Timeout:
+        # Maybe set up for a retry, or continue in a retry loop
+        print("ERROR: Timeout")
+    except requests.exceptions.TooManyRedirects:
+        # Tell the user their URL was bad and try a different one
+        print("ERROR: bad url =" + url)
+    except requests.exceptions.RequestException as e:
+        # catastrophic error. bail.
+        print(e)
+        sys.exit(1)
+    if (r.status_code == 200):
+        return r
+    else:
+        print("ERROR: status code = " + str(r.status_code))
+        return None
+
 
 def batch(iterable, size):
-	sourceiter = iter(iterable)
-	while True:
-		batchiter = islice(sourceiter, size)
-		yield chain([batchiter.next()], batchiter)
+    sourceiter = iter(iterable)
+    while True:
+        batchiter = islice(sourceiter, size)
+        yield chain([batchiter.next()], batchiter)
+
 
 def batchRS(infile):
-	for rs in infile:
-		rs = re.sub('rs','', rs.rstrip()) 
-		if rs.isdigit():
-			url = api_rootURL + 'beta/refsnp/' + rs
-			print (url)
-			req = requests.get(url)
-			print (req.text)
+    for rs in infile:
+        rs = re.sub('rs', '', rs.rstrip())
+        if rs.isdigit():
+            url = api_rootURL + 'beta/refsnp/' + rs
+            print(url)
+            req = requests.get(url)
+            print(req.text)
+
 
 def batchHGVS(infile, handler=0):
-	#print "batchHGVS"
-	for hgvs in infile:
-		hgvs = hgvs.rstrip()
-		url = api_rootURL + 'hgvs/' + hgvs +'/contextuals'
-		req = apiRequest(url)
-		if req and handler:
-			handler(hgvs, req)
-		elif req:
-			spdi = req2spdi(req)
-			print(hgvs + "\t" + spdi)
+    for hgvs in infile:
+        hgvs = hgvs.rstrip()
+        url = api_rootURL + 'hgvs/' + hgvs + '/contextuals'
+        req = apiRequest(url)
+        if req and handler:
+            handler(hgvs, req)
+        elif req:
+            spdi = req2spdi(req)
+            print(hgvs + "\t" + spdi)
 
 
 def hgvs2rs(hgvs, req):
-	spdi = req2spdi(req)
-	rslist = spdi2rs(spdi)
-	print ("\t".join([hgvs, spdi, ",".join(map(str, rslist))]))
+    spdi = req2spdi(req)
+    rslist = spdi2rs(spdi)
+    print("\t".join([hgvs, spdi, ",".join(map(str, rslist))]))
+
 
 def batchHGVS2RS(infile):
-	batchHGVS(infile, hgvs2rs)
+    batchHGVS(infile, hgvs2rs)
+
 
 def spdi2rs(spdi):
-	#https://api.ncbi.nlm.nih.gov/variation/v0/NC_000009.11%3A98786275%3AA%3AG/rsids
-	url = api_rootURL + 'spdi/' + spdi + '/rsids'
-	req = apiRequest(url)
-	if req:
-		return json.loads(req.text)['data']['rsids']
-	else:
-		return ["no rs found"]
+    url = api_rootURL + 'spdi/' + spdi + '/rsids'
+    req = apiRequest(url)
+    if req:
+        return json.loads(req.text)['data']['rsids']
+    else:
+        return ["no rs found"]
+
 
 def req2spdi(req):
-	reqjson = json.loads(req.text)
-	spdiobj = reqjson['data']['spdis'][0]
-	#[{u'seq_id': u'NC_000001.10', u'inserted_sequence': u'A', u'deleted_sequence': u'T', u'position': 12344}]
-	spdi = ':'.join([spdiobj['seq_id'], str(spdiobj['position']), spdiobj['deleted_sequence'], spdiobj['inserted_sequence']])
-	return spdi
+    reqjson = json.loads(req.text)
+    spdiobj = reqjson['data']['spdis'][0]
+    spdi = ':'.join([
+        spdiobj['seq_id'],
+        str(spdiobj['position']),
+        spdiobj['deleted_sequence'],
+        spdiobj['inserted_sequence']])
+    return spdi
+
 
 def batchVCF(infile):
-	vcfbatchsize = 1000
-	for batchiter in batch(infile, vcfbatchsize):
-		#print("Batch:\n")
-		rowcount = 0
-		rowdata = ''
-		for row in batchiter:
-			if not row.startswith("#"):
-				rowcount += 1
-				rowdata += row
-		if rowcount > 0:
-			#print rowdata
-			req = requests.post(api_rootURL + 'vcf/file/set_rsids?assembly=GCF_000001405.25', data=rowdata)
-			print (req.text)
+    vcfbatchsize = 1000
+    for batchiter in batch(infile, vcfbatchsize):
+        rowcount = 0
+        rowdata = ''
+        for row in batchiter:
+            if not row.startswith("#"):
+                rowcount += 1
+                rowdata += row
+        if rowcount > 0:
+            req = requests.post(
+                api_rootURL + 'vcf/file/set_rsids?assembly=GCF_000001405.25',
+                data=rowdata)
+            print(req.text)
 
 
-batchfunctions = {'VCF':batchVCF, 'RS':batchRS , 'HGVS':batchHGVS, 'HGVS_RS':batchHGVS2RS}
+batchfunctions = {
+    'VCF': batchVCF,
+    'RS': batchRS,
+    'HGVS': batchHGVS,
+    'HGVS_RS': batchHGVS2RS}
 args = parser.parse_args()
 infile = open(args.input_file, "r")
 batchfunctions[args.input_format](infile)
