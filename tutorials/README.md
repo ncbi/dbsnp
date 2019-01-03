@@ -1,6 +1,6 @@
 Scripts and tutorials for using dbSNP data
 
-JSON Alpha release files based on dbSNP build are available on the FTP site (ftp://ftp.ncbi.nih.gov/snp/redesign/latest_release/JSON). 
+dbSNP build release JSON files are available on the FTP site (ftp://ftp.ncbi.nih.gov/snp/redesign/latest_release/JSON). 
 ============================
 
 ### directory layout
