@@ -25,8 +25,8 @@
 # Script name: rsjson_allele_info_demo.py
 # Description: a demo script to parse dbSNP RS JSON object.  The script will
 # produce tab-delimited output containing tthe assembly version, sequence ID,
-# position, mrna and protein SPDI reference allele (inserted) and variant (deleted) sequence, and ClinVar clinical significance
-# if available.
+# position, mrna and protein SPDI reference allele (inserted) and variant
+# (deleted) sequence, and ClinVar clinical significance if available.
 # Author:  Lon Phan  lonphan@ncbi.nlm.nih.gov
 # For help please contact: tkt-varhd@ncbi.nlm.nih.gov
 #
@@ -40,6 +40,7 @@ import re
 
 rs = {}
 
+
 def printAllele_annotations(primary_refsnp):
     '''
     rs clinical significance
@@ -47,57 +48,52 @@ def printAllele_annotations(primary_refsnp):
     for annot in primary_refsnp['allele_annotations']:
         for clininfo in annot['clinical']:
             print(",".join(clininfo['clinical_significances']))
-            
+
 
 def getPlacements(info):
     '''
     rs genomic positions
     '''
-    rs['alleles'] =  [] # holder for one or more variant alleles
+    rs['alleles'] = []  # holder for one or more variant alleles
     for alleleinfo in info:
         # has top level placement (ptlp) and assembly info
-        if alleleinfo['is_ptlp'] and len(alleleinfo['placement_annot']['seq_id_traits_by_assembly']) > 0:  #get genomic placement and alleles
-            assembly_name = alleleinfo['placement_annot'] \
-                                      ['seq_id_traits_by_assembly'] \
-                                      [0]['assembly_name']
+        if alleleinfo['is_ptlp'] and len(
+                alleleinfo['placement_annot']['seq_id_traits_by_assembly']
+                ) > 0:  # get genomic placement and alleles
 
             for a in alleleinfo['alleles']:
                 spdi = a['allele']['spdi']
-                #print(spdi)
                 if spdi['inserted_sequence'] == spdi['deleted_sequence']:
-                    rs['alleles'].append({'allele':spdi['deleted_sequence']})
+                    rs['alleles'].append({'allele': spdi['deleted_sequence']})
                     rs['seq_id'] = spdi['seq_id']
-                    rs['position'] =  spdi['position']
-                else: #spdi['inserted_sequence'] != spdi['deleted_sequence']:
-                    rs['alleles'].append({'allele':spdi['inserted_sequence']})
+                    rs['position'] = spdi['position']
+                else:  # spdi['inserted_sequence'] != spdi['deleted_sequence']:
+                    rs['alleles'].append({'allele': spdi['inserted_sequence']})
+
 
 def getRefSeqAnnot(info):
     '''
     rs refseq info
     '''
-    idx = 0
-    for allele in rs['alleles']:
-
-        #print(info[cnt])
+    for idx in range(0, len(rs['alleles'])):
         allele_annotation = info[idx]['assembly_annotation'][0]
-        if (re.match('^NC_', allele_annotation['seq_id'])): #get only RefSeq annotation on NC
-                #print (allele_annotation['seq_id'])
+        # get only RefSeq annotation on NC
+        if (re.match('^NC_', allele_annotation['seq_id'])):
                 for g in allele_annotation['genes']:
-                    rs['alleles'][idx]['refseq_annot'] = g  #allele and annotation have same ordering
-        idx = idx + 1
-                       
-    
+                    # allele and annotation have same ordering
+                    rs['alleles'][idx]['refseq_annot'] = g
 
 
 for line in sys.stdin:
     rs_obj = json.loads(line)
     rs['id'] = rs_obj['refsnp_id']
     if 'primary_snapshot_data' in rs_obj:
-        getPlacements(rs_obj['primary_snapshot_data']['placements_with_allele'])
-        getRefSeqAnnot(rs_obj['primary_snapshot_data']['allele_annotations'])
+        getPlacements(
+            rs_obj['primary_snapshot_data']['placements_with_allele'])
+        getRefSeqAnnot(
+            rs_obj['primary_snapshot_data']['allele_annotations'])
         idx = 0
         for a in rs['alleles']:
-            #print(a)
             if 'refseq_annot' in a:
                 rnas = a['refseq_annot']['rnas']
                 gene_symbol = a['refseq_annot']['locus']
@@ -106,5 +102,12 @@ for line in sys.stdin:
                     if 'transcript_change' in r:
                         mrna = r['transcript_change']
                         protein = r['protein']['variant']['spdi']
-                        print( "\t".join([rs['id'], a['allele'], gene_name, gene_symbol, mrna['seq_id'], mrna['deleted_sequence'], str(mrna['position']),mrna['deleted_sequence'] ,protein['seq_id'], protein['deleted_sequence'], str(protein['position']),protein['deleted_sequence']]))
-     
+                        print("\t".join([rs['id'], a['allele'], gene_name,
+                                        gene_symbol, mrna['seq_id'],
+                                        mrna['deleted_sequence'],
+                                        str(mrna['position']),
+                                        mrna['deleted_sequence'],
+                                        protein['seq_id'],
+                                        protein['deleted_sequence'],
+                                        str(protein['position']),
+                                        protein['deleted_sequence']]))

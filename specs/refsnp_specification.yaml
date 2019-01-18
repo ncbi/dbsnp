@@ -2,15 +2,20 @@ definitions:
 
   refsnp_snapshot:
     type: object
-    required: [ refsnp_id, create_date, update_date, update_revision, status,
-      merges, splits, placements_with_allele, allele_annotations, genes,
-      citations, support, anchor, variant_type]
+    required: [ refsnp_id, create_date, last_update_date, last_update_build_id,
+       dbsnp1_merges, lost_obs_movements, present_obs_movements, citations ]
     description: >-
       The characteristics of a single group of short variants equivalent by
       type and position over several sequences as calculated based on the
       information available at a particular point in time. It is a snapshot at
       a particular point in time of the ever-evolving knowledge of a particular
       class of variants.
+      Has 4 subclasses primary_snapshot, merged_snapshot, unsupported_snapshot,
+      and nosnppos_snapshot (deprecated).
+      They are each represented by an instance of this object with the appropriate data field (primary_snapshot_data,
+      merged_snapshot_data, unsupported_snapshot or nosnppos_snapshot_data) filled
+      in. It is an error to have more than one of these filled in (though our C++ code generator cannot parse the YAML necessary
+      to specify this constraint, so we do not enforce it).
     properties:
       refsnp_id:
         type: string
@@ -25,7 +30,7 @@ definitions:
           The date the RefSNP was created.
         example: >-
           2001-01-15T00:00Z
-      update_date:
+      last_update_date:
         type: string
         format: ISO 8601
         description: >-
@@ -33,45 +38,140 @@ definitions:
           Same as create date if never updated.
         example: >-
           2001-01-15T00:00Z
-      update_revision:
+      last_update_build_id:
         type: string
         format: ascii
         description: >-
-          The last dbSNP revision in which this RefSNP was created or updated
-      status:
-        type: string
-        format: ascii
-        description: |
-          The status of this RefSNP. It is possible (though unlikely) that
-          other statuses may be added in the future.
-
-          live - the normal condition for a RefSNP.
-
-          merged - improvements in sequence alignments or reference sequences
-          caused two RefSNPs to share the same RsAnchor, so they were merged
-          and this id was retired.
-
-          suppressed - the RefSNP was released but is problematic and should
-          not be used in future work.
-        enum:
-          - live
-          - suppressed
-          - merged
-      merges:
+          The id of the last dbSNP build in which this RefSNP was created or updated.
+      dbsnp1_merges:
         type: array
         description: >-
+          Note: this field is for dbsnp1 merge only.
           Record of each time another RefSNP objects merged into this RefSNP
           because the RsAnchors of each were the same.  If the recipient of
           a merge then merges into yet a third RefSNP, the list is flattened.
         items:
-          $ref: '#/definitions/merge_event'
-      splits:
+          $ref: '#/definitions/dbsnp1_merge_event'
+      citations:
         type: array
         description: >-
-          Record of times the alleles of this or other RefSNP objects moved
-          independently of their current RefSNP anchor.
+          Set of Pubmed IDs (PMIDs) for this RefSNP or its supporting submissions
         items:
-          $ref: '#/definitions/split_event'
+          type: integer
+      lost_obs_movements:
+        type: array
+        description: >-
+          movements recording observations lost between the previous release
+          and this release
+        items:
+          $ref: '#/definitions/lost_obs_movement'
+      present_obs_movements:
+        type: array
+        description: >-
+          The record of movements between the previous and current release for observations
+          mapped to this RS by the ADS used in this release.
+        items:
+          $ref: '#/definitions/present_obs_movement'
+      nosnppos_snapshot_data:
+        $ref: '#/definitions/nosnppos_snapshot_data'
+      withdrawn_snapshot_data:
+        $ref: '#/definitions/withdrawn_snapshot_data'
+      primary_snapshot_data:
+        $ref: '#/definitions/primary_snapshot_data'
+      merged_snapshot_data:
+        $ref: '#/definitions/merged_snapshot_data'
+      unsupported_snapshot_data:
+        $ref: '#/definitions/unsupported_snapshot_data'
+
+  merged_snapshot_data:
+    description: >-
+      Data specific to merged snapshots; cannot be present at the same time as
+      primary_snapshot_data or nosnppos_snapshot_data
+    type: object
+    required: [ proxy_time, proxy_build_id, merged_into ]
+    properties:
+      proxy_time:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date and time this RefSnp was merged
+        example: >-
+          2001-01-15T00:00Z
+      proxy_build_id:
+        type: string
+        format: ascii
+        description: >-
+          The number of the dbSNP build in which this RefSnp was merged
+      merged_into:
+        type: array
+        description: >-
+          The RefSnp id(s) that this RefSnp was merged into. In dbsnp1 a RefSnp can
+          only be merged into one RefSnp; however in dbsnp2 it is possible to merge
+          into multiple RefSnps
+        items:
+          type: string
+          description: >-
+            The RefSnp id that the current RefSnp was merged into
+
+  withdrawn_snapshot_data:
+    description: >-
+      Data specific to withdrawn snapshots;
+    type: object
+    required: [ withdrawn_time, support]
+    properties:
+      withdrawn_time:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date and time this RefSnp was withdrawn
+        example: >-
+          2001-01-15T00:00Z
+      support:
+        type: array
+        description: >-
+          The observations that support the existence of a variant at
+          this particular location and type. Supporting observations can come from
+          submissions to dbSNP or from external data sources like ClinVar.
+        items:
+          $ref: '#/definitions/support'
+
+  nosnppos_snapshot_data:
+    description: >-
+      Data specific to nosnppos snapshots;
+    type: object
+    required: [ support ]
+    properties:
+      support:
+        type: array
+        description: >-
+          The observations that support the existence of a variant at
+          this particular location and type. Supporting observations can come from
+          submissions to dbSNP or from external data sources like ClinVar.
+        items:
+          $ref: '#/definitions/support'
+
+  unsupported_snapshot_data:
+    description: >-
+      Data specific to unsupported snapshots; cannot be present at the same time as the other *_snapshot_data fields
+    type: object
+    required: [ alleles_from_previous_support ]
+    properties:
+      alleles_from_previous_support:
+        type: array
+        description: >-
+          The set of alleles that this RefSnp had in the build just prior to becoming unsupported.
+        items:
+          $ref: '#/definitions/spdi'
+
+
+  primary_snapshot_data:
+    description: >-
+      Data specific to primary snapshots; cannot be present at the same time as
+      merged_snapshot_data or nosnppos_snapshot_data
+    type: object
+    required: [ placements_with_allele, allele_annotations,
+      support, anchor, variant_type ]
+    properties:
       placements_with_allele:
         type: array
         description: >-
@@ -98,20 +198,6 @@ definitions:
          lists.
         items:
           $ref: '#/definitions/allele_annotation_list'
-      genes:
-        type: array
-        description: >-
-          Set of genes that coincide or nearly coincide with this RefSNP.  Genes
-          are included if the gene start is 2KB upstream or gene stop is 500 bp
-          downstream of the variant.
-        items:
-          $ref: '#/definitions/gene'
-      citations:
-        type: array
-        description: >-
-          Set of Pubmed IDs (PMIDs) for this RefSNP or its supporting submissions
-        items:
-          type: integer
       support:
         type: array
         description: >-
@@ -143,7 +229,7 @@ definitions:
           - delins
           - identity
 
-  merge_event:
+  dbsnp1_merge_event:
     type: object
     required: [merged_rsid, revision, merge_date]
     description: >-
@@ -175,41 +261,125 @@ definitions:
         example: >-
           2001-01-15T00:00Z
 
-  split_event:
+  lost_obs_movement:
     type: object
-    required: [revision, split_date, split_from_id, split_to_ids]
+    required: [component_ids, observation, allele_in_cur_release, rsids_in_cur_release, allele_in_prev_release]
     description: >-
-      Record of alleles of a RefSNP mapping to different anchors.
-
-      Due to curatorial changes or a change input alignment data sets,
-      alleles that once shared an anchor may begin to map to
-      different anchors, and thus belong in different RefSNPs.  This object is a
-      record of that split of alleles, and when possible is recorded in *both*
-      the originating RefSNP and target RefSNP objects.
-
-      Not all such changes are recorded.
+      For recording the movement of an observation that was in this rs in the previous
+      release, but no longer in the current.
     properties:
-      revision:
+      component_ids:
+        type: array
+        description: >-
+          DbSnpIds of the supporting data where this particular observation is found:
+          SubSnpId, ClinVarSnpId, etc
+        items:
+          $ref: "#/definitions/support_id"
+      observation:
+        description: >-
+          The actual read at a particular location on a particular version of a sequence
+        $ref: "#/definitions/spdi"
+      allele_in_cur_release:
+        description: >-
+          The cannonical allele SPDI produced by mapping this observation to it's PTLP.
+          When the observation is suppressed this may be interpreted as the allele it
+          would have been mapped to had it not been suppressed.
+        $ref: "#/definitions/spdi"
+      rsids_in_cur_release:
+        type: array
+        description: >-
+          The ids of the RefSnps that contain this observation in the current release.
+          Only identity alleles can belong to more than one RefSnp, so this can only
+          have more than one entry if the observation maps to the identity allele. If
+          empty then this observation no longer is associated with any id (which can
+          only occur if it is suppressed or withdrawn (or if there is a bug)).
+        items:
+          type: string
+          format: uint64
+      allele_in_prev_release:
+        description: >-
+          The spdi that was the canonical allele for this observation in the previous
+          release. It is not guaranteed that it remains canonical in this release,
+          thus the type is ContextualSpdi.
+        $ref: "#/definitions/spdi"
+
+  present_obs_movement:
+    type: object
+    required: [component_ids, observation, allele_in_cur_release, other_rsids_in_cur_release, last_added_to_this_rs]
+    description: >-
+      For recording the movement of an observation in the current rs for the current release.
+    properties:
+      component_ids:
+        type: array
+        description: >-
+          DbSnpIds of the supporting data where this particular observation is found:
+          SubSnpId, ClinVarSnpId, etc
+        items:
+          $ref: "#/definitions/support_id"
+      observation:
+        description: >-
+          The actual read at a particular location on a particular version of a sequence
+        $ref: "#/definitions/spdi"
+      allele_in_cur_release:
+        description: >-
+          The cannonical allele SPDI produced by mapping this observation to it's PTLP.
+          When the observation is suppressed this may be interpreted as the allele it
+          would have been mapped to had it not been suppressed.
+        $ref: "#/definitions/spdi"
+      other_rsids_in_cur_release:
+        type: array
+        description: >-
+          The RSIDs of any other RefSnps that contain this observation in the
+          current release. Can only be non-empty for the identity allele.
+        items:
+          type: string
+          format: uint64
+      previous_release:
+        description: >-
+          If absent, this observation wasn't part of an RS last release i.e. it is a
+          new submission  or was just unsuppressed (or there is a bug)
+        $ref: "#/definitions/previous_release"
+      last_added_to_this_rs:
         type: string
         format: ascii
         description: >-
-          The revision in which the split took place
-      split_date:
-        type: string
-        format: ISO 8601
+          The most recent release in which this observation started being associated
+          with this RSID. If the historical membership for this observation is
+          release1:rs1 release2:rs2 release3:rs1 release4:rs1, this will hold "release3".
+
+          Note that because of a change to dbSNP data model between build 151 and 152,
+          if the most recent release is prior to 152 then the observation may have been added to
+          this rs before the build listed. For example, if it says 140, it is possible that
+          it was really added in 130. But it cannot have been added after build 140. If it
+          says 152, then it was last added in build 152 and not before or after that.
+
+  previous_release:
+    type: object
+    description: >-
+      The characteristics of an observation that allow one to find it in the previous
+      release. Should only be used when the observation described was present in the
+      previous release.
+    required: [allele, rsids]
+    properties:
+      allele:
         description: >-
-          The date the RefSNP alleles split
-        example: >-
-          2001-01-15T00:00Z
-      split_from_id:
-        type: string
-        format: uint64
-        description: >-
-          The RefSNP ID that had at least one allele split off of it
-      split_to_ids:
+          The spdi that was the canonical allele for this observation in the previous
+          release. It is not guaranteed that it remains canonical in this release, thus
+          the type is ContextualSpdi.
+
+          Note that because of a change to dbSNP data model between build 151 and 152,
+          this field is not valid in build 152. It will be valid for build 153 and later.
+          In build 152 it contains an arbitrary allele and only preserves the previous
+          association between the observations in SubSNPs and their 1.0 RefSNPs.
+        $ref: "#/definitions/spdi"
+      rsids:
         type: array
         description: >-
-          The set of RefSNP IDs which the split alleles now support, including the split_from_id
+          The ids of the RefSnps that contained a particular observation in the previous
+          release. Only identity alleles can belong to more than one RefSnp, so this can
+          only have more than one entry if the observation maps to the identity allele.
+          The PreviousRelease struct should only be used when the observation was present
+          in the previous release, so this field should not be empty.
         items:
           type: string
           format: uint64
@@ -253,7 +423,7 @@ definitions:
 
   placement_annot:
     type: object
-    required: [seq_type, mol_type, location_ontology, seq_id_traits_by_assembly,
+    required: [seq_type, mol_type, seq_id_traits_by_assembly,
       is_aln_opposite_orientation, is_mismatch]
     description: >-
       Annotation about this sequence
@@ -287,18 +457,10 @@ definitions:
         enum:
           - unknown
           - genomic
-          - cdna
           - rna
           - protein
           - mitochondrion
-          - choloplast
           - nucleic_acid
-      location_ontology:
-        type: array
-        description: >-
-          Set of Location Sequence Ontology terms that describe this placement
-        items:
-          $ref: '#/definitions/so_term'
       seq_id_traits_by_assembly:
         type: array
         description: >-
@@ -324,16 +486,6 @@ definitions:
     required: [allele, hgvs]
     description: >-
       Description of a particular allele on a paritcular sequence.
-
-      The cdna-protein and protein-annot fields cannot both be present
-      and may both be absent. They provide additional information for
-      cDNA and protein placements respectively.
-
-      The cdna-protein field gives the allele corresponding to this one
-      (which must be a transcript allele) on the protein sequence.
-
-      The protein-annot field gives extra information only available for
-      protein placements.
     properties:
       allele:
         $ref: '#/definitions/allele'
@@ -342,31 +494,6 @@ definitions:
         format: ascii
         description: >-
           The HGVS expression for this allele on this placement
-      cdna_protein:
-        $ref: '#/definitions/allele'
-      protein_annot:
-        $ref: '#/definitions/protein_allele_annotation'
-
-  protein_allele_annotation:
-    type: object
-    required: [consequences, frame]
-    description: >-
-      All protein variants occur in a particular frame, and have an associated
-      set of consequences, described using Sequence Ontology Terms.
-    properties:
-      consequences:
-        type: array
-        items:
-          $ref: '#/definitions/so_term'
-      frame:
-        type: integer
-        description: >-
-          0-based position of the first variant nucleotide
-          in the associated protein codon.
-        enum:
-          - 0
-          - 1
-          - 2
 
   seq_id_trait_by_assembly:
     type: object
@@ -386,7 +513,7 @@ definitions:
         format: ascii
         description: >-
           The Genomic Collections accession for this assembly.  For more information,
-          see, for example, http://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.34/
+          see, for example, http://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.38/
       is_top_level:
         type: boolean
         description: >-
@@ -435,7 +562,7 @@ definitions:
     description: >-
       A length poloymorphism in a nucleotide sequence, that coincides with an open
       reading frame, produces a frameshift in protein sequence.
-    required: [seq_id, position]
+    required: [ seq_id, position ]
     properties:
       seq_id:
         type: string
@@ -458,7 +585,7 @@ definitions:
       Nucleotide and amino acid changes are catagorized into Sequence Ontology
       terms.  For more information, see
       https://www.ncbi.nlm.nih.gov/variation/docs/glossary/
-    required: [name, accession]
+    required: [ name, accession ]
     properties:
       name:
         type: string
@@ -527,41 +654,6 @@ definitions:
           - SubSNP: ss12345
           - ClinVar: 12345
           - Frequency: '1000 Genomes Phase III'
-
-  gene:
-    type: object
-    required: [id, symbol, is_r5_region, is_r3_region, is_pseudo]
-    description: >-
-      Information about a gene's relation to a particular variant
-    properties:
-        id:
-          type: integer
-          description: >-
-            The NCBI GeneID
-        symbol:
-          type: string
-          format: ascii
-          description: >-
-            The NCBI Gene Symbol
-          example: >-
-            BRCA1
-        is_pseudo:
-          type: boolean
-          description: >-
-            True, if the gene is labeled a Pseudo-gene by NCBI Gene Resource at
-            the time this revision is built.
-        is_r5_region:
-          type: boolean
-          description: >-
-            True, if the variant is within 2KB upstream of the start of the gene's
-            annotation on the chromosome, which, depending on the gene,
-            may or may not include the 5' UTR.
-        is_r3_region:
-          type: boolean
-          description: >-
-            True, if the variant is within 500 bp downstream of the end of the gene's
-            annotation on the chromosome, which, depending on the gene,
-            may or may not include the 3' UTR.
 
   allele_annotation_list:
     type: object
@@ -638,7 +730,7 @@ definitions:
     description: >-
       Each Gene consists of a tree of RNAs and Coding Regions (Proteins)
       and associated SO-terms
-    required: [name, id, orientation, sequence_ontology, rnas]
+    required: [name, id, locus, is_pseudo, orientation, sequence_ontology, rnas]
     properties:
       name:
         type: string
@@ -649,6 +741,18 @@ definitions:
         type: integer
         description: >-
           The NCBI GeneId
+      locus:
+        type: string
+        format: ascii
+        description: >-
+          The NCBI Gene Symbol
+        example: >-
+          BRCA1
+      is_pseudo:
+        type: boolean
+        description: >-
+          True, if the gene is labeled a Pseudo-gene by NCBI Gene Resource at
+          the time this revision is built.
       orientation:
         type: string
         description: >-
@@ -688,8 +792,8 @@ definitions:
           The RefSeq/Genbank Accession.Version for the reference sequence
         example: >-
           NC_000001.23
-      transcript_change:
-        $ref: '#/definitions/transcript_change'
+      codon_aligned_transcript_change:
+        $ref: '#/definitions/codon_aligned_transcript_change'
       sequence_ontology:
         type: array
         description: >-
@@ -737,30 +841,29 @@ definitions:
     type: object
     description: >-
       Metadata and allele counts for an allele in a particular study/project.
-    required: [project_name, create_date, update_date, allele_count, total_count, common]
+    required: [study_name, study_version, local_row_id, observation, allele_count, total_count]
     properties:
-      project_name:
+      study_name:
         type: string
         format: unicode
         description: >-
-          The name of the project that provided the frequency data for this allele
+          Name part of study_id
         example: >-
-          1000 Genomes Phase III
-      create_date:
-        type: string
-        format: ISO 8601
+          ExAC
+      study_version:
+        type: integer
         description: >-
-          The date the project was submitted to NCBI's Genotype Archive
-        example: >-
-          2001-01-15T00:00Z
-      update_date:
-        type: string
-        format: ISO 8601
+          Version part of study_id
+        example:
+          1
+      local_row_id:
+        type: integer
         description: >-
-          The date the project was updated in NCBI's Genotype Archive.
-          If never updated, then same as create-date.
-        example: >-
-          2001-01-15T00:00Z
+          Row number id within submission
+        example:
+          1
+      observation:
+        $ref: "#/definitions/spdi"
       allele_count:
         type: integer
         description: >-
@@ -769,15 +872,6 @@ definitions:
         type: integer
         description: >-
           The number of chromosomes in the study
-      common:
-        type: boolean
-        description: >-
-          True if this allele is 'common'
-          Common is defined as at least one sub-population that has greater
-          than 1% frequency and appeared in at least 2 samples.
-          NB: Many reports tag entire SNPs with 'common', which is a
-          statement that the minor allele (the second-most common allele)
-          is common.
 
   clinvar_data:
     type: object
@@ -787,7 +881,8 @@ definitions:
       http://www.ncbi.nlm.nih.gov/clinvar/docs/help/
     required: [accession_version, allele_id, measure_set_id, variant_identifiers,
       refsnp_id, create_date, update_date, review_status, disease_names,
-      clinical_significances, disease_ids, origins, collection_method, citations, gene_ids]
+      clinical_significances, disease_ids, origins, collection_method,
+      citations, gene_ids]
     properties:
       accession_version:
         type: string
@@ -834,6 +929,14 @@ definitions:
         description: >-
           The date the ClinVar RCV was last updated. If never updated,
           then same as create-date.
+        example: >-
+          2001-01-15T00:00Z
+      last_evaluated_date:
+        type: string
+        format: ISO 8601
+        description: >-
+          The date the submitter last evaluated the clinical significance for
+          this record.  If absent, then value not submitted by submitter.
         example: >-
           2001-01-15T00:00Z
       review_status:
@@ -987,6 +1090,7 @@ definitions:
     type: object
     description: >-
       Description of a catastrophic failure
+    required: [reason, message]
     properties:
       reason:
         type: string
@@ -1003,12 +1107,62 @@ definitions:
           A human readable message providing more details about the error.
           If there is only one error, this field will match error.message.
 
-  transcript_change:
+  spdi_success:
     type: object
-    required: [ seq_id, position, deletion_sequence, inserted_sequence ]
     description: >-
-      A single allele in SPDI notation, expanded to include all affected
-      codons.
+      Successful response to a request for a single SPDI object
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/spdi"
+
+  spdis_success:
+    type: object
+    description: >-
+      Successful response to a request for a list of SPDI objects
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/spdis"
+
+  rsids_success:
+    type: object
+    description: >-
+      Successful response to a request for a list of RefSNP
+      identification numbers
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/rsids"
+
+  hgvs_success:
+    type: object
+    description: >-
+      Successful response to a request for a single HGVS object
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/hgvs"
+
+  vcf_fields_success:
+    type: object
+    description: >-
+      Successful response to a request for a single vcf_fields object
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/vcf_fields"
+
+  codon_aligned_transcript_change:
+    type: object
+    required: [ seq_id, position, deleted_sequence, inserted_sequence ]
+    description: >-
+      This reports the codon change and its position in SPDI notation
+      when the variant is in a coding region. Then the position
+      reported is the transcript position of the first nucleotide of
+      the affected codons, not the variant allele itself which can
+      occur at anywhere in those codons. For a non-coding transcript,
+      this is just the allele change as mapped to the transcript.
     properties:
       seq_id:
         type: string
@@ -1024,7 +1178,7 @@ definitions:
           is, position 0 starts the deletion immediately before
           the first nucleotide and position 1 starts the deletion
           between the first and second nucleotides.
-      deletion_sequence:
+      deleted_sequence:
         type: string
         format: ascii
         description: >-
@@ -1043,7 +1197,7 @@ definitions:
 
   spdi:
     type: object
-    required: [ seq_id, position, deletion-sequence, inserted-sequence ]
+    required: [ seq_id, position, deleted_sequence, inserted_sequence ]
     description: >-
       A single contextual allele in SPDI notation. Contextual allele
       means that applying the Blossom Precision Correction Algorithm
@@ -1063,14 +1217,14 @@ definitions:
           is, position 0 starts the deletion immediately before
           the first nucleotide and position 1 starts the deletion
           between the first and second nucleotides.
-      deletion-sequence:
+      deleted_sequence:
         type: string
         format: ascii
         description: >-
           The IUPAC sequence of nucleotides/amino-acids to delete from the
           reference. This can be empty, which is how a pure insertion is
           represented.
-      inserted-sequence:
+      inserted_sequence:
         type: string
         format: ascii
         description: >-
@@ -1078,6 +1232,113 @@ definitions:
           after perforing the deletion. Amino-acids use the
           single character encoding. All nucleotide codes including the
           ones for ambiguity are allowed.
+      warnings:
+        $ref: "#/definitions/warnings"
+
+  spdis:
+    type: object
+    required: [ spdis ]
+    description: >-
+      A set of contextual alleles in SPDI notation. Order is
+      not significant. There may be duplicates.
+    properties:
+      spdis:
+        type: array
+        items:
+          $ref: '#/definitions/spdi'
+      errors:
+        $ref: "#/definitions/error"
+      warnings:
+        $ref: "#/definitions/warnings"
+
+  hgvs_batch_success:
+    type: object
+    description: >-
+      Successful response to a request for a batch of HGVSes
+    required: [ data ]
+    properties:
+      data:
+        $ref: "#/definitions/hgvs_batch"
+
+  hgvs_batch:
+    type: array
+    description: >-
+      An array of results, one for each input HGVS.  Each result is
+      also an array, since each input HGVS may represent multiple
+      alleles.
+    items:
+        $ref: '#/definitions/hgvs_batch_item'
+
+  hgvs_batch_item:
+    type: object
+    required: [ hgvs, alleles ]
+    description: >-
+        The input HGVS paired with its of result collection, which has one
+        item per allele.
+    properties:
+      hgvs:
+        description: the input HGVS expression
+        type: string
+        format: hgvs
+      alleles:
+        description: one entry per contextual allele encompased by the HGVS
+        $ref: "#/definitions/spdis"
+
+  rsids:
+    type: object
+    required: [ rsids ]
+    description: >-
+      A set of RefSNP IDs. Order is not significant.
+      There may be duplicates.
+    properties:
+      rsids:
+        type: array
+        items:
+          type: integer
+          description: RefSNP ID
+
+  hgvs:
+    type: object
+    required: [ hgvs ]
+    description: >-
+      An allele in HGVS notation
+    properties:
+      hgvs:
+        type: string
+        format: ascii
+      warnings:
+        $ref: "#/definitions/warnings"
+
+  vcf_fields:
+    type: object
+    required: [ chrom, pos, ref, alt ]
+    description: >-
+      The allele-description fields of a VCF entry. They are properly
+      left-shifted and contain a padding nucleotide for del, ins, and
+      indel type changes.
+    properties:
+      chrom:
+        type: string
+        format: ascii
+        description: >-
+          The RefSeq/Genbank Accession.Version for the reference
+          sequence. Despite the name (taken from the VCF standard)
+          this does not need to be a chromosome.
+      pos:
+        type: integer
+        description: >-
+          The 1-based position of the first nuclotide in the
+          reference allele string on its sequence
+      ref:
+        type: string
+        format: ascii
+        description: >-
+          The reference allele, with padding nucleotide when required.
+      alt:
+        type: string
+        format: ascii
+        description: >-
+          Alternate allele, with padding nucleotide when required.
       warnings:
         $ref: "#/definitions/warnings"
 
