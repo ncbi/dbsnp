@@ -21,3 +21,9 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     ├── rsjson_getss_info_demo.py            # Extract submission information (ss, local_snp_id, etc.)
 
     └── README.md
+    
+## Run and explore notebook interactively on Binder server.
+
+|Notebook|Binder|
+|---|---|
+|eUtils.ipynb|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
