@@ -7,9 +7,10 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
 
     .
     ├── Variation Services                   # Tutorial for working with SPDI Variation Service
+    ├── eUtils.ipynb                         # Sample dbSNP eUtils query 
     ├── hadoop_json_annotation.py            # parse dbSNP RS JSON object and extract the rs annotation using Hadoop
-    ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data usisng Hadoop
-    ├── hadoop_json_merge.py                 # parse dbSNP RS JSON object and extract rs merge history usisng Hadoop
+    ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data using Hadoop
+    ├── hadoop_json_merge.py                 # parse dbSNP RS JSON object and extract rs merge history using Hadoop
     ├── hadoop_json_placement.py             # parse dbSNP RS JSON object and extract rs mapping information (ie. position)
     ├── refsnp-sample.json.gz                # Sample data containing one RefSNP JSON example for rs268 for testing             rsjson_demo.py  
     ├── rsjson_demo.py                       # Sample Python script to parse RefSNP (rs) JSON object.   The script
