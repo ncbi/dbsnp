@@ -22,7 +22,7 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
 
     └── README.md
     
-## Run and explore notebook interactively on Binder server.
+## Run and explore notebook interactively on Binder server.  It may take a few minutes for Binder server to start up.
 
 |Notebook|Binder|
 |---|---|
