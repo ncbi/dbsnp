@@ -22,8 +22,8 @@
 #  Please cite the author in any work or product based on this material.
 #
 # ===========================================================================
-# Module name: dbsnp
-# Description: a module facilitating dbSNP data retrieval
+# Module name: nvariationservices
+# Description: dbSNP data retrieval using NCBI Variation Services API
 #
 import requests
 import json
@@ -31,128 +31,193 @@ import re
 import sys
 import urllib
 from itertools import islice, chain
-from collections import defaultdict
+from collections import defaultdict, OrderedDict, namedtuple
 
 api_rootURL = 'https://api.ncbi.nlm.nih.gov/variation/v0/'
 spdi_fields = ['seq_id', 'position', 'deleted_sequence', 'inserted_sequence']
-vcf_key_fields = ['chrom', 'pos', 'id', 'ref']
+TVcf = namedtuple('TVcf', ['chrom', 'pos', 'id', 'ref', 'alt', 'qual', 'filter', 'info'])
+TVcf.__new__.__defaults__ = ('.',) * len(TVcf._fields)
+VcfT1 = namedtuple('VcfT1', ['chrom', 'pos', 'id', 'ref'])
+VcfT2 = namedtuple('VcfT2', ['chrom', 'pos', 'ref', 'alt'])
+TVcfX = namedtuple('TVcfX', ['qual', 'filter', 'info'])
 
-class refsnp(object):
+class Variation:
     # Description: perform queries to ncbi spdi service and convert
     # between VCF, HGVS, and dbSNP RSIDs
 
-    def __init__(self, variant=''):
-        self.rsid = 0
+    def __init__(self, init_val=''):
+        self.rsid = OrderedDict()
         self.req = None
         self.rs = dict()
-        self.spdi = list()
-        self.hgvs = list()
-        self.vcf = list()
-        m_rsid = re.fullmatch('(rs)?([1-9]\d*)', variant)
-        m_spdi = re.fullmatch('([^:]+:){3}[^:]+', variant)
-        if m_rsid:
+        self.spdi = OrderedDict()
+        self.hgvs = OrderedDict()
+        self.vcf = OrderedDict()
+        self.vcfx = TVcfX(*['.'] * 3)
+
+        rsid = None
+        if isinstance(init_val, int):
+            rsid = init_val
+        else:
+            m_rsid = re.fullmatch('(rs)?(?P<rsid>[1-9]\d*)', init_val)
+            if m_rsid:
+                rsid = int(m_rsid.group('rsid'))
         
-            self.rsid = int(m_rsid.group(2))
-            url = api_rootURL + 'beta/refsnp/' + str(self.rsid)
-            #print(url)
-            self.req = self._apiRequest(url)
-            self.rs = json.loads(self.req.text)
-            
-            ptlp = self.__find_ptlp(self.rs['primary_snapshot_data']['placements_with_allele'])
-            novar_spdi = dict()
-            novar_hgvs = None
-            novar_vcf_key = None
-            vcf = defaultdict(list)
-            for a in ptlp['alleles']:
-                s = a['allele']['spdi']
-                if a['hgvs'].endswith('='):
-                    novar_spdi = ':'.join([str(s[i]) for i in spdi_fields])
-                    novar_hgvs = a['hgvs']
-                    url = api_rootURL + 'spdi/' + urllib.parse.quote(novar_spdi) + '/vcf_fields'
-                    n_vcf = json.loads(self._apiRequest(url).text)['data']
-                    n_vcf['id'] = 'rs' + str(self.rsid)
-                    novar_vcf_key = "\t".join([str(n_vcf[i]) for i in vcf_key_fields])
+        if rsid:
+            self.__init_from_rsid(rsid)
+        else:
+            m_other = re.fullmatch('(?P<spdi>([^:]+:){3}[^:]+)?(?P<hgvs>[^:]+:[gcmnrp]\.[^:]+)?(?P<vcf>([^\t]+\t){4}[^t].*)?', init_val)
+            if m_other:
+                if m_other.group('spdi'):
+                    self.__init_from_spdi(m_other.group('spdi'))
+                elif m_other.group('hgvs'):
+                    self.__init_from_hgvs(m_other.group('hgvs'))
+                elif m_other.group('vcf'):
+                    self.__init_from_vcf(m_other.group('vcf'))
                 else:
-                    spdi = ':'.join([str(s[i]) for i in spdi_fields])
-                    self.spdi.append(spdi)
-                    self.hgvs.append(a['hgvs'])
-                    url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/vcf_fields'
-                    a_vcf = json.loads(self._apiRequest(url).text)['data']
-                    a_vcf['id'] = 'rs' + str(self.rsid)
-                    vcf_key = "\t".join([str(a_vcf[i]) for i in vcf_key_fields])
-                    vcf[vcf_key].append(a_vcf['alt'])
-            
-            if not self.hgvs and novar_hgvs:
-                self.spdi.append(novar_spdi)
-                self.hgvs.append(novar_hgvs)
-                vcf[novar_vcf_key].append('.')
-            
-            for vcf_key in vcf:
-                self.vcf.append("\t".join([vcf_key, ','.join(vcf[vcf_key])]))
+                    raise ValueError('Variation format not recognized: '+init_val)
+            else:
+                raise ValueError('Variation format not recognized: '+init_val)
+                
 
-        elif m_spdi:
-            spdi = variant
-            self.spdi.append(spdi)
+                    
+    def __init_from_rsid(self, rsid):
+        self.rsid[rsid] = 1
+        url = api_rootURL + 'beta/refsnp/' + str(rsid)
+        self.req = requests.get(url)
+        self.rs = json.loads(self.req.text)
+        
+        ptlp = self.__find_ptlp(self.rs['primary_snapshot_data']['placements_with_allele'])
+        novar_spdi = dict()
+        novar_hgvs = None
+        novar_vcf_key = None
+        vcf4rs = defaultdict(list)
+        for a in ptlp['alleles']:
+            s = a['allele']['spdi']
+            if a['hgvs'].endswith('='):
+                novar_spdi = ':'.join([str(s[i]) for i in spdi_fields])
+                novar_hgvs = a['hgvs']
+                url = api_rootURL + 'spdi/' + urllib.parse.quote(novar_spdi) + '/vcf_fields'
+                n_vcf = json.loads(requests.get(url).text)['data']                   # {chrom, pos, ref, alt}
+                n_vcf['id'] = 'rs' + str(rsid)                                       # {chrom, pos, id, ref, alt}
+                novar_vcf_key = VcfT1(**{f: str(n_vcf[f]) for f in VcfT1._fields})   # (chrom, pos, id, ref)
+            else:
+                spdi = ':'.join([str(s[i]) for i in spdi_fields])
+                self.spdi[spdi] = 1
+                self.hgvs[a['hgvs']] = 1
+                url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/vcf_fields'
+                a_vcf = json.loads(requests.get(url).text)['data']             # {chrom, pos, ref, alt}
+                a_vcf['id'] = 'rs' + str(rsid)                                 # {chrom, pos, id, ref, alt}
+                vcf_key = VcfT1(**{f: str(a_vcf[f]) for f in VcfT1._fields})   # (chrom, pos, id, ref)
+                vcf4rs[vcf_key].append(a_vcf['alt'])                              # {(chrom, pos, id, ref):[alt,]}
+        
+        if not self.hgvs and novar_hgvs:
+            self.spdi[novar_spdi] = 1
+            self.hgvs[novar_hgvs] = 1
+            vcf4rs[novar_vcf_key].append('.')    # creates pair (chrom, pos, id, ref):['.']
+        
+        for vcf_key in vcf4rs:
+            alt = ','.join(sorted(vcf4rs[vcf_key]))
+            vcf_key2 = VcfT2(**{f: getattr(vcf_key, f) for f in ['chrom', 'pos', 'ref']}, alt = alt)
+            vcf = TVcf(**vcf_key._asdict(), alt = alt, **self.vcfx._asdict())
+            self.vcf[vcf_key2] = vcf
+
+
+
+    def __init_from_spdi(self, spdi):
+        self.spdi[spdi] = 1
+        
+        url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/contextual'
+        cona = json.loads(requests.get(url).text)['data']
+        cona_spdi = ':'.join([str(cona[i]) for i in spdi_fields])
+        self.spdi[cona_spdi] = 1
+        
+        url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/canonical_representative'
+        cana = json.loads(requests.get(url).text)['data']
+        cana_spdi = ':'.join([str(cana[i]) for i in spdi_fields])
+        self.spdi[cana_spdi] = 1
+        
+        for spdi in self.spdi.keys():
+            self.hgvs[self._spdi2hgvs(spdi)] = 1
+        url = api_rootURL + 'spdi/' + urllib.parse.quote(cona_spdi) + '/rsids'
+        rsid_rsp = json.loads(requests.get(url).text)
+        if 'data' in rsid_rsp:
+            for rs in rsid_rsp['data']['rsids']:
+                self.__init_from_rsid(rs)
+        else:
+            for spdi in self.spdi.keys():
+                url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/vcf_fields'
+                vcfd = json.loads(requests.get(url).text)['data']
+                if vcfd['alt'] == vcfd['ref']:
+                    vcfd['alt'] = '.'
+                vcf_key = VcfT2(**{f: str(vcfd[f]) for f in vcfd})
+                vcft = TVcf(**vcf_key._asdict(), **self.vcfx._asdict())
+                self.vcf[vcf_key] = vcft
+
+
+    def __init_from_hgvs(self, hgvs):
+        self.hgvs[hgvs] = 1
+        
+        url = api_rootURL + 'hgvs/' + urllib.parse.quote(hgvs) + '/contextuals'
+        conas = json.loads(requests.get(url).text)['data']['spdis']
+        for a in conas:
+            cona_spdi = ':'.join([str(a[i]) for i in spdi_fields])
+            self.spdi[cona_spdi] = 1
+            self.__init_from_spdi(cona_spdi)
+
+
+
+    def __init_from_vcf(self, vcf):
+        #self.vcf[vcf] = 1
+        vcft = TVcf(*vcf.split("\t"))
+        vcf_key = VcfT2(**{f: getattr(vcft, f) for f in VcfT2._fields})
+        self.vcf[vcf_key] = vcft
+        self.vcfx = TVcfX(**{f: getattr(vcft, f) for f in TVcfX._fields})
+        url = api_rootURL + 'vcf/' + '/'.join(urllib.parse.quote(v) for v in list(vcf_key)) + '/contextuals'
+        conas_rsp = json.loads(requests.get(url).text)
+        if 'data' in conas_rsp:
+            conas = conas_rsp['data']['spdis']
+            for a in conas:
+                cona_spdi = ':'.join([str(a[i]) for i in spdi_fields])
+                self.spdi[cona_spdi] = 1
+                self.__init_from_spdi(cona_spdi)
 
             
-            
+
+    def _spdi2hgvs(self, spdi):
+        url = api_rootURL + 'spdi/' + urllib.parse.quote(spdi) + '/hgvs'
+        return json.loads(requests.get(url).text)['data']['hgvs']
+
+
+
     def __str__(self):
         return json.dumps(self.rs)
     
             
             
-    def asSpdi(self):
-        return "\n".join(self.spdi)
+    def asSpdiList(self):
+        return self.spdi.keys()
 
         
         
-    def asHgvs(self):
-        return "\n".join(self.hgvs)
+    def asHgvsList(self):
+        return self.hgvs.keys()
     
         
         
-    def asRsid(self):
-        return str(self.id())
+    def asRsidList(self):
+        return self.rsid.keys()
 
         
         
-    def id(self):
-        return self.rsid
-    
-    
-    
     def asJson(self):
         return self.req.text
     
     
     
-    def asVcf(self):
-        return "\n".join(self.vcf)
+    def asVcfList(self):
+        return ["\t".join(list(self.vcf[v])) for v in self.vcf]
 
         
-
-    def _apiRequest(self, url):
-        try:
-            r = requests.get(url)
-        except requests.exceptions.Timeout:
-            # Maybe set up for a retry, or continue in a retry loop
-            print("ERROR: Timeout")
-        except requests.exceptions.TooManyRedirects:
-            # Tell the user their URL was bad and try a different one
-            print("ERROR: bad url =" + url)
-        except requests.exceptions.RequestException as e:
-            # catastrophic error. bail.
-            print(e)
-            sys.exit(1)
-
-        if (r.status_code == 200):
-            return r
-        else:
-            print("ERROR: status code = " + str(r.status_code))
-        
-        return None
-
-
 
     def __find_ptlp(self, placements):
         for p in placements:
