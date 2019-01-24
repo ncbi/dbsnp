@@ -2,7 +2,7 @@
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../lib/python"))
 
-from nvariationservices import Variation
+from navs import Variation
 
 test_cases = [
     'rs328',

@@ -22,9 +22,14 @@
 #  Please cite the author in any work or product based on this material.
 #
 # ===========================================================================
-# Module name: nvariationservices
+# Module name: navs (NCBI API Variation Services)
 # Description: dbSNP data retrieval using NCBI Variation Services API
 #
+# Authors:  Eugene M. Shekhtman
+#           Lon Phan  lonphan@ncbi.nlm.nih.gov
+# For help please contact: tkt-varhd@ncbi.nlm.nih.gov
+#
+# ---------------------------------------------------------------------------
 import requests
 import json
 import re
