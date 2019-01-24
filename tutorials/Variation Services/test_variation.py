@@ -26,8 +26,12 @@ for tc in test_cases:
     v = Variation(tc)
     print("RSID:\n" + "\n".join([str(rsid) for rsid in v.asRsidList()]))
     print()
-    #print(v.asJson())
-    #print()
+    rsAsJson = v.asJson()
+    if rsAsJson:
+        print(rsAsJson[0:400] + '...')
+    else:
+        print('<No JSON>')
+    print()
     #print(v)
     print("SPDI:\n" + "\n".join(v.asSpdiList()))
     print()

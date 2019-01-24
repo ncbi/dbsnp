@@ -215,7 +215,10 @@ class Variation:
         
         
     def asJson(self):
-        return self.req.text
+        if len(self.rsid):
+            return self.req.text
+        else:
+            return None
     
     
     
