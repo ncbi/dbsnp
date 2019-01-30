@@ -7,9 +7,10 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
 
     .
     ├── Variation Services                   # Tutorial for working with SPDI Variation Service
+    ├── eUtils.ipynb                         # Sample dbSNP eUtils query 
     ├── hadoop_json_annotation.py            # parse dbSNP RS JSON object and extract the rs annotation using Hadoop
-    ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data usisng Hadoop
-    ├── hadoop_json_merge.py                 # parse dbSNP RS JSON object and extract rs merge history usisng Hadoop
+    ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data using Hadoop
+    ├── hadoop_json_merge.py                 # parse dbSNP RS JSON object and extract rs merge history using Hadoop
     ├── hadoop_json_placement.py             # parse dbSNP RS JSON object and extract rs mapping information (ie. position)
     ├── refsnp-sample.json.gz                # Sample data containing one RefSNP JSON example for rs268 for testing             rsjson_demo.py  
     ├── rsjson_demo.py                       # Sample Python script to parse RefSNP (rs) JSON object.   The script
@@ -20,3 +21,9 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     ├── rsjson_getss_info_demo.py            # Extract submission information (ss, local_snp_id, etc.)
 
     └── README.md
+    
+## Run and explore notebook interactively on Binder server.  It may take a few minutes for Binder server to start up.
+
+|Notebook|Binder|
+|---|---|
+|eUtils.ipynb|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
