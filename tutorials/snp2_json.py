@@ -2,7 +2,7 @@ import urllib.request
 import json
 import re
 
-class Snp2Json(object):
+class SnpJsonParser(object):
 
     api_base = 'https://api.ncbi.nlm.nih.gov/variation/v0/beta/refsnp/'
 
