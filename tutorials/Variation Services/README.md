@@ -1,4 +1,5 @@
 ## Sample Python script for querying and retrieving dbSNP data from NCBI SPDI service (https://api.ncbi.nlm.nih.gov/variation/v0/)
+#### See also [Jupyter notebook](https://github.com/ncbi/dbsnp/tree/master/tutorials/Variation%20Services/Jupyter_Notebook) examples. 
 ## ================================================
 ### Annotate VCF with RS ID  
 ## ================================================
