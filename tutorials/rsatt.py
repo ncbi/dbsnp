@@ -4,8 +4,8 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../lib/python'))
 from navs import *
-
-class SnpJsonParser(object):
+#get RS attribute (rsat) from JSON 
+class rsatt(object): 
 
     acc_chr = {
         'NC_012920': 'MT',
@@ -36,12 +36,12 @@ class SnpJsonParser(object):
         }
     
 
-    def get_pubmed(self, rs_obj):
+    def pmids(self, rs_obj):
 
         return(rs_obj['citations'])
     
     
-    def get_ss_info(self, rs_obj):
+    def ss(self, rs_obj):
         
         if 'primary_snapshot_data' in rs_obj:
             # columns: rs, handle, type, ss_or_RCV
@@ -53,19 +53,17 @@ class SnpJsonParser(object):
             return(ss_set)
 
 
-    def get_allele_info(self, rs_obj):
+    def gene_allele_annot(self, rs_obj):
 
         rs = {}
         rs['id'] = rs_obj['refsnp_id']
         allele_info = []
         if 'primary_snapshot_data' in rs_obj:
-            self.getPlacements(
-                rs_obj['primary_snapshot_data']['placements_with_allele'], rs)
+            self.genomic_placements(rs_obj)
 
-            self.getRefSeqAnnot(
-                rs_obj['primary_snapshot_data']['allele_annotations'], rs)
+            rsa =self.refseq_annot(rs_obj)
 
-            for a in rs['alleles']:
+            for a in rsa['alleles']:
                 if 'refseq_annot' in a:
                     rnas = a['refseq_annot']['rnas']
                     gene_symbol = a['refseq_annot']['locus']
@@ -87,7 +85,7 @@ class SnpJsonParser(object):
         return(allele_info)
         
             
-    def get_Allele_annotations(self, primary_refsnp):
+    def clinSig(self, primary_refsnp):
         '''
         rs clinical significance
         '''
@@ -99,12 +97,13 @@ class SnpJsonParser(object):
         return(allele_annot)
 
 
-    def getPlacements(self, info, rs):
+    def genomic_placements(self, info):
         '''
         rs genomic positions
         '''
+        rs = {}
         rs['alleles'] = []  # holder for one or more variant alleles
-        for alleleinfo in info:
+        for alleleinfo in info['primary_snapshot_data']['placements_with_allele']:
             # has top level placement (ptlp) and assembly info
             if alleleinfo['is_ptlp'] and \
                len(alleleinfo['placement_annot']['seq_id_traits_by_assembly']) > 0:
@@ -118,12 +117,14 @@ class SnpJsonParser(object):
                     else:
                         # spdi['inserted_sequence'] != spdi['deleted_sequence']:
                         rs['alleles'].append({'allele': spdi['inserted_sequence']})
+        return rs
 
-
-    def getRefSeqAnnot(self, info, rs):
+    def refseq_annot(self, rsobj):
         '''
         rs refseq info
         '''
+        rs = self.genomic_placements(rsobj)
+        info = rsobj['primary_snapshot_data']['allele_annotations']
         for idx in range(0, len(rs['alleles'])):
             allele_annotation = info[idx]['assembly_annotation'][0]
             # get only RefSeq annotation on NC
@@ -131,9 +132,10 @@ class SnpJsonParser(object):
                 for g in allele_annotation['genes']:
                     # allele and annotation have same ordering
                     rs['alleles'][idx]['refseq_annot'] = g
+        return rs
 
 
-    def get_mafs(self, rs_obj):
+    def mafs(self, rs_obj):
         
         mafs = {}
         if 'primary_snapshot_data' in rs_obj:        
@@ -161,19 +163,19 @@ class SnpJsonParser(object):
         return(mafs)
             
                     
-    def get_gene_consequence(self, rs_obj):
+    def gene_consequence(self, rs_obj):
         
         pass
 
     
-    def get_variation_type(self, rs_obj):
+    def variation_type(self, rs_obj):
 
         if 'primary_snapshot_data' in rs_obj:
             return(rs_obj['primary_snapshot_data']['variant_type'])
 
 
 
-    def get_alleles(self, rs_obj):
+    def alleles(self, rs_obj):
         alleles = []
         if 'primary_snapshot_data' in rs_obj:
             ptlp = self.__find_ptlp(rs_obj['primary_snapshot_data']['placements_with_allele'])
@@ -184,7 +186,7 @@ class SnpJsonParser(object):
         return(alleles)
 
 
-    def get_chr_pos(self, rs_obj):
+    def chr_pos(self, rs_obj):
 
         pos = {}
         if 'primary_snapshot_data' in rs_obj:
