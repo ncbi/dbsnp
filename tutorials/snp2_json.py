@@ -1,36 +1,63 @@
-import urllib.request
 import json
 import re
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../lib/python'))
+from navs import *
 
-class Snp2Json(object):
+class SnpJsonParser(object):
 
-    api_base = 'https://api.ncbi.nlm.nih.gov/variation/v0/beta/refsnp/'
+    acc_chr = {
+        'NC_012920': 'MT',
+        'NC_000024': 'Y',
+        'NC_000023': 'X',
+        'NC_000022': '22',
+        'NC_000021': '21',
+        'NC_000020': '20',
+        'NC_000019': '19',
+        'NC_000018': '18',
+        'NC_000017': '17',
+        'NC_000016': '16',
+        'NC_000015': '15',
+        'NC_000014': '14',
+        'NC_000013': '13',
+        'NC_000012': '12',
+        'NC_000011': '11',
+        'NC_000010': '10',
+        'NC_000009': '9',
+        'NC_000008': '8',
+        'NC_000007': '7',
+        'NC_000006': '6',
+        'NC_000005': '5',
+        'NC_000004': '4',
+        'NC_000003': '3',
+        'NC_000002': '2',
+        'NC_000001': '1',
+        }
+    
 
-    def get_json(self, rs):
-        
-        with urllib.request.urlopen(self.api_base + str(rs)) as response:
-            return(json.loads(response.read().decode()))
+    def get_pubmed(self, rs_obj):
 
-
+        return(rs_obj['citations'])
+    
+    
     def get_ss_info(self, rs_obj):
         
         if 'primary_snapshot_data' in rs_obj:
-            print("\t".join(["rs", "handle", "type", "ss or RCV"]))
-            self._getSsInfo(rs_obj['refsnp_id'], \
-                            rs_obj['primary_snapshot_data']['support'])
-            
-        
-    def _getSsInfo(self, rs, obj):
-        for ss in obj:
-            id = ss['id']
-            print("\t".join([str(rs), ss['submitter_handle'],
-                             id['type'], id['value']]))
+            # columns: rs, handle, type, ss_or_RCV
+            ss_set = []
+            for ss in rs_obj['primary_snapshot_data']['support']:
+                id = ss['id']
+                ss_set.append([rs_obj['refsnp_id'], ss['submitter_handle'], id['type'], id['value']])
+
+            return(ss_set)
 
 
     def get_allele_info(self, rs_obj):
 
         rs = {}
         rs['id'] = rs_obj['refsnp_id']
+        allele_info = []
         if 'primary_snapshot_data' in rs_obj:
             self.getPlacements(
                 rs_obj['primary_snapshot_data']['placements_with_allele'], rs)
@@ -47,7 +74,7 @@ class Snp2Json(object):
                         if 'codon_aligned_transcript_change' in r:
                             mrna = r['codon_aligned_transcript_change']
                             protein = r['protein']['variant']['spdi']
-                            print("\t".join([rs['id'], a['allele'], gene_name,
+                            allele_info.append([rs['id'], a['allele'], gene_name,
                                              gene_symbol, mrna['seq_id'],
                                              mrna['deleted_sequence'],
                                              str(mrna['position']),
@@ -55,16 +82,21 @@ class Snp2Json(object):
                                              protein['seq_id'],
                                              protein['deleted_sequence'],
                                              str(protein['position']),
-                                             protein['deleted_sequence']]))
+                                             protein['deleted_sequence']])
+
+        return(allele_info)
         
             
-    def printAllele_annotations(self, primary_refsnp):
+    def get_Allele_annotations(self, primary_refsnp):
         '''
         rs clinical significance
         '''
+        allele_annot = []
         for annot in primary_refsnp['allele_annotations']:
             for clininfo in annot['clinical']:
-                print(",".join(clininfo['clinical_significances']))
+                allele_annot.append(clininfo['clinical_significances'])
+
+        return(allele_annot)
 
 
     def getPlacements(self, info, rs):
@@ -99,3 +131,82 @@ class Snp2Json(object):
                 for g in allele_annotation['genes']:
                     # allele and annotation have same ordering
                     rs['alleles'][idx]['refseq_annot'] = g
+
+
+    def get_mafs(self, rs_obj):
+        
+        mafs = {}
+        if 'primary_snapshot_data' in rs_obj:        
+            for allele in rs_obj['primary_snapshot_data']['allele_annotations']:
+                for freq in allele['frequency']:
+                    if freq['study_name'] not in mafs:
+                        mafs[freq['study_name']] = {}
+                        mafs[freq['study_name']]['an'] = freq['total_count']
+                        mafs[freq['study_name']]['ac'] = {}
+
+                    mafs[freq['study_name']]['ac'][freq['observation']['inserted_sequence']] \
+                        = freq['allele_count']
+
+            for study, maf in mafs.items():
+                sorted_ac = sorted(maf['ac'].items(), key=lambda kv: kv[1])
+                idx = 0
+                # minor allele is the 2nd least abundant allele
+                if len(sorted_ac) > 2:
+                    idx = 1
+                maf['maf_count'] = sorted_ac[idx][1]
+                maf['maf'] = float(sorted_ac[idx][1])/maf['an']
+                maf['maf_allele'] = sorted_ac[idx][0]
+                maf.pop('ac')
+
+        return(mafs)
+            
+                    
+    def get_gene_consequence(self, rs_obj):
+        
+        pass
+
+    
+    def get_variation_type(self, rs_obj):
+
+        if 'primary_snapshot_data' in rs_obj:
+            return(rs_obj['primary_snapshot_data']['variant_type'])
+
+
+
+    def get_alleles(self, rs_obj):
+        alleles = []
+        if 'primary_snapshot_data' in rs_obj:
+            ptlp = self.__find_ptlp(rs_obj['primary_snapshot_data']['placements_with_allele'])
+            if ptlp is not None:
+                for allele in ptlp['alleles']:
+                    alleles.append(allele['allele']['spdi']['inserted_sequence'])
+
+        return(alleles)
+
+
+    def get_chr_pos(self, rs_obj):
+
+        pos = {}
+        if 'primary_snapshot_data' in rs_obj:
+            ptlp = self.__find_ptlp(rs_obj['primary_snapshot_data']['placements_with_allele'])
+            if ptlp is not None:
+                for seq_id_trait in ptlp['placement_annot']['seq_id_traits_by_assembly']:
+                    if seq_id_trait['is_top_level'] and seq_id_trait['is_chromosome']:
+                        pos['assembly'] = seq_id_trait['assembly_name']
+                        pos['assembly_accession'] = seq_id_trait['assembly_accession']
+                        pos['pos'] = ptlp['alleles'][0]['allele']['spdi']['position']
+                        seq_id = ptlp['alleles'][0]['allele']['spdi']['seq_id']
+                        acc = seq_id.split('.')[0]
+                        pos['chr'] = seq_id
+                        if acc in self.acc_chr:
+                            pos['chr'] = self.acc_chr[acc]
+
+        return(pos)
+                            
+
+    def __find_ptlp(self, placements):
+        for p in placements:
+            if p['is_ptlp']:
+                return p
+
+        return None    
