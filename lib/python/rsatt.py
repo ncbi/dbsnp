@@ -85,11 +85,12 @@ class rsatt(object):
         return(allele_info)
         
             
-    def clinSig(self, primary_refsnp):
+     def clinical_significance(self, rs_obj):
         '''
         rs clinical significance
         '''
         allele_annot = []
+        primary_refsnp = rs_obj['primary_snapshot_data']
         for annot in primary_refsnp['allele_annotations']:
             for clininfo in annot['clinical']:
                 allele_annot.append(clininfo['clinical_significances'])
