@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="eSummaryResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DocumentSummarySet"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DocumentSummarySet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DbBuild"/>
+        <xs:element maxOccurs="unbounded" ref="DocumentSummary"/>
+      </xs:sequence>
+      <xs:attribute name="status" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DbBuild" type="xs:ID">
+    <xs:annotation>
+      <xs:documentation>Entrez build version</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SNP_ID"/>
+        <xs:element ref="ALLELE_ORIGIN"/>
+        <xs:element ref="GLOBAL_MAFS"/>
+        <xs:element ref="GLOBAL_POPULATION"/>
+        <xs:element ref="GLOBAL_SAMPLESIZE"/>
+        <xs:element ref="SUSPECTED"/>
+        <xs:element ref="CLINICAL_SIGNIFICANCE"/>
+        <xs:element ref="GENES"/>
+        <xs:element ref="ACC"/>
+        <xs:element ref="CHR"/>
+        <xs:element ref="HANDLE"/>
+        <xs:element ref="FXN_CLASS"/>
+        <xs:element ref="VALIDATED"/>
+        <xs:element ref="DOCSUM"/>
+        <xs:element ref="TAX_ID"/>
+        <xs:element ref="ORIG_BUILD"/>
+        <xs:element ref="UPD_BUILD"/>
+        <xs:element ref="CREATEDATE"/>
+        <xs:element ref="UPDATEDATE"/>
+        <xs:element ref="SS"/>
+        <xs:element ref="ALLELE"/>
+        <xs:element ref="SNP_CLASS"/>
+        <xs:element ref="CHRPOS"/>
+        <xs:element ref="TEXT"/>
+        <xs:element ref="SNP_ID_SORT"/>
+        <xs:element ref="CLINICAL_SORT"/>
+        <xs:element ref="CITED_SORT"/>
+        <xs:element ref="CHRPOS_SORT"/>
+        <xs:element ref="MERGED_SORT"/>
+      </xs:sequence>
+      <xs:attribute name="uid" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SNP_ID" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>dbSNP Reference SNP (rs) number (https://www.ncbi.nlm.nih.gov/snp/docs/RefSNP_about)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ALLELE_ORIGIN">
+    <xs:annotation>
+      <xs:documentation>Allele germline or somatic (not used)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="GLOBAL_MAFS">
+    <xs:annotation>
+      <xs:documentation>Global Minor Allele Frequency (MAF) listed by project or study (ie. 1000 Genomes, TOPMED, etc.)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="MAF"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MAF">
+    <xs:annotation>
+      <xs:documentation>Aggregate total MAF for each project or study (ie. 1000 Genomes)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="STUDY"/>
+        <xs:element ref="FREQ"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="STUDY" type="xs:NMTOKEN">
+    <xs:annotation>
+      <xs:documentation>Study or project name (ie. 1000 Genomes)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FREQ" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>MAF frequency computed from study total sample size or chromosome count (ie. 5008 for 1000 Genomes).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GLOBAL_POPULATION">
+    <xs:annotation>
+      <xs:documentation>DEPRECATED (replaced by Global MAF)</xs:documentation>
+    </xs:annotation>
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="GLOBAL_SAMPLESIZE" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>DEPRECATED </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SUSPECTED">
+    <xs:annotation>
+      <xs:documentation>NOT USED;  may be restored when data is available in future dbSNP build.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="CLINICAL_SIGNIFICANCE" type="xs:string">
+    <xs:annotation>
+      <xs:documentation source="https://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/">Clinvar clinical signficance (ie. pathogenic) if available for RS.  
+</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GENES">
+    <xs:annotation>
+      <xs:documentation>One or more genes that the variant is mapped to</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="GENE_E"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GENE_E">
+    <xs:annotation>
+      <xs:documentation>Gene element</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="NAME"/>
+        <xs:element ref="GENE_ID"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NAME" type="xs:NCName">
+    <xs:annotation>
+      <xs:documentation source="https://www.ncbi.nlm.nih.gov/gene">Gene Symbol (ie. LPL, APOE, etc.)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GENE_ID" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation source="https://www.ncbi.nlm.nih.gov/gene">Gene ID (ie. 4023)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ACC" type="xs:NCName">
+    <xs:annotation>
+      <xs:documentation>Chromosome sequence accession and version (ie. Chr8 = NC_000008.11)
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000008.11
+ </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CHR" type="xs:Name">
+    <xs:annotation>
+      <xs:documentation>Chromosome number</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HANDLE" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>dbSNP Submitter Handle </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FXN_CLASS" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Functional consequences (ie. synonymous variant, missense variant, etc.) based on SO terms.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VALIDATED" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Validation status:
+By Cluster: Reference SNP (rs) cluster have more than one Submitted SNP; presumably independent observatioins from multiple submitters.
+By Frequency: Observed in population </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DOCSUM" type="xs:string"/>
+  <xs:element name="TAX_ID" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Organism taxid (ie. human = 9606).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ORIG_BUILD" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>The first build number when the RS was created.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UPD_BUILD" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>The last build number when the RS was updated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CREATEDATE" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>When the RS was first released</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UPDATEDATE" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>When the RS was last updated</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SS" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>One or more submitted SNP (ss) accessions that are clustered to the RS, comma-delimited.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ALLELE" type="xs:NCName">
+    <xs:annotation>
+      <xs:documentation>The SNP alleles as IUPAC code (ie. R = G/A)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SNP_CLASS" type="xs:NCName">
+    <xs:annotation>
+      <xs:documentation>Variation type:
+
+("del"[SNP Class] OR "delins"[SNP Class] OR "ins"[SNP Class] OR "mnv"[SNP Class] OR "snv"[SNP Class])</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CHRPOS" type="xs:NMTOKEN">
+    <xs:annotation>
+      <xs:documentation>Variant CHR and position (8:19956018) on the latest assembly version (ie. GRCh38.p13)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TEXT">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="SNP_ID_SORT" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Internal use only for sorting</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CLINICAL_SORT" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Internal use only  for sorting</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CITED_SORT">
+    <xs:annotation>
+      <xs:documentation>Internal use only  for sorting</xs:documentation>
+    </xs:annotation>
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="CHRPOS_SORT" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Internal use only  for sorting</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MERGED_SORT" type="xs:integer">
+    <xs:annotation>
+      <xs:documentation>Internal use only  for sorting</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
