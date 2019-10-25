@@ -12,7 +12,7 @@ dbSNP aggregate allele frequency data from multiple sources including:
 * and many others
 
 Example: (https://www.ncbi.nlm.nih.gov/snp/rs328#frequency_tab) 
- 
+
 dbSNP is currently designing new services to allow searching and retrieving frequency data.   Please send your comments and suggestions to snp-admin@ncbi.nlm.nih.gov or submit a request on GitHub (https://github.com/ncbi/dbsnp/issues).
 
 Thank you for your interest.
@@ -27,7 +27,10 @@ dbSNP Team
 # ASHG 2019 Presentation
 
 ### Open access to dbGaP new aggregated allele frequency for variant interpretation.
+
 The slides are available on the dbSNP homepage (https://www.ncbi.nlm.nih.gov/snp/)
+
+dbSNP Frequency content: https://ftp.ncbi.nlm.nih.gov/pub/factsheets/CoLabs_dbGaP_Frequency.pdf
 
 ## Abstract:
 
