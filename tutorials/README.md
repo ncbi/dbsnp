@@ -25,6 +25,7 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     
 ## Run and explore notebook interactively on Binder server.  It may take a few minutes for Binder server to start up.
 
-|Notebook|Binder|
-|---|---|
-|eUtils.ipynb|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
+|Notebook|Description|Binder|
+|---|---|---|
+|eUtils.ipynb|dbSNP eUtils query|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
+|MafGraph.ipynb|eUtils query and MAF parsing and graphing|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FMafGraph.ipynb)|
