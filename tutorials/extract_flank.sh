@@ -1,5 +1,6 @@
 #!/bin/bash -norc
-#retrieve 
+#retrieve RS flanking sequences
+#required Entrez EDirect E-utilities to be installed on your computer (https://www.ncbi.nlm.nih.gov/books/NBK179288/) 
 
 flank_length=100       #user specified flank sequence length (ie. 100bp)
 efetch -db snp -id 19,268,12516 -format xml | #retrieve one or more dbSNP rs id comma-delimited
