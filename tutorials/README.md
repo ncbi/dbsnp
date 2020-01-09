@@ -8,6 +8,7 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     .
     ├── Variation Services                   # Tutorial for working with SPDI Variation Service
     ├── eUtils.ipynb                         # Sample dbSNP eUtils query 
+    ├── extract_flank.sh                     # Script using eUtils to get rs flanking sequences 
     ├── MafGraph.ipynb                       # eUtils query and MAF parsing and graphing
     ├── hadoop_json_annotation.py            # parse dbSNP RS JSON object and extract the rs annotation using Hadoop
     ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data using Hadoop
