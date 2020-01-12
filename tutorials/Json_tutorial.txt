@@ -15,7 +15,7 @@ Basic questions and basic setup to start working with JSON file. There are tools
 JSON object files can be downloaded through dbSNP FTP site under .redesign: ftp://ftp.ncbi.nlm.nih.gov/snp/.redesign/latest_release/JSON/ 
 
 3. JSON schema
-The schema for the RefSNP JSON can be found at https://api.ncbi.nlm.nih.gov/variation/v0/, under /beta/refsnp/{rsid}, also at https://bitbucket.ncbi.nlm.nih.gov/projects/VAR/repos/dbsnp2/browse/cpp/src/internal/variation/services/cgi/v0/var_service.yaml.
+The schema for the RefSNP JSON can be found at https://api.ncbi.nlm.nih.gov/variation/v0/, under /beta/refsnp/{rsid}, also at https://api.ncbi.nlm.nih.gov/variation/v0/var_service.yaml.
 
 4. Browse and navigate JSON file
 http://www.jsoneditoronline.org/ provides a free resource for navigating hierarchical JSON objects.  Start by copy-pasting rs268 to the editor, and clicking the 'right arrow'.  Click the 'left arrow' to get a pretty print of the object.
