@@ -20,5 +20,3 @@ Launch `frequencies_for_vcf.ipynb` notebook on Binder: [![Binder](https://mybind
 Launch `metadata_as_hash.ipynb` notebook on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=tutorials%2FVariation%20Services%2FJupyter_Notebook%2Fmetadata_as_hash.ipynb)
 
 Launch `plot.ipynb` notebook on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=tutorials%2FVariation%20Services%2FJupyter_Notebook%2Fplot.ipynb)
-
-Launch `querying_subsets_ftp.ipynb` notebook on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=tutorials%2FVariation%20Services%2FJupyter_Notebook%2Fquerying_subsets_ftp.ipynb)
