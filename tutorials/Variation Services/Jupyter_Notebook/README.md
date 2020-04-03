@@ -23,4 +23,8 @@ The experimental `Binder` server may take a few minutes to launch and can be slo
 
 * Launch `querying_subsets_ftp.ipynb` notebook on [Google Colab](https://colab.research.google.com/github/ncbi/dbsnp/blob/master/tutorials/Variation%20Services/Jupyter_Notebook/querying_subsets_ftp.ipynb)
 
-    Note: a (free) Google account is required to run a notebook in Google Colab.
+    Notes:
+
+    * A (free) Google account is required to run a notebook in Google Colab.
+
+    * We do not use Binder for this notebook because they have a policy of not allowing FTP connections: <https://github.com/binder-examples/getting-data#large-public-files>
