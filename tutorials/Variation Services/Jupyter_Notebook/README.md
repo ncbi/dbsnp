@@ -28,6 +28,7 @@ Retrieve frequency data by rsid in JSON format
 Compare frequencies for two populations for variations from a VCF file
 
 * Launch `metadata_as_hash.ipynb` notebook on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=tutorials%2FVariation%20Services%2FJupyter_Notebook%2Fmetadata_as_hash.ipynb)
+
 Retrieve and transform ALFA project and population meta data
 
 * Launch `plot.ipynb` notebook on Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=tutorials%2FVariation%20Services%2FJupyter_Notebook%2Fplot.ipynb)
