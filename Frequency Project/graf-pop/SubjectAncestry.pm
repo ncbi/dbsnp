@@ -6,12 +6,19 @@ use GraphParameters;
 
 sub new
 {
-    my ($class, $param, $sbjScores) = @_;
+    my ($class, $param, $sbjScores, $sbjRaces) = @_;
     my $refType = ref($sbjScores);
 
     die "\nERROR: failed to create SubjectAncestry: sbjScores is not an array\n" if ($refType ne "ARRAY");
     my $numSbjs = $#$sbjScores + 1;
     print "\nWARNING: sbjScores is an empty\n" if ($numSbjs < 1);
+    if ($sbjRaces) {
+        die "\nERROR: SubjectAncestry: sbjRaces is not a hash\n" if (ref($sbjRaces) ne "HASH");
+        foreach my $sbjNo (0 .. $#$sbjScores) {
+            my $sbj = $sbjScores->[$sbjNo]->{subject};
+            $sbjScores->[$sbjNo]->{race} = $sbjRaces->{$sbj} if ($sbjRaces->{$sbj});
+        }
+    }
 
     bless {
         param => $param,
@@ -132,6 +139,7 @@ sub SaveResults
     for my $sbjNo (0 .. $#sbjPopScores) {
         my %info = %{$sbjPopScores[$sbjNo]};
         my $sbj  = $info{subject};
+        my $snps = $info{snps};
         my $race = $info{race};
         my $gd1  = $info{x};
         my $gd2  = $info{y};
@@ -164,10 +172,10 @@ sub SaveResults
             my $genoPop  = "";
             if ($genoPopId > 0 && $genoPopId < 8) {
                 my $genoPopNo = $genoPopId - 1;
-                $genoPop = $self->{param}->{alfaFullPops}->[$genoPopId];
+                $genoPop = $self->{param}->{alfaFullPops}->[$genoPopNo];
             }
             push @sbjOutputLines,
-                "$sbj\t$race\t$showGd1\t$showGd2\t$showGd3\t$showGd4\t$showbPct\t$showwPct\t$showaPct\t$genoPopId\t$genoPop";
+                "$sbj\t$numSnps\t$race\t$showGd1\t$showGd2\t$showGd3\t$showGd4\t$showbPct\t$showwPct\t$showaPct\t$genoPopId\t$genoPop";
 
             if ($subPopSbjs{$genoPopId}) {
                 $subPopSbjs{$genoPopId}++;
@@ -181,7 +189,7 @@ sub SaveResults
 
     if ($numShowSbjs > 0) {
         open FILE, ">$outFile" or die "\nERROR: Couldn't open $outFile for writing!\n";
-        print FILE "Subject\tSelf-reported ancestry\tGD1\tGD2\tGD3\tGD4\tP_f (%)\tP_e (%)\tP_a (%)\tPopID\tComputed population\n";
+        print FILE "Subject\t#SNPs\tSelf-reported ancestry\tGD1\tGD2\tGD3\tGD4\tP_f (%)\tP_e (%)\tP_a (%)\tPopID\tComputed population\n";
         for my $line (@sbjOutputLines) {
             print FILE "$line\n";
         }
@@ -210,6 +218,7 @@ sub GetGenoPopId
     my $eComp = $ePct / 100;
     my $fComp = $fPct / 100;
     my $aComp = $aPct / 100;
+    my $eurVx = $self->{param}->{vtxCoords}->[0]->[0];
 
     my $genoPopId = 0;
 
@@ -241,11 +250,11 @@ sub GetGenoPopId
             $genoPopId = 7;
         }
         else {
-            if ($aComp < $fComp) {
+            if ($gd1 < $eurVx && $aComp < $self->{param}->{othLatCut}) {
                 $genoPopId = 5;
             }
             else {
-                if ($gd4 + $gd1 < 1.525) {
+                if ($gd4 + $gd1 < $self->{param}->{asnLatCut}) {
                     $genoPopId = 6; # Hispanic2 are on the left lower side
                 }
                 else {

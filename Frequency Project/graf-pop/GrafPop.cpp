@@ -8,10 +8,10 @@ int main(int argc, char* argv[])
 
     string disclaimer =
     "\n *==========================================================================="
-    "\n *  GrafPop: Software to Infer Subject Ancestry from genotypes quickly"
+    "\n *  GrafPop: Software to infer subject ancestry from genotypes quickly"
     "\n *  Yumi (Jimmy) Jin, PhD"
     "\n *  jinyu@ncbi.nlm.nih.gov"
-    "\n *  03/10/2021"
+    "\n *  04/05/2021"
     "\n *"
     "\n *                            PUBLIC DOMAIN NOTICE"
     "\n *               National Center for Biotechnology Information"
@@ -64,18 +64,22 @@ int main(int argc, char* argv[])
         return 0;
     }
 
-    string ancSnpFile = "AncInferSNPs.txt";
+    string ancSnpFile = FindFile("AncInferSNPs.txt");
+    if (ancSnpFile == "") {
+        cout << "\nERROR: didn't find file AncInferSNPs.txt. Please put the file under 'data' directory.\n\n";
+        return 0;
+    }
     AncestrySnps *ancSnps = new AncestrySnps();
     ancSnps->ReadAncestrySnpsFromFile(ancSnpFile);
     //ancSnps->ShowAncestrySnps();
 
     int totAncSnps = ancSnps->GetNumAncestrySnps();
-    int minAncSnps = 100;
+    int minAncSnps = 1000;
 
     int numThreads = thread::hardware_concurrency();
     numThreads--;
 
-    smpGenoAnc = new SampleGenoAncestry(ancSnps);
+    smpGenoAnc = new SampleGenoAncestry(ancSnps, minAncSnps);
 
     if (fileType == GenoDatasetType::IS_VCF || fileType == GenoDatasetType::IS_VCF_GZ) {
         VcfSampleAncestrySnpGeno *vcfGeno = new VcfSampleAncestrySnpGeno(genoDs, ancSnps);
@@ -90,30 +94,24 @@ int main(int argc, char* argv[])
         int numAncSnps = vcfGeno->vcfAncSnpIds.size();
         int numVcfSmps = vcfGeno->GetNumSamples();
 
-        for (int i = 0; i < numAncSnps; i++) {
-            int ancSnpId = vcfGeno->vcfAncSnpIds[i];
-            char *smpGenos = vcfGeno->vcfAncSnpCodedGenos[i];
-            cout << "SNP anc ID " << ancSnpId
-                 << "\trs " << ancSnps->snps[ancSnpId].rs
-                 << "\tg37 " << ancSnps->snps[ancSnpId].posG37
-                 << "\tg38 " << ancSnps->snps[ancSnpId].posG38
-                 << "\tgeno ";
-            for (int j = 0; j < numVcfSmps; j++) cout << int(smpGenos[j]);
-            cout << "\n";
-            if (i > 20) break;
+        if (smpGenoAnc->HasEnoughAncestrySnps(numAncSnps)) {
+            smpGenoAnc->SetGenoSamples(vcfGeno->vcfSamples);
+            smpGenoAnc->SetSnpGenoData(&vcfGeno->vcfAncSnpIds, &vcfGeno->vcfAncSnpCodedGenos);
         }
-
-        smpGenoAnc->SetGenoSamples(vcfGeno->vcfSamples);
-        smpGenoAnc->SetSnpGenoData(&vcfGeno->vcfAncSnpIds, &vcfGeno->vcfAncSnpCodedGenos);
+        else {
+            cout << "\nWARNING: Ancestry inference not done due to lack of genotyped ancestry SNPs "
+             << "(at least " << minAncSnps << " ancestry SNPs are needed).\n\n";
+            return 0;
+        }
     }
     else if (fileType == GenoDatasetType::IS_PLINK) {
-	string bedFile = fileBase + ".bed";
-	string bimFile = fileBase + ".bim";
-	string famFile = fileBase + ".fam";
+        string bedFile = fileBase + ".bed";
+        string bimFile = fileBase + ".bim";
+        string famFile = fileBase + ".fam";
 
-	if ( !FileExists(bedFile.c_str()) ||
-	     !FileExists(bimFile.c_str()) ||
-	     !FileExists(famFile.c_str())    ) {
+        if ( !FileExists(bedFile.c_str()) ||
+             !FileExists(bimFile.c_str()) ||
+             !FileExists(famFile.c_str())    ) {
             if (!FileExists(bedFile.c_str())) cout << "\nERROR: didn't find " << bedFile << "\n";
             if (!FileExists(bimFile.c_str())) cout << "\nERROR: didn't find " << bimFile << "\n";
             if (!FileExists(famFile.c_str())) cout << "\nERROR: didn't find " << famFile << "\n";
@@ -128,11 +126,12 @@ int main(int argc, char* argv[])
         int numSmps = smpGenoAnc->GetNumSamples();
         cout << "Total " << numSmps << " samples\n\n";
 
-        BimFileAncestrySnps *bimSnps = new BimFileAncestrySnps(totAncSnps, 100);
+        BimFileAncestrySnps *bimSnps = new BimFileAncestrySnps(totAncSnps);
         bimSnps->ReadAncestrySnpsFromFile(bimFile, ancSnps);
+        int numBimAncSnps = bimSnps->GetNumBimAncestrySnps();
         bimSnps->ShowSummary();
-        if (bimSnps->HasEnoughAncestrySnps()) {
 
+        if (smpGenoAnc->HasEnoughAncestrySnps(numBimAncSnps)) {
             BedFileSnpGeno *bedGenos = new BedFileSnpGeno(bedFile, ancSnps, bimSnps, famSmps);
             bedGenos->ReadGenotypesFromBedFile();
             bedGenos->ShowSummary();
@@ -140,7 +139,7 @@ int main(int argc, char* argv[])
             smpGenoAnc->SetSnpGenoData(&bedGenos->ancSnpSnpIds, &bedGenos->ancSnpSmpGenos);
         }
         else {
-            cout << "Ancestry inferrence not done due to lack of genotyped ancestry SNPs.\n\n";
+            cout << "Ancestry inference not done due to lack of genotyped ancestry SNPs.\n\n";
             return 0;
         }
     }
@@ -157,7 +156,7 @@ int main(int argc, char* argv[])
                 lock_guard<mutex> iolock(iomutex);
             }
 
-	    smpGenoAnc->SetAncestryPvalues(i);
+	        smpGenoAnc->SetAncestryPvalues(i);
         });
     }
 
@@ -174,3 +173,39 @@ int main(int argc, char* argv[])
     return 1;
 }
 
+string GetExecutablePath()
+{
+    char rawPathName[PATH_MAX];
+    realpath(PROC_SELF_EXE, rawPathName);
+
+    string exePath = string(rawPathName);
+    size_t slashPos = exePath.find_last_of("/\\");
+    string exeDir = exePath.substr(0, slashPos);
+
+    return exeDir;
+}
+
+string FindFile(string filename)
+{
+    string fullFile = filename;
+
+    if (FileExists(fullFile.c_str())) return fullFile;
+
+    string exeDir = GetExecutablePath();
+    fullFile = exeDir + "/data/" + filename;
+    if (FileExists(fullFile.c_str())) return fullFile;
+
+    fullFile = exeDir + "/" + filename;
+    if (FileExists(fullFile.c_str())) return fullFile;
+
+    if(const char* grafPath = getenv("GRAFPATH")) {
+        string grafDir = string(grafPath);
+        fullFile = grafDir + "/data/" + filename;
+        if (FileExists(fullFile.c_str())) return fullFile;
+
+        fullFile = grafDir + "/" + filename;
+        if (FileExists(fullFile.c_str())) return fullFile;
+    }
+
+    return "";
+}

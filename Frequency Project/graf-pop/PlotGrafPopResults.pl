@@ -47,6 +47,7 @@ use GD::Graph::colour;
 use GD::Graph::lines;
 
 use GraphColors;
+use GrafPopFiles;
 use GraphParameters;
 use PopulationCutoffs;
 use GraphTransformation;
@@ -64,6 +65,8 @@ my $showSbjs = 0;
 $showSbjs = 1 if ($outFile =~ /\.txt$/);
 
 my $param = new GraphParameters();
+exit unless ($param);
+
 my $cgi = new CGI;
 my $img = new GD::Image($param->{imageWidth}, $param->{imageHeight});
 my $colors = new GraphColors($img);
@@ -92,7 +95,7 @@ my @allSbjPvalues = (); # Subject GD scores (x, y, z, 1) for plotting
 
 #--------------------------- Read subject GrafPop scores  ---------------------------#
 my ($popScoreRef, $allPopSbjs, $minSbjSnps, $maxSbjSnps, $meanSbjSnps, $error)
-    = ReadGrafPopResults($inFile, $param->{minSnps}, $param->{maxSnps});
+    = GrafPopFiles::ReadGrafPopResults($inFile, $param->{minSnps}, $param->{maxSnps});
 die "\nERROR: $error\n\n" if ($error);
 
 @sbjPopScores = @$popScoreRef;
@@ -104,10 +107,14 @@ my %allRaces = ();
 my $hasRaceInfo = 0;
 my $numRaces = 0;
 if ($param->{raceFile}) {
-    my ($sbjRaceRef, $allRaceRef, $hasRace) = ReadSubjectRaces($param->{raceFile}, $allPopSbjs);
+    my ($sbjRaceRef, $allRaceRef, $hasRace, $err) = GrafPopFiles::ReadSubjectRaces($param->{raceFile}, $allPopSbjs);
     %sbjRaces = %$sbjRaceRef;
     %allRaces = %$allRaceRef;
     $hasRaceInfo = $hasRace;
+    if ($err) {
+        print "\nERROR: $err\n";
+        exit;
+    }
 }
 
 #---------------- Get subject counts for different self-reported races --------------#
@@ -176,15 +183,6 @@ if ($param->{rotx}) {
     RotateSubjectsOnx($param->{rotx});
 }
 
-#-------------------- Save subjects if the input file is .txt file  -------------------#
-if ($showSbjs) {
-    my $ancSbjs = new SubjectAncestry($param, \@sbjPopScores);
-    $ancSbjs->SetSubjectGenoPopulations();
-    $ancSbjs->SaveResults($outFile);
-    $ancSbjs->ShowPopulationComparison() if ($param->{raceFile});
-    exit;
-}
-
 #---------------------------------- Plot graph ---------------------------------------#
 PlotPopulations($outFile);
 
@@ -203,7 +201,7 @@ sub PlotPopulations
 
     # Plot axes, y-axis can be GD2 or GD4
     my $xLabel = "GD1";
-    my $yLabel = "GD4";
+    my $yLabel = "GD2";
 
     if ($param->{rotx}) {
 	    $yLabel = "GD2, GD3: rotated by $param->{rotx} degree";
@@ -225,11 +223,13 @@ sub PlotPopulations
     my $hasOther = 0;
     my $numSelSbjs = 0;
     my $numOthSbjs = 0;
-    my $raceNo = 0;
+    my $raceNo = 1;
+    print "\nSelf-reported races/ethnicities\n" if (@sortRaces > 1);
     foreach my $raceId (0 .. $#sortRaces) {
 	    my $raceNum = $raceId + 1;
 	    my $race = $sortRaces[$raceId];
 	    my $cnt = $raceSbjCnts{$race};
+        print "$raceNo: $race (n=$cnt)\n" if (@sortRaces > 1);
 	    my $dispRace = TruncateDisplayRace($race, $cnt, $lgdSide, $snpLgdGap);
 	    my $colorNo = $raceColorIds{$race};
 	    my $color = $colors->{raceColors}->[$colorNo];
@@ -282,8 +282,14 @@ sub PlotPopulations
 
     # Plot vertices, cutoff lines
     $cutoffValues->PlotVertices($colors->{black});
-    $cutoffValues->PlotCutoffLines($colors->{gold}) if ($param->{showCutoff});
-    $cutoffValues->PlotSasCutoffLines($colors->{gold});
+    if ($param->{showCutoff}) {
+        if ($param->{showGd4}) {
+            $cutoffValues->PlotSasCutoffLines($colors->{gold});
+        }
+        else {
+            $cutoffValues->PlotCutoffLines($colors->{gold})
+        }
+    }
 
     # Show expected areas for populations specified by the user
     if (!$param->{showGd4} && !$param->{rotx}) {
@@ -317,9 +323,9 @@ sub PlotSubjects
     my $afoLblLen = length(" Africann ") * $mbFontWidth;
     my $easLblLen = length(" East Asian ") * $mbFontWidth;
 
-    my $eurVx = $cutoffValues->{vtxCoords}->[0]->[0];
-    my $afoVx = $cutoffValues->{vtxCoords}->[1]->[0];
-    my $easVx = $cutoffValues->{vtxCoords}->[2]->[0];
+    my $eurVx = $param->{vtxCoords}->[0]->[0];
+    my $afoVx = $param->{vtxCoords}->[1]->[0];
+    my $easVx = $param->{vtxCoords}->[2]->[0];
 
     # Z-values determine which subjects are in the front
     my %sbjZvals = ();
@@ -373,11 +379,9 @@ sub PlotSubjects
         $afoLbly = $afoMiny - $vetGap if ($afoLbly > $afoMiny - $vetGap);
         $easLbly = $easMiny - $vetGap if ($easLbly > $easMiny - $vetGap);
 
-        if (!$param->{rotx}) {
-            PlotVertexLabel($eurLbl, 0, $eurLbly);
-            PlotVertexLabel($afoLbl, 1, $afoLbly);
-            PlotVertexLabel($easLbl, 2, $easLbly);
-        }
+        PlotVertexLabel($eurLbl, 0, $eurLbly);
+        PlotVertexLabel($afoLbl, 1, $afoLbly);
+        PlotVertexLabel($easLbl, 2, $easLbly);
     }
 }
 
@@ -389,82 +393,63 @@ sub PlotAxes
     my ($yTop, $xLabelStr, $yLabelStr) = @_;
 
     my $yBottom = $yTop + $graphHeight;
+    my $format = "%4.2f";
+    my $tickLblLen = 4;
 
     # Plot y-axis
     $img->line($gxLeft, $yTop, $gxLeft, $yBottom, $black);
     $img->line($gxRight, $yTop, $gxRight, $yBottom, $black);
 
-    # Plot ticks
-    my $yStep = 0.1;
-    my $yTicks = $param->{yRange} / $yStep;
+    # Plot ticks on y-axis
+    my ($yMinorIntv, $yNumMinors, $yTickNoFirstMajor) = GetTickIntervals($param->{yMin}, $param->{yMax});
+    my $yTotMinors = int($param->{yRange} / $yMinorIntv + 0.05);
+    my $dy = $graphWidth/$yTotMinors;
 
+    my $xMinor = $gxLeft - $param->{minorTickLen};
     my $xMajor = $gxLeft - $param->{majorTickLen};
-
-    my $dy = $graphHeight/$yTicks;
-    my $minorDy = $graphHeight/($yTicks*$param->{yMinorTicks});
-
-    my $tickLblLen = 4;
-    my $numDigits = $tickLblLen;;
-    my $format = "%4.1f";
     my $xString = $gxLeft - $mbFontWidth*$tickLblLen - $param->{majorTickLen} - $param->{tickGap};
 
-    for my $i (0 .. $yTicks+1) {
-	my $val = $param->{yMin} + $yStep * $i;
-	my $valStr = sprintf($format, $val);
-	my $y = int($yBottom - $dy*$i + 0.5);
-	$y = $yBottom if ($y > $yBottom);
-	if ($y >= $yTop) {
-	    $img->line($gxLeft, $y, $xMajor, $y, $black);
-	    $img->string(gdMediumBoldFont, $xString, $y-$mbFontHeight/2, $valStr, $black);
-	}
-
-	# Plot minor ticks
-	if ($i < $yTicks) {
-	    my $yMinor = $y;
-	    my $xMinor = $gxLeft - $param->{minorTickLen};
-	    for my $j (1 .. $param->{yMinorTicks}-1) {
-		    $yMinor -= $minorDy;
-		    $img->line($gxLeft, $yMinor, $xMinor, $yMinor, $black) if ($yMinor > $yTop);
-	        }
-	    }
+    for my $i (0 .. $yTotMinors) {
+	    my $val = $param->{yMin} + $yMinorIntv * $i;
+	    my $valStr = sprintf($format, $val);
+	    my $y = int($yBottom - $dy*$i + 0.5);
+        $y = $yBottom if ($y > $yBottom);
+        if ($y >= $yTop) {
+            $img->line($gxLeft, $y, $xMinor, $y, $black);
+            if (($i + 1 - $yTickNoFirstMajor) % $yNumMinors == 0) {
+                $img->line($xMinor, $y, $xMajor, $y, $black);
+                $img->string(gdMediumBoldFont, $xString, $y-$mbFontHeight/2, $valStr, $black);
+             }
+        }
     }
 
     # Draw y-axis label
     my $lblLen = length($yLabelStr);
     my $yLabel = $yBottom - ($graphHeight - $mbFontWidth*$lblLen)/2;
-    $img->stringUp(gdMediumBoldFont, $xString-20, $yLabel, $yLabelStr, $black);
-
+    $img->stringUp(gdMediumBoldFont, $xString-25, $yLabel, $yLabelStr, $black);
 
     # Plot x-axis
     $img->line($gxLeft, $yBottom, $gxRight, $yBottom, $black);
     $img->line($gxLeft, $yTop, $gxRight, $yTop, $black);
 
-    # Plot ticks
-    my $xStep = 0.1;
-    my $xTicks = int($param->{xRange} / $xStep + 0.05);
+    # Plot x-axis ticks
+    my ($xMinorIntv, $xNumMinors, $xTickNoFirstMajor) = GetTickIntervals($param->{xMin}, $param->{xMax});
+    my $xTotMinors = int($param->{xRange} / $xMinorIntv + 0.05);
+    my $dx = $graphWidth/$xTotMinors;
 
+    my $yMinor = $yBottom + $param->{minorTickLen};
     my $yMajor = $yBottom + $param->{majorTickLen};
-    my $dx = $graphWidth/$xTicks;
-    my $minorDx = $graphWidth/($xTicks*$param->{xMinorTicks});
-
     my $yString = $yMajor + 5;
 
-    for my $i (0 .. $xTicks) {
-	    my $val = $param->{xMin} + $xStep * $i;
+    for my $i (0 .. $xTotMinors) {
+	    my $val = $param->{xMin} + $xMinorIntv * $i;
 	    my $valStr = sprintf($format, $val);
 	    my $x = int($gxLeft + $dx*$i + 0.5);
-	    $img->line($x, $yBottom, $x, $yMajor, $black);
-	    $img->string(gdMediumBoldFont, $x-$mbFontWidth*2, $yString, $valStr, $black);
-
-	    # Plot minor ticks
-	    if ($i < $xTicks) {
-	        my $xMinor = $x;
-	        my $yMinor = $yBottom + $param->{minorTickLen};
-	        for my $j (1 .. $param->{xMinorTicks}-1) {
-		        $xMinor += $minorDx;
-		        $img->line($xMinor, $yBottom, $xMinor, $yMinor, $black);
-	        }
-	    }
+	    $img->line($x, $yBottom, $x, $yMinor, $black);
+        if (($i + 1 - $xTickNoFirstMajor) % $xNumMinors == 0) {
+    	    $img->line($x, $yMinor, $x, $yMajor, $black);
+    	    $img->string(gdMediumBoldFont, $x-$mbFontWidth*2, $yString, $valStr, $black);
+        }
     }
 
     # Draw x-axis label
@@ -474,18 +459,49 @@ sub PlotAxes
 }
 
 #
+# Set tick intervals based on value range
+#
+sub GetTickIntervals
+{
+    my ($minVal, $maxVal) = @_;
+
+    my $range = $maxVal - $minVal;
+    my $minorIntv = 0.02; # value diff between two adjacent minor ticks
+    my $numMinors = 5;    # number of minor ticks in each major tick range
+
+    if ($range < 0.5) {
+        $minorIntv = 0.01;
+    }
+    elsif ($range < 0.2) {
+        $minorIntv = 0.005;
+        $numMinors = 2;
+    }
+
+    my $majorIntv = $minorIntv * $numMinors;
+    my $startVal = int(($minVal+0.0001)/$majorIntv) * $majorIntv;
+
+    # Which minor tick is the first major tick
+    my $tickNoFirstMajor = int(($startVal + $majorIntv - $minVal + 0.0001) / $minorIntv) + 1;
+
+    return ($minorIntv, $numMinors, $tickNoFirstMajor);
+}
+
+#
 # Plot population labels for the three vertices of the triangle
 #
 sub PlotVertexLabel
 {
     my ($vLbl, $popNo, $vLbly, $extraGap) = @_;
 
-    my $lblLen = length($vLbl);
-    my ($xVal, $yVal, $zVal, $junk) = @{$cutoffValues->{vtxCoords}->[$popNo]};
-    my $xPos = $gxLeft  + ($xVal - $xMin) * $graphWidth  / ($xMax - $xMin) - $mbFontWidth*$lblLen/2.0;
+    my $lblLen = length($vLbl) * $mbFontWidth;
+    my ($xVal, $yVal, $zVal, $junk) = @{$param->{vtxCoords}->[$popNo]};
+    my $xPos = $gxLeft  + ($xVal - $xMin) * $graphWidth  / ($xMax - $xMin) - $lblLen/2.0;
     my $yPos = $gyBottom - ($vLbly - $yMin) * $graphHeight / ($yMax - $yMin) + $extraGap;
     $yPos -=  $mbFontHeight / 2; # The position of the middle of the label
-    $img->string(gdMediumBoldFont, $xPos, $yPos, $vLbl, $black);
+    if ($xPos > $gxLeft + 10 && $xPos + $lblLen < $gxRight - 10 &&
+        $yPos > $gyTop + 10 && $yPos < $gyBottom - 20) {
+        $img->string(gdMediumBoldFont, $xPos, $yPos, $vLbl, $black);
+    }
 }
 
 #
@@ -511,115 +527,6 @@ sub TruncateDisplayRace
     }
 
     return $dispRace;
-}
-
-#
-# Read scores of subjects from result file generated by the C++ program
-#
-sub ReadGrafPopResults
-{
-    my ($inFile, $minSnps, $maxSnps) = @_;
-
-    my $sbjNo = 0;
-    my $totSbjs = 0;
-    my @sbjPopScores = ();
-    my %allPopSbjs = ();
-    my ($minAncSnps, $maxAncSnps, $totAncSnps, $meanAncSnps) = (100000, 0, 0, 0);
-    my $error = "";
-
-    open FILE, $inFile or die "ERROR: Couldn't open file $inFile!\n\n";
-    my $header = <FILE>;
-    while ($header =~ /^\#/) {
-	    $header = <FILE>;
-    }
-    if ($header !~ /^Sample\t\#SNPs\tGD1.*\tGD2.*\tGD3.*\tGD4.*/) {
-	    $error = "Invalid input file.  Expected following columns:\n" .
-	            "\tSample\n\t#SNPs\n\tGD1 (x)\n\tGD2 (y)\n\tGD3 (z)\n\tGD4\n\tE(%)\n\tF(%)\n\tA(%)\n\n";
-    }
-    else {
-	    while(<FILE>) {
-	        chomp;
-	        my @vals = split /\t/, $_;
-            if (@vals >= 9) {
-                my ($sbj, $numSnps, $xVal, $yVal, $zVal, $gd4, $ePct, $fPct, $aPct) = @vals;
-                my %info = (subject => $sbj, race => "", raceNo => 0, color => "", snps => $numSnps,
-                        x => $xVal, y => $yVal, z => $zVal, gd4 => $gd4, fPct => $fPct, ePct => $ePct, aPct => $aPct);
-
-                if ($numSnps >= $minSnps && $numSnps <= $maxSnps && !$allPopSbjs{$sbj}) {
-                    push @sbjPopScores, \%info;
-
-                    $minAncSnps = $numSnps if ($numSnps < $minAncSnps);
-                    $maxAncSnps = $numSnps if ($numSnps > $maxAncSnps);
-                    $totAncSnps += $numSnps;
-                    $allPopSbjs{$sbj} = 1;
-                    $sbjNo++;
-                }
-
-                $totSbjs++;
-            }
-	    }
-        close FILE;
-
-        my $numSbjs = @sbjPopScores;
-        $meanAncSnps = $totAncSnps * 1.0 / $numSbjs;
-
-        if ($sbjNo < 1) {
-            $error = "No sample found in $inFile";
-        }
-
-        print "Found $numSbjs samples with population scores in file $inFile. Total $totSbjs samples.\n";
-        if ($minSnps > 0 || $maxSnps < 10000) {
-            if ($numSbjs > 0) {
-                print "  $numSbjs samples have genotyped Anc SNPs between $minSnps and $maxSnps.\n";
-            }
-            else {
-                $error = "No samples with genotype ancestry SNPs between $minSnps and $maxSnps found in the input file.";
-            }
-        }
-    }
-
-    return (\@sbjPopScores, \%allPopSbjs, $minAncSnps, $maxAncSnps, $meanAncSnps, $error);
-}
-
-#
-# Read races from a two-column file without header line for all subjects in a set
-#
-sub ReadSubjectRaces
-{
-    my ($file, $allSbjs) = @_;
-
-    my $hasRace = 0;
-    my %sbjRaces = ();
-    my %allRaces = ();
-
-    die "\nERROR: didn't find subject race file $file!\n\n" unless (-e $file);
-
-    open FILE, $file or die "\nERROR: Couldn't open $file!\n\n";
-    while (<FILE>) {
-        chomp;
-        my ($sbj, $race) = split /\t/, $_;
-        $race =~ s/\s*$//;
-        $race = $1 if ($race =~ /^\s*\"(.+)\"\s*$/);
-
-        if ($sbj && $allSbjs->{$sbj}) {
-            $hasRace = 1 if ($race && $race !~ /^unknown$/i);
-            $race = $unkRace if (!$race || $race !~ /\S/);
-            $sbjRaces{$sbj} = $race;
-            $allRaces{$race} = 1;
-        }
-    }
-    close FILE;
-
-    my $numSbjs = keys %sbjRaces;
-    $numRaces = keys %allRaces;
-    if ($numRaces > 0) {
-	    print "\nRead $numRaces populations from $numSbjs subjects in $file\n";
-    }
-    else {
-	    print "\nNOTE: No populations found in $file.\n";
-    }
-
-    return (\%sbjRaces, \%allRaces, $hasRace);
 }
 
 #
@@ -690,6 +597,8 @@ sub PlotOneDot
     $x = int($x + 0.5);
     $y = int($y + 0.5);
 
+    return if ($x < $gxLeft+$size || $x > $gxRight-$size || $y < $gyTop+$size || $y > $gyBottom-$size);
+
     # Acoid using fill() since:
     # 1. It is hard to find spots to fill when circles overlap
     # 2. It may overspill, especially when the dots are close to the edges
@@ -718,7 +627,7 @@ sub RotateSubjectsOnx
 {
     my $theta = shift;
 
-    my @afoVtxCoords = @{$cutoffValues->{vtxCoords}->[1]};
+    my @afoVtxCoords = @{$param->{vtxCoords}->[1]};
     my ($afoVx, $afoVy, $afoVz) = @afoVtxCoords;
 
     GraphTransformation::MoveShape3D(-$afoVx, -$afoVy, -$afoVz, \@allSbjPvalues);
@@ -732,28 +641,20 @@ sub GetScriptUsage
 
     Note:
           Input file is the file generated by the C++ grafpop program that includes subject ancestry scores.
-          Output file should be either a .png file or a .txt file.
-          If the output file is a .png file, the script plots the results to a graph and save the graph to the file.
-          If the output file is a .txt file, the script saves the calculated subject ancestry components to the file.
+          Output file should be a .png file.
 
     Options:
-        Set window size in pixels
-            -gw      graph width
+        Specify the input file with self-reported subject race information
+            -spf     text file with two columns (no header): subject and self-reported population
 
-        Set graph axis limits
+        Set window size in pixels
+            -gw      graph width (500 - 2000, default 800)
+
+        Set graph axis limits, max - min should be between 0.1 and 1.5
             -xmin    min x value
             -xmax    max x value
             -ymin    min y value
             -ymax    max y value
-
-        Set a rectangle area to retrieve subjects for graph of DG1 vs. DG2
-            -xcmin   min x value
-            -xcmax   max x value
-            -ycmin   min y value
-            -ycmax   max y value
-            -isByd   0 or 1
-                     0:  retrieve subjects whose values are within the above rectangle (default value)
-                     1:  retrieve subjects whose values are beyond the above rectangle
 
         Set minimum and maximum numbers of genotyped fingerprint SNPs for samples to be processed
             -minsnp  minimum number of SNPs with genotypes
@@ -765,14 +666,14 @@ sub GetScriptUsage
                                  Set it to -1 to combine African and African American populations
             -acut    proportion: cutoff East Asian proportion dividing East Asians from other populations. Default 95%.
                                  Set it to -1 to combine East Asian and Other Asian populations
-            -ohcut   proportion: cutoff African proportion dividing Latin Americans from Other population. Default 13%.
+            -ohcut   proportion: cutoff African proportion dividing Latin Americans from Other population. Default 14%.
             -fhcut   proportion: cutoff African proportion dividing Latin Americans from African Americans. Default 40%.
 
-        Select some self-reported populations (by IDs) to be highlighted on the graph
+        Select some self-reported populations (by IDs) to be highlighted on the graph (for studies with multiple races)
             -pops    comma separated population IDs, e.g., -pops 1,3,4 -> highlight populations #1, #3 and #4
 
         Select self-reported populations (by IDs) to show areas including 95% dbGaP subjects with genotypes of
-        at least 50,000 ancestry SNPs
+        at least 50,000 ancestry SNPs, to help estimate subject populations
             -areas   comma separated dbGaP self-reported population IDs, e.g., -areas 1,3
                          -> show areas that include 95% dbGaP subjects with self-reported populations #1 and #3
                             1: European                 2: African
@@ -781,19 +682,16 @@ sub GetScriptUsage
                             7: Asian-Pacific Islander   8: South Asian
 
         Select which score to show on the y-axis
-            -gd4     1 or 0.  1: show GD4 on y-axis;  0: show GD2
+            -gd4:    show GD4 on y-axis (GD4 separates South Asians from Latin Americans and other Asians)
 
         Set population cutoff lines
-            -cutoff  1 or 0.  1: show cutoff lines;  0: hide cutoff lines
+            -cutoff: show cutoff lines
 
         Rotate the plot on x-axis by a certain angle
-            -rotx    angle in degrees
+            -rotx    angle (in degrees) to rotate the GD2/GD3 vs. GD1 plot on the x-axis (0 - 360)
 
         Set the size (diameter) of each dot that represents each subject
-            -dot     size in pixels
-
-        The input file with self-reported subject race information
-            -spf     a file with two columns: subject and self-reported population";
+            -dot     dot size in pixels (1 - 10, default 2)";
 
     return $usage;
 }

@@ -44,7 +44,7 @@ private:
 
     char GetCompAllele(char);
     int  GetSnpGenoInt(bool, bool);
-    char* RecodeBedSnpGeno(char*, bool);
+    char* RecodeBedSnpGeno(char*, int, bool);
 };
 
 #endif

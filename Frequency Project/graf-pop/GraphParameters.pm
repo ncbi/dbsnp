@@ -9,18 +9,18 @@ use Getopt::Long;
 
 # Width and height of the plot (the box excluding header and footer)
 my $gWidth  = 800;
-my $gHeight = 800;
+my $gHeight = $gWidth;
 
-my $leftEdge = 20;      # The left edge of the graph
-my $rightEdge = 20;
+my $leftEdge   = 20;
+my $rightEdge  = 20;
 my $bottomEdge = 50;
 
 my $graphTitleHt = 20;
 
 my $majorTickLen = 6;
 my $minorTickLen = 3;
-my $xMinorTicks = 5;
-my $yMinorTicks = 5;
+my $xMinorTicks  = 5;
+my $yMinorTicks  = 5;
 
 my $mbFontWidth  = gdMediumBoldFont->width;
 my $mbFontHeight = gdMediumBoldFont->height;
@@ -29,14 +29,14 @@ my $mlFontWidth  = gdLargeFont->width;
 my $axisLabelGap = 20;  # Distance between tick labels and axis labels
 my $tickGap = 5;        # Gap between the tick and tick label
 
-my $showGd4 = 0;
-my $dotSize = 2;
-my $rotx = 0;
+my $showGd4  = 0;
+my $dotSize  = 2;
+my $rotx     = 0;
 my $selRaces = "";
 my $isBeyond = 0;
 my $raceFile = "";
 my $showCutoff = "";
-my $showAreas = "";
+my $showAreas  = "";
 
 # Left edge of the plot (the rectangular box)
 my $gxLeft  = $leftEdge + $mbFontHeight + $axisLabelGap + $mbFontWidth*2 + $tickGap + $majorTickLen;
@@ -58,30 +58,37 @@ my $xMax = 1.8;
 my $yMin = 1.0;
 my $yMax = 1.8;
 
-my $xRange  = $xMax - $xMin;
-my $yRange  = $yMax - $yMin;
+my $xRange = $xMax - $xMin;
+my $yRange = $yMax - $yMin;
 
+my $totNumAncSnps = 100437;
 my $minSnps = 0;
-my $maxSnps = 200000;
+my $maxSnps = $totNumAncSnps + 1;
 
 # Set population cutoff values.
+my @eurVtxCoord = (1.4785,  1.4460, 0.0000, 1);
+my @afoVtxCoord = (1.0500,  1.1000, 0.0000, 1);
+my @easVtxCoord = (1.7422,  1.1000, 0.0000, 1);
+my @vertexCoords = (\@eurVtxCoord, \@afoVtxCoord, \@easVtxCoord);
+
 my $eurCut      = 90;
 my $afoCut      = 95;
 my $easCut      = 95;
-my $othLatCut   = 13;
+my $othLatCut   = 14;
 my $afaLacCut   = 40;
 
 my $meanSasx    = 1.524446;
 my $meanSasy    = 0.079465;
 my $sdSasx      = 0.019755;
 my $sdSasy      = 0.005485;
+my $asnLatCut   = 1.525;
 
 my $numSasSds   = 4;
 my $sasCutaVal  = 5;
 my $sasCutBasey = $meanSasy - $numSasSds * $sdSasy;
 
-my $asnCutBasex = 1.6;
-my $meanAsny    = -0.01;
+my $asnCutBasex = 1.58;
+my $meanAsny    = 0;
 my $asnCutaVal  = 30;
 my $sasLenCut   = 0.04;  # For separating South Asians from Hispanics using a different score
 
@@ -90,11 +97,6 @@ sub new
     my ($class) = @_;
 
     GetInputParameters();
-
-    if ($showGd4) {
-        $yMin = -0.3;
-        $yMax = 0.5;
-    }
 
     $rotx = $rotx % 360;
 
@@ -110,35 +112,33 @@ sub new
         }
     }
 
-    # Round min, max values to the tenth
-    $xMin = int($xMin * 10 + 0.5) / 10;
-    $xMax = int($xMax * 10 + 0.5) / 10;
-    $yMax = int($yMax * 10 + 0.5) / 10;
-    if ($yMin < 0) {
-        $yMin = int($yMin * 10 - 0.5) / 10;
-    }
-    else {
-        $yMin = int($yMin * 10 + 0.5) / 10;
-    }
-
-    if ($xMin && $xMax && $xMin >= $xMax) {
-        die "\nERROR: x-min ($xMin) is not smaller than x-max ($xMax).\n\n";
-    }
-    if ($yMin && $yMax && $yMin >= $yMax) {
-        die "\nERROR: y-min ($yMin) is not smaller than y-max ($yMax).\n\n";
-    }
-
-    # Do some (not all) sanity checks on cutoff values
+    # Do some (not all) sanity checks
     my $cutErr = "";
-    $cutErr .= "\tecut < 0\n"  if ($eurCut < 0);
-    $cutErr .= "\tohcut < 0\n" if ($othLatCut < 0);
-    $cutErr .= "\tfhcut < 0\n" if ($afaLacCut < 0);
+    if ($xMin && $xMax && $xMax - $xMin < 0.0999) {
+        $cutErr .=  "\tDifference of x-max ($xMax) and x-min ($xMin) is less than 0.1.\n";
+    }
+    if ($xMin && $xMax && $xMax - $xMin > 1.5001) {
+        $cutErr .=  "\tDifference of x-max ($xMax) and x-min ($xMin) is greater than 1.5.\n";
+    }
+    if ($yMin && $yMax && $yMax - $yMin < 0.0999) {
+        $cutErr .=  "\tDifference of y-max ($yMax) and y-min ($yMin) is less than 0.1.\n";
+    }
+    if ($yMin && $yMax && $yMax - $yMin > 1.5001) {
+        $cutErr .=  "\tDifference of y-max ($yMax) and y-min ($yMin) is greater than 1.5.\n";
+    }
 
-    $cutErr .= "\tecut > 100\n"  if ($eurCut > 100);
-    $cutErr .= "\tacut > 100\n"  if ($easCut > 100);
-    $cutErr .= "\tfcut > 100\n"  if ($afoCut > 100);
-    $cutErr .= "\tohcut > 100\n" if ($othLatCut > 100);
-    $cutErr .= "\tfhcut > 100\n" if ($afaLacCut > 100);
+    $cutErr .= "\tminsnps ($minSnps) too large\n" if ($minSnps > $totNumAncSnps);
+    $cutErr .= "\tminsnps ($minSnps) greater than maxsnps ($maxSnps)\n" if ($minSnps > $maxSnps);
+
+    $cutErr .= "\tecut < 0\n"   if ($eurCut < 0);
+    $cutErr .= "\tohcut < 0\n"  if ($othLatCut < 0);
+    $cutErr .= "\tfhcut < 0\n"  if ($afaLacCut < 0);
+
+    $cutErr .= "\tecut > 100\n" if ($eurCut > 100);
+    $cutErr .= "\tacut > 100\n" if ($easCut > 100);
+    $cutErr .= "\tfcut > 100\n" if ($afoCut > 100);
+    $cutErr .= "\tohcut > 50\n" if ($othLatCut > 50);
+    $cutErr .= "\tfhcut > 80\n" if ($afaLacCut > 80);
 
     $cutErr .= "\tecut + ohcut < 100\n" if ($eurCut + $othLatCut < 100);
     $cutErr .= "\tfcut + ohcut < 100\n" if ($afoCut + $othLatCut < 100 && $afoCut > 0);
@@ -147,7 +147,8 @@ sub new
     $cutErr .= "\tfhcut + ecut < 100\n" if ($afaLacCut < 100 - $eurCut);
 
     if ($cutErr) {
-        die "\nERROR in population cutoff line settings:\n$cutErr\n";
+        print "\nERROR in population cutoff line settings:\n$cutErr\n";
+        return "";
     }
 
     $showCutoff = 0 if ($rotx);
@@ -164,7 +165,7 @@ sub new
     $othLatCut /= 100.0;
 
     $minSnps = 0 unless ($minSnps);
-    $maxSnps = 10000 unless ($maxSnps);
+    $maxSnps = 200000 unless ($maxSnps);
 
     if ($xCutMin && $xCutMax && $xCutMin > $xCutMax) {
         $xCutMin = 0;
@@ -253,13 +254,16 @@ sub new
         sasCutBasey  => $sasCutBasey,
         sasCutaVal   => $sasCutaVal,
         sasLenCut    => $sasLenCut,
+        asnLatCut    => $asnLatCut,
 
         asnCutBasex  => $asnCutBasex,
         meanAsny     => $meanAsny,
         asnCutaVal   => $asnCutaVal,
 
-        alfaPops => \@alfaPops,
+        alfaPops     => \@alfaPops,
         alfaFullPops => \@alfaFullPops,
+
+    	vtxCoords    => \@vertexCoords,
     }, $class;
 }
 
@@ -304,6 +308,18 @@ sub GetInputParameters
         SetInputParameter($param, $inputParams{$param});
     }
 
+    if ($showGd4) {
+        $yMin = -0.3 unless (defined $inputParams{"ymin"});
+        $yMax =  0.5 unless (defined $inputParams{"ymax"});
+    }
+
+    if (defined $inputParams{"ecut"} ||
+        defined $inputParams{"fcut"} ||
+        defined $inputParams{"acut"} ||
+        defined $inputParams{"ohcut"} ||
+        defined $inputParams{"fhcut"} ) {
+        $showCutoff = 1
+    }
     return ($inFile, $outFile);
 }
 
@@ -314,8 +330,8 @@ sub SetInputParameter
     $gWidth       =  $value if ($param eq "gw");
     $dotSize      =  $value if ($param eq "dot");
 
-    $minSnps      =  $value if ($param eq "minsnp");
-    $maxSnps      =  $value if ($param eq "maxsnp");
+    $minSnps      =  $value if ($param =~ /^minsnp/);
+    $maxSnps      =  $value if ($param =~ /^maxsnp/);
 
     $xMin         =  $value if ($param eq "xmin");
     $xMax         =  $value if ($param eq "xmax");
@@ -328,8 +344,8 @@ sub SetInputParameter
     $yCutMax      =  $value if ($param eq "ycmax");
 
     $eurCut       =  $value if ($param eq "ecut");
-    $afoCut       =  $value if ($param eq "fut");
-    $easCut       =  $value if ($param eq "aut");
+    $afoCut       =  $value if ($param eq "fcut");
+    $easCut       =  $value if ($param eq "acut");
     $othLatCut    =  $value if ($param eq "ohcut");
     $afaLacCut    =  $value if ($param eq "fhcut");
 
@@ -340,6 +356,30 @@ sub SetInputParameter
     $isBeyond     =  $value if ($param eq "isByd");
     $showCutoff   =  $value if ($param eq "cutoff");
     $showAreas    =  $value if ($param eq "areas");
+
+    $gWidth  =  500 if ($gWidth <  500);
+    $gWidth  = 2000 if ($gWidth > 2000);
+    $gHeight = $gWidth;
+    $gxLeft  = $leftEdge + $mbFontHeight + $axisLabelGap + $mbFontWidth*2 + $tickGap + $majorTickLen;
+    $gxRight = $gxLeft + $gWidth;
+    $gyBtm   = $gyTop + $gHeight;
+
+    $imageWidth  = $gxLeft + $gWidth + $rightEdge;
+    $imageHeight = $gyTop + $gHeight + $graphTitleHt + $bottomEdge;
+
+    $xRange  = $xMax - $xMin;
+    $yRange  = $yMax - $yMin;
+
+    # Round min, max values to the hundreds
+    $xMin = int($xMin * 100 + 0.5) / 100;
+    $xMax = int($xMax * 100 + 0.5) / 100;
+    $yMax = int($yMax * 100 + 0.5) / 100;
+    if ($yMin < 0) {
+        $yMin = int($yMin * 100 - 0.5) / 100;
+    }
+    else {
+        $yMin = int($yMin * 100 + 0.5) / 100;
+    }
 }
 
 1;

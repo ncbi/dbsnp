@@ -14,4 +14,13 @@ using namespace std;
 #include <thread>
 #include <mutex>
 
+#if defined(__sun)
+#define PROC_SELF_EXE "/proc/self/path/a.out"
+#else
+#define PROC_SELF_EXE "/proc/self/exe"
+#endif
+
+string GetExecutablePath(void);
+string FindFile(string);
+
 #endif

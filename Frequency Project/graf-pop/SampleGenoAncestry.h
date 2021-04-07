@@ -59,6 +59,7 @@ public:
 
     int GetNumSamples() { return numSamples; };
     int GetNumAncSamples() { return numAncSmps; };
+    bool HasEnoughAncestrySnps(int numSnps) { return numSnps >= minAncSnps; }
 
     void ShowSummary();
 };

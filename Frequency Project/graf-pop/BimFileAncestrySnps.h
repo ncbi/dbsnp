@@ -7,7 +7,6 @@
 class BimFileAncestrySnps
 {
     int totAncSnps;
-    int minAncSnps;
 
     string filename;
     int numBimSnps;
@@ -31,10 +30,9 @@ private:
 
 public:
     BimFileAncestrySnps();
-    BimFileAncestrySnps(int, int);
+    BimFileAncestrySnps(int);
     ~BimFileAncestrySnps();
     void SetTotalAncestrySnps(int totSnps) { totAncSnps = totSnps; };
-    void SetMinimumAncestrySnps(int minSnps) { minAncSnps = minSnps; };
     char* RecodeBedSnpGeno(char*, bool);
     int ReadAncestrySnpsFromFile(string, AncestrySnps*);
     int CompareAncestrySnpAlleles(const char, const char, const char, const char);
@@ -46,7 +44,6 @@ public:
     int GetAlleleMatchGivenBimSnpPos(int bimSnpPos) {
         return bimSnpPos >= 0 && bimSnpPos < numBimSnps ? bimSnpAlleleMatches[bimSnpPos] : 1000;
     };
-    bool HasEnoughAncestrySnps() { return numGoodAncSnps >= minAncSnps; }
     void ShowSummary();
 };
 

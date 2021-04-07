@@ -28,6 +28,7 @@ SampleGenoAncestry::SampleGenoAncestry(AncestrySnps *aSnps, int minSnps)
 {
     ancSnps = aSnps;
     if (minSnps) minAncSnps = minSnps;
+    else         minAncSnps = 100;
     numSamples = 0;
     numAncSnps = 0;
     totAncSnps = ancSnps->GetNumAncestrySnps();

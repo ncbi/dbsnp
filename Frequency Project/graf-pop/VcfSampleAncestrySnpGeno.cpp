@@ -292,7 +292,7 @@ void VcfSampleAncestrySnpGeno::RecodeSnpGenotypes()
     }
 
     int saveSnpNo = 0; // Putative SNPs saved after vcf file was read
-    int ancSnpNo = 0;  // Final list of ancestry SNPs to be used for ancestry inferrence
+    int ancSnpNo = 0;  // Final list of ancestry SNPs to be used for ancestry inference
 
     for (saveSnpNo = 0; saveSnpNo < putativeAncSnps; saveSnpNo++) {
         int ancSnpId = -1;
@@ -366,7 +366,7 @@ const char eRef, const char eAlt, int* expRefIdx, int* expAltIdx)
             for (int altNo = 0; altNo < numAlts; altNo++) {
                 string altWord = altWords[altNo];
                 int alleleIdx = altNo + 1;  // allele index starts from 0 = ref, then 1 = first alt, ...
-	                if (altWord.length() == 1) {
+	            if (altWord.length() == 1) {
                     char alt = altWord[0];
                     if (flip)  alt = FlipAllele(alt);
 
@@ -421,42 +421,7 @@ void VcfSampleAncestrySnpGeno::ShowSummary()
     cout << "\nTotal " << totAncSnps << " ancestry SNPs used by GrafPop\n";
 
     cout << "Number of samples found in the vcf file: " << numSamples << "\n";
-    for (int i = 0; i < numSamples; i++) {
-        if (i < 10) cout << vcfSamples[i] << "\n";
-    }
-    cout << "\n";
     cout << "Total " << putativeAncSnps << " ancestry SNPs found from "	<< totVcfSnps << " SNPs\n";
-
-    for (int i = 0; i < putativeAncSnps; i++) {
-        int chr = vcfAncSnpChrs[i];
-        int pos = vcfAncSnpPoss[i];
-        int rsIdSnpId = vcfRsIdAncSnpIds[i];
-        int gb37SnpId = vcfGb37AncSnpIds[i];
-        int gb38SnpId = vcfGb38AncSnpIds[i];
-        string snp = vcfAncSnpSnps[i];
-        string ref = vcfAncSnpRefs[i];
-        string alt = vcfAncSnpAlts[i];
-
-        vector<char> gtRefs = vcfAncSnpGtRefs[i];
-        vector<char> gtAlts = vcfAncSnpGtAlts[i];
-
-        cout << "Chr " << chr
-             << " pos " << pos
-             << " snp " << snp
-             << " ref " << ref
-             << " alt " << alt;
-
-        if (rsIdSnpId > -1) cout << " #RS Ancs " << rsIdSnpId;
-        if (gb37SnpId > -1) cout << " #G37 Ancs " << gb37SnpId;
-        if (gb38SnpId > -1) cout << " #G38 Ancs " << gb38SnpId;
-        cout << " GTs ";
-        for (int j = 0; j < numSamples; j++) {
-            if (j < 20) cout << gtRefs[j] << "/" << gtAlts[j] << " ";
-        }
-        cout << "\n";
-
-        if (i >= 5) break;
-    }
 
     cout << "\n#RSID Ancs: " << numRsIdAncSnps << "\n"
     << "#GB37 Ancs: " << numGb37AncSnps << "\n"

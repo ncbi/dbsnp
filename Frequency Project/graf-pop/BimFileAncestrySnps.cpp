@@ -2,16 +2,14 @@
 
 BimFileAncestrySnps::BimFileAncestrySnps()
 {
-    minAncSnps = 100;
     numDupAncSnps = 0;
     filename = "";
     numBimSnps = 0;
 }
 
-BimFileAncestrySnps::BimFileAncestrySnps(int totSnps, int minSnps)
+BimFileAncestrySnps::BimFileAncestrySnps(int totSnps)
 {
     totAncSnps = totSnps;
-    minAncSnps = minSnps;
     numDupAncSnps = 0;
     filename = "";
     numBimSnps = 0;
@@ -209,23 +207,13 @@ void BimFileAncestrySnps::ShowSummary()
 
     cout << "Total " << numBimSnps << " SNPs in bim file. " << numBimAncSnps << " SNPs are ancestry SNPs.\n";
     cout << "\t" << showSnpType << " are used to find ancestry SNPs.\n";
-    cout << "\t" << numGoodAncSnps << " SNPs have expected alleles and will be used for ancestry inferrence.\n";
+    cout << "\t" << numGoodAncSnps << " SNPs have expected alleles and will be used for ancestry inference.\n";
     if (numDupAncSnps > 0) cout << "\t" << numDupAncSnps << " ancestry SNPs have multiple entries.\n";
 
     if (numBadAncSnps > 0) {
         cout << "\t" << numBadAncSnps << " ancestry SNPs do not have expected alleles.\n";
     }
     cout << "\n";
-    cout << "Minimum Ancestry SNPs needed for ancestry inferrence: " << minAncSnps << "\n";
-
-    if (HasEnoughAncestrySnps()) {
-        cout << "There are enough Ancestry SNPs to infer subject ancestry.\n";
-    }
-    else {
-        cout << "There are not enough Ancestry SNPs for ancestry inferrence.\n";
-    }
-    cout << "\n";
-
 
     //  int snpId = GetAncSnpIdGivenBimSnpPos(i*100);
     //  int match = GetAlleleMatchGivenBimSnpPos(i*100);

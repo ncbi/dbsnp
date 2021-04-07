@@ -47,17 +47,14 @@ char BedFileSnpGeno::GetCompAllele(char a)
     return c;
 }
 
-char* BedFileSnpGeno::RecodeBedSnpGeno(char *snpBedGenos, bool swap)
+char* BedFileSnpGeno::RecodeBedSnpGeno(char *snpBedGenos, int numBytes, bool swap)
 {
     char *snpGenos = new char[numSamples]; // char only takes one byte
     for (int i = 0; i < numSamples; i++) snpGenos[i] = 3;
 
-    int snpNumBytes = (numSamples - 1) / 4 + 1;
-
     int smpNo = 0;
     int byteNo = 0;
 
-    int numBytes = strlen(snpBedGenos);
     for (byteNo = 0; byteNo < numBytes; byteNo++) {
         char genoByte = snpBedGenos[byteNo];
         int val = int(genoByte);
@@ -80,7 +77,6 @@ char* BedFileSnpGeno::RecodeBedSnpGeno(char *snpBedGenos, bool swap)
             }
 
             if (smpNo < numSamples) snpGenos[smpNo] = intGeno;
-
             smpNo++;
         }
     }
@@ -141,7 +137,7 @@ bool BedFileSnpGeno::ReadGenotypesFromBedFile()
             for (int j = 0; j < snpNumBytes; j++) snpGenoStr[j] = buff[j];
             ASSERT(bimAncSnpNo < numAncSnps, "bim ancestry SNP ID " << bimAncSnpNo << " not less than " << numAncSnps << "\n");
 
-            char *snpSmpGeno = RecodeBedSnpGeno(snpGenoStr, swap);
+            char *snpSmpGeno = RecodeBedSnpGeno(snpGenoStr, snpNumBytes, swap);
 
             ancSnpSmpGenos.push_back(snpSmpGeno);
             ancSnpSnpIds.push_back(ancSnpId);
@@ -154,7 +150,7 @@ bool BedFileSnpGeno::ReadGenotypesFromBedFile()
     numBimAncSnps = bimAncSnpNo;
 
     cout << "Read genotypes of " << bimAncSnpNo << " Ancestry SNPs from total " << numBimSnps << " SNPs.\n";
-    cout << "\nBed file has genotypes of " << numBimSnps << " SNPs. Read genotypes of "
+    cout << "Bed file has genotypes of " << numBimSnps << " SNPs. Read genotypes of "
          << numBimAncSnps << " ancestry SNPs for " << numSamples << " samples.\n";
 
     return 0;
@@ -184,7 +180,4 @@ void BedFileSnpGeno::ShowSummary()
     cout << "Total " << numSamples << " samples\n";
     cout << "Total " << numAncSnps << " Ancestry SNPs\n";
     cout << "Total " << numBimAncSnps << " Ancestry SNPs in bim file\n\n";
-
-    cout << "Bed file has genotypes of " << numBimSnps << " SNPs. Read genotypes of "
-         << numBimAncSnps << " ancestry SNPs for " << numSamples << " samples.\n";
 }

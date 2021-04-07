@@ -14,25 +14,27 @@ use GraphTransformation;
 
 my $pi = 3.1415936535;
 
-my @eurVtxCoord = (1.4785,  1.4460, 0.0000, 1);
-my @afoVtxCoord = (1.0500,  1.1000, 0.0000, 1);
-my @easVtxCoord = (1.7422,  1.1000, 0.0000, 1);
+my ($eurVx, $eurVy) = (0, 0);
+my ($afoVx, $afoVy) = (0, 0);
+my ($easVx, $easVy) = (0, 0);
 
-my ($eurVx, $eurVy) = ($eurVtxCoord[0], $eurVtxCoord[1]);
-my ($afoVx, $afoVy) = ($afoVtxCoord[0], $afoVtxCoord[1]);
-my ($easVx, $easVy) = ($easVtxCoord[0], $easVtxCoord[1]);
-
-my @vertexCoords = (\@eurVtxCoord, \@afoVtxCoord, \@easVtxCoord);
 my $cutLineLen = 0.065;  # Length of the cutoff lines outside the triangle
 
 sub new
 {
     my ($class, $img, $param) = @_;
 
+    my @eurVtxCoord = @{$param->{vtxCoords}->[0]};
+    my @afoVtxCoord = @{$param->{vtxCoords}->[1]};
+    my @easVtxCoord = @{$param->{vtxCoords}->[2]};
+
+    ($eurVx, $eurVy) = ($eurVtxCoord[0], $eurVtxCoord[1]);
+    ($afoVx, $afoVy) = ($afoVtxCoord[0], $afoVtxCoord[1]);
+    ($easVx, $easVy) = ($easVtxCoord[0], $easVtxCoord[1]);
+
     bless {
         img => $img,
-        param => $param,
-        vtxCoords => \@vertexCoords
+        param => $param
     }, $class;
 }
 
@@ -70,6 +72,8 @@ sub ShowExpectedArea
 sub PlotVertices
 {
     my ($self, $color) = @_;
+
+    my @vertexCoords = @{$self->{param}->{vtxCoords}};
 
     # Check if all vertices are in the drawing area
     my $xMin = $self->{param}->{xMin};
@@ -187,11 +191,13 @@ sub PlotCutoffLines
     $self->PlotOuterCutoff($afoXval4, $afoYval4, 1, $color);
     $self->PlotOuterCutoff($eurXval3, $eurYval3, 3, $color);
 
-    # Cutoff lines outside the triangle, separating Hispanics from other populations
+    # Cutoff lines inside the triangle, separating Hispanics from other populations
     my $ofXval1 = $afoXval3;
     my $ofYval1 = $afoVy;
     my $ofXval2 = $eurVx + ($easVx - $eurVx) * $self->{param}->{othLatCut};
     my $ofYval2 = $eurVy - ($eurVy - $easVy) * $self->{param}->{othLatCut};
+    my $ofXval3 = $eurVx;
+    my $ofYval3 = $afoVy + ($ofYval2 - $afoVy) * ($eurVx - $ofXval1) / ($ofXval2 - $ofXval1);
 
     my $oaXval1 = $afoXval4;
     my $oaYval1 = $afoVy;
@@ -201,13 +207,13 @@ sub PlotCutoffLines
     my $ofhXval = $ofXval2 - ($eurVx - $afoVx) * $self->{param}->{othLatCut};
     my $ofhYval = $ofYval2 - ($eurVy - $afoVy) * $self->{param}->{othLatCut};
     $self->PlotOneCutoffLine($oaXval1, $oaYval1, $ofhXval, $ofhYval, $color);
-    $self->PlotOneCutoffLine($ofXval1, $ofYval1, $ofhXval, $ofhYval, $color);
+    $self->PlotOneCutoffLine($ofXval1, $ofYval1, $ofXval3, $ofYval3, $color);
 
     # Cutoff line separating the two Hispanic sub-populations
     my $afmVx = ($easVx + $afoVx) / 2;
     my $ehXval = $eurVx - ($eurVx - $afmVx) * (1 - $self->{param}->{eurCut});
     my $ehYval = $eurVy - ($eurVy - $afoVy) * (1 - $self->{param}->{eurCut});
-    $self->PlotOneCutoffLine($ehXval, $ehYval, $ofhXval, $ofhYval, $color);
+    $self->PlotOneCutoffLine($eurVx, $ofYval3, $eurVx, $eurYval1, $color);
 
     # Cutoff lines separating Hispanics from African Americans
     my $fhXval1 = $eurXval3;
@@ -281,7 +287,10 @@ sub PlotSasCutoffLines
         my $x2 = $self->{param}->{gxLeft}+($xVal-$self->{param}->{xMin})*$self->{param}->{gWidth} /$self->{param}->{xRange};
         my $y2 = $self->{param}->{gyBtm} -($yVal-$self->{param}->{yMin})*$self->{param}->{gHeight}/$self->{param}->{yRange};
 
-        if ($i > 0) {
+        if ($i > 0 && $x2 > $self->{param}->{gxLeft}
+                   && $x2 < $self->{param}->{gxRight}
+                   && $y2 > $self->{param}->{gyTop}
+                   && $y2 < $self->{param}->{gyBtm} ) {
             $self->{img}->line($x1, $y1, $x2, $y2, $color);
         }
         $x1 = $x2;
@@ -298,7 +307,11 @@ sub PlotSasCutoffLines
 
         my $x2 = $self->{param}->{gxLeft}+($xVal-$self->{param}->{xMin})*$self->{param}->{gWidth} /$self->{param}->{xRange};
         my $y2 = $self->{param}->{gyBtm} -($yVal-$self->{param}->{yMin})*$self->{param}->{gHeight}/$self->{param}->{yRange};
-        if ($i > 0) {
+
+        if ($i > 0 && $x2 > $self->{param}->{gxLeft}
+                   && $x2 < $self->{param}->{gxRight}
+                   && $y2 > $self->{param}->{gyTop}
+                   && $y2 < $self->{param}->{gyBtm} ) {
             $self->{img}->line($x1, $y1, $x2, $y2, $color);
         }
         $x1 = $x2;

@@ -148,13 +148,6 @@ void SampleGenoDist::CalculateBaryCenters()
     eWt = ((y2 - y3)*(xp - x3) + (x3 - x2)*(yp - y3))/det;
     fWt = ((y3 - y1)*(xp - x3) + (x1 - x3)*(yp - y3))/det;
     aWt = 1 - eWt - fWt;
-
-    if (0) {
-        cout << "Weights\n";
-        cout << "\tWhite: " << eWt << "\n";
-        cout << "\tBlack: " << fWt << "\n";
-        cout << "\tAsian: " << aWt << "\n";
-    }
 }
 
 void SampleGenoDist::ShowPositions(string title, bool showOrig)
@@ -175,9 +168,9 @@ void SampleGenoDist::ShowPositions(string title, bool showOrig)
     printf("\tE: %6.4f  %6.4f  %6.4f\n", ePt.x, ePt.y, ePt.z);
     printf("\tF: %6.4f  %6.4f  %6.4f\n", fPt.x, fPt.y, fPt.z);
     printf("\tA: %6.4f  %6.4f  %6.4f\n", aPt.x, aPt.y, aPt.z);
-    printf("\tS: %6.4f  %6.4f  %6.4f\n", sPt.x, sPt.y, sPt.z);
+    //printf("\tS: %6.4f  %6.4f  %6.4f\n", sPt.x, sPt.y, sPt.z);
 
-    cout << "\nWeights\n";
-    printf("\tE: %6.4f  %6.4f  %6.4f\n", eWt, fWt, aWt);
+    //cout << "\nWeights\n";
+    //printf("\tE: %6.4f  %6.4f  %6.4f\n", eWt, fWt, aWt);
     printf("\n");
 }
