@@ -4,7 +4,7 @@ SampleGenoAncestry *smpGenoAnc = NULL;
 
 int main(int argc, char* argv[])
 {
-    string usage = "Usage: grafpop <Binary PLINK set> <output file>\n";
+    string usage = "Usage: grafpop <Binary PLINK set or VCF file> <output file>\n";
 
     string disclaimer =
     "\n *==========================================================================="
@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
     //ancSnps->ShowAncestrySnps();
 
     int totAncSnps = ancSnps->GetNumAncestrySnps();
-    int minAncSnps = 1000;
+    int minAncSnps = 100;
 
     int numThreads = thread::hardware_concurrency();
     numThreads--;
@@ -124,7 +124,6 @@ int main(int argc, char* argv[])
 
         smpGenoAnc->SetGenoSamples(famSmps->samples);
         int numSmps = smpGenoAnc->GetNumSamples();
-        cout << "Total " << numSmps << " samples\n\n";
 
         BimFileAncestrySnps *bimSnps = new BimFileAncestrySnps(totAncSnps);
         bimSnps->ReadAncestrySnpsFromFile(bimFile, ancSnps);
@@ -133,7 +132,8 @@ int main(int argc, char* argv[])
 
         if (smpGenoAnc->HasEnoughAncestrySnps(numBimAncSnps)) {
             BedFileSnpGeno *bedGenos = new BedFileSnpGeno(bedFile, ancSnps, bimSnps, famSmps);
-            bedGenos->ReadGenotypesFromBedFile();
+            bool hasErr = bedGenos->ReadGenotypesFromBedFile();
+            if (hasErr) return 0;
             bedGenos->ShowSummary();
 
             smpGenoAnc->SetSnpGenoData(&bedGenos->ancSnpSnpIds, &bedGenos->ancSnpSmpGenos);

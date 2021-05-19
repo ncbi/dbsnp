@@ -111,7 +111,8 @@ bool BedFileSnpGeno::ReadGenotypesFromBedFile()
         cout << "ERROR: File " << bedFile << " is not in SNP mode!\n";
         hasErr = true;
     }
-    else if (fileLen != expFileLen) {
+
+    if (fileLen != expFileLen) {
         cout << "ERROR: Number of genotypes in bed file doesn't match fam and bim File!\n";
         cout << "\tFam file has " << numSamples << " samples.  Bim file has "
         << numBimSnps << " SNPs. Each SNP should have "
