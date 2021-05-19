@@ -114,33 +114,33 @@ sub new
 
     # Do some (not all) sanity checks
     my $cutErr = "";
-    if ($xMin && $xMax && $xMax - $xMin < 0.0999) {
+    if (defined $xMin && defined $xMax && $xMax - $xMin < 0.0999) {
         $cutErr .=  "\tDifference of x-max ($xMax) and x-min ($xMin) is less than 0.1.\n";
     }
-    if ($xMin && $xMax && $xMax - $xMin > 1.5001) {
+    if (defined $xMin && defined $xMax && $xMax - $xMin > 1.5001) {
         $cutErr .=  "\tDifference of x-max ($xMax) and x-min ($xMin) is greater than 1.5.\n";
     }
-    if ($yMin && $yMax && $yMax - $yMin < 0.0999) {
+    if (defined $yMin && defined $yMax && $yMax - $yMin < 0.0999) {
         $cutErr .=  "\tDifference of y-max ($yMax) and y-min ($yMin) is less than 0.1.\n";
     }
-    if ($yMin && $yMax && $yMax - $yMin > 1.5001) {
+    if (defined $yMin && defined $yMax && $yMax - $yMin > 1.5001) {
         $cutErr .=  "\tDifference of y-max ($yMax) and y-min ($yMin) is greater than 1.5.\n";
     }
 
     $cutErr .= "\tminsnps ($minSnps) too large\n" if ($minSnps > $totNumAncSnps);
     $cutErr .= "\tminsnps ($minSnps) greater than maxsnps ($maxSnps)\n" if ($minSnps > $maxSnps);
 
-    $cutErr .= "\tecut < 0\n"   if ($eurCut < 0);
-    $cutErr .= "\tohcut < 0\n"  if ($othLatCut < 0);
-    $cutErr .= "\tfhcut < 0\n"  if ($afaLacCut < 0);
+    $cutErr .= "\tecut < 50\n"  if ($eurCut < 50);
+    $cutErr .= "\tohcut < 5\n"  if ($othLatCut < 5);
+    $cutErr .= "\tfhcut < 5\n"  if ($afaLacCut < 5);
 
-    $cutErr .= "\tecut > 100\n" if ($eurCut > 100);
-    $cutErr .= "\tacut > 100\n" if ($easCut > 100);
-    $cutErr .= "\tfcut > 100\n" if ($afoCut > 100);
+    $cutErr .= "\tecut > 98\n"  if ($eurCut > 98);
+    $cutErr .= "\tacut > 98\n"  if ($easCut > 98);
+    $cutErr .= "\tfcut > 98\n"  if ($afoCut > 98);
     $cutErr .= "\tohcut > 50\n" if ($othLatCut > 50);
     $cutErr .= "\tfhcut > 80\n" if ($afaLacCut > 80);
 
-    $cutErr .= "\tecut + ohcut < 100\n" if ($eurCut + $othLatCut < 100);
+    $cutErr .= "\tecut + ohcut < 95\n"  if ($eurCut + $othLatCut < 95);
     $cutErr .= "\tfcut + ohcut < 100\n" if ($afoCut + $othLatCut < 100 && $afoCut > 0);
     $cutErr .= "\tacut + ohcut < 100\n" if ($easCut + $othLatCut < 100 && $easCut > 0);
     $cutErr .= "\tfhcut > fcut\n"       if ($afaLacCut > $afoCut && $afoCut > 0);

@@ -97,7 +97,8 @@ int SampleGenoAncestry::SaveAncestryResults(string outFile)
     }
 
     if (numSaveSmps < 1) {
-        cout << "\nNone of the " << numSamples << " have ancestry results\n";
+        cout << "\nNOTE: None of the " << numSamples << " samples have enough genotypes for ancestry inference."
+        <<  " No ancestry results were generated.\n";
         return numSaveSmps;
     }
 

@@ -57,12 +57,12 @@ sub ReadGrafPopResults
         }
 
         print "Found $numSbjs samples with population scores in file $inFile. Total $totSbjs samples.\n";
-        if ($minSnps > 0 || $maxSnps < 200000) {
+        if ($minSnps > 0 || $maxSnps < 100438) {
             if ($numSbjs > 0) {
-                print "  $numSbjs samples have genotyped Anc SNPs between $minSnps and $maxSnps.\n";
+                print "\t$numSbjs samples have $minSnps to $maxSnps genotyped Ancestry SNPs.\n";
             }
             else {
-                $error = "No samples with genotype ancestry SNPs between $minSnps and $maxSnps found in the input file.";
+                $error = "No samples with genotype ancestry SNPs between $minSnps and $maxSnps found in the input file.\n";
             }
         }
     }
@@ -81,9 +81,10 @@ sub ReadSubjectRaces
     my $hasRace = 0;
     my %sbjRaces = ();
     my %allRaces = ();
+    my $totSbjs = 0;
 
     unless (-e $file) {
-        $err = "didn't find subject race file $file!\n\n";
+        $err = "didn't find subject race file $file!\n";
         return (\%sbjRaces, \%allRaces, $hasRace, $err);
     }
 
@@ -91,26 +92,35 @@ sub ReadSubjectRaces
     open FILE, $file or die "\nERROR: Couldn't open $file!\n\n";
     while (<FILE>) {
         chomp;
+        next if ($_ !~ /\S/);
+
         my ($sbj, $race) = split /\t/, $_;
         $race =~ s/\s*$//;
         $race = $1 if ($race =~ /^\s*\"(.+)\"\s*$/);
 
-        if ($sbj && $allSbjs->{$sbj}) {
-            $hasRace = 1 if ($race && $race !~ /^unknown$/i);
-            $race = $unkRace if (!$race || $race !~ /\S/);
-            $sbjRaces{$sbj} = $race;
-            $allRaces{$race} = 1;
+        if ($sbj && $race) {
+            $totSbjs++;
+
+            if ($allSbjs->{$sbj}) {
+                $hasRace = 1 if ($race && $race !~ /^unknown$/i);
+                $race = $unkRace if (!$race || $race !~ /\S/);
+                $sbjRaces{$sbj} = $race;
+                $allRaces{$race} = 1;
+            }
         }
     }
     close FILE;
 
     my $numSbjs = keys %sbjRaces;
     my $numRaces = keys %allRaces;
-    if ($numRaces > 0) {
+    if ($totSbjs == 0) {
+	    print "\nWARNING: No subject races found in $file.\n";
+    }
+    elsif ($numRaces > 0) {
 	    print "\nRead $numRaces populations from $numSbjs subjects in $file\n";
     }
     else {
-	    print "\nNOTE: No populations found in $file.\n";
+	    print "\nWARNING: No race values found in $file for subjects included in input GrafPop result file.\n\n";
     }
 
     return (\%sbjRaces, \%allRaces, $hasRace, $err);

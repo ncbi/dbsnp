@@ -170,7 +170,7 @@ sub SaveResults
             my $showwPct = sprintf("%5.2f", $ePct);
             my $showaPct = sprintf("%5.2f", $aPct);
             my $genoPop  = "";
-            if ($genoPopId > 0 && $genoPopId < 8) {
+            if ($genoPopId > 0 && $genoPopId < 9) {
                 my $genoPopNo = $genoPopId - 1;
                 $genoPop = $self->{param}->{alfaFullPops}->[$genoPopNo];
             }

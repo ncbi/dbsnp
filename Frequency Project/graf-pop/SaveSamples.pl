@@ -57,7 +57,10 @@ exit unless ($param);
 #--------------------------- Read subject GrafPop scores  ---------------------------#
 my ($sbjPopScores, $allPopSbjs, $minSbjSnps, $maxSbjSnps, $meanSbjSnps, $error)
     = GrafPopFiles::ReadGrafPopResults($inFile, $param->{minSnps}, $param->{maxSnps});
-die "\nERROR: $error\n\n" if ($error);
+if ($error) {
+    print "\nERROR: $error\n\n";
+    exit;
+}
 
 #--------------------------- Read subject races from file ---------------------------#
 my %sbjRaces = ();

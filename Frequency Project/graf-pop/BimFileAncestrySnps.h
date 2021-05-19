@@ -47,5 +47,4 @@ public:
     void ShowSummary();
 };
 
-
 #endif
