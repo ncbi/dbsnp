@@ -23,7 +23,7 @@ my $disclaim = << "EOF";
 
         Author: Yumi (Jimmy) Jin (jinyu\@ncbi.nlm.nih.gov)
         File Description: script to save samples and ancestry scores into a file.
-        Date: 04/05/2021
+        Date: 07/07/2021
     ====================================================================================
 EOF
 

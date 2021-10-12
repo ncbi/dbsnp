@@ -23,7 +23,7 @@ my $disclaim = << "EOF";
 
         Author: Yumi (Jimmy) Jin (jinyu\@ncbi.nlm.nih.gov)
         File Description: script to plot graphs to show subject populations.
-        Date: 03/01/2021
+        Date: 07/07/2021
     ====================================================================================
 EOF
 
@@ -659,7 +659,7 @@ sub GetScriptUsage
         Set window size in pixels
             -gw      graph width (500 - 2000, default 800)
 
-        Set graph axis limits, max - min should be between 0.1 and 1.5
+        Set graph axis limits
             -xmin    min x value
             -xmax    max x value
             -ymin    min y value

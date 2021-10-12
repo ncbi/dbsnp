@@ -23,7 +23,7 @@ my $disclaim = << "EOF";
 
         Author: Yumi (Jimmy) Jin (jinyu\@ncbi.nlm.nih.gov)
         File Description: script to extract genotypes of Ancestry SNPs from one or multiple vcf or vcf.gz files.
-        Date: 05/06/2021
+        Date: 07/07/2021
     ====================================================================================
 EOF
 
