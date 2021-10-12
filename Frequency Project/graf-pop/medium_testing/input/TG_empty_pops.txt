@@ -1,0 +1,8 @@
+# Positions of the three vertices
+#
+#          x       y      z
+# F: 	1.0500  1.1000 0.0000
+# A: 	1.7422  1.1000 0.0000
+# E: 	1.4785  1.4460 0.0000
+#
+Sample	#SNPs	GD1 (x)	GD2 (y)	GD3 (z)	GD4	E(%)	F(%)	A(%)

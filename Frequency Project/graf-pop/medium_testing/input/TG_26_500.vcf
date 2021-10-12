@@ -1,0 +1,1253 @@
+##fileformat=VCFv4.1
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20150218
+##reference=ftp://ftp.1000genomes.ebi.ac.uk//vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
+##source=1000GenomesPhase3Pipeline
+##contig=<ID=1,assembly=b37,length=249250621>
+##contig=<ID=2,assembly=b37,length=243199373>
+##contig=<ID=3,assembly=b37,length=198022430>
+##contig=<ID=4,assembly=b37,length=191154276>
+##contig=<ID=5,assembly=b37,length=180915260>
+##contig=<ID=6,assembly=b37,length=171115067>
+##contig=<ID=7,assembly=b37,length=159138663>
+##contig=<ID=8,assembly=b37,length=146364022>
+##contig=<ID=9,assembly=b37,length=141213431>
+##contig=<ID=10,assembly=b37,length=135534747>
+##contig=<ID=11,assembly=b37,length=135006516>
+##contig=<ID=12,assembly=b37,length=133851895>
+##contig=<ID=13,assembly=b37,length=115169878>
+##contig=<ID=14,assembly=b37,length=107349540>
+##contig=<ID=15,assembly=b37,length=102531392>
+##contig=<ID=16,assembly=b37,length=90354753>
+##contig=<ID=17,assembly=b37,length=81195210>
+##contig=<ID=18,assembly=b37,length=78077248>
+##contig=<ID=19,assembly=b37,length=59128983>
+##contig=<ID=20,assembly=b37,length=63025520>
+##contig=<ID=21,assembly=b37,length=48129895>
+##contig=<ID=22,assembly=b37,length=51304566>
+##contig=<ID=GL000191.1,assembly=b37,length=106433>
+##contig=<ID=GL000192.1,assembly=b37,length=547496>
+##contig=<ID=GL000193.1,assembly=b37,length=189789>
+##contig=<ID=GL000194.1,assembly=b37,length=191469>
+##contig=<ID=GL000195.1,assembly=b37,length=182896>
+##contig=<ID=GL000196.1,assembly=b37,length=38914>
+##contig=<ID=GL000197.1,assembly=b37,length=37175>
+##contig=<ID=GL000198.1,assembly=b37,length=90085>
+##contig=<ID=GL000199.1,assembly=b37,length=169874>
+##contig=<ID=GL000200.1,assembly=b37,length=187035>
+##contig=<ID=GL000201.1,assembly=b37,length=36148>
+##contig=<ID=GL000202.1,assembly=b37,length=40103>
+##contig=<ID=GL000203.1,assembly=b37,length=37498>
+##contig=<ID=GL000204.1,assembly=b37,length=81310>
+##contig=<ID=GL000205.1,assembly=b37,length=174588>
+##contig=<ID=GL000206.1,assembly=b37,length=41001>
+##contig=<ID=GL000207.1,assembly=b37,length=4262>
+##contig=<ID=GL000208.1,assembly=b37,length=92689>
+##contig=<ID=GL000209.1,assembly=b37,length=159169>
+##contig=<ID=GL000210.1,assembly=b37,length=27682>
+##contig=<ID=GL000211.1,assembly=b37,length=166566>
+##contig=<ID=GL000212.1,assembly=b37,length=186858>
+##contig=<ID=GL000213.1,assembly=b37,length=164239>
+##contig=<ID=GL000214.1,assembly=b37,length=137718>
+##contig=<ID=GL000215.1,assembly=b37,length=172545>
+##contig=<ID=GL000216.1,assembly=b37,length=172294>
+##contig=<ID=GL000217.1,assembly=b37,length=172149>
+##contig=<ID=GL000218.1,assembly=b37,length=161147>
+##contig=<ID=GL000219.1,assembly=b37,length=179198>
+##contig=<ID=GL000220.1,assembly=b37,length=161802>
+##contig=<ID=GL000221.1,assembly=b37,length=155397>
+##contig=<ID=GL000222.1,assembly=b37,length=186861>
+##contig=<ID=GL000223.1,assembly=b37,length=180455>
+##contig=<ID=GL000224.1,assembly=b37,length=179693>
+##contig=<ID=GL000225.1,assembly=b37,length=211173>
+##contig=<ID=GL000226.1,assembly=b37,length=15008>
+##contig=<ID=GL000227.1,assembly=b37,length=128374>
+##contig=<ID=GL000228.1,assembly=b37,length=129120>
+##contig=<ID=GL000229.1,assembly=b37,length=19913>
+##contig=<ID=GL000230.1,assembly=b37,length=43691>
+##contig=<ID=GL000231.1,assembly=b37,length=27386>
+##contig=<ID=GL000232.1,assembly=b37,length=40652>
+##contig=<ID=GL000233.1,assembly=b37,length=45941>
+##contig=<ID=GL000234.1,assembly=b37,length=40531>
+##contig=<ID=GL000235.1,assembly=b37,length=34474>
+##contig=<ID=GL000236.1,assembly=b37,length=41934>
+##contig=<ID=GL000237.1,assembly=b37,length=45867>
+##contig=<ID=GL000238.1,assembly=b37,length=39939>
+##contig=<ID=GL000239.1,assembly=b37,length=33824>
+##contig=<ID=GL000240.1,assembly=b37,length=41933>
+##contig=<ID=GL000241.1,assembly=b37,length=42152>
+##contig=<ID=GL000242.1,assembly=b37,length=43523>
+##contig=<ID=GL000243.1,assembly=b37,length=43341>
+##contig=<ID=GL000244.1,assembly=b37,length=39929>
+##contig=<ID=GL000245.1,assembly=b37,length=36651>
+##contig=<ID=GL000246.1,assembly=b37,length=38154>
+##contig=<ID=GL000247.1,assembly=b37,length=36422>
+##contig=<ID=GL000248.1,assembly=b37,length=39786>
+##contig=<ID=GL000249.1,assembly=b37,length=38502>
+##contig=<ID=MT,assembly=b37,length=16569>
+##contig=<ID=NC_007605,assembly=b37,length=171823>
+##contig=<ID=X,assembly=b37,length=155270560>
+##contig=<ID=Y,assembly=b37,length=59373566>
+##contig=<ID=hs37d5,assembly=b37,length=35477943>
+##ALT=<ID=CNV,Description="Copy Number Polymorphism">
+##ALT=<ID=DEL,Description="Deletion">
+##ALT=<ID=DUP,Description="Duplication">
+##ALT=<ID=INS:ME:ALU,Description="Insertion of ALU element">
+##ALT=<ID=INS:ME:LINE1,Description="Insertion of LINE1 element">
+##ALT=<ID=INS:ME:SVA,Description="Insertion of SVA element">
+##ALT=<ID=INS:MT,Description="Nuclear Mitochondrial Insertion">
+##ALT=<ID=INV,Description="Inversion">
+##ALT=<ID=CN0,Description="Copy number allele: 0 copies">
+##ALT=<ID=CN1,Description="Copy number allele: 1 copy">
+##ALT=<ID=CN2,Description="Copy number allele: 2 copies">
+##ALT=<ID=CN3,Description="Copy number allele: 3 copies">
+##ALT=<ID=CN4,Description="Copy number allele: 4 copies">
+##ALT=<ID=CN5,Description="Copy number allele: 5 copies">
+##ALT=<ID=CN6,Description="Copy number allele: 6 copies">
+##ALT=<ID=CN7,Description="Copy number allele: 7 copies">
+##ALT=<ID=CN8,Description="Copy number allele: 8 copies">
+##ALT=<ID=CN9,Description="Copy number allele: 9 copies">
+##ALT=<ID=CN10,Description="Copy number allele: 10 copies">
+##ALT=<ID=CN11,Description="Copy number allele: 11 copies">
+##ALT=<ID=CN12,Description="Copy number allele: 12 copies">
+##ALT=<ID=CN13,Description="Copy number allele: 13 copies">
+##ALT=<ID=CN14,Description="Copy number allele: 14 copies">
+##ALT=<ID=CN15,Description="Copy number allele: 15 copies">
+##ALT=<ID=CN16,Description="Copy number allele: 16 copies">
+##ALT=<ID=CN17,Description="Copy number allele: 17 copies">
+##ALT=<ID=CN18,Description="Copy number allele: 18 copies">
+##ALT=<ID=CN19,Description="Copy number allele: 19 copies">
+##ALT=<ID=CN20,Description="Copy number allele: 20 copies">
+##ALT=<ID=CN21,Description="Copy number allele: 21 copies">
+##ALT=<ID=CN22,Description="Copy number allele: 22 copies">
+##ALT=<ID=CN23,Description="Copy number allele: 23 copies">
+##ALT=<ID=CN24,Description="Copy number allele: 24 copies">
+##ALT=<ID=CN25,Description="Copy number allele: 25 copies">
+##ALT=<ID=CN26,Description="Copy number allele: 26 copies">
+##ALT=<ID=CN27,Description="Copy number allele: 27 copies">
+##ALT=<ID=CN28,Description="Copy number allele: 28 copies">
+##ALT=<ID=CN29,Description="Copy number allele: 29 copies">
+##ALT=<ID=CN30,Description="Copy number allele: 30 copies">
+##ALT=<ID=CN31,Description="Copy number allele: 31 copies">
+##ALT=<ID=CN32,Description="Copy number allele: 32 copies">
+##ALT=<ID=CN33,Description="Copy number allele: 33 copies">
+##ALT=<ID=CN34,Description="Copy number allele: 34 copies">
+##ALT=<ID=CN35,Description="Copy number allele: 35 copies">
+##ALT=<ID=CN36,Description="Copy number allele: 36 copies">
+##ALT=<ID=CN37,Description="Copy number allele: 37 copies">
+##ALT=<ID=CN38,Description="Copy number allele: 38 copies">
+##ALT=<ID=CN39,Description="Copy number allele: 39 copies">
+##ALT=<ID=CN40,Description="Copy number allele: 40 copies">
+##ALT=<ID=CN41,Description="Copy number allele: 41 copies">
+##ALT=<ID=CN42,Description="Copy number allele: 42 copies">
+##ALT=<ID=CN43,Description="Copy number allele: 43 copies">
+##ALT=<ID=CN44,Description="Copy number allele: 44 copies">
+##ALT=<ID=CN45,Description="Copy number allele: 45 copies">
+##ALT=<ID=CN46,Description="Copy number allele: 46 copies">
+##ALT=<ID=CN47,Description="Copy number allele: 47 copies">
+##ALT=<ID=CN48,Description="Copy number allele: 48 copies">
+##ALT=<ID=CN49,Description="Copy number allele: 49 copies">
+##ALT=<ID=CN50,Description="Copy number allele: 50 copies">
+##ALT=<ID=CN51,Description="Copy number allele: 51 copies">
+##ALT=<ID=CN52,Description="Copy number allele: 52 copies">
+##ALT=<ID=CN53,Description="Copy number allele: 53 copies">
+##ALT=<ID=CN54,Description="Copy number allele: 54 copies">
+##ALT=<ID=CN55,Description="Copy number allele: 55 copies">
+##ALT=<ID=CN56,Description="Copy number allele: 56 copies">
+##ALT=<ID=CN57,Description="Copy number allele: 57 copies">
+##ALT=<ID=CN58,Description="Copy number allele: 58 copies">
+##ALT=<ID=CN59,Description="Copy number allele: 59 copies">
+##ALT=<ID=CN60,Description="Copy number allele: 60 copies">
+##ALT=<ID=CN61,Description="Copy number allele: 61 copies">
+##ALT=<ID=CN62,Description="Copy number allele: 62 copies">
+##ALT=<ID=CN63,Description="Copy number allele: 63 copies">
+##ALT=<ID=CN64,Description="Copy number allele: 64 copies">
+##ALT=<ID=CN65,Description="Copy number allele: 65 copies">
+##ALT=<ID=CN66,Description="Copy number allele: 66 copies">
+##ALT=<ID=CN67,Description="Copy number allele: 67 copies">
+##ALT=<ID=CN68,Description="Copy number allele: 68 copies">
+##ALT=<ID=CN69,Description="Copy number allele: 69 copies">
+##ALT=<ID=CN70,Description="Copy number allele: 70 copies">
+##ALT=<ID=CN71,Description="Copy number allele: 71 copies">
+##ALT=<ID=CN72,Description="Copy number allele: 72 copies">
+##ALT=<ID=CN73,Description="Copy number allele: 73 copies">
+##ALT=<ID=CN74,Description="Copy number allele: 74 copies">
+##ALT=<ID=CN75,Description="Copy number allele: 75 copies">
+##ALT=<ID=CN76,Description="Copy number allele: 76 copies">
+##ALT=<ID=CN77,Description="Copy number allele: 77 copies">
+##ALT=<ID=CN78,Description="Copy number allele: 78 copies">
+##ALT=<ID=CN79,Description="Copy number allele: 79 copies">
+##ALT=<ID=CN80,Description="Copy number allele: 80 copies">
+##ALT=<ID=CN81,Description="Copy number allele: 81 copies">
+##ALT=<ID=CN82,Description="Copy number allele: 82 copies">
+##ALT=<ID=CN83,Description="Copy number allele: 83 copies">
+##ALT=<ID=CN84,Description="Copy number allele: 84 copies">
+##ALT=<ID=CN85,Description="Copy number allele: 85 copies">
+##ALT=<ID=CN86,Description="Copy number allele: 86 copies">
+##ALT=<ID=CN87,Description="Copy number allele: 87 copies">
+##ALT=<ID=CN88,Description="Copy number allele: 88 copies">
+##ALT=<ID=CN89,Description="Copy number allele: 89 copies">
+##ALT=<ID=CN90,Description="Copy number allele: 90 copies">
+##ALT=<ID=CN91,Description="Copy number allele: 91 copies">
+##ALT=<ID=CN92,Description="Copy number allele: 92 copies">
+##ALT=<ID=CN93,Description="Copy number allele: 93 copies">
+##ALT=<ID=CN94,Description="Copy number allele: 94 copies">
+##ALT=<ID=CN95,Description="Copy number allele: 95 copies">
+##ALT=<ID=CN96,Description="Copy number allele: 96 copies">
+##ALT=<ID=CN97,Description="Copy number allele: 97 copies">
+##ALT=<ID=CN98,Description="Copy number allele: 98 copies">
+##ALT=<ID=CN99,Description="Copy number allele: 99 copies">
+##ALT=<ID=CN100,Description="Copy number allele: 100 copies">
+##ALT=<ID=CN101,Description="Copy number allele: 101 copies">
+##ALT=<ID=CN102,Description="Copy number allele: 102 copies">
+##ALT=<ID=CN103,Description="Copy number allele: 103 copies">
+##ALT=<ID=CN104,Description="Copy number allele: 104 copies">
+##ALT=<ID=CN105,Description="Copy number allele: 105 copies">
+##ALT=<ID=CN106,Description="Copy number allele: 106 copies">
+##ALT=<ID=CN107,Description="Copy number allele: 107 copies">
+##ALT=<ID=CN108,Description="Copy number allele: 108 copies">
+##ALT=<ID=CN109,Description="Copy number allele: 109 copies">
+##ALT=<ID=CN110,Description="Copy number allele: 110 copies">
+##ALT=<ID=CN111,Description="Copy number allele: 111 copies">
+##ALT=<ID=CN112,Description="Copy number allele: 112 copies">
+##ALT=<ID=CN113,Description="Copy number allele: 113 copies">
+##ALT=<ID=CN114,Description="Copy number allele: 114 copies">
+##ALT=<ID=CN115,Description="Copy number allele: 115 copies">
+##ALT=<ID=CN116,Description="Copy number allele: 116 copies">
+##ALT=<ID=CN117,Description="Copy number allele: 117 copies">
+##ALT=<ID=CN118,Description="Copy number allele: 118 copies">
+##ALT=<ID=CN119,Description="Copy number allele: 119 copies">
+##ALT=<ID=CN120,Description="Copy number allele: 120 copies">
+##ALT=<ID=CN121,Description="Copy number allele: 121 copies">
+##ALT=<ID=CN122,Description="Copy number allele: 122 copies">
+##ALT=<ID=CN123,Description="Copy number allele: 123 copies">
+##ALT=<ID=CN124,Description="Copy number allele: 124 copies">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=CIEND,Number=2,Type=Integer,Description="Confidence interval around END for imprecise variants">
+##INFO=<ID=CIPOS,Number=2,Type=Integer,Description="Confidence interval around POS for imprecise variants">
+##INFO=<ID=CS,Number=1,Type=String,Description="Source call set.">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End coordinate of this variant">
+##INFO=<ID=IMPRECISE,Number=0,Type=Flag,Description="Imprecise structural variation">
+##INFO=<ID=MC,Number=.,Type=String,Description="Merged calls.">
+##INFO=<ID=MEINFO,Number=4,Type=String,Description="Mobile element info of the form NAME,START,END<POLARITY; If there is only 5' OR 3' support for this call, will be NULL NULL for START and END">
+##INFO=<ID=MEND,Number=1,Type=Integer,Description="Mitochondrial end coordinate of inserted sequence">
+##INFO=<ID=MLEN,Number=1,Type=Integer,Description="Estimated length of mitochondrial insert">
+##INFO=<ID=MSTART,Number=1,Type=Integer,Description="Mitochondrial start coordinate of inserted sequence">
+##INFO=<ID=SVLEN,Number=.,Type=Integer,Description="SV length. It is only calculated for structural variation MEIs. For other types of SVs; one may calculate the SV length by INFO:END-START+1, or by finding the difference between lengthes of REF and ALT alleles">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=TSD,Number=1,Type=String,Description="Precise Target Site Duplication for bases, if unknown, value will be NULL">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Total number of alternate alleles in called genotypes">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Estimated allele frequency in the range (0,1)">
+##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of samples with data">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=EAS_AF,Number=A,Type=Float,Description="Allele frequency in the EAS populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=EUR_AF,Number=A,Type=Float,Description="Allele frequency in the EUR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=AFR_AF,Number=A,Type=Float,Description="Allele frequency in the AFR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=AMR_AF,Number=A,Type=Float,Description="Allele frequency in the AMR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=SAS_AF,Number=A,Type=Float,Description="Allele frequency in the SAS populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth; only low coverage data were counted towards the DP, exome data were not used">
+##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele. Format: AA|REF|ALT|IndelType. AA: Ancestral allele, REF:Reference Allele, ALT:Alternate Allele, IndelType:Type of Indel (REF, ALT and IndelType are only defined for indels)">
+##INFO=<ID=VT,Number=.,Type=String,Description="indicates what type of variant the line represents">
+##INFO=<ID=EX_TARGET,Number=0,Type=Flag,Description="indicates whether a variant is within the exon pull down target boundaries">
+##INFO=<ID=MULTI_ALLELIC,Number=0,Type=Flag,Description="indicates whether a site is multi-allelic">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	HG00096	HG00263	HG00446	HG00736	HG01204	HG01498	HG01767	HG01938	HG02128	HG02355	HG02597	HG02836	HG03115	HG03449	HG03705	HG03872	HG04090	NA12154	NA18557	NA18916	NA19060	NA19321	NA19720	NA20508	NA20832	NA21141
+0	0	rs0	T	C	100	PASS	AC=1671	GT	0|0	0|0	0|1	0|1	0|1	0|1	0|1	0|0	0|0	0|1	0|0	1|1	1|0	1|1	0|1	1|0	0|0	0|0	0|1	1|0	0|0	1|1	0|0	0|0	0|0	0|0
+1	5039093	rs6657381	C	T	100	PASS	AC=1104	GT	1|0	1|0	0|0	0|0	0|1	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|1	1|0	0|0	0|1	0|0	0|0	0|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1479	GT	0|0	0|0	0|1	1|0	0|1	0|1	1|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	0|1	1|0	1|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|1
+1	9432911	rs17393334	G	A	100	PASS	AC=1328	GT	0|0	0|0	0|1	1|1	1|0	0|1	0|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1754	GT	0|0	0|0	1|1	1|0	0|0	0|1	0|0	0|0	0|0	0|1	1|1	0|0	0|1	0|1	1|1	0|0	0|0	1|0	1|1	1|0	1|1	1|1	1|0	0|0	1|0	0|1
+1	15077567	rs6661767	T	G	100	PASS	AC=1942	GT	0|0	1|1	0|0	1|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|1	1|0	1|0	1|0	1|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	0|1	1|1
+0	0	rs0	G	A	100	PASS	AC=1719	GT	0|0	0|1	1|0	0|1	0|0	0|1	0|1	1|0	1|0	0|0	1|1	0|1	1|0	0|0	0|1	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	1|1
+1	19772847	rs10492998	C	T	100	PASS	AC=860	GT	1|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0
+0	0	rs0	A	G	100	PASS	AC=552	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+1	24516880	rs11587500	G	A	100	PASS	AC=1764	GT	1|0	1|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	1|1	1|0	0|0	0|0	0|1	0|1	0|1	0|0	0|0	1|0	1|0	1|1
+0	0	rs0	A	G	100	PASS	AC=1392	GT	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|1	0|1	1|1	0|1	1|0	0|1	1|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0
+1	30740493	rs12035857	T	C	100	PASS	AC=1740	GT	0|0	0|0	1|0	0|0	0|0	1|0	0|0	1|0	1|0	1|0	0|1	1|0	0|0	0|1	0|0	0|1	0|0	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1400	GT	0|0	1|0	0|1	1|0	1|1	1|1	0|1	1|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0
+1	36585077	rs12074848	C	T	100	PASS	AC=2192	GT	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|0	1|1	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=1263	GT	0|0	0|0	0|1	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|1	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|0	0|0
+1	41935450	rs1537522	C	T	100	PASS	AC=3288	GT	1|1	1|0	1|1	1|1	0|0	1|1	0|0	1|1	1|1	0|1	1|0	0|1	0|0	1|0	1|0	1|1	1|1	1|0	1|1	1|0	1|1	1|0	1|1	1|1	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=564	GT	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0
+1	48164622	rs4926966	A	G	100	PASS	AC=3801	GT	0|1	1|1	1|1	1|0	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	0|1	1|0	1|0	1|1	1|1	1|1	1|0	1|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3847	GT	1|1	1|1	1|1	0|1	0|1	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|1	1|0	1|1	0|0	1|0	1|1	1|1	1|1	0|1	1|1	0|1	0|1	1|0
+1	54892741	rs11206349	A	G	100	PASS	AC=731	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1508	GT	0|0	0|0	0|1	0|1	0|1	1|1	0|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|1
+1	58811791	rs6686674	G	A	100	PASS	AC=2084	GT	0|1	1|0	0|0	1|1	0|1	1|0	1|1	1|1	0|0	0|0	0|0	1|0	0|1	1|0	0|0	1|0	1|1	0|0	0|1	1|1	0|0	0|0	1|1	1|1	0|1	0|1
+0	0	rs0	A	G	100	PASS	AC=481	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|0	0|0	0|0
+1	63753736	rs4915891	T	C	100	PASS	AC=2193	GT	1|1	0|1	0|1	1|0	0|1	1|0	0|0	1|0	0|0	1|0	1|1	0|0	1|0	1|1	1|1	0|0	0|1	0|0	1|0	0|0	0|0	1|0	0|0	1|1	1|0	1|1
+0	0	rs0	C	A	100	PASS	AC=4002	GT	1|1	1|0	1|1	1|1	1|0	0|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|0	0|1	0|1	1|1	1|1	1|1	1|1	0|1	0|1	0|1	1|1
+1	68643091	rs944082	T	C	100	PASS	AC=2743	GT	0|1	1|0	0|1	1|1	1|0	0|0	0|1	0|1	0|0	1|1	1|0	0|1	0|1	0|1	0|1	0|0	0|1	1|1	1|1	0|1	0|0	1|1	0|1	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=2937	GT	0|1	1|1	0|1	1|1	0|0	0|1	0|1	0|0	1|1	0|0	1|1	1|1	1|0	0|1	1|0	1|1	1|0	0|1	0|1	1|0	0|1	1|1	0|0	1|0	1|1	1|0
+1	74896816	rs1341573	C	T	100	PASS	AC=2793	GT	1|0	1|0	1|1	1|0	1|1	1|0	1|1	1|1	1|0	1|0	0|1	0|0	0|0	1|0	1|0	1|0	1|0	1|0	1|1	0|0	1|0	1|0	1|1	1|1	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=1420	GT	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1
+1	80139113	rs2000021	C	T	100	PASS	AC=2811	GT	1|1	0|1	0|1	0|1	0|0	1|1	1|1	1|1	0|1	1|1	0|1	1|0	1|1	1|1	1|0	1|0	0|0	1|1	0|0	0|1	1|0	0|0	0|0	1|1	1|1	0|1
+0	0	rs0	G	A	100	PASS	AC=4088	GT	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|0	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1
+1	85487520	rs10518327	G	A	100	PASS	AC=779	GT	1|0	1|0	0|1	1|0	0|0	0|1	1|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3257	GT	1|1	1|0	1|1	0|1	0|1	0|1	0|1	1|1	1|1	1|1	0|0	1|1	1|1	0|0	1|0	0|0	1|1	0|1	1|0	1|1	1|1	1|1	1|1	0|0	1|1	1|0
+1	90631849	rs4370755	T	C	100	PASS	AC=1543	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	0|0	0|1	0|0	0|0	1|0	0|1	1|1	0|0	1|1	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	C	T	100	PASS	AC=3572	GT	0|0	1|1	0|1	1|0	1|1	1|1	1|0	1|1	1|1	0|1	1|0	1|1	1|1	1|1	0|0	0|1	0|0	0|1	1|1	1|1	1|0	1|1	0|0	0|0	1|1	0|0
+1	96249028	rs7538619	A	G	100	PASS	AC=2879	GT	0|0	1|0	1|1	1|1	1|1	0|1	0|0	0|1	1|1	1|1	0|1	1|0	1|1	1|1	0|0	0|0	1|0	1|1	1|1	1|1	0|1	1|1	0|0	0|1	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2216	GT	0|1	1|1	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	1|0	1|1	1|1	1|1	0|0	1|0	0|0	1|1	0|0	1|1	0|1	1|1	0|0	1|1	0|0	1|0
+1	101715646	rs12044675	G	A	100	PASS	AC=571	GT	0|0	0|0	0|1	0|0	0|0	0|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1412	GT	1|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	1|0	1|1	1|0	0|0	0|0	0|1	0|1	0|1	1|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0
+1	108498145	rs345271	T	C	100	PASS	AC=2977	GT	1|1	1|0	1|1	0|0	1|1	1|1	0|1	1|0	0|1	1|1	1|1	0|1	0|0	0|0	1|1	1|1	1|0	1|1	1|1	0|0	1|1	0|0	1|0	1|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1031	GT	1|0	0|0	0|1	0|0	0|1	0|0	0|0	1|0	0|0	1|0	0|0	1|0	1|1	1|0	0|1	0|0	0|0	0|1	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|1
+1	113214413	rs12069113	C	T	100	PASS	AC=443	GT	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3119	GT	0|1	1|1	1|0	1|0	0|1	1|0	0|1	0|1	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|0	1|0	1|1	1|1	0|1	1|1	0|1	1|0	0|0	1|1
+1	118830947	rs11588400	T	C	100	PASS	AC=1164	GT	0|1	0|0	0|1	0|0	0|0	0|1	1|1	0|0	0|1	0|0	0|1	0|0	1|1	1|0	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=869	GT	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0
+1	152692472	rs873775	A	C	100	PASS	AC=1749	GT	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|1	0|1	0|0	0|0	0|1	1|0	1|0	0|1	0|0	0|1	0|0	0|0	0|1	1|0	1|1	0|0	0|0	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=1695	GT	0|1	0|1	1|0	0|0	0|0	1|0	0|0	1|1	0|1	1|1	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	1|0	0|0	1|1	0|0	1|0	0|0	0|0	0|1
+1	158179236	rs384414	C	T	100	PASS	AC=2858	GT	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	0|0	1|1	0|1	0|0	0|0	0|0	1|0	1|0	1|0	1|0	0|0	1|1	0|0	0|0	0|0	1|1	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=2296	GT	0|1	0|1	1|1	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	1|1	1|1	1|1	0|0	1|0	1|1	0|0	0|0	1|1	0|0	1|1	0|0	0|0	1|0	1|0
+1	162970153	rs2842002	G	A	100	PASS	AC=4342	GT	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=4349	GT	1|1	1|1	1|0	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1
+1	167554337	rs7554445	T	G	100	PASS	AC=2450	GT	1|1	0|0	0|0	1|1	0|0	1|0	1|0	1|0	0|0	1|0	0|1	0|0	1|0	0|1	0|1	1|1	0|1	1|0	1|0	0|0	1|0	0|1	1|0	1|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=748	GT	1|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+1	172186729	rs633995	G	A	100	PASS	AC=2116	GT	0|1	0|1	0|1	0|1	1|0	0|1	0|0	0|0	0|0	0|0	1|1	0|1	1|1	0|1	1|0	1|1	0|0	1|0	0|0	1|1	0|0	1|0	0|0	1|1	1|1	1|0
+0	0	rs0	G	A	100	PASS	AC=1046	GT	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|1	0|0
+1	178933590	rs7539025	A	G	100	PASS	AC=1260	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|1	1|0	0|1	0|1	0|0	0|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=892	GT	0|0	0|0	0|0	0|0	1|1	1|0	1|0	0|0	0|0	1|0	0|1	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+1	184622136	rs10797982	C	A	100	PASS	AC=1028	GT	0|1	0|0	1|0	1|0	0|0	1|1	1|0	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	1|1	1|0	0|0	1|0	0|1	0|0	1|0	1|1	0|0
+0	0	rs0	G	T	100	PASS	AC=1132	GT	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	1|1	0|0	0|0	1|0	0|0	0|0	0|0
+1	191875752	rs9427811	A	G	100	PASS	AC=857	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1
+0	0	rs0	T	C	100	PASS	AC=3586	GT	1|1	1|0	0|0	1|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|0	1|1	0|1	1|1	1|0	0|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1	0|1
+1	199150453	rs6684332	C	T	100	PASS	AC=2920	GT	0|0	0|1	1|1	1|0	0|0	1|1	0|0	1|1	1|1	1|1	0|1	0|1	1|1	0|1	1|1	0|0	1|1	1|0	1|1	0|1	1|1	1|1	1|1	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=1507	GT	1|1	0|0	0|1	0|0	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	1|0	0|0	1|1	0|1	0|0	0|0
+1	203982333	rs2796433	G	A	100	PASS	AC=2953	GT	1|0	1|0	0|1	0|1	0|1	1|0	1|1	1|1	0|0	0|0	1|0	0|0	0|1	1|1	1|0	0|1	1|1	0|1	1|1	0|0	0|0	0|0	1|1	1|0	0|0	1|1
+0	0	rs0	T	C	100	PASS	AC=3109	GT	1|0	1|1	0|0	0|1	1|0	0|1	1|1	0|0	1|0	0|1	1|1	1|0	1|1	0|0	1|0	1|1	0|1	1|1	0|0	0|1	1|0	0|1	1|1	1|1	1|1	0|1
+1	209245859	rs10494916	T	G	100	PASS	AC=2127	GT	0|1	0|1	0|1	1|0	0|1	1|0	0|0	1|0	1|1	1|0	0|1	1|0	0|0	1|0	1|0	1|0	1|1	0|0	1|1	1|0	0|0	0|0	1|0	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1689	GT	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	0|0	1|1	0|0	0|1	1|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0
+1	213947964	rs4233314	T	C	100	PASS	AC=4101	GT	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|0	1|0	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	0|1
+0	0	rs0	A	C	100	PASS	AC=2637	GT	0|0	1|0	0|0	0|1	0|0	0|1	0|0	1|1	0|0	0|0	0|1	1|1	0|0	1|1	1|0	1|0	1|1	0|0	0|0	0|1	0|0	1|1	0|0	1|0	1|0	0|0
+1	218643940	rs725033	C	T	100	PASS	AC=1464	GT	0|0	0|0	0|1	0|0	0|0	1|0	0|1	1|1	1|0	0|0	0|1	0|0	0|1	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=745	GT	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+1	226900415	rs3768405	G	A	100	PASS	AC=620	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=3554	GT	0|1	0|1	1|1	1|1	1|0	1|1	1|1	0|0	1|1	0|1	1|0	1|1	1|1	1|1	1|0	0|0	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1
+1	232125109	rs701163	A	G	100	PASS	AC=1725	GT	0|0	1|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	1|0	0|0	0|0	1|0	1|0	1|0	0|1	1|1	1|0	0|0	0|0	0|1	1|0
+0	0	rs0	T	C	100	PASS	AC=1821	GT	0|0	0|1	1|1	1|0	0|0	0|0	0|1	1|1	1|1	1|0	0|1	1|0	1|0	0|0	1|1	1|0	0|1	0|0	0|0	1|0	1|1	0|1	0|1	1|0	0|1	0|0
+1	236451196	rs557205	C	A	100	PASS	AC=1096	GT	0|0	1|0	0|1	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	1|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3603	GT	0|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|0	0|1	1|0	1|1	1|1	1|0	1|1	1|0	0|1	1|0	1|1	0|1
+1	240659736	rs2152555	T	C	100	PASS	AC=1066	GT	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|1
+0	0	rs0	C	T	100	PASS	AC=1935	GT	1|0	1|0	1|0	0|0	0|1	0|0	1|1	1|1	0|1	0|0	0|0	0|0	1|0	0|0	1|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|1
+1	245528780	rs1173847	A	C	100	PASS	AC=3059	GT	0|0	0|1	0|0	1|1	0|1	0|1	0|0	1|1	0|0	0|0	1|1	1|1	1|1	1|1	0|0	1|0	0|1	1|0	0|0	1|1	1|0	1|1	1|1	0|0	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2112	GT	1|0	1|0	0|1	0|0	1|1	0|1	0|1	1|1	0|1	0|0	1|0	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|1	1|1
+2	1460004	rs4927611	G	T	100	PASS	AC=1830	GT	0|1	1|0	0|1	0|0	1|0	0|0	0|0	1|0	0|0	0|0	1|1	1|0	0|0	0|1	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|0	0|1	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=1056	GT	0|1	0|1	0|0	1|0	1|0	1|0	1|0	1|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|0
+2	5662812	rs7566447	C	T	100	PASS	AC=3420	GT	1|1	0|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	0|1	1|1	0|0	0|0	0|1	1|1	1|1	1|0	1|1	1|1	0|0	1|1	0|1	1|1	1|1	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1914	GT	0|0	0|0	1|1	1|1	1|0	0|0	0|1	1|0	1|0	0|1	0|0	1|0	0|1	0|0	0|1	1|1	0|1	0|1	1|0	1|0	1|1	0|0	1|1	0|1	0|0	1|1
+2	9971366	rs287980	G	A	100	PASS	AC=3529	GT	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	0|1	0|0	1|0	1|1	1|1	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=2456	GT	0|0	0|1	0|1	1|0	1|0	1|0	0|1	0|0	0|0	1|1	1|0	0|0	1|1	1|1	1|0	0|0	0|0	1|1	0|0	1|1	0|0	0|1	1|0	1|1	1|1	1|1
+2	14162065	rs391769	A	G	100	PASS	AC=1806	GT	1|1	1|0	0|1	0|0	0|1	1|1	0|0	0|1	0|1	1|1	1|1	0|0	0|0	0|0	0|0	1|1	0|0	1|1	1|0	0|0	1|1	0|0	0|0	1|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2439	GT	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1	1|0	0|1	1|1	0|0	0|1	0|1	0|0	0|0	1|1	0|0	1|1	0|1	1|1	0|1	0|0
+2	19140546	rs1317019	G	A	100	PASS	AC=3389	GT	1|1	1|1	1|1	1|1	1|1	0|1	1|0	1|1	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	1|0	1|0	1|1	0|0	0|1	1|1	1|0	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=4209	GT	1|1	1|0	1|1	0|1	1|0	1|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1
+2	24514996	rs10495747	T	C	100	PASS	AC=666	GT	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=1895	GT	1|0	0|0	0|1	1|1	0|1	1|1	1|0	1|1	0|1	0|0	0|0	1|1	1|1	1|1	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	1|1	0|1	0|0	1|0
+2	29783021	rs4280415	T	C	100	PASS	AC=2229	GT	0|0	0|1	0|0	1|0	1|0	1|1	0|1	1|0	1|0	0|0	0|0	1|1	1|1	0|0	0|0	0|1	1|1	0|0	0|0	1|0	1|0	1|1	1|1	1|1	1|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3483	GT	0|1	1|1	0|1	0|1	0|1	1|1	1|1	0|1	0|1	0|1	0|1	1|1	1|1	1|0	0|1	1|1	0|1	1|1	0|0	1|1	1|1	1|1	0|1	1|0	1|0	0|0
+2	34990937	rs4471866	C	T	100	PASS	AC=713	GT	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|1	1|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=887	GT	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	1|1	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+2	39443569	rs6743345	G	A	100	PASS	AC=3245	GT	1|0	1|1	0|1	0|1	0|0	0|0	1|1	1|0	1|1	0|0	1|1	0|0	0|0	0|1	1|0	1|1	1|1	1|1	1|1	0|0	1|1	0|0	1|0	1|1	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=3665	GT	0|1	1|0	1|1	0|1	1|1	0|1	0|1	1|1	0|1	1|1	1|0	1|0	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|0	1|0	1|1	0|0	1|1
+2	44004010	rs2288709	T	C	100	PASS	AC=2570	GT	0|0	0|0	0|0	1|1	0|1	0|1	0|0	0|1	0|0	0|0	0|0	1|1	1|1	1|1	1|0	0|1	0|1	1|0	1|0	1|1	0|1	1|1	1|1	0|1	1|0	1|1
+0	0	rs0	C	A	100	PASS	AC=989	GT	0|1	0|1	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0
+2	47952231	rs797689	T	C	100	PASS	AC=2956	GT	1|1	1|1	1|0	1|0	0|0	1|1	1|1	1|0	0|0	1|1	1|1	0|1	0|0	0|1	1|0	1|1	0|1	1|1	0|1	1|0	0|1	1|0	0|0	1|0	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=3154	GT	0|1	1|0	1|1	0|0	0|0	1|0	0|0	1|0	1|1	1|0	0|1	1|1	1|1	1|1	0|1	1|0	0|0	1|0	1|0	1|1	0|0	1|1	0|1	1|1	1|0	1|0
+2	52908627	rs350792	T	C	100	PASS	AC=3475	GT	1|0	0|1	1|0	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	1|0	1|1	0|1	0|1	1|0	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2385	GT	1|1	0|1	0|0	1|1	1|0	1|1	1|1	1|0	0|1	0|0	1|0	0|0	0|1	1|1	1|1	1|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|1	1|1	1|1
+2	58161520	rs7596775	T	C	100	PASS	AC=1915	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|1	1|1	1|1	1|1	0|1	0|0	0|0	0|0	1|0	1|1	0|1	0|0	1|1	1|0	0|1	1|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2394	GT	0|1	0|0	1|1	0|1	1|1	1|0	0|1	1|0	0|1	1|1	0|1	1|0	0|0	1|0	1|0	1|1	0|0	1|0	1|1	0|0	1|1	0|0	1|1	0|0	0|1	1|1
+2	64553440	rs919123	A	C	100	PASS	AC=2405	GT	0|1	1|1	0|0	1|0	1|1	0|0	0|0	0|1	0|0	0|1	1|1	0|0	0|0	1|1	0|1	1|1	1|0	1|0	0|0	1|1	1|0	1|1	1|1	0|1	1|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2670	GT	0|1	0|0	1|0	1|0	1|0	0|1	0|0	0|0	1|1	1|1	0|1	0|1	1|1	1|1	0|0	0|0	0|1	1|0	1|0	1|1	0|0	0|1	0|0	0|1	0|1	0|0
+2	69305747	rs4854538	C	T	100	PASS	AC=2203	GT	0|0	0|0	1|0	0|1	1|1	1|0	1|0	1|1	1|1	1|0	1|1	0|1	1|0	0|0	0|0	1|1	1|0	1|1	0|0	1|0	0|1	1|1	1|1	1|0	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=3646	GT	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|0	0|1	0|1	1|0	1|0	1|1	1|1	1|1	1|1	1|0	1|0	1|1	1|0	1|1	0|1	1|1
+2	75351948	rs3771823	A	G	100	PASS	AC=1773	GT	1|1	1|0	0|0	1|1	1|0	1|0	0|1	1|0	1|0	0|0	1|0	0|0	0|1	0|1	0|0	1|0	0|0	1|1	0|0	0|1	0|0	1|0	0|0	1|1	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=2070	GT	1|1	1|1	1|1	0|1	1|1	1|1	1|0	0|1	1|0	0|1	1|1	0|0	0|0	0|0	1|1	0|0	0|1	0|1	1|1	1|0	0|1	0|0	1|1	1|1	1|0	1|0
+2	79915152	rs6719934	C	T	100	PASS	AC=1719	GT	0|0	1|0	1|0	0|0	0|0	1|1	1|1	0|0	0|0	0|1	1|1	1|0	0|0	1|1	0|1	0|0	0|0	0|1	1|0	0|1	1|1	0|0	0|1	1|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=609	GT	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1
+2	86033879	rs10203272	C	A	100	PASS	AC=1090	GT	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	1|0	1|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3271	GT	1|1	1|0	1|1	1|1	0|1	1|1	1|1	0|0	0|1	0|1	0|0	1|1	1|1	1|1	0|0	1|1	0|1	1|1	1|1	0|1	0|0	0|1	0|1	1|1	1|1	0|1
+2	100966244	rs876439	C	T	100	PASS	AC=720	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=2665	GT	0|1	1|0	0|0	1|1	1|0	0|0	0|1	1|1	1|0	0|1	1|0	1|1	1|1	1|1	0|1	0|0	1|0	1|0	0|0	1|1	1|0	1|1	0|0	0|0	0|0	0|1
+2	106104856	rs13006682	T	C	100	PASS	AC=1293	GT	1|1	1|0	0|0	1|1	1|1	0|0	1|0	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|1	1|1	1|0	1|0	0|0	0|0	1|0	1|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1693	GT	0|1	0|0	1|1	0|0	0|1	0|0	1|0	1|1	0|1	1|1	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	1|1	0|0	1|1	0|1	0|0	1|1
+2	112754828	rs3811632	G	T	100	PASS	AC=1522	GT	1|1	0|1	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|1
+0	0	rs0	G	T	100	PASS	AC=2321	GT	1|0	0|0	1|0	0|1	1|0	0|0	1|1	1|0	1|0	1|0	1|1	0|1	0|0	0|0	0|1	1|0	1|1	0|1	1|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0
+2	119465312	rs458340	A	G	100	PASS	AC=3587	GT	1|1	1|1	1|1	0|1	0|0	1|1	0|0	1|1	1|1	1|1	0|0	1|0	1|0	1|1	0|0	1|1	0|1	1|1	1|1	0|1	1|1	1|0	1|0	1|1	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2421	GT	0|1	0|0	0|1	0|0	1|1	0|1	0|0	0|1	0|1	0|1	0|1	1|1	1|0	1|0	1|0	0|0	0|1	0|0	1|0	1|1	0|0	1|1	1|1	1|0	1|0	0|0
+2	124929288	rs11123025	C	T	100	PASS	AC=3433	GT	0|1	1|0	0|1	1|1	0|1	0|1	0|1	1|1	1|0	0|0	1|1	1|0	1|1	1|1	1|0	0|0	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=3731	GT	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1	1|1	1|0	0|1	0|1	1|1	1|1	0|0	1|1	0|1	1|1	1|0	1|1	1|1	1|0	1|1	0|1	1|0
+2	131063169	rs10178745	A	G	100	PASS	AC=3078	GT	0|0	1|1	0|0	0|0	1|0	1|1	1|0	1|1	0|0	0|1	0|1	1|1	1|1	1|1	0|0	1|0	1|0	0|1	0|0	1|1	1|0	0|1	0|1	1|1	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=718	GT	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0
+2	137314240	rs12612204	A	G	100	PASS	AC=2196	GT	1|1	1|0	1|1	0|0	1|0	1|1	0|0	1|1	1|1	1|1	1|1	0|0	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0	1|0	0|0	1|1	0|0	1|0	0|0
+0	0	rs0	G	T	100	PASS	AC=3100	GT	1|1	0|1	1|1	1|0	1|1	1|1	0|1	0|0	1|0	1|0	1|0	1|1	1|1	0|0	1|0	1|1	0|1	1|0	1|0	1|1	1|1	1|0	1|0	0|1	1|1	1|1
+2	142608783	rs10496903	C	A	100	PASS	AC=1164	GT	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3252	GT	1|1	1|1	1|0	1|0	1|1	1|1	1|0	1|1	1|0	1|0	1|0	0|1	1|0	0|1	0|1	1|1	0|1	1|1	1|1	0|0	1|1	0|1	1|1	1|0	1|0	1|0
+2	149568729	rs10171238	C	T	100	PASS	AC=2197	GT	1|1	1|1	0|0	1|1	0|0	1|1	1|0	1|1	0|1	0|0	0|1	1|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	1|1	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1674	GT	1|1	1|1	1|0	0|0	1|0	0|0	1|0	0|0	0|1	1|0	1|0	0|1	0|0	1|1	1|0	1|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0
+2	154903010	rs1519213	C	A	100	PASS	AC=1751	GT	1|0	1|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|1	0|0	1|1	0|1	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	0|0	0|0	1|0	1|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1398	GT	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0
+2	160734722	rs2292387	C	T	100	PASS	AC=1087	GT	0|0	0|0	1|1	0|0	0|1	0|0	0|0	0|1	1|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	0|0
+0	0	rs0	A	C	100	PASS	AC=914	GT	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|0	1|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	1|0	0|0
+2	166963392	rs6752526	G	A	100	PASS	AC=237	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1335	GT	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	0|0	0|0	1|1	0|0	0|0	1|1	1|0	1|0
+2	172127920	rs4667682	C	T	100	PASS	AC=1052	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=1875	GT	1|0	1|0	0|0	1|1	0|1	0|1	0|1	0|1	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|1	0|1
+2	177018726	rs4972504	T	C	100	PASS	AC=4107	GT	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	0|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1848	GT	0|0	1|0	0|0	1|0	0|0	0|1	0|1	0|0	1|0	0|0	0|1	0|1	1|0	1|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|1	0|0	1|1	0|0
+2	182341674	rs155087	T	C	100	PASS	AC=3563	GT	1|1	1|0	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|0	1|1	0|1	1|1	0|0	0|1	1|1	1|1	1|1	1|0	1|0	0|0	0|0	1|1	1|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1317	GT	1|0	0|1	1|0	0|1	0|0	0|1	1|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	1|1	0|0	1|0	0|0	1|1	0|0	1|1	0|0
+2	189414364	rs13034731	C	T	100	PASS	AC=1380	GT	0|1	1|1	0|1	0|1	0|1	0|1	1|1	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|1	0|0	0|0	0|1	0|0	1|0	0|0	0|1	1|0
+0	0	rs0	G	T	100	PASS	AC=3338	GT	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|0	1|0	0|0	0|0	1|0	0|1	0|0	1|0	1|0	1|0	0|0	1|1	0|0	0|1	1|1	1|0	1|0
+2	197256269	rs16850723	A	G	100	PASS	AC=781	GT	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1759	GT	1|1	1|1	0|0	1|1	0|1	1|1	0|1	1|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|1	0|1	1|1	0|0	1|0	0|0	0|0	1|1	0|1	1|0	0|0
+2	204639764	rs4673268	C	A	100	PASS	AC=966	GT	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	1|0	0|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2464	GT	0|1	0|1	1|0	1|0	0|0	1|1	1|1	1|1	0|1	0|0	0|0	1|1	1|1	1|1	1|0	1|1	0|0	1|0	0|0	1|1	0|0	1|1	1|1	0|1	1|0	0|1
+2	209929978	rs10211095	A	G	100	PASS	AC=1968	GT	1|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|1	0|1	1|1	1|1	1|1	0|0	1|0	0|0	0|0	1|0	0|1	1|0	1|1	0|0	0|1	0|0	0|1
+0	0	rs0	T	C	100	PASS	AC=2797	GT	0|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	0|0	0|1	1|1	0|0	0|0	1|0	1|1	1|0	1|1	1|1	1|0	0|0	0|0	0|0	1|1	1|1	1|1	1|0
+2	215778534	rs4672731	C	T	100	PASS	AC=2955	GT	0|1	0|0	0|0	1|0	0|1	1|1	1|1	0|1	0|0	1|1	0|0	1|1	1|1	1|1	1|0	1|0	0|1	0|1	1|1	1|1	0|1	1|1	1|1	0|1	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=1417	GT	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|1	0|1	1|1	1|0	0|0	0|0
+2	220812228	rs6725376	G	T	100	PASS	AC=1569	GT	0|1	1|0	0|1	0|0	1|0	1|0	1|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|1	0|0	1|1	1|0	0|0	1|1	0|0	1|0	0|0	0|1	0|0
+0	0	rs0	G	A	100	PASS	AC=1709	GT	0|1	0|0	0|0	1|0	1|0	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	1|1
+2	225197260	rs11893974	A	C	100	PASS	AC=587	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3682	GT	1|1	1|1	0|1	0|1	0|1	1|1	1|1	1|1	0|0	0|0	1|0	1|1	1|1	1|1	0|1	1|0	1|0	0|1	1|0	1|1	1|1	1|1	1|1	1|0	1|0	0|1
+2	230372314	rs13033846	A	G	100	PASS	AC=1059	GT	0|0	1|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2956	GT	0|0	1|1	1|0	0|1	1|1	1|1	0|1	0|1	1|0	0|0	1|1	0|0	0|0	0|0	1|1	1|1	1|0	1|1	0|1	0|1	0|1	0|0	1|0	0|0	1|1	1|1
+2	235308752	rs2136261	C	T	100	PASS	AC=1872	GT	0|1	1|1	1|1	0|0	1|0	0|0	0|1	1|1	0|1	0|1	0|0	0|0	0|0	1|0	1|1	0|0	0|0	1|1	0|1	0|0	0|1	1|0	0|0	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=724	GT	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+2	239533669	rs1039888	G	A	100	PASS	AC=1501	GT	0|0	0|1	1|0	0|1	0|0	1|1	0|0	0|0	1|1	1|1	1|0	0|0	1|0	0|1	0|1	0|0	0|1	0|0	0|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3034	GT	1|0	1|1	1|0	1|0	1|1	1|0	0|1	1|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	0|1	0|0	1|1	1|0	1|1	1|0	1|1	1|1	0|0	1|1	1|1
+3	1299571	rs3772334	A	C	100	PASS	AC=2445	GT	1|0	0|0	1|1	0|0	1|0	1|1	0|1	1|1	1|0	1|1	1|0	0|1	0|0	0|0	1|0	1|0	0|1	1|1	1|1	0|0	0|0	0|0	1|0	0|0	1|1	1|0
+0	0	rs0	G	T	100	PASS	AC=2113	GT	0|0	1|1	0|0	1|1	0|1	0|1	1|1	0|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	1|0	0|0	1|1	0|0	1|0	1|1	0|0	0|0	0|0
+3	4783407	rs11714054	T	C	100	PASS	AC=687	GT	1|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	1|0
+0	0	rs0	A	C	100	PASS	AC=1416	GT	0|1	0|1	0|0	1|0	0|1	0|1	1|1	0|0	0|0	1|0	0|1	1|0	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0
+3	8802851	rs11131149	G	A	100	PASS	AC=1992	GT	1|0	0|0	1|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|1	1|1	0|1	0|1	1|1	0|0	0|1	0|1	0|1	0|0	0|0	0|0	1|0	0|0	1|0
+0	0	rs0	T	G	100	PASS	AC=3664	GT	0|1	0|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1	1|0	1|0	0|1	1|1	0|0	1|1	1|1	1|1	0|1	0|0	0|0	1|0	1|0
+3	13233385	rs11717784	A	C	100	PASS	AC=1250	GT	0|0	1|1	1|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1	0|0	1|0	0|0	1|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3331	GT	1|1	1|0	1|1	0|0	1|0	1|1	1|0	1|1	0|1	0|1	1|1	1|1	0|1	0|1	1|1	0|0	0|0	0|1	1|1	0|1	1|1	1|1	1|0	0|1	0|1	0|0
+3	18889373	rs7623645	A	G	100	PASS	AC=1588	GT	1|0	1|1	0|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|1	0|1	1|1	0|0	0|1	0|0	0|0	0|0	1|1	0|0	1|0	0|0	1|1	1|0	1|0
+0	0	rs0	C	T	100	PASS	AC=943	GT	0|0	1|0	0|0	1|0	0|1	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+3	24031090	rs9310725	C	T	100	PASS	AC=3898	GT	1|1	1|1	0|0	1|1	1|0	1|1	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	0|0	1|1	1|0	0|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1820	GT	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	1|0	1|1	1|1	1|1	0|0	0|1	0|0	0|0	0|0	0|1	0|1	1|1	1|0	0|1	0|0	1|0
+3	29130678	rs9818278	G	A	100	PASS	AC=1135	GT	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|1	0|0	0|0	0|0	1|0	1|0	0|0	1|0	0|1	0|0	1|0	0|1	1|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3055	GT	0|0	0|0	1|0	0|0	1|0	1|1	1|0	1|1	0|0	1|0	1|0	1|1	0|1	1|1	1|1	1|0	0|0	1|0	1|1	1|1	0|0	1|1	1|1	1|0	0|0	1|0
+3	33926125	rs7626857	G	A	100	PASS	AC=3379	GT	0|0	0|1	0|1	1|0	0|0	1|0	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|0	0|0	0|1	1|0	0|1	1|1	1|1	1|1	1|0	1|0	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=3718	GT	1|1	1|1	1|0	1|1	1|1	0|1	1|1	1|1	1|0	0|1	1|1	0|0	0|0	0|1	1|1	0|1	1|1	1|0	0|0	1|1	0|1	0|0	1|1	1|1	1|0	1|1
+3	39489619	rs630934	C	A	100	PASS	AC=2139	GT	0|0	0|1	1|1	1|0	0|0	1|1	1|1	1|1	0|1	1|1	1|0	0|1	0|0	0|0	1|0	1|0	1|1	0|1	0|0	0|1	1|1	0|0	0|1	1|0	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2355	GT	1|1	1|0	1|1	0|0	0|1	1|1	1|0	1|1	0|0	0|0	1|1	1|0	1|1	1|1	0|0	0|0	1|0	0|0	0|0	1|0	1|0	1|1	0|0	0|0	0|0	1|0
+3	45822437	rs17078339	A	G	100	PASS	AC=1751	GT	0|1	0|1	1|1	0|1	1|0	1|1	1|1	1|0	0|1	1|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=765	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0
+3	54645869	rs573279	T	C	100	PASS	AC=1655	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|1	0|0	0|1	0|0	0|1	0|1	1|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=3924	GT	1|1	1|0	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|0	1|0	0|0
+3	59449029	rs2366696	C	T	100	PASS	AC=1454	GT	0|0	1|0	1|0	0|0	1|0	0|0	1|0	1|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|1	0|1	0|0	1|0	1|0	0|0
+0	0	rs0	A	C	100	PASS	AC=503	GT	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+3	63088792	rs921160	A	G	100	PASS	AC=3279	GT	1|1	1|1	1|1	1|0	1|1	0|0	0|0	1|1	1|0	1|0	0|0	1|1	1|1	1|0	1|1	1|1	1|0	1|0	1|1	1|1	1|0	1|1	1|1	0|0	1|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1136	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0
+3	67732386	rs10510966	T	C	100	PASS	AC=1338	GT	1|1	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3222	GT	0|1	0|1	0|1	0|0	1|1	0|1	0|1	1|0	0|1	1|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|1	1|1	1|0	0|1	1|1	0|0	0|1	0|1	1|1
+3	72227587	rs9829428	T	C	100	PASS	AC=773	GT	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=1853	GT	0|0	0|1	1|0	1|0	0|0	0|0	0|0	1|1	1|1	0|1	0|1	0|0	1|0	0|0	1|1	0|1	1|0	1|1	1|0	1|1	0|0	0|0	1|1	0|0	0|1	0|0
+3	77509454	rs2166802	C	A	100	PASS	AC=1451	GT	0|1	0|1	1|1	1|1	0|1	1|0	0|1	1|1	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|1	1|0	0|0	0|1	0|0	0|1	0|0	0|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1856	GT	0|0	0|1	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|1
+3	85663849	rs6779752	G	A	100	PASS	AC=2689	GT	1|0	1|0	1|1	1|0	0|1	1|1	1|0	0|0	1|1	1|1	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|1	1|1	0|1	1|1	1|0	1|1	1|0	1|1	1|1
+0	0	rs0	C	A	100	PASS	AC=1569	GT	1|1	0|0	1|1	1|1	1|0	0|0	1|1	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|1	0|1	1|0	0|0
+3	97411617	rs301923	A	G	100	PASS	AC=1296	GT	0|0	0|1	1|0	0|0	0|1	1|1	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	1|0	0|0	1|0	0|0	0|0	0|1	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2261	GT	1|0	1|0	1|1	0|1	0|0	1|0	1|1	0|0	0|1	0|1	1|0	1|1	0|0	1|0	1|1	0|0	0|0	0|0	1|0	1|0	0|1	1|0	0|0	0|1	0|0	1|0
+3	104530166	rs3996202	C	T	100	PASS	AC=2371	GT	0|1	1|1	1|0	0|1	1|1	0|0	0|1	0|0	0|0	1|1	0|0	1|1	1|1	1|1	1|0	0|0	1|0	1|1	0|0	1|1	0|0	1|0	0|0	1|1	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=2615	GT	1|1	1|0	0|0	1|0	1|0	1|1	1|1	0|0	0|1	0|0	1|1	0|0	1|1	1|1	0|1	1|0	1|1	1|1	0|0	1|1	0|1	1|0	1|0	1|1	1|0	0|1
+3	109547714	rs677533	G	A	100	PASS	AC=1177	GT	0|0	1|0	1|0	1|1	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	1|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1620	GT	1|1	1|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|1	0|1	1|1	0|0	0|0	0|1	0|1	1|0	0|1	1|1
+3	115108682	rs12637405	C	T	100	PASS	AC=479	GT	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2253	GT	1|0	0|0	1|0	1|1	1|1	0|0	0|0	1|1	0|0	0|0	0|0	1|1	0|1	1|1	0|1	0|1	1|0	1|1	0|0	1|0	0|0	1|1	0|0	0|0	1|1	0|0
+3	120028644	rs6803846	G	A	100	PASS	AC=993	GT	0|1	1|1	0|0	1|0	0|1	0|0	1|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1366	GT	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	0|0	1|1	0|1	1|1	0|0	1|0	0|1
+3	125856695	rs2305230	C	A	100	PASS	AC=1226	GT	1|0	0|0	1|0	1|0	0|0	0|0	0|0	1|0	1|0	1|0	0|0	1|1	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	1|0	0|0	0|0
+0	0	rs0	C	A	100	PASS	AC=2804	GT	1|1	1|1	1|1	0|0	1|0	1|1	1|1	1|0	0|1	1|1	1|1	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|1	0|0	1|0	0|0	1|1	1|1	1|0	1|1
+3	131980800	rs4854895	T	G	100	PASS	AC=2643	GT	1|0	0|1	1|1	0|1	0|0	0|0	1|0	0|1	0|0	1|1	0|1	0|0	1|0	0|1	0|0	0|1	0|1	0|1	0|1	0|1	1|0	1|1	1|0	1|1	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=3484	GT	0|1	1|1	0|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1	1|0	0|1	0|0	0|0	1|1	1|1	1|1	1|0	1|1	1|0	0|1	0|1	1|0	1|1	1|1	1|1
+3	137235880	rs9815948	G	A	100	PASS	AC=2715	GT	0|1	0|1	0|1	0|1	0|1	0|0	0|1	1|1	1|1	0|1	0|0	1|1	0|0	1|1	1|0	0|1	0|1	1|1	1|0	0|0	1|1	0|1	0|1	1|0	0|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1656	GT	0|0	0|0	1|0	1|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	0|1	1|0	0|0	0|1	0|0	1|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0
+3	142902953	rs4371486	T	C	100	PASS	AC=3855	GT	0|1	0|1	1|1	1|1	0|1	0|1	0|1	1|1	0|0	1|0	1|1	1|1	1|1	1|1	0|0	1|0	1|0	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|0
+0	0	rs0	A	C	100	PASS	AC=1444	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	1|0	0|0	0|1	0|1	1|1	0|0	1|0	0|0	0|0	0|0	1|1	0|1	1|1	1|0	0|0	0|0	1|0
+3	148694336	rs4681473	G	A	100	PASS	AC=4053	GT	1|1	0|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	0|0	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1157	GT	1|0	0|0	0|0	0|1	0|1	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	0|1
+3	153776149	rs13079099	A	G	100	PASS	AC=952	GT	0|0	0|0	1|0	0|0	1|1	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	0|1	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2711	GT	1|0	0|0	0|0	0|0	1|0	0|0	1|0	1|1	0|1	1|1	1|1	0|1	1|0	1|0	0|0	1|1	0|0	1|0	1|1	0|1	0|0	1|1	1|0	0|1	0|1	0|1
+3	160946769	rs6794601	C	T	100	PASS	AC=3590	GT	1|1	0|0	1|1	1|0	0|0	1|1	0|0	1|1	1|0	1|1	1|0	0|1	1|1	1|0	1|1	1|1	0|1	0|1	1|1	0|1	1|1	1|0	1|1	0|0	0|0	0|1
+0	0	rs0	G	T	100	PASS	AC=1205	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	0|0	0|0	1|0	1|0	0|0	1|1	0|0	1|1	0|1	0|0	0|0	0|0
+3	168136690	rs7614661	C	T	100	PASS	AC=2271	GT	1|1	0|1	0|1	0|0	0|0	0|1	0|0	1|0	0|1	0|0	1|0	1|1	0|1	1|1	0|1	0|1	0|0	0|1	1|0	1|1	0|0	1|1	1|0	0|0	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=590	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0
+3	173402170	rs1393450	T	G	100	PASS	AC=1153	GT	1|1	0|1	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	1|0	0|1	0|0	0|0	1|0	1|1	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=1627	GT	0|0	1|0	0|1	0|1	1|1	0|1	0|0	0|1	0|0	1|0	1|0	0|1	0|1	0|1	0|1	0|0	0|0	1|1	0|1	1|1	0|0	1|1	1|1	0|1	0|0	0|1
+3	178127824	rs1812958	T	G	100	PASS	AC=1392	GT	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	1|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	0|1	0|0	0|0	0|0
+0	0	rs0	C	A	100	PASS	AC=690	GT	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|0	0|0
+3	184322950	rs10937179	T	C	100	PASS	AC=3851	GT	0|0	0|0	1|0	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|0	1|1	1|0	1|1	1|0	1|1	1|0	1|1
+0	0	rs0	G	A	100	PASS	AC=1678	GT	0|1	0|0	0|0	1|0	1|0	0|1	1|0	1|1	0|1	1|1	0|0	1|1	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	1|0	0|0	1|1	1|0
+3	188639324	rs4687006	C	T	100	PASS	AC=2856	GT	0|1	1|1	0|1	1|1	0|1	1|0	0|1	1|1	0|1	1|0	1|0	0|0	0|0	0|0	1|1	1|1	0|1	1|0	1|1	0|0	1|1	0|0	0|0	1|1	0|1	1|0
+0	0	rs0	C	A	100	PASS	AC=919	GT	0|0	0|0	0|0	1|1	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|1	0|1	1|1	0|0	0|1	0|0	0|1	0|1	0|0	1|0	1|0	0|0
+3	193066869	rs1980263	G	A	100	PASS	AC=1887	GT	0|1	0|1	1|1	1|1	1|0	1|0	0|0	1|1	0|0	0|0	1|0	0|0	0|1	1|0	1|0	0|1	0|1	0|1	1|0	0|0	0|0	1|0	1|1	1|1	0|1	1|0
+0	0	rs0	G	A	100	PASS	AC=1035	GT	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0
+4	1078187	rs1670533	G	A	100	PASS	AC=3873	GT	0|0	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3863	GT	1|1	1|0	1|0	0|1	1|1	0|0	1|1	0|1	1|1	0|1	0|1	1|1	1|1	1|1	0|1	1|0	1|0	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1
+4	6213622	rs4274923	G	A	100	PASS	AC=3099	GT	1|1	1|1	1|1	0|1	0|1	1|1	1|0	0|1	1|1	0|1	1|1	1|0	0|0	1|1	0|1	0|0	1|0	1|1	1|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0
+0	0	rs0	A	C	100	PASS	AC=2552	GT	0|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	0|1	1|0	0|1	1|1	0|0	0|1	0|0	0|1	1|0	1|0	1|1	0|1	1|1	1|0	0|0	0|1
+4	11179846	rs1399334	T	C	100	PASS	AC=3085	GT	1|1	0|1	0|1	0|0	1|1	1|1	0|1	0|1	1|0	1|1	0|1	1|0	1|1	1|1	0|0	1|1	0|0	1|0	0|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1
+0	0	rs0	C	A	100	PASS	AC=2753	GT	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|1	0|0	0|0	1|1	0|1	1|1	1|1	1|0	1|1	0|1	0|1	0|0	1|1	0|0	1|0	1|0	1|1	0|0	1|1
+4	15943140	rs10939642	G	A	100	PASS	AC=2544	GT	1|0	1|0	1|1	1|1	1|0	1|0	1|1	0|0	1|1	1|0	1|0	1|0	1|0	1|0	1|0	0|1	0|1	1|1	1|1	0|0	0|1	0|0	1|1	1|0	0|0	1|0
+0	0	rs0	C	T	100	PASS	AC=1291	GT	0|0	0|0	0|0	1|1	0|1	0|0	0|1	0|1	0|0	1|0	1|0	0|0	0|1	0|0	1|0	0|1	1|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0
+4	21255650	rs1425333	A	G	100	PASS	AC=1665	GT	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	1|1	1|1	0|0	0|1	0|1	0|0	0|0	1|1	0|0	1|1	0|1	0|0	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=1613	GT	1|0	1|1	0|0	1|1	1|1	1|1	0|1	0|0	0|0	0|1	0|0	1|0	1|1	0|0	1|1	1|1	1|1	0|1	0|0	0|1	1|0	0|0	1|1	1|1	0|0	0|1
+4	25771973	rs6448402	C	T	100	PASS	AC=2702	GT	0|0	0|1	1|0	0|1	1|0	0|0	0|1	0|1	0|0	0|0	0|1	1|1	1|1	1|1	1|1	1|1	0|0	0|1	0|0	1|1	1|1	1|1	0|0	0|1	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=1149	GT	1|0	0|0	1|0	0|0	0|0	0|1	1|0	1|1	0|0	1|1	0|1	0|0	0|0	0|0	1|0	0|1	1|0	0|1	1|0	0|0	0|1	0|0	0|0	0|1	0|1	0|0
+4	30987395	rs7696734	C	T	100	PASS	AC=543	GT	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=560	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+4	37569966	rs9685958	G	A	100	PASS	AC=800	GT	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1725	GT	0|0	1|1	1|0	1|0	0|0	1|1	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|1	1|1	1|1	1|1	0|1	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0
+4	42125621	rs4132888	A	G	100	PASS	AC=1970	GT	1|1	0|1	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1	1|1	1|1	0|1	0|0	0|0	0|1	0|0	1|1	0|0	1|1	0|0	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=897	GT	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0
+4	48914936	rs2085292	G	A	100	PASS	AC=2681	GT	0|0	1|1	1|0	0|0	1|1	0|0	1|0	0|0	0|0	1|0	0|0	1|1	1|1	1|0	0|0	1|1	1|1	0|0	1|0	1|1	0|0	1|1	0|0	0|0	0|1	1|1
+0	0	rs0	T	G	100	PASS	AC=1717	GT	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	1|1	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|1	1|0	1|0	1|0	1|1
+4	58272082	rs1012188	T	C	100	PASS	AC=3431	GT	0|1	1|0	0|1	0|0	0|1	0|0	0|1	1|0	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|1	1|1	1|1	0|0	0|0	1|1	0|1
+0	0	rs0	G	A	100	PASS	AC=953	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	1|0	1|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	1|0	0|0
+4	65346967	rs2086731	C	T	100	PASS	AC=2190	GT	0|1	1|0	0|1	1|0	0|1	0|1	1|1	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	1|1	0|1	0|1	0|0	1|0	0|1	0|1	0|1
+0	0	rs0	A	G	100	PASS	AC=2953	GT	1|0	1|1	1|1	1|0	1|1	1|0	1|0	0|1	1|0	1|1	0|0	0|1	1|0	0|0	1|0	0|1	1|1	1|0	1|0	0|0	0|1	0|1	0|0	1|1	1|1	1|0
+4	72709580	rs7681566	G	A	100	PASS	AC=1091	GT	0|0	0|1	1|1	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	1|1	0|0	0|0
+0	0	rs0	G	T	100	PASS	AC=2627	GT	0|0	0|1	0|1	0|0	1|1	0|1	0|0	1|1	0|1	0|0	1|1	1|1	1|1	1|1	0|0	0|0	0|0	1|0	0|0	1|1	1|1	1|0	1|1	1|0	1|0	1|0
+4	79108589	rs11098085	C	A	100	PASS	AC=2566	GT	1|1	1|1	1|1	1|0	0|0	0|0	1|1	1|1	0|0	0|1	1|1	0|0	0|0	0|0	1|0	1|1	1|1	0|0	1|1	1|1	1|1	0|0	0|1	0|0	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1725	GT	1|0	1|0	0|0	0|0	1|1	0|0	0|1	1|0	0|0	0|0	0|0	1|0	1|0	1|1	1|0	0|0	0|0	1|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	1|1
+4	84939404	rs13149123	C	T	100	PASS	AC=2436	GT	1|1	1|1	0|0	0|1	0|1	0|1	1|1	0|1	0|0	0|1	0|1	0|0	0|0	0|0	1|0	0|1	1|1	1|1	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=1482	GT	1|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	1|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|1	0|1
+4	90527344	rs6850389	G	A	100	PASS	AC=1092	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1720	GT	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|1	0|0	0|1	1|1	1|0	1|1	1|1	1|1	0|1	0|0	0|1	0|0	0|1	0|0	0|0	1|0	1|0	0|1	0|1
+4	96581831	rs6841996	G	T	100	PASS	AC=1237	GT	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|1	1|1	1|1	0|1	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	G	T	100	PASS	AC=3610	GT	1|0	1|1	1|1	0|1	0|0	1|0	0|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|0	0|0	0|1
+4	102783351	rs4572884	C	T	100	PASS	AC=2098	GT	1|1	0|0	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	1|1	1|1	1|1	0|1	1|1	0|0	1|1	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1233	GT	0|0	0|1	0|1	0|0	0|0	0|0	0|1	1|0	1|0	0|0	1|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0
+4	109781788	rs965935	A	C	100	PASS	AC=3079	GT	1|1	0|0	1|1	0|0	1|0	1|0	1|1	1|1	1|1	1|1	1|1	0|0	0|1	1|0	1|1	0|1	1|1	1|0	1|1	0|0	1|1	0|0	1|1	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=2900	GT	0|1	0|0	1|1	0|1	0|1	0|0	1|0	1|1	1|0	0|1	0|1	1|1	1|1	0|1	1|0	0|1	1|0	0|1	0|1	1|1	1|0	1|1	1|0	1|1	1|0	0|1
+4	115856995	rs17679264	T	C	100	PASS	AC=773	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=2206	GT	0|0	1|0	0|1	0|0	0|0	0|0	0|1	1|1	1|0	0|0	1|1	0|0	0|0	0|1	1|0	0|0	0|0	1|0	0|0	1|0	1|1	0|1	0|0	1|1	1|0	0|0
+4	122624065	rs7680787	T	C	100	PASS	AC=1461	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|1	0|1	0|0	0|1	0|1	0|0	1|1	0|1	1|0	1|0	1|1	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=1777	GT	0|1	1|0	1|0	1|0	1|0	0|1	0|1	0|1	0|0	0|0	1|0	0|0	0|0	1|1	1|0	0|0	0|1	0|1	1|0	0|0	0|0	1|0	0|1	1|0	1|1	0|0
+4	129483230	rs6858471	T	C	100	PASS	AC=1255	GT	1|0	0|1	0|0	0|1	0|1	0|0	1|0	1|0	0|0	0|0	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	1|0	1|1
+0	0	rs0	T	C	100	PASS	AC=750	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+4	136934240	rs4552531	T	G	100	PASS	AC=1544	GT	0|1	0|1	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=3630	GT	0|0	0|0	0|1	1|0	0|0	0|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|0	1|0	1|0	1|1	1|1	1|1	1|1	0|1	1|0	1|1
+4	141995467	rs2321859	A	G	100	PASS	AC=3332	GT	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|0	1|1	1|0	1|0	1|1	0|1	0|1	1|0	1|0	1|0	1|1	0|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=1334	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|1	0|1	0|0	1|0	0|0	0|0	0|0	0|1	0|1	0|1	0|0	0|0	0|0
+4	148928372	rs12643170	G	A	100	PASS	AC=2302	GT	0|1	1|0	0|1	0|0	0|0	1|1	1|1	0|0	0|1	1|1	1|1	1|0	0|1	1|0	1|1	1|1	0|0	1|0	0|1	0|0	1|1	0|0	1|0	1|1	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=1725	GT	1|0	0|1	1|0	0|1	1|1	0|1	0|0	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	1|1	0|1	0|1
+4	155062069	rs10028852	A	G	100	PASS	AC=3925	GT	0|1	1|1	1|0	1|1	1|1	1|1	1|0	1|0	0|0	1|1	1|0	0|0	1|0	0|1	1|1	1|1	1|1	1|0	1|1	0|0	1|1	0|1	1|1	1|1	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=1337	GT	1|0	1|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|1	1|1	0|0
+4	160715001	rs1457806	T	C	100	PASS	AC=3993	GT	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|0	0|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|0	1|0	1|1
+0	0	rs0	G	A	100	PASS	AC=2897	GT	1|1	0|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0	1|1	1|0	1|1	0|1	1|1	0|0	1|1	1|0	1|0	0|0	0|1	0|1	1|1	0|0	0|1	1|1	0|0
+4	166052741	rs4691153	A	G	100	PASS	AC=676	GT	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1
+0	0	rs0	C	T	100	PASS	AC=3086	GT	1|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|1	0|1	0|0	1|1	0|1	1|0	1|1	0|1	0|1	1|1	0|1	1|0	1|1	1|1	0|1	0|1
+4	171418411	rs2020059	A	C	100	PASS	AC=3061	GT	1|1	0|0	0|1	0|1	0|0	1|0	0|1	1|0	1|1	0|1	1|0	0|0	1|0	0|1	1|0	0|1	1|1	0|1	1|1	0|0	1|1	1|1	0|0	0|0	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=1262	GT	0|0	0|0	0|1	0|1	0|0	0|0	1|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0
+4	176754093	rs11133116	C	T	100	PASS	AC=2617	GT	0|0	0|1	1|0	1|0	0|1	1|1	0|1	1|0	0|1	1|0	1|0	0|1	0|0	1|0	1|1	1|1	1|0	0|1	0|1	0|1	1|1	1|0	1|1	1|1	1|1	1|0
+0	0	rs0	A	G	100	PASS	AC=828	GT	0|0	0|0	0|0	1|0	0|0	0|1	0|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+4	181471913	rs6851088	G	A	100	PASS	AC=1388	GT	0|0	1|1	0|0	0|1	0|0	1|1	0|0	0|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	1|0	0|1	0|0	0|1	0|1	1|0
+0	0	rs0	T	C	100	PASS	AC=2907	GT	0|0	1|0	1|1	1|0	0|0	0|1	0|0	1|1	1|0	1|1	1|1	1|0	1|0	0|0	1|1	0|0	1|1	0|0	1|0	1|1	1|1	1|0	1|1	1|1	0|1	1|1
+4	185710859	rs7681334	G	A	100	PASS	AC=3022	GT	1|1	0|0	1|1	1|1	0|0	0|1	1|1	1|1	1|1	1|1	1|0	1|0	1|0	1|0	1|1	1|0	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=2084	GT	0|1	0|1	1|0	1|0	1|1	0|0	0|1	0|1	0|0	0|0	0|0	1|1	1|0	1|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	0|1	1|0
+4	189525837	rs12501064	G	A	100	PASS	AC=4310	GT	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|0	0|0	1|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=617	GT	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+5	3465678	rs396398	C	A	100	PASS	AC=3750	GT	1|0	1|1	1|1	1|1	1|0	1|0	1|1	1|1	0|1	1|1	1|1	0|0	1|0	0|1	1|0	1|1	1|1	1|0	1|1	1|1	0|1	1|0	1|1	1|0	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=3572	GT	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	0|1	1|1	1|1	0|0	1|0	0|1	1|1	1|1	1|0	0|1	1|0	0|0	0|1	0|1	1|1	1|1	0|0	1|1
+5	7563591	rs7717535	C	T	100	PASS	AC=874	GT	0|0	1|0	1|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=2186	GT	1|0	0|0	1|0	1|1	0|1	0|1	0|1	0|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|0	0|0	0|0	1|0	1|1	1|1	1|1
+5	11720017	rs6861373	C	T	100	PASS	AC=1906	GT	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|1	0|0	0|1	1|1	1|1	0|1	1|1	1|0	0|0	0|0	0|0	1|1	1|1	1|0	0|0	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2545	GT	1|1	1|1	1|1	0|1	0|1	0|0	1|0	1|0	1|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|1	1|1	0|1	0|1	1|1
+5	17791844	rs1822399	T	G	100	PASS	AC=3254	GT	1|0	0|1	0|1	0|1	1|1	1|1	1|1	1|0	0|0	1|1	1|0	1|1	1|0	0|1	1|1	1|0	0|0	1|0	1|0	1|0	0|1	1|1	1|0	0|1	0|1	1|1
+0	0	rs0	C	A	100	PASS	AC=2307	GT	0|0	0|0	1|0	1|1	0|0	1|0	1|0	1|1	0|1	1|1	1|1	0|0	0|1	0|0	1|1	0|1	1|0	1|0	1|0	0|0	0|1	1|0	0|1	0|1	1|0	0|0
+5	24737095	rs10039614	T	G	100	PASS	AC=1024	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	1|0	0|0	0|1	1|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1972	GT	0|0	1|0	1|1	1|0	0|0	0|1	0|0	1|1	1|0	1|1	0|1	0|1	0|0	0|1	0|0	0|1	1|1	1|0	1|0	0|1	0|1	0|0	1|1	0|0	0|0	1|0
+5	30787271	rs9283723	T	G	100	PASS	AC=965	GT	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|1	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1183	GT	0|1	0|0	1|0	0|0	0|1	0|0	0|1	0|1	0|0	1|1	0|1	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+5	35185826	rs13436213	C	T	100	PASS	AC=1393	GT	0|1	1|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=2370	GT	1|0	1|1	1|1	1|1	1|0	0|0	1|0	1|1	0|0	0|1	0|0	0|0	1|1	1|1	1|1	0|0	0|0	1|1	0|0	0|1	0|0	0|1	1|0	1|1	1|1	0|1
+5	40607910	rs13163402	T	C	100	PASS	AC=2728	GT	1|1	0|1	1|1	1|1	1|0	1|0	1|1	1|1	1|0	0|0	0|1	1|0	1|0	1|1	1|1	0|0	0|1	0|1	1|0	1|0	0|0	1|0	1|1	1|0	1|1	1|1
+0	0	rs0	A	C	100	PASS	AC=3630	GT	1|1	1|1	1|0	0|1	0|1	1|1	1|0	1|0	1|1	1|1	0|1	1|1	0|1	1|1	1|0	0|0	1|1	1|1	0|0	1|0	0|1	1|0	1|0	1|1	1|1	1|1
+5	52613555	rs408393	A	G	100	PASS	AC=3844	GT	1|0	1|1	1|1	1|1	0|1	1|1	0|1	1|0	1|0	0|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|1	1|1	1|0	1|1	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=3514	GT	0|0	0|1	1|1	1|1	1|0	0|0	1|0	0|1	0|1	0|1	0|1	1|0	1|1	1|1	1|0	1|1	1|0	0|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1
+5	57578037	rs43217	A	G	100	PASS	AC=3734	GT	0|0	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|0	1|0	1|0	1|0	0|1	0|0	1|1	1|1	1|0	1|1	1|0	0|1	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=3650	GT	0|1	1|1	0|1	0|0	1|0	1|1	1|1	1|1	1|1	0|0	0|0	1|1	1|1	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1
+5	63932450	rs2366778	C	T	100	PASS	AC=4095	GT	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|0	0|1	1|1	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1470	GT	0|0	1|0	1|1	0|1	0|0	0|1	0|0	1|1	0|0	1|1	0|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0	1|1	0|1	0|0	1|0	0|0	0|1	0|1	1|0
+5	71295157	rs13187253	C	T	100	PASS	AC=1765	GT	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|1	1|1	1|0	1|1	1|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	1|0	0|0	1|0	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=3111	GT	1|0	0|1	0|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	0|0	1|1	1|0	1|0	1|1	1|0	0|1	0|1	1|0	0|1	1|1	1|1	1|1	1|1	0|1	0|0
+5	76303398	rs6898403	T	C	100	PASS	AC=2451	GT	0|0	0|0	1|0	1|0	1|0	0|0	1|0	1|0	0|1	0|0	0|1	1|0	1|1	1|0	0|1	0|1	1|1	0|0	0|0	0|1	0|0	1|0	0|1	0|1	0|0	0|1
+0	0	rs0	T	C	100	PASS	AC=3404	GT	0|0	1|1	0|1	0|0	0|1	0|0	1|0	1|0	1|1	0|0	0|1	1|1	1|1	0|1	1|1	1|0	0|0	1|0	1|0	1|1	1|1	1|0	1|0	0|1	0|0	1|0
+5	80883110	rs2917542	C	T	100	PASS	AC=3633	GT	1|0	0|0	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|0	1|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1
+0	0	rs0	T	G	100	PASS	AC=1317	GT	1|0	1|0	0|1	0|1	0|1	0|0	0|1	0|1	0|0	0|0	1|1	1|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0
+5	88021527	rs34320	T	G	100	PASS	AC=2219	GT	0|0	1|0	0|1	1|1	1|0	1|1	0|1	0|1	1|1	0|1	1|0	0|0	0|0	0|0	1|1	1|0	0|1	0|1	1|1	1|0	1|1	0|0	0|0	0|1	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=1454	GT	0|0	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	1|1	0|1	1|1	0|0	0|0	0|1	0|0	0|0	1|1	0|0	1|1	1|0	0|0	0|0	0|0
+5	95008959	rs461873	A	G	100	PASS	AC=3143	GT	1|1	1|0	0|0	0|0	1|1	1|1	1|0	0|1	1|0	0|0	1|0	1|1	1|1	1|1	1|1	0|1	0|0	1|0	0|0	1|1	1|1	1|1	1|0	1|0	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=3569	GT	0|1	0|1	0|1	1|1	0|1	1|1	0|1	1|1	1|0	0|1	1|1	1|0	1|1	1|0	0|0	0|1	0|1	0|1	1|0	0|1	1|1	0|1	1|0	0|1	1|1	1|1
+5	103086147	rs2161495	G	A	100	PASS	AC=1565	GT	0|1	0|1	1|1	1|0	1|0	0|0	0|0	0|1	1|0	1|0	0|0	1|0	0|0	0|1	0|1	1|0	0|1	0|0	1|1	0|0	1|1	0|0	0|0	0|1	0|1	0|0
+0	0	rs0	C	A	100	PASS	AC=3768	GT	1|1	0|0	1|1	1|0	1|1	1|0	0|1	1|1	1|1	1|1	0|0	1|1	0|1	0|1	1|1	1|1	0|1	1|1	1|1	0|0	1|1	0|1	1|1	0|0	1|0	1|1
+5	108843934	rs7448843	A	C	100	PASS	AC=1773	GT	0|1	0|0	1|0	0|0	0|1	1|0	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|0	1|0	0|0	1|1	0|1	0|0	0|0	1|1	0|0	0|0	1|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2983	GT	1|1	1|1	1|1	1|1	0|1	0|1	1|0	0|0	1|0	0|1	0|0	1|1	1|1	0|0	1|0	0|0	0|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1	0|1	1|0
+5	114539183	rs3763104	T	C	100	PASS	AC=1179	GT	0|0	1|0	1|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	1|1	0|1	1|0	0|0	0|1	0|0	0|0	1|1
+0	0	rs0	A	C	100	PASS	AC=3163	GT	0|0	1|1	1|1	1|0	0|0	0|1	1|0	1|0	0|1	0|1	1|0	1|1	1|1	1|1	1|0	1|0	1|0	1|0	0|1	1|1	1|0	1|0	1|1	1|1	0|0	1|0
+5	120066820	rs1449148	A	G	100	PASS	AC=994	GT	1|1	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	1|0	1|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2215	GT	0|1	0|0	0|0	1|0	1|0	1|1	1|0	0|0	1|0	0|0	0|1	1|1	1|1	0|0	0|1	1|1	0|1	1|1	1|1	1|1	1|0	0|0	1|0	0|1	1|1	0|0
+5	125663367	rs7733611	C	T	100	PASS	AC=3059	GT	1|1	0|1	1|1	0|1	0|1	0|0	0|1	0|0	0|1	0|1	1|0	1|1	1|1	1|1	1|1	0|0	0|0	1|0	1|1	1|0	0|1	0|1	0|1	1|0	1|0	1|1
+0	0	rs0	T	C	100	PASS	AC=1265	GT	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	1|1	1|0	0|0	0|0	1|0	0|1	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0
+5	132111043	rs30523	G	A	100	PASS	AC=2465	GT	0|0	0|0	1|1	0|0	0|1	1|0	0|0	1|1	1|1	1|0	0|0	1|1	1|1	1|1	0|1	0|0	0|0	0|0	1|1	1|1	1|0	1|1	0|1	0|0	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3764	GT	0|1	1|1	1|1	1|1	1|0	0|1	0|1	1|1	1|1	1|0	1|1	1|1	0|0	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	0|1	0|1	1|1	1|1
+5	137586330	rs10515498	C	T	100	PASS	AC=1107	GT	0|1	1|0	1|0	0|0	0|1	0|0	0|0	1|0	1|1	1|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=3938	GT	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	0|0	0|1	1|1	0|1	1|1	1|0	1|1	1|1	1|0
+5	143024627	rs12657648	G	A	100	PASS	AC=1327	GT	0|0	1|1	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	1|0	0|0	0|1	0|1	0|0	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1188	GT	0|1	0|0	0|1	0|0	1|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0
+5	148248818	rs9325124	G	A	100	PASS	AC=2604	GT	0|1	1|1	0|0	1|1	0|0	1|1	0|1	1|0	0|0	1|0	1|1	1|0	1|1	0|0	0|0	0|1	0|0	1|1	1|1	0|1	1|1	0|1	0|1	1|0	0|0	0|0
+0	0	rs0	A	C	100	PASS	AC=4321	GT	1|1	1|1	1|1	0|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|0	1|1	0|0	1|0	1|1	0|1	1|1	1|0	1|1	1|0	0|1	1|1
+5	152901395	rs17588123	T	C	100	PASS	AC=912	GT	0|1	1|0	0|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	1|1	0|1	1|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=4065	GT	0|0	1|1	1|1	0|1	1|1	1|1	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	0|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|0	1|0	1|1
+5	158506415	rs10515789	T	G	100	PASS	AC=813	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	1|0	0|0	0|0	1|1
+0	0	rs0	T	G	100	PASS	AC=2441	GT	0|0	1|0	1|0	0|0	1|1	0|0	0|1	0|1	1|1	0|0	1|1	0|0	0|1	0|0	1|0	1|1	1|1	1|0	1|0	1|0	1|1	1|0	0|0	0|1	1|1	1|1
+5	163867010	rs4130719	G	A	100	PASS	AC=1587	GT	0|0	0|0	0|0	0|1	0|0	0|0	1|1	1|0	0|0	1|1	0|0	1|0	1|0	1|1	0|0	1|0	0|1	0|0	0|0	0|1	0|0	1|0	1|1	0|0	1|0	0|0
+0	0	rs0	T	C	100	PASS	AC=2788	GT	1|0	1|0	1|0	0|0	0|1	0|0	1|0	0|0	1|1	0|0	1|1	1|1	1|1	1|1	0|1	1|0	0|1	1|1	0|1	1|1	0|0	1|1	1|0	1|0	1|1	1|0
+5	168423907	rs11747642	T	C	100	PASS	AC=1582	GT	0|1	0|0	0|0	1|0	1|1	1|0	1|0	0|1	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|1	1|1	0|0	0|1	0|1	0|0	1|0	1|0	1|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3733	GT	1|1	1|0	0|0	1|1	0|1	1|0	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1
+5	172856628	rs6889586	T	C	100	PASS	AC=845	GT	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	G	100	PASS	AC=2821	GT	0|1	1|1	0|0	0|0	1|1	0|1	0|0	1|0	0|0	0|0	0|0	1|1	1|1	1|0	0|0	1|0	1|1	1|0	0|0	1|1	0|0	0|0	1|0	0|1	0|0	1|0
+5	177991258	rs185493	C	T	100	PASS	AC=3429	GT	1|0	1|0	1|1	1|0	1|1	0|0	0|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	0|0	0|0	0|0	1|1
+0	0	rs0	A	G	100	PASS	AC=2863	GT	0|1	0|0	0|1	1|0	0|0	0|1	1|1	0|0	0|1	0|0	0|1	0|1	1|1	0|0	1|1	1|1	0|1	0|0	1|1	1|1	0|1	0|0	0|1	1|1	1|0	0|1
+6	1825466	rs9328071	T	G	100	PASS	AC=1412	GT	0|1	0|0	1|1	0|1	1|0	1|1	0|1	1|0	1|0	1|0	0|0	0|0	0|1	1|0	1|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	1|0	0|1
+0	0	rs0	C	T	100	PASS	AC=895	GT	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+6	6054401	rs13210587	A	G	100	PASS	AC=1351	GT	1|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	A	C	100	PASS	AC=2933	GT	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|0	1|1	1|0	1|1	1|0	0|1	1|0	0|0	0|0	1|0	1|1	1|0	0|1	1|1	1|1	0|1	0|1	1|1	1|0
+6	10273963	rs1333652	T	C	100	PASS	AC=2617	GT	1|1	1|1	0|0	1|1	0|1	1|1	1|1	1|1	0|0	0|0	1|1	0|0	1|0	1|1	0|1	0|0	0|1	0|0	0|0	1|1	1|0	0|1	1|0	0|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1152	GT	0|1	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	1|0	0|0	1|0	0|1	1|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	0|1	0|1	0|0
+6	14457917	rs9367837	C	T	100	PASS	AC=2207	GT	0|0	1|1	0|0	0|0	0|0	1|1	0|0	1|1	0|1	0|1	0|1	1|1	0|1	1|1	1|0	1|1	0|1	0|0	1|1	0|1	0|0	0|1	1|1	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=2601	GT	1|0	0|1	1|1	1|0	0|0	0|0	1|0	1|1	1|1	0|1	1|0	1|0	0|1	0|1	0|1	1|1	0|0	0|0	0|1	0|1	1|0	1|0	0|0	1|1	0|1	0|1
+6	19190261	rs9368038	G	T	100	PASS	AC=1771	GT	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	0|0	0|0	0|1	1|1	1|1	1|1	1|1	1|0	0|0	1|0	0|0	1|1	0|0	0|1	0|0	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=4392	GT	1|1	1|0	1|0	0|1	1|1	0|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1
+6	23294310	rs1925437	T	C	100	PASS	AC=4043	GT	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|0	0|1	1|1	0|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=3590	GT	1|1	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1	0|0	1|0	0|0	1|1	1|1	1|1	1|1	1|1	0|1
+6	28014597	rs149900	C	T	100	PASS	AC=1262	GT	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|0	1|1	1|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=2917	GT	1|0	1|0	0|1	1|1	0|0	0|0	1|0	1|0	1|1	1|1	1|0	1|1	1|1	1|1	0|1	0|1	0|1	1|0	0|1	1|1	0|1	1|0	1|0	0|0	0|0	1|1
+6	33241169	rs213207	C	T	100	PASS	AC=3056	GT	1|1	1|0	1|1	0|0	0|1	1|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|1	0|0	1|0	1|1	1|0	1|1	1|0	1|1	0|0	1|0	1|0	1|1	1|0
+0	0	rs0	C	A	100	PASS	AC=3135	GT	0|1	1|1	0|0	1|1	1|0	1|1	1|1	0|1	0|1	1|0	1|0	1|1	0|1	1|1	1|1	1|0	1|1	1|0	0|0	0|1	0|1	0|1	0|0	0|1	1|1	1|1
+6	38166511	rs10456462	G	A	100	PASS	AC=670	GT	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=4131	GT	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1
+6	42138533	rs4711710	C	T	100	PASS	AC=3361	GT	1|0	1|1	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	0|0	0|0	1|0	1|1	1|1	0|1	0|1	1|1	1|0	1|1	1|0	1|0	0|1	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=3267	GT	0|0	0|1	1|1	1|1	0|1	0|1	0|1	1|1	0|1	0|1	0|0	0|1	0|1	0|0	0|0	1|1	1|0	0|1	1|1	1|0	1|1	0|1	1|0	1|0	1|0	0|1
+6	47658627	rs13194549	G	T	100	PASS	AC=641	GT	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|0	0|1	0|0	0|0	0|1	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1087	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0
+6	53452060	rs559102	G	A	100	PASS	AC=757	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	1|0	1|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=3836	GT	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	0|0
+6	64984651	rs9353681	C	T	100	PASS	AC=1090	GT	0|0	0|0	1|0	0|0	0|1	0|1	1|0	1|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|0	0|0	1|1	0|0	1|1	1|1	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1095	GT	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|0
+6	71051702	rs1739663	C	A	100	PASS	AC=1149	GT	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|0	0|0	0|0	1|0	0|0	1|1	0|0	1|1	0|0	0|1	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=1697	GT	1|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|1	0|0	0|1	0|1	0|0	0|1	0|0	1|0	0|0	1|1	0|0	0|0	1|1	1|1
+6	76857008	rs2029151	C	T	100	PASS	AC=3088	GT	1|1	1|1	0|0	1|1	1|1	0|1	0|1	1|1	0|0	0|0	0|1	1|0	0|0	0|1	1|1	1|1	0|1	1|1	0|0	1|1	0|0	0|0	0|0	1|1	1|1	1|1
+0	0	rs0	A	C	100	PASS	AC=2331	GT	0|1	1|0	1|1	0|0	1|0	1|0	0|1	1|1	1|1	1|0	1|0	0|0	0|1	0|1	1|1	1|0	0|1	1|0	0|1	1|1	1|0	1|1	1|1	1|0	0|0	0|0
+6	83410478	rs9361960	C	A	100	PASS	AC=744	GT	0|0	1|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=2062	GT	0|1	0|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|1	0|0	1|0	1|0	0|1	0|0	1|0	1|1	0|0	0|1	0|1	1|1	1|1	1|1	1|1	1|1
+6	89432362	rs6901395	T	C	100	PASS	AC=2483	GT	0|1	1|1	0|0	1|1	1|1	0|0	0|1	0|0	0|0	0|1	1|1	1|0	1|1	1|1	0|1	1|1	0|1	1|0	0|0	1|0	0|1	1|1	1|0	1|0	0|1	1|0
+0	0	rs0	A	G	100	PASS	AC=1459	GT	1|1	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|0	0|0	1|1	1|1	0|1	0|0	0|0	0|0	1|1	0|0	1|1	0|0	0|1	0|0	0|0	1|0	0|0
+6	94133927	rs519420	A	G	100	PASS	AC=1868	GT	0|0	1|0	0|0	1|0	1|0	0|1	0|0	1|1	0|0	0|1	0|0	0|0	0|0	1|1	0|0	0|0	0|1	1|0	1|1	0|0	0|1	0|0	1|0	1|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2968	GT	0|0	1|0	0|1	0|0	1|1	0|0	0|0	0|1	1|1	0|1	1|1	0|1	0|1	1|1	0|1	1|0	1|1	0|0	1|1	1|1	1|1	0|0	0|1	1|0	0|0	0|0
+6	100403514	rs4840106	G	A	100	PASS	AC=1880	GT	0|0	0|0	1|1	0|1	1|0	0|1	0|0	0|0	0|1	1|1	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2906	GT	1|1	0|0	0|1	1|0	0|1	1|1	1|1	0|0	1|1	0|0	1|0	1|1	0|0	0|1	1|0	0|1	0|0	0|1	0|0	1|1	1|0	0|1	1|0	1|0	0|1	1|1
+6	106292430	rs1876564	T	C	100	PASS	AC=3070	GT	0|0	0|0	0|1	1|0	0|1	1|0	0|0	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|0	0|1	0|1	1|0	1|0	0|0	1|1	1|0	1|0	1|1	0|0
+0	0	rs0	G	A	100	PASS	AC=3059	GT	0|0	1|1	0|0	1|1	0|1	0|0	0|0	1|0	0|1	0|0	1|1	0|1	1|1	1|1	0|0	0|1	1|0	0|0	0|1	1|1	1|0	1|0	0|0	1|1	0|1	1|0
+6	111549162	rs2297939	G	A	100	PASS	AC=1554	GT	0|0	0|0	1|1	1|0	0|1	0|0	0|0	1|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=1243	GT	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	1|0	1|0	0|0	1|0	1|0	1|0	0|0	0|1	1|0	1|0	0|1	0|0	0|1	0|0	0|0	1|0
+6	117741495	rs9374658	T	G	100	PASS	AC=2291	GT	1|1	0|1	0|0	0|0	0|1	1|0	0|1	0|0	1|1	1|0	1|0	0|1	0|1	0|0	0|1	1|0	0|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	1|0	1|0
+0	0	rs0	A	C,G	100	PASS	AC=9,1169	GT	2|0	0|2	0|2	0|2	0|0	0|2	0|0	2|0	2|0	0|0	0|0	0|0	0|0	0|0	2|0	0|0	2|2	2|0	0|0	0|0	0|0	0|0	2|0	0|2	0|0	2|0
+6	123571228	rs4345414	G	A	100	PASS	AC=3041	GT	1|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|0	1|1	0|0	0|0	0|0	0|1	1|0	1|1	1|0	1|1	1|0	0|0	1|1	0|1	1|1	1|1	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=3864	GT	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1
+6	129466298	rs3778141	C	T	100	PASS	AC=1239	GT	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	1|1	1|0	0|1	1|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|1	0|1
+0	0	rs0	A	G	100	PASS	AC=932	GT	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0
+6	133903856	rs6902621	C	T	100	PASS	AC=1745	GT	0|0	0|0	0|0	1|0	0|1	0|0	0|0	1|0	1|0	1|0	0|0	1|0	1|1	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	A	C	100	PASS	AC=1578	GT	0|0	0|0	1|0	1|0	1|1	1|0	1|0	0|0	1|1	0|1	0|1	0|0	0|1	0|0	0|1	0|0	1|0	0|1	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0
+6	138825687	rs7754416	G	A	100	PASS	AC=1053	GT	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	1|1	1|0	0|0	0|1	0|0	0|1	0|0	1|1
+0	0	rs0	T	C	100	PASS	AC=1394	GT	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|1	0|1	0|0	1|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	0|0	1|1
+6	144412067	rs9496857	C	T	100	PASS	AC=2367	GT	1|1	1|0	1|0	1|1	1|1	1|1	0|0	0|0	1|0	1|1	0|0	1|1	1|1	1|1	0|1	0|0	1|0	1|1	0|0	1|0	1|0	1|1	0|0	0|0	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=2013	GT	0|1	0|1	0|1	0|0	0|0	1|1	1|0	1|1	0|1	0|1	0|1	0|1	0|0	0|1	0|0	0|1	1|1	0|1	0|1	0|0	1|1	1|1	0|0	0|1	0|0	0|1
+6	149605182	rs9498283	A	G	100	PASS	AC=1205	GT	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|1	1|0	1|0	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|1	0|1	0|0	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=2879	GT	1|1	1|0	1|1	1|1	1|0	0|1	0|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|1	1|0	0|0	0|1	0|1	1|1	0|1	0|0	0|1	0|0
+6	154025836	rs1937594	C	A	100	PASS	AC=1091	GT	0|1	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1109	GT	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1
+6	158816875	rs697505	T	G	100	PASS	AC=866	GT	0|0	0|0	0|0	1|0	0|1	1|1	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+0	0	rs0	G	T	100	PASS	AC=1064	GT	1|1	1|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	0|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0
+6	162888704	rs4709620	A	G	100	PASS	AC=2551	GT	0|0	0|1	0|0	0|1	1|1	1|0	0|1	0|0	1|0	0|0	1|0	1|1	1|1	1|1	1|0	1|0	0|0	1|0	0|1	1|1	1|0	1|1	0|0	0|0	0|1	0|1
+0	0	rs0	C	A	100	PASS	AC=3645	GT	0|0	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|1	0|1	1|0
+6	166943513	rs11970312	T	G	100	PASS	AC=1013	GT	0|1	0|0	1|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=865	GT	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|1
+7	1886937	rs6954673	C	T	100	PASS	AC=1590	GT	1|0	1|0	1|0	1|0	1|1	1|0	1|1	1|1	0|0	1|0	1|1	0|0	0|0	0|1	1|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0
+0	0	rs0	G	A	100	PASS	AC=1389	GT	0|1	0|0	1|1	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	1|0	1|0	0|1	0|0	0|0	0|1	0|0	0|0
+7	6870635	rs10242703	G	A	100	PASS	AC=2613	GT	1|1	1|1	0|1	0|0	0|1	1|0	1|0	1|0	1|0	1|1	1|0	1|1	0|0	1|1	1|1	1|1	0|1	1|0	1|0	1|0	0|0	0|0	1|0	1|0	1|1	1|1
+0	0	rs0	T	G	100	PASS	AC=2726	GT	1|1	1|0	1|0	0|1	0|0	0|0	0|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1	0|0	0|1	0|0	1|1	0|0	0|1	1|1	1|1	0|0	0|1	1|0	0|0
+7	11220846	rs4720945	G	A	100	PASS	AC=2364	GT	1|0	1|0	1|1	0|1	1|1	1|0	1|0	1|1	1|1	1|1	1|0	1|0	0|1	0|1	0|0	0|0	0|1	0|0	0|1	0|0	1|0	1|0	1|1	0|0	0|0	0|1
+0	0	rs0	T	C	100	PASS	AC=1337	GT	0|0	0|0	0|1	1|0	0|0	1|0	0|0	0|0	1|1	0|1	0|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	0|0	1|1	0|1	0|0	1|0	1|0	0|0
+7	14988867	rs40628	A	G	100	PASS	AC=3510	GT	0|1	1|0	1|1	1|0	1|1	1|1	1|0	0|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|0	1|0	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=3090	GT	1|1	1|0	1|1	0|0	1|0	1|0	1|1	0|1	1|1	0|1	1|0	1|0	0|0	1|1	0|0	1|0	1|1	1|0	0|1	1|1	0|1	1|0	1|1	0|1	1|1	0|1
+7	18979516	rs10223990	A	G	100	PASS	AC=1311	GT	1|1	1|0	0|1	0|0	0|0	0|0	1|0	0|0	1|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	1|0	1|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1083	GT	0|0	1|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0	0|0	1|1	1|0	0|1	1|0	0|0	1|0	1|1
+7	23028610	rs2286707	G	T	100	PASS	AC=737	GT	0|0	1|1	0|0	1|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2122	GT	0|0	0|1	0|0	1|0	0|1	0|1	0|1	1|1	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	1|0	0|1	0|0	0|0	0|1	1|0	0|0	0|1
+7	27433363	rs10240666	A	G	100	PASS	AC=3256	GT	0|1	1|1	1|1	1|1	1|0	1|1	0|1	0|0	0|0	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|0	0|1	0|0	1|0	1|0	1|1	1|1	0|1	1|1	1|0
+0	0	rs0	G	T	100	PASS	AC=3755	GT	0|1	0|1	1|1	0|0	1|0	0|0	0|0	1|1	1|1	1|1	0|0	1|1	1|1	0|1	1|1	0|0	1|1	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0
+7	31497237	rs218097	C	T	100	PASS	AC=3619	GT	0|0	0|1	0|1	0|0	1|1	1|0	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	0|1	1|0	0|1	1|0	1|0	0|1	1|1	0|1	1|0	1|1	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=2105	GT	0|1	0|0	1|1	0|1	0|0	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	1|0	0|0	0|0	0|1	1|0	0|0
+7	36654238	rs2001599	T	C	100	PASS	AC=1952	GT	1|0	1|0	1|1	0|0	1|0	0|1	0|1	0|1	0|1	0|0	0|1	1|1	0|0	1|0	0|0	0|1	1|0	1|0	0|1	0|1	1|0	1|0	1|1	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=3742	GT	1|1	0|0	1|0	0|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	0|0	1|1	1|1	0|1	0|1	1|1	1|1	0|1	1|1
+7	41822335	rs2190339	A	G	100	PASS	AC=2335	GT	0|1	0|0	1|0	0|1	0|1	1|0	1|1	0|0	1|1	0|1	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	1|1	0|0	1|0	1|0	0|1	1|0	1|1	1|1
+0	0	rs0	C	G,T	100	PASS	AC=39,1711	GT	1|2	0|2	0|0	2|0	0|2	2|2	0|2	2|2	0|2	2|2	0|2	0|2	0|0	0|0	2|0	0|2	0|2	0|0	0|2	0|0	0|0	0|0	2|0	2|0	2|0	2|0
+7	47119985	rs874321	A	G	100	PASS	AC=2678	GT	0|1	1|1	1|0	0|0	0|1	1|1	1|1	0|0	1|1	1|1	0|1	0|0	1|0	0|1	0|1	1|1	1|1	1|0	1|1	0|0	0|1	0|1	1|0	0|1	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1258	GT	1|0	0|0	0|0	0|1	1|0	1|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0
+7	52305206	rs4286900	G	A	100	PASS	AC=1849	GT	1|1	0|0	0|1	0|0	1|0	1|0	0|0	1|1	0|0	1|0	1|1	0|1	0|0	0|0	1|0	0|1	1|1	0|0	1|1	0|0	0|0	0|0	1|1	1|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=3306	GT	1|1	1|1	0|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	0|1	0|1	0|0	0|0	0|1	0|1	0|1	1|1	1|1	1|1	0|0	0|0	0|1	0|1	1|1	1|0
+7	66855925	rs17145225	T	C	100	PASS	AC=1225	GT	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|1	1|0	1|0	1|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1815	GT	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	1|0	1|0	0|1	0|1	0|0	1|1	0|1	0|0	0|0	0|1	1|0	0|0
+7	73097654	rs1128349	C	T	100	PASS	AC=1516	GT	0|0	1|0	1|0	0|1	1|0	0|1	1|0	0|0	0|0	0|1	1|0	0|0	0|1	1|0	0|1	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	G	T	100	PASS	AC=1124	GT	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|1	0|0	0|1	0|1	0|1	0|0	0|0	0|0
+7	80388136	rs3807094	G	A	100	PASS	AC=1212	GT	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|1	1|1	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=2462	GT	1|0	1|0	1|0	1|1	1|0	0|1	1|0	1|0	1|0	1|0	0|0	1|1	0|1	0|0	0|0	1|0	1|0	1|0	0|1	1|0	1|0	0|0	1|1	0|0	1|0	1|1
+7	85470182	rs9640974	G	A	100	PASS	AC=1303	GT	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|0	1|0	0|0	0|1	0|1	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1971	GT	1|0	0|0	1|0	1|0	0|0	1|0	0|1	0|0	0|0	1|0	0|0	1|1	0|1	0|1	0|0	0|0	0|1	0|0	0|1	1|0	1|0	1|1	0|0	0|0	0|0	1|0
+7	91257948	rs10249071	C	T	100	PASS	AC=1315	GT	1|0	0|0	0|1	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=3376	GT	1|1	1|0	1|1	1|0	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|0	1|1	1|1	0|0	0|1	1|1	1|1
+7	96886435	rs799605	G	A	100	PASS	AC=674	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|1	1|1	1|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|1
+0	0	rs0	C	T	100	PASS	AC=1081	GT	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|1	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0
+7	103177947	rs362710	C	T	100	PASS	AC=2793	GT	1|1	1|1	0|0	0|1	0|0	1|0	1|1	0|1	0|0	0|0	1|1	0|1	0|0	1|1	1|1	1|1	0|1	1|0	1|1	0|0	0|1	0|0	1|1	0|1	0|1	1|0
+0	0	rs0	A	G	100	PASS	AC=2197	GT	1|1	0|0	1|1	0|0	1|1	1|1	0|1	0|0	1|1	1|0	1|1	0|1	0|0	0|1	1|1	1|1	0|0	1|1	0|1	1|0	1|1	0|1	1|0	0|0	0|0	1|1
+7	107789251	rs439587	A	C	100	PASS	AC=3657	GT	1|1	1|0	0|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1	0|1	0|1	0|1	1|0	1|1	0|1	1|1	1|1	1|0	1|0	1|0	0|0	1|0	1|1	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2980	GT	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|0	1|0	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	0|0	1|0	0|1	1|0
+7	113917539	rs1209254	T	C	100	PASS	AC=3149	GT	1|1	1|1	0|1	0|1	1|1	0|0	0|0	1|1	1|1	1|1	1|1	0|0	0|0	0|0	1|1	0|0	0|1	1|1	1|1	0|0	1|1	1|1	1|1	1|0	0|1	1|1
+0	0	rs0	G	A	100	PASS	AC=2872	GT	0|0	1|1	0|1	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|1	1|1	1|0	1|1	0|1	1|1	1|0	1|1	0|1	1|1	0|1	1|1	1|1	0|0	1|0	1|1
+7	121237869	rs6955079	A	G	100	PASS	AC=2263	GT	0|0	0|0	0|0	1|1	1|1	1|1	0|1	0|1	1|1	1|0	0|0	1|1	0|1	1|1	1|0	0|0	0|0	0|1	0|0	1|1	0|0	1|1	0|0	0|1	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=993	GT	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0
+7	128507297	rs2029623	T	C	100	PASS	AC=1697	GT	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	1|1	1|0	0|0	0|0	0|0	0|1	0|0	1|1	1|0	1|1	0|0	0|1	0|0	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=2777	GT	1|1	0|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	1|1	0|1	0|0	0|1	0|0	1|0	1|1	1|1	1|0	1|1	0|1	1|1	0|0	1|1	1|0	0|1	1|1
+7	134290869	rs6951927	C	T	100	PASS	AC=2293	GT	1|1	1|1	0|1	0|0	1|1	1|0	0|0	0|1	0|0	0|1	0|1	0|0	1|0	1|1	1|0	0|1	1|0	0|1	0|0	0|0	1|1	1|0	1|0	1|0	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=891	GT	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0
+7	139294931	rs2030712	C	T	100	PASS	AC=1896	GT	1|1	1|0	0|0	0|1	1|1	1|1	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|1	1|0	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1128	GT	0|0	0|1	0|0	1|1	0|1	1|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+7	145581082	rs7809901	C	T	100	PASS	AC=1418	GT	1|0	0|0	1|1	0|0	1|0	1|1	0|0	0|0	0|1	1|0	1|1	0|1	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|1	0|0
+0	0	rs0	G	A	100	PASS	AC=1709	GT	1|0	1|0	1|0	0|0	0|1	0|0	0|1	1|0	0|0	1|0	1|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	1|0	1|0	0|0	0|1
+7	150785753	rs11769150	C	T	100	PASS	AC=859	GT	0|0	0|1	0|0	1|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	1|0	1|1	0|1	0|0	1|1	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=1491	GT	1|0	0|0	1|1	1|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0
+7	155681732	rs12698335	A	G	100	PASS	AC=3656	GT	1|0	1|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1	0|0	1|0	0|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|0	1|1
+0	0	rs0	C	T	100	PASS	AC=901	GT	0|1	0|1	0|0	0|1	0|1	0|0	0|1	1|1	1|1	1|0	0|0	0|0	0|0	0|0	1|1	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	1|0	0|1
+8	1439795	rs12542312	T	C	100	PASS	AC=1612	GT	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	1|1	1|1	1|0	0|0	0|0	0|0	1|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1619	GT	0|0	1|0	0|0	0|0	0|0	1|1	0|0	1|0	1|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|1
+8	4723047	rs11136785	A	C	100	PASS	AC=2106	GT	0|1	1|1	1|1	0|0	0|1	1|0	1|0	1|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|1	0|0	1|1	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1211	GT	1|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|1	0|0	0|1	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|1	0|0	1|1	0|0	0|0
+8	9105172	rs330042	G	A	100	PASS	AC=1310	GT	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	0|0	0|0	0|0	0|1
+0	0	rs0	T	G	100	PASS	AC=2061	GT	0|1	1|0	0|0	0|1	1|1	0|0	0|0	0|0	1|1	1|1	0|1	0|0	0|1	0|0	0|1	0|0	0|1	0|1	0|1	1|0	1|1	0|0	0|0	0|1	0|1	0|0
+8	13462398	rs9650348	G	A	100	PASS	AC=2113	GT	1|0	1|1	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|1	1|1	0|0	0|1	1|1	0|1	1|1	1|1	1|1	1|0	0|0	0|1	0|1	0|1	1|1	1|0	1|1
+0	0	rs0	A	C	100	PASS	AC=3742	GT	1|1	1|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|0	0|1	1|1	1|1	0|1	0|1	1|1
+8	17261568	rs11203852	T	A,G	100	PASS	AC=431,3116	GT	0|0	2|0	2|2	2|2	2|2	2|0	0|0	2|2	2|0	2|2	0|2	2|2	2|0	2|2	2|2	2|2	2|2	0|0	2|2	1|2	2|2	2|0	2|0	2|0	2|0	0|0
+0	0	rs0	C	A	100	PASS	AC=3767	GT	0|1	1|1	0|1	0|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	1|0	0|1	0|1	1|1	0|0	1|1	0|1	1|1	0|1	1|1	0|1	1|0	1|1	1|1	1|0
+8	21035898	rs17578338	G	T	100	PASS	AC=852	GT	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2418	GT	0|1	0|0	0|1	0|0	1|0	1|0	0|0	0|0	1|1	1|1	0|1	1|0	0|1	0|0	1|0	1|0	1|1	1|0	0|0	1|1	1|1	1|1	1|0	0|1	0|0	1|1
+8	25748428	rs13280831	A	G	100	PASS	AC=2233	GT	1|0	1|1	1|1	0|0	1|0	0|1	0|0	1|1	1|1	0|1	0|1	1|0	0|0	1|0	0|0	1|0	0|1	0|1	1|1	0|0	1|1	0|0	1|1	1|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=1355	GT	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	1|0	0|1	1|0	0|1	0|0	1|0	0|1	0|0	0|0	0|0	0|1	1|0
+8	29395511	rs4295704	A	C	100	PASS	AC=1844	GT	1|1	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	1|0	0|0	1|0	0|0	1|0	1|0	0|0	0|1	0|1	0|1	1|0
+0	0	rs0	A	G	100	PASS	AC=1948	GT	1|0	1|0	1|0	1|1	0|1	1|1	1|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|1	1|1	0|0
+8	35380121	rs2579892	T	G	100	PASS	AC=2520	GT	0|0	0|1	0|1	1|1	1|0	1|0	0|0	1|1	0|0	0|0	0|0	1|1	1|1	1|1	1|0	0|0	1|0	0|0	0|1	1|1	0|1	1|1	0|1	0|0	0|1	1|1
+0	0	rs0	T	G	100	PASS	AC=3109	GT	1|0	0|1	1|0	1|0	1|1	1|1	1|1	0|1	0|1	1|1	0|0	1|1	0|1	0|1	1|0	0|1	0|1	1|1	0|1	0|1	0|1	1|0	1|1	1|0	1|0	0|1
+8	41688047	rs1362890	T	C	100	PASS	AC=2077	GT	0|0	0|0	1|0	0|1	1|0	1|1	0|1	1|1	0|0	0|0	0|1	0|1	0|0	1|1	1|1	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|1	1|1	0|1
+0	0	rs0	C	T	100	PASS	AC=2993	GT	1|0	1|0	1|1	1|1	0|0	0|1	0|0	0|0	0|1	1|1	1|0	1|0	1|1	1|1	1|0	0|1	0|1	1|1	0|1	1|1	1|0	1|1	1|0	0|0	0|1	0|0
+8	53342616	rs1001932	T	G	100	PASS	AC=1192	GT	0|1	0|0	1|0	1|0	0|0	0|1	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|1	1|0	0|1
+0	0	rs0	G	A	100	PASS	AC=1731	GT	1|0	1|1	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|1	1|1	0|1	0|0	0|0
+8	59229893	rs7006132	C	T	100	PASS	AC=950	GT	1|0	1|0	0|0	0|1	1|1	0|1	0|0	1|1	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1010	GT	0|1	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+8	64682296	rs6980548	G	A	100	PASS	AC=772	GT	0|0	1|1	0|0	0|1	1|0	0|0	1|0	0|1	0|0	0|0	0|0	1|0	1|1	0|1	0|0	1|0	0|1	0|1	0|0	0|0	0|0	1|0	0|1	0|1	0|0	1|0
+0	0	rs0	G	T	100	PASS	AC=1017	GT	0|0	0|0	1|0	0|1	1|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	1|0	0|0
+8	70744812	rs3750266	G	A	100	PASS	AC=2461	GT	0|0	1|1	0|0	0|1	1|0	1|0	0|1	0|0	0|0	1|1	0|1	1|1	1|1	1|0	1|1	1|1	0|1	0|0	0|0	1|0	1|1	1|1	0|1	0|0	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=2329	GT	0|1	0|0	0|1	1|1	1|1	0|1	0|1	1|1	1|0	1|1	1|0	0|0	1|1	0|0	0|1	1|1	0|1	0|1	1|1	0|1	0|1	0|0	1|0	1|0	0|0	0|1
+8	75580419	rs16938934	G	T	100	PASS	AC=619	GT	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1202	GT	0|1	0|1	0|1	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|1	1|0	1|1	1|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	0|0
+8	81438310	rs1051919	G	A	100	PASS	AC=1146	GT	0|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|1	0|1
+0	0	rs0	A	G	100	PASS	AC=1461	GT	1|0	0|0	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|1	1|0	0|1	0|0	0|0	0|0	1|0	1|1	1|1	0|0	0|1	0|1
+8	88253171	rs4961016	G	A	100	PASS	AC=2681	GT	0|0	0|0	1|0	1|0	0|0	1|1	1|1	1|1	0|0	0|0	1|0	1|0	0|0	1|0	0|1	0|0	1|0	0|1	1|1	0|1	0|1	1|0	0|1	0|1	1|1	1|1
+0	0	rs0	C	A	100	PASS	AC=2452	GT	1|0	1|0	1|0	0|1	0|0	0|0	0|1	0|0	0|1	0|1	0|0	0|1	1|0	0|0	0|0	1|1	1|1	1|1	1|0	1|0	0|0	1|0	1|0	0|1	1|0	1|1
+8	94882313	rs7826194	T	C	100	PASS	AC=3239	GT	0|0	0|0	1|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|1	1|1	1|0	0|1	1|0	1|0	0|0	0|1	1|0	0|1	1|1	1|1	0|1	0|1	1|0
+0	0	rs0	A	C	100	PASS	AC=825	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	1|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0
+8	99686213	rs10096329	C	T	100	PASS	AC=2787	GT	1|1	1|1	1|1	1|1	1|0	1|0	1|0	1|1	1|0	1|1	1|0	0|1	1|1	1|1	0|0	0|0	0|1	1|0	0|1	1|0	1|0	0|1	0|1	0|1	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2666	GT	1|0	0|1	0|1	0|0	0|0	1|1	0|1	0|0	1|0	1|1	1|1	0|1	1|1	1|1	1|0	0|0	1|1	0|1	1|0	1|0	1|1	1|1	0|1	0|0	0|0	0|1
+8	105399186	rs3793358	C	T	100	PASS	AC=1311	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	1|1	0|0	1|0	0|1	0|1	1|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=3288	GT	1|1	1|0	1|0	1|1	1|1	0|1	1|1	1|1	1|0	1|0	1|1	0|1	0|1	1|1	1|1	1|0	0|1	1|1	1|0	1|1	1|0	1|0	1|1	1|1	1|1	1|1
+8	110725294	rs3133945	G	T	100	PASS	AC=785	GT	0|0	0|0	1|0	0|0	0|0	1|0	0|0	1|1	0|1	0|1	0|0	0|0	0|0	0|0	1|0	0|0	1|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=4253	GT	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|0	0|1	1|0	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|0	1|1
+8	117823217	rs6981342	A	G	100	PASS	AC=3687	GT	1|0	1|1	1|1	0|0	1|1	1|0	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	0|0	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=3387	GT	0|1	0|0	1|0	1|1	0|1	0|0	0|0	0|0	1|0	1|1	0|0	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|0
+8	122426082	rs13258852	G	A	100	PASS	AC=1045	GT	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|1	0|1	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1588	GT	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|1	0|1	0|1	1|0	0|0	0|1	1|1	0|0	0|0	1|1	0|1	0|0	1|1	0|0
+8	127008916	rs6470399	G	A	100	PASS	AC=2923	GT	0|0	0|0	1|0	1|0	0|0	1|1	1|0	1|1	0|0	0|1	1|0	0|1	1|1	1|1	1|0	1|0	1|1	1|0	0|1	1|1	1|0	1|1	1|0	1|0	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=720	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	1|1	0|0	1|1	1|0
+8	131278618	rs10505549	G	T	100	PASS	AC=1062	GT	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|1	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=1140	GT	0|0	0|0	1|0	1|0	0|1	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	1|0	0|1	1|1	1|1	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0
+8	135353633	rs11997394	G	T	100	PASS	AC=909	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2238	GT	0|0	1|0	0|1	0|0	1|0	1|1	1|0	0|1	1|0	1|1	0|1	0|0	0|0	0|0	1|0	0|1	0|0	1|1	1|1	0|1	0|0	0|0	1|0	1|0	0|0	0|0
+8	139996825	rs13253216	A	C	100	PASS	AC=2057	GT	0|0	0|0	0|1	0|0	0|1	1|0	0|0	1|1	0|0	1|1	0|0	0|1	0|0	1|0	1|0	0|0	0|1	0|0	1|1	1|1	0|0	1|1	1|1	0|0	0|1	0|1
+0	0	rs0	C	T	100	PASS	AC=2093	GT	0|1	1|0	0|1	0|1	1|0	0|0	1|1	0|0	1|0	1|0	0|0	1|1	0|1	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|0	0|0	1|1	1|0	0|0
+8	144146404	rs12675829	C	T	100	PASS	AC=1498	GT	1|0	1|1	0|0	0|1	0|1	1|1	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|0	1|0	1|0	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=1361	GT	1|1	0|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	1|0	0|0	0|0	1|1	0|0
+9	2425663	rs10812034	G	A	100	PASS	AC=1821	GT	1|1	1|1	0|1	0|0	1|0	1|1	0|0	0|1	0|0	1|0	1|1	0|0	0|0	0|0	1|0	1|1	1|0	0|1	1|0	0|0	1|0	0|0	1|1	0|1	1|1	0|1
+0	0	rs0	C	T	100	PASS	AC=3010	GT	1|1	1|1	0|1	1|0	1|1	1|1	0|1	1|1	0|0	0|1	0|1	1|0	1|1	1|1	0|0	0|0	0|0	0|1	0|0	1|1	0|1	0|1	0|1	0|1	1|0	0|0
+9	6479626	rs10115883	G	A	100	PASS	AC=1530	GT	0|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|1	1|1	1|1	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|1	1|0	0|1	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=2731	GT	0|0	1|0	1|1	0|1	0|0	1|0	0|0	1|1	0|0	1|0	1|0	1|1	1|1	1|1	0|1	1|1	1|0	0|0	0|0	1|1	0|0	1|1	1|0	1|1	0|1	0|1
+9	10008726	rs2382104	G	T	100	PASS	AC=3302	GT	1|0	0|1	0|0	0|0	1|1	0|1	1|1	0|1	1|0	0|1	1|1	1|0	1|1	0|1	1|1	0|1	1|1	1|1	1|1	0|0	1|1	1|0	1|0	1|1	1|1	1|1
+0	0	rs0	T	G	100	PASS	AC=3994	GT	1|1	1|1	1|1	1|0	1|1	0|0	1|1	1|0	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	0|0	1|1	0|0	1|1	1|1	1|1
+9	14213974	rs12682686	C	T	100	PASS	AC=1185	GT	0|0	0|1	0|0	0|1	1|0	0|0	0|0	1|1	1|0	0|0	0|1	1|1	1|0	0|0	0|1	1|0	1|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2115	GT	0|0	1|0	1|0	0|0	1|1	0|0	1|1	0|1	0|1	0|1	1|0	1|1	0|1	0|0	0|0	0|0	0|1	1|0	0|0	1|1	0|1	1|0	1|0	1|0	0|1	0|0
+9	18174349	rs1411795	T	C	100	PASS	AC=3564	GT	0|1	1|1	0|1	1|1	1|0	1|1	1|0	1|1	1|1	1|0	1|1	1|0	0|1	0|1	1|1	1|1	1|1	1|1	0|0	1|0	1|1	0|1	0|1	1|1	1|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1632	GT	0|1	0|1	1|1	0|1	0|0	0|1	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0
+9	22301053	rs1575971	C	T	100	PASS	AC=4367	GT	1|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=3364	GT	0|0	0|1	0|1	0|0	1|1	1|0	1|0	0|1	1|1	0|0	0|1	1|1	1|1	1|1	0|1	1|1	1|0	0|1	1|1	1|1	1|1	1|1	0|1	0|0	0|1	1|0
+9	26777330	rs2383716	T	C	100	PASS	AC=3276	GT	0|1	0|0	1|1	0|1	0|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|0	0|1	0|0
+0	0	rs0	G	T	100	PASS	AC=848	GT	1|0	0|0	0|1	0|0	0|1	0|1	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+9	32078175	rs1508318	C	T	100	PASS	AC=1284	GT	1|0	1|0	0|0	1|0	0|1	0|0	0|1	0|0	0|0	1|0	1|0	0|1	0|0	0|0	1|0	0|1	0|1	1|0	0|0	0|0	0|1	0|0	0|0	0|1	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=1975	GT	1|0	0|1	1|0	1|0	1|0	0|0	0|0	0|0	1|1	1|1	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|1
+9	37454874	rs309444	A	G	100	PASS	AC=3635	GT	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|0	1|1	1|1	1|1	0|0	0|1	0|0	0|0	1|1	1|1	0|1	1|1	0|0	0|0	0|1	1|0	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=4317	GT	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1
+9	74300640	rs2310021	A	G	100	PASS	AC=4439	GT	0|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=3128	GT	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	0|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	0|1	0|0	1|0
+9	79219334	rs6420275	A	G	100	PASS	AC=1771	GT	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	1|1	0|1	0|0	0|0	0|0	0|0	0|1	0|1	1|1	0|0	0|1	1|0	0|0
+0	0	rs0	C	A	100	PASS	AC=2175	GT	0|0	0|0	0|0	0|1	0|0	0|1	1|0	0|0	0|0	0|0	1|0	1|1	1|1	1|1	0|0	1|0	1|1	0|0	0|0	0|1	0|0	1|0	0|1	0|1	0|0	0|0
+9	83714890	rs4390020	C	T	100	PASS	AC=1840	GT	1|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|1	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=1298	GT	0|0	0|1	0|0	0|1	0|1	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|1
+9	88140497	rs10780727	T	G	100	PASS	AC=1637	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	1|1	1|0	0|0	0|0	0|0	1|0	1|0	1|1	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3664	GT	1|0	0|1	1|0	1|0	0|1	1|1	1|0	0|1	1|1	1|0	0|1	1|1	1|1	1|0	1|1	0|1	1|0	1|0	1|1	1|1	0|0	1|0	1|1	1|0	1|0	1|1
+9	93169441	rs10821400	G	A	100	PASS	AC=3179	GT	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|0	1|0	0|0	0|1	1|0	0|1	1|0	0|1	0|1	0|1	0|0	1|1	0|0	1|1	1|1
+0	0	rs0	G	T	100	PASS	AC=3952	GT	1|1	0|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|0	1|0	1|1	0|1	1|1	1|1	1|1	0|0	1|1	0|1	1|1	1|1	1|0	1|1
+9	98668370	rs12345187	C	T	100	PASS	AC=1312	GT	1|0	0|0	0|0	0|0	1|0	0|1	1|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	1|1	0|0	1|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2846	GT	1|0	0|1	0|1	1|1	0|0	1|1	1|0	1|1	0|1	0|0	1|0	0|0	1|1	0|1	1|1	0|0	1|0	0|0	0|1	1|1	1|0	0|1	0|1	1|0	0|1	1|1
+9	104863180	rs10760840	G	A	100	PASS	AC=1236	GT	0|0	0|0	1|1	1|0	0|0	0|1	0|1	0|0	0|1	1|0	0|1	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=903	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1
+9	109644865	rs6477547	C	T	100	PASS	AC=2279	GT	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|1	1|1	1|1	0|0	0|1	1|0	0|1	0|0	1|1	0|0	1|1	0|0	0|0	0|0	0|1
+0	0	rs0	T	G	100	PASS	AC=3145	GT	0|1	1|1	1|0	1|1	1|0	0|1	0|1	1|1	0|0	1|1	1|1	1|0	0|1	0|0	0|1	0|0	1|1	1|1	1|1	1|0	1|0	1|0	1|1	1|1	1|1	0|1
+9	113674967	rs1326899	A	G	100	PASS	AC=2306	GT	0|0	0|1	0|0	0|0	0|1	0|1	0|0	1|1	1|0	0|0	0|1	0|0	1|1	1|1	0|0	0|1	1|0	1|0	1|0	1|1	1|0	0|0	1|0	0|1	0|0	1|0
+0	0	rs0	T	G	100	PASS	AC=2073	GT	1|1	0|1	1|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|1	0|0	1|1	0|1	1|0	1|0	0|1	1|0	1|0	1|0	0|0	0|1	0|0	0|0	0|1	1|1
+9	118213502	rs2157663	C	T	100	PASS	AC=626	GT	0|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=3893	GT	1|0	0|1	1|1	0|0	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	0|1	1|0	0|1	1|1	0|1	1|1	1|0	1|0	1|1	1|1	1|0	1|1	1|1
+9	122288239	rs7849695	T	C	100	PASS	AC=2395	GT	0|0	0|1	0|1	0|1	1|1	1|0	1|1	1|0	1|0	0|1	1|1	0|0	0|0	0|0	1|1	0|1	1|0	1|0	1|1	0|0	1|1	0|0	0|0	0|1	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=1223	GT	0|0	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|0	0|1	1|0	0|0	1|0	0|1	0|0	1|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	1|1
+9	127688614	rs3780598	A	G	100	PASS	AC=615	GT	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|1	0|0	1|0	1|0	1|0	0|0	1|1	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|1	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=943	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	0|0
+9	132967196	rs7024495	A	G	100	PASS	AC=2938	GT	1|1	0|1	1|1	1|1	1|1	0|1	0|1	0|0	1|1	0|1	1|1	1|0	1|1	1|1	1|0	1|0	1|1	0|1	1|1	0|0	1|0	1|0	0|0	0|0	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=571	GT	0|0	0|0	1|0	0|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0
+9	137285503	rs11102986	A	G	100	PASS	AC=4214	GT	0|1	1|1	1|0	0|1	1|1	1|1	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=1838	GT	1|0	0|0	0|0	1|0	0|0	1|1	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|1	0|1	0|0	1|0	0|0	1|0	0|1	0|1	0|0	0|0
+10	1755177	rs4880535	G	T	100	PASS	AC=2261	GT	0|1	1|0	0|0	0|0	1|1	0|0	0|1	1|1	0|1	0|1	0|0	1|1	1|0	0|1	1|0	1|0	0|0	0|1	1|1	1|0	1|1	0|1	1|1	1|1	1|1	0|0
+0	0	rs0	G	T	100	PASS	AC=3633	GT	1|1	1|0	1|0	1|1	0|1	0|1	1|0	0|0	1|0	1|1	0|0	1|1	0|1	1|0	0|0	1|1	1|1	1|1	1|1	1|0	0|1	1|1	0|0	1|1	1|1	1|1
+10	5529329	rs11592540	G	A	100	PASS	AC=839	GT	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2583	GT	0|1	1|0	1|1	1|0	1|1	1|1	1|0	1|1	1|0	0|0	0|1	1|0	0|1	0|0	0|1	1|1	1|0	1|1	1|0	0|0	1|0	0|1	1|1	0|0	0|0	0|0
+10	9360823	rs1150023	A	C	100	PASS	AC=3099	GT	1|1	0|1	1|0	1|0	1|0	0|1	1|0	1|1	1|0	1|0	1|1	1|1	0|1	0|0	0|1	1|1	1|1	1|1	1|1	1|0	0|1	0|0	0|1	0|1	1|0	1|0
+0	0	rs0	G	A	100	PASS	AC=1460	GT	0|0	1|0	1|0	0|0	0|0	0|0	0|0	1|1	1|1	0|1	0|1	0|0	0|0	0|1	1|0	1|0	0|1	1|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	1|0
+10	13432540	rs12414133	A	G	100	PASS	AC=1269	GT	0|0	1|0	0|0	0|1	0|1	1|1	1|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2995	GT	0|1	1|0	0|1	1|0	1|0	1|0	1|1	1|1	0|1	1|0	1|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	0|1	0|1	1|1	1|0
+10	17357756	rs1055986	A	G	100	PASS	AC=4051	GT	1|0	0|1	1|1	1|0	0|1	0|0	0|0	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=3932	GT	1|1	1|1	1|0	1|1	1|0	1|1	0|1	1|1	1|0	1|0	1|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|0	0|1	1|1	0|0	1|1	1|0	1|1	1|1
+10	22360446	rs2986341	T	G	100	PASS	AC=3145	GT	1|1	1|1	1|1	0|1	1|0	1|1	0|1	0|1	1|1	1|1	1|1	0|1	0|0	0|0	1|1	1|1	1|1	0|1	1|1	0|0	1|1	0|0	1|0	0|1	1|1	1|1
+0	0	rs0	C	A	100	PASS	AC=4178	GT	0|1	0|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|1	1|0	1|1	1|1	1|0	1|1	0|1	1|1	1|1	1|1
+10	27231789	rs11015404	G	A	100	PASS	AC=936	GT	1|0	0|1	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0
+0	0	rs0	T	C	100	PASS	AC=1276	GT	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|0	0|1	0|0	0|0
+10	31364621	rs793088	C	T	100	PASS	AC=1293	GT	0|0	0|0	0|1	1|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|1	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=3306	GT	0|1	0|0	1|1	1|0	0|1	0|1	0|0	1|0	1|1	1|1	1|0	0|1	1|0	1|1	1|1	0|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1
+10	37062991	rs2804974	C	T	100	PASS	AC=1284	GT	1|0	0|0	0|0	0|0	0|1	0|1	1|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|1	0|0	0|0	0|0	1|1	0|1	1|0	1|0
+0	0	rs0	G	A	100	PASS	AC=2043	GT	1|1	0|0	1|0	0|0	0|0	1|1	1|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|1	1|0	0|1	0|0	1|1	0|0	1|1	1|0	0|0	0|1
+10	50133442	rs17782114	G	T	100	PASS	AC=1329	GT	0|1	0|0	0|1	0|0	1|0	0|0	0|0	1|1	0|1	0|1	1|1	0|0	0|0	0|0	0|1	1|1	0|0	0|0	1|0	0|0	0|1	0|0	0|0	1|1	1|0	0|0
+0	0	rs0	G	A	100	PASS	AC=3639	GT	1|1	0|1	0|0	1|0	0|1	1|0	1|0	0|1	1|1	0|0	1|0	1|1	1|1	1|1	1|1	1|0	0|1	1|1	0|1	0|0	0|1	1|1	0|1	1|1	1|1	1|0
+10	55161298	rs2133471	C	T	100	PASS	AC=2065	GT	0|1	1|1	1|1	0|1	1|0	0|1	1|1	0|0	1|1	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|1	1|1	0|0	1|0	1|1	1|0	1|0
+0	0	rs0	G	T	100	PASS	AC=862	GT	0|1	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	1|1	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+10	60790128	rs17829274	T	C	100	PASS	AC=1024	GT	0|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	1|0
+0	0	rs0	A	G	100	PASS	AC=3620	GT	1|1	0|1	0|0	1|1	0|1	1|0	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|0
+10	66267858	rs2394072	G	A	100	PASS	AC=2611	GT	1|0	1|1	1|0	0|0	1|0	0|0	1|1	0|0	0|0	1|0	1|1	1|0	1|0	1|1	0|0	1|1	0|1	1|0	0|0	1|1	1|0	0|1	1|0	1|0	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=3277	GT	1|1	0|0	0|0	1|0	0|1	1|1	0|0	1|0	1|1	0|1	0|1	1|1	0|0	1|1	0|1	1|1	1|0	0|1	1|0	1|1	1|0	1|0	0|0	1|1	1|1	1|1
+10	71588504	rs1227756	G	A	100	PASS	AC=1938	GT	1|0	1|1	0|1	0|1	0|0	0|0	1|1	0|0	0|0	0|0	1|1	1|0	1|0	0|0	1|0	1|0	0|0	1|0	0|1	0|1	0|0	0|1	1|0	0|1	0|0	1|1
+0	0	rs0	C	T	100	PASS	AC=1391	GT	0|0	0|0	1|1	0|0	0|0	0|1	0|0	0|0	1|0	0|0	1|0	1|0	0|0	0|1	1|0	1|1	0|0	0|0	1|1	1|1	1|0	1|0	0|0	0|0	1|0	0|0
+10	77938242	rs4746372	G	A	100	PASS	AC=2651	GT	1|1	0|0	1|1	0|0	1|0	0|0	0|0	1|0	0|1	1|0	1|1	0|1	1|1	1|0	1|0	0|1	1|1	0|0	0|1	0|0	1|1	0|1	0|0	0|0	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=1007	GT	0|0	0|0	0|1	0|1	1|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0
+10	82707770	rs10882390	A	G	100	PASS	AC=1440	GT	1|1	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1	0|1	0|0	0|1	0|0	0|1	1|1	0|0	0|0	0|0	1|0	0|1	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=1382	GT	0|1	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|1	0|0	0|1	0|1	1|0	0|0	0|1	0|0	1|1
+10	87713420	rs7090885	T	C	100	PASS	AC=2936	GT	1|0	0|1	1|1	0|1	1|0	0|0	1|1	0|1	0|1	0|0	0|0	1|0	1|0	1|1	0|1	1|1	1|0	0|0	1|0	0|1	0|0	1|0	1|1	0|1	0|1	1|1
+0	0	rs0	C	T	100	PASS	AC=3111	GT	1|0	0|0	0|1	0|0	1|1	1|0	1|0	1|1	1|0	0|1	0|0	1|1	1|0	0|0	1|1	1|1	1|0	1|1	0|1	1|1	0|1	1|1	1|0	0|1	0|1	1|1
+10	92436384	rs10509605	A	G	100	PASS	AC=1374	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	1|1	1|1	1|0	1|1	0|1	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=3859	GT	1|1	0|1	0|1	1|1	1|1	1|1	1|0	0|1	1|1	1|1	1|0	1|1	1|0	1|0	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|0	0|1	0|1	1|0	1|1
+10	97325729	rs7918947	A	C	100	PASS	AC=3219	GT	1|1	0|0	0|0	1|1	0|0	0|0	1|1	0|0	1|0	0|1	0|0	1|1	1|1	1|1	1|0	1|1	0|0	0|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2114	GT	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|1	1|1	0|1	1|1	1|0	1|1	0|0	1|1	1|0	0|0	0|0	1|1	0|0	1|0	1|1
+10	102691412	rs10509748	T	G	100	PASS	AC=1701	GT	1|1	1|1	0|0	0|1	1|1	0|0	0|1	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|0
+0	0	rs0	C	A	100	PASS	AC=1933	GT	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|0	1|1	1|1	1|1	1|0	1|0	0|0	0|0	0|0	1|1	0|1	1|1	0|0	0|0	0|0	0|0
+10	108819785	rs10884409	G	A	100	PASS	AC=2109	GT	1|1	0|1	0|0	1|1	0|0	0|1	1|0	0|0	0|0	0|0	0|0	1|0	1|0	1|1	0|0	0|1	1|1	1|0	0|0	1|1	1|0	0|1	0|0	0|0	1|0	1|1
+0	0	rs0	C	T	100	PASS	AC=2631	GT	1|1	1|1	0|1	1|0	1|1	1|0	1|1	1|1	1|1	1|0	0|0	0|0	1|0	1|0	0|0	1|0	0|0	1|1	0|0	1|0	1|1	0|0	1|1	1|1	0|0	1|0
+10	114400295	rs2120929	G	A	100	PASS	AC=3491	GT	1|1	0|1	1|1	1|1	0|0	1|0	1|0	1|1	1|1	0|1	0|1	1|1	0|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	0|0	0|1	1|1	1|1	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=889	GT	0|1	0|0	1|1	0|1	0|1	1|0	0|0	1|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1
+10	119107982	rs11815112	C	T	100	PASS	AC=762	GT	0|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|1	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	T	G	100	PASS	AC=1610	GT	1|1	1|0	0|0	0|1	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	1|0	1|0	0|1	1|0	1|1	1|1
+10	123399847	rs10466158	T	C	100	PASS	AC=1395	GT	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1436	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|1	0|1	0|0	1|0	1|0	1|0	0|0	0|1	1|0	0|1	0|0	1|0	1|1	0|0	0|1
+10	128203545	rs4962566	T	C	100	PASS	AC=2931	GT	1|0	1|1	1|1	1|1	1|0	1|1	0|0	1|1	0|0	1|1	1|1	0|0	1|0	0|1	0|1	0|0	0|1	1|1	0|0	0|0	1|0	0|0	1|1	1|1	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=2316	GT	1|1	1|1	0|0	0|0	0|1	1|0	1|0	0|0	0|1	0|1	0|1	0|0	0|1	0|0	0|1	1|1	1|1	1|0	0|0	0|0	1|0	0|0	1|1	1|1	0|0	0|0
+10	132144195	rs1385259	C	T	100	PASS	AC=1458	GT	0|1	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1	1|0	0|1	0|0	1|0	1|0	0|0	1|1	0|0
+0	0	rs0	C	A	100	PASS	AC=2473	GT	0|0	0|0	1|1	1|0	1|1	0|0	1|0	1|1	1|1	1|1	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	1|1	1|0	0|0	1|0	1|1	0|1
+11	1912726	rs542605	A	G	100	PASS	AC=2606	GT	0|1	0|1	1|1	1|1	0|1	0|0	0|0	1|1	1|1	1|0	1|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	1|1	0|1	1|1	0|0	0|1	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=989	GT	1|0	1|1	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	1|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0
+11	6318959	rs11040851	A	G	100	PASS	AC=1394	GT	0|1	0|1	1|0	1|0	0|1	0|0	0|1	0|1	1|1	1|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	1|0
+0	0	rs0	C	A	100	PASS	AC=1987	GT	1|0	1|1	0|0	1|1	0|1	0|0	0|0	1|0	0|1	1|1	0|0	0|0	0|0	0|1	1|1	1|0	0|1	1|0	0|1	0|0	1|0	0|1	0|0	0|0	0|1	0|0
+11	10594503	rs11042882	T	C	100	PASS	AC=2005	GT	1|0	0|1	1|1	0|1	0|1	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	1|1	0|0	1|1	0|1	1|0	0|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3094	GT	1|1	1|0	1|0	1|0	1|1	1|1	1|0	1|1	0|0	1|1	1|0	1|0	0|0	1|0	1|1	0|1	1|1	1|1	0|1	1|0	0|1	0|0	1|1	0|0	1|1	1|0
+11	15290883	rs12279544	G	T	100	PASS	AC=897	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|1	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=2178	GT	1|0	1|1	1|0	0|0	1|0	1|0	0|0	0|1	0|0	0|0	1|0	0|0	1|1	1|1	1|0	1|1	1|0	0|0	0|0	0|1	0|0	1|1	0|0	1|0	0|1	0|0
+11	20104669	rs2028570	G	A	100	PASS	AC=2193	GT	0|1	1|1	1|1	0|0	0|1	1|1	0|0	1|0	0|1	0|0	0|1	0|0	0|0	1|0	1|1	1|0	1|1	0|1	0|0	1|0	0|0	1|0	1|1	1|1	1|0	0|1
+0	0	rs0	G	A	100	PASS	AC=4108	GT	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|0	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1
+11	24610019	rs1858156	C	T	100	PASS	AC=2187	GT	0|0	1|1	1|1	1|0	0|1	0|1	0|1	0|0	1|1	0|0	1|1	0|0	1|0	0|0	0|1	0|1	0|0	1|1	1|1	0|1	1|1	0|1	0|0	1|1	1|1	1|0
+0	0	rs0	C	T	100	PASS	AC=3461	GT	0|0	0|1	0|1	1|1	0|1	1|1	1|1	1|0	1|0	1|1	1|1	0|0	0|1	0|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	0|1	1|0	1|1	1|1
+11	30555332	rs811210	G	A	100	PASS	AC=3117	GT	0|0	1|0	0|0	0|1	1|0	1|1	1|1	0|0	1|0	0|1	1|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	0|1	0|0	0|1	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=1451	GT	0|0	1|0	0|1	1|0	0|1	0|0	0|1	1|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+11	36096312	rs10430962	G	A	100	PASS	AC=927	GT	1|1	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	1|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1910	GT	0|1	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|0	0|0	1|0	1|1	1|0	1|0	0|1	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	0|1	0|0
+11	42552055	rs10837869	A	G	100	PASS	AC=2676	GT	0|1	1|1	0|1	1|1	1|1	0|1	0|1	0|1	0|1	0|0	1|1	0|1	1|0	1|0	0|1	1|0	1|0	1|0	1|0	1|1	0|0	1|0	1|1	1|1	1|1	1|1
+0	0	rs0	A	C	100	PASS	AC=2786	GT	0|1	1|1	0|1	1|1	0|0	0|0	1|1	0|0	0|0	1|0	1|1	0|0	1|0	0|0	1|1	1|1	1|1	1|0	0|1	0|0	0|0	0|1	0|0	1|0	1|1	1|1
+11	47318157	rs749067	T	C	100	PASS	AC=818	GT	0|0	0|1	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=2579	GT	0|1	0|1	0|1	1|0	1|0	0|0	1|0	1|1	1|0	1|0	0|0	0|1	0|0	0|0	0|0	1|0	0|1	1|1	0|0	0|0	1|1	1|0	1|0	0|1	1|1	0|0
+11	60537069	rs4939451	T	C	100	PASS	AC=2624	GT	0|0	0|1	1|1	0|0	1|0	1|0	1|1	1|1	1|1	0|1	0|1	1|0	1|0	0|1	1|1	1|1	1|0	1|1	0|0	1|0	1|1	1|0	1|0	0|1	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=4154	GT	1|1	0|1	1|1	0|1	1|1	1|1	1|0	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|0
+11	66781263	rs896436	A	G	100	PASS	AC=1466	GT	0|1	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=857	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+11	72968660	rs10793057	G	A	100	PASS	AC=722	GT	1|0	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1707	GT	1|0	0|1	0|1	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|0	0|0	0|1	1|1	1|0	1|1	0|0	1|0	0|0	1|0
+11	78873621	rs501435	C	T	100	PASS	AC=3022	GT	1|1	1|1	0|0	1|0	0|1	1|1	1|1	1|0	0|0	0|1	1|1	0|0	1|1	0|0	0|0	1|1	0|0	1|1	1|1	1|0	0|0	1|0	1|1	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=3840	GT	1|1	1|1	0|1	1|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	0|0	0|0	0|1	1|1	1|1	1|0	1|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1
+11	83487889	rs12290852	T	G	100	PASS	AC=1163	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3856	GT	0|1	1|0	1|1	1|0	1|1	0|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	0|1	0|1	1|1
+11	88543715	rs12787863	C	T	100	PASS	AC=1034	GT	0|0	0|1	0|1	0|0	0|0	1|0	0|1	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	1|1	0|1	0|0	0|0	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=3594	GT	1|1	1|0	1|1	0|1	0|1	0|1	0|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1
+11	94591289	rs4309121	T	C	100	PASS	AC=1017	GT	1|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|1	0|1	0|0	1|1	0|0	1|0	0|1	0|0	1|0
+0	0	rs0	G	T	100	PASS	AC=3906	GT	0|1	1|0	1|1	1|0	1|0	1|1	1|0	1|1	1|1	1|1	1|0	1|1	0|1	0|1	0|1	0|1	1|0	1|0	1|0	1|1	0|0	1|1	0|1	1|0	1|0	1|1
+11	99609677	rs4582935	T	C	100	PASS	AC=1386	GT	0|0	1|0	0|1	0|0	1|0	0|1	0|1	1|1	1|0	1|0	0|0	0|0	1|1	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=761	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0
+11	105077608	rs11226659	C	T	100	PASS	AC=985	GT	0|0	0|0	1|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|1
+0	0	rs0	C	T	100	PASS	AC=1934	GT	0|1	0|0	1|0	0|0	0|0	1|1	1|0	1|1	0|1	0|1	1|1	0|0	0|0	0|0	1|1	0|1	1|1	0|0	0|0	0|0	1|1	0|0	0|1	0|1	1|0	1|1
+11	111056023	rs9645657	G	A	100	PASS	AC=4195	GT	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|1	1|0	0|0	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	1|0	1|1	1|1
+0	0	rs0	C	A	100	PASS	AC=550	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	1|1	0|0	1|0	0|0	1|1	0|0	0|0	0|0
+11	115586744	rs1698175	G	A	100	PASS	AC=571	GT	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1106	GT	1|1	0|0	0|0	1|0	0|0	0|1	1|0	1|1	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0
+11	119907605	rs12420530	G	T	100	PASS	AC=956	GT	0|0	1|0	1|0	1|1	0|0	1|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=3639	GT	1|0	0|1	1|1	0|1	1|1	0|1	0|0	1|0	1|0	1|1	1|0	1|1	1|0	1|1	0|1	0|1	1|0	0|0	1|1	0|0	0|1	1|0	1|1	0|1	1|1	1|0
+11	124313722	rs7122962	G	A	100	PASS	AC=984	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	1|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|1	1|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1538	GT	1|0	1|0	1|0	0|0	0|0	0|1	1|1	0|0	1|0	0|0	0|1	0|1	1|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0
+11	128797257	rs1893142	G	A	100	PASS	AC=3713	GT	1|1	0|0	0|1	1|0	1|0	1|1	1|1	0|0	0|1	1|1	1|0	0|1	1|1	1|1	1|1	1|0	0|1	1|1	0|1	1|0	1|1	1|1	1|0	1|0	1|0	1|0
+0	0	rs0	C	T	100	PASS	AC=2601	GT	1|0	0|0	0|1	1|0	1|0	0|1	0|1	1|1	1|1	0|0	1|1	0|0	1|0	0|1	0|0	1|0	0|1	1|1	1|1	0|1	0|0	0|1	1|1	0|1	1|1	1|1
+11	132831793	rs11223299	A	G	100	PASS	AC=1284	GT	0|0	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=1166	GT	1|1	0|1	0|0	1|0	0|0	0|1	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+12	2421588	rs2108570	A	G	100	PASS	AC=3912	GT	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=2408	GT	1|1	0|1	0|0	1|1	1|1	1|1	1|1	0|1	0|1	0|0	1|1	1|0	0|1	0|0	1|1	1|1	1|0	0|1	0|0	1|1	0|0	0|0	1|0	1|1	0|0	1|0
+12	6153534	rs1063856	T	C	100	PASS	AC=1684	GT	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|1	0|0	1|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=2362	GT	1|0	0|1	0|0	0|1	1|1	0|0	1|0	0|1	0|1	0|0	0|0	1|1	0|0	0|1	0|1	1|1	0|1	0|1	1|0	1|1	1|0	1|1	1|0	0|1	0|1	0|1
+12	13350245	rs7132172	T	C	100	PASS	AC=2164	GT	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	0|1	1|0	1|0	0|0	0|1	1|0	0|0	0|1	1|1	1|0	0|0	1|0	1|0	1|1	1|0	1|0	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1626	GT	0|1	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	1|1	0|1	1|1	1|1	0|1	1|0	1|1	0|0	0|0	0|1	0|1	0|0	1|0	0|1	0|0	0|0	0|1
+12	18226996	rs4764371	A	G	100	PASS	AC=1632	GT	0|0	0|0	1|1	0|0	0|1	1|0	0|0	0|1	0|1	1|0	0|1	1|1	1|0	1|0	0|0	1|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1119	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0
+12	22863971	rs12423985	A	G	100	PASS	AC=2045	GT	1|0	0|0	0|0	1|0	1|0	0|0	0|1	0|0	1|0	0|0	1|0	1|1	1|0	1|1	0|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0	1|1	1|1	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=2249	GT	1|1	1|1	0|1	0|1	1|1	0|0	0|1	0|0	1|0	0|1	0|0	1|0	0|1	1|1	1|0	1|0	0|1	1|1	0|1	0|1	1|0	1|1	1|0	1|1	1|1	1|0
+12	26858066	rs895964	G	A	100	PASS	AC=1476	GT	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	1|1	1|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0
+0	0	rs0	T	G	100	PASS	AC=3688	GT	1|0	0|1	1|0	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|0	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1
+12	32034552	rs1666224	C	T	100	PASS	AC=2907	GT	1|1	0|0	0|0	1|0	0|1	0|1	0|1	1|1	0|1	0|1	0|1	1|1	0|0	1|1	0|0	0|0	0|1	0|1	1|1	1|1	0|1	1|1	0|1	1|0	0|1	1|1
+0	0	rs0	C	A	100	PASS	AC=2075	GT	0|0	0|1	1|1	0|0	0|0	0|1	0|0	0|0	0|1	1|1	1|0	0|0	1|0	0|0	0|0	1|0	1|0	0|0	1|1	0|1	1|1	0|1	0|0	0|0	0|0	0|0
+12	41431289	rs1434687	G	A	100	PASS	AC=3030	GT	1|1	0|0	0|0	1|1	0|0	0|0	1|1	0|1	0|0	0|0	0|0	1|1	1|1	1|1	0|1	0|1	0|1	0|1	0|0	1|1	1|1	1|1	0|1	0|0	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=1418	GT	0|0	0|1	0|0	0|0	0|1	0|0	1|1	0|1	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|1	0|0	1|0	1|1	0|1	1|0	1|0
+12	47290687	rs12372169	G	A	100	PASS	AC=806	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=2298	GT	0|0	0|1	1|0	0|1	1|1	0|0	0|1	1|0	1|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1	0|0	1|1	1|1	1|1	0|0	1|0	0|0	0|1	1|0	1|0
+12	52955033	rs3842941	G	A	100	PASS	AC=1815	GT	0|1	1|0	0|0	0|0	0|0	1|0	1|0	1|1	0|1	0|0	1|0	1|1	0|1	1|1	1|0	0|0	0|1	1|1	0|1	0|1	1|1	1|1	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=3695	GT	1|1	1|0	1|1	1|0	0|1	1|1	0|1	0|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	0|1	1|1	1|0	0|0	1|1	1|1	1|1	1|0	1|1
+12	58838826	rs1908537	A	G	100	PASS	AC=1990	GT	1|0	1|1	0|0	0|1	1|0	1|1	1|0	1|1	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|0	0|1	1|0	1|1	1|1	1|0	0|0	0|0	1|0	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=1387	GT	0|0	1|0	0|0	1|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|1	0|0	0|1	0|0	0|0	1|1	1|0	0|1
+12	65018137	rs11175471	T	C	100	PASS	AC=685	GT	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	A	G	100	PASS	AC=644	GT	0|0	0|1	0|0	0|1	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|0
+12	69647278	rs12831239	A	G	100	PASS	AC=729	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3446	GT	1|0	0|0	1|1	0|0	0|1	0|1	0|1	1|1	1|1	0|0	1|1	0|1	1|1	0|1	1|1	1|1	1|0	0|0	1|1	1|1	1|1	0|0	1|1	0|0	1|1	1|0
+12	74790141	rs1461067	G	A	100	PASS	AC=2320	GT	0|1	1|1	1|0	0|1	0|1	0|0	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	1|0	1|0	0|0	0|0	0|0	0|0	0|1	1|1	1|1
+0	0	rs0	G	T	100	PASS	AC=488	GT	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0
+12	80486960	rs7971921	C	T	100	PASS	AC=2143	GT	1|1	0|1	1|0	0|1	0|1	0|0	0|0	0|0	1|0	0|1	1|1	1|0	0|1	1|0	0|1	0|1	0|0	1|0	0|1	0|0	0|1	0|0	0|0	0|1	0|0	1|1
+0	0	rs0	T	C	100	PASS	AC=1416	GT	1|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|1	1|0	1|0	0|1	0|1	0|1	1|1	0|1	0|0
+12	87119057	rs2702775	T	G	100	PASS	AC=3827	GT	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|0	1|1	0|0	1|1	0|0	1|1	0|0	1|1	1|1	1|1	0|1	1|1	0|0	1|0	1|1	1|1	1|1	1|0	1|1
+0	0	rs0	G	A	100	PASS	AC=4186	GT	1|1	0|1	1|1	0|1	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|0	1|0	1|1	1|0	1|1	1|1	1|1	0|1	1|1
+12	93834379	rs1483003	C	T	100	PASS	AC=2605	GT	1|0	1|1	0|0	0|0	1|1	1|1	1|0	1|1	0|1	0|0	0|0	1|0	1|0	0|1	1|1	0|0	0|0	0|0	0|1	1|1	1|1	1|0	1|1	0|1	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=3276	GT	1|0	1|1	1|1	1|1	1|1	0|1	1|1	0|0	0|1	0|1	1|1	1|0	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|1	0|0	1|0	1|0	1|1	1|1	0|1
+12	98637398	rs1847532	T	C	100	PASS	AC=3760	GT	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|0	1|1	1|1	1|0	0|0	1|0	0|0	1|1	1|1	1|1	1|1	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=2612	GT	1|1	1|1	1|0	0|1	0|0	1|1	1|1	1|1	1|0	0|1	1|1	0|1	1|0	1|0	1|0	1|1	1|1	0|1	1|1	0|0	1|1	1|1	0|1	0|1	1|1	1|1
+12	104059790	rs755598	C	A	100	PASS	AC=3126	GT	0|1	0|1	1|1	0|1	0|0	1|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	0|0	1|1	0|1	1|1	1|1	0|1	1|0	1|1	0|0	1|0	1|0	0|1	1|1
+0	0	rs0	G	A	100	PASS	AC=2209	GT	1|0	0|0	1|1	1|1	1|1	1|1	0|1	1|0	1|0	0|0	0|0	0|1	0|0	0|0	0|1	1|0	0|0	1|1	1|1	0|0	1|0	0|0	0|1	1|0	0|1	0|0
+12	108918330	rs2303632	G	T	100	PASS	AC=986	GT	0|1	0|0	0|0	1|1	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0
+0	0	rs0	T	G	100	PASS	AC=2558	GT	0|0	0|0	1|0	0|0	0|1	1|1	0|0	0|0	1|1	1|1	0|0	1|0	1|1	0|1	1|1	0|1	1|1	0|1	1|0	1|1	1|1	1|0	0|0	0|1	0|0	0|0
+12	115190655	rs10850375	T	C	100	PASS	AC=1437	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|1	1|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	1|0
+0	0	rs0	C	T	100	PASS	AC=1423	GT	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	1|1	1|0	1|0	0|0	0|1	0|0	0|0	1|1	0|1	1|1	0|0	1|1	0|0	0|0
+12	119518636	rs1525954	C	T	100	PASS	AC=4068	GT	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	0|1	1|0	0|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2421	GT	1|1	1|1	1|0	1|1	1|0	0|0	1|0	1|0	1|1	1|1	1|1	0|0	0|0	0|0	0|0	0|1	1|1	0|0	1|0	1|0	1|1	0|1	1|1	0|1	1|1	0|0
+12	125446436	rs4765011	A	G	100	PASS	AC=2114	GT	1|0	0|0	1|0	0|1	0|0	1|0	0|0	1|0	1|1	0|1	1|1	1|0	0|0	1|0	0|1	0|1	0|1	1|1	0|0	0|0	1|0	0|1	0|0	1|1	0|1	0|1
+0	0	rs0	C	A	100	PASS	AC=1270	GT	0|0	0|1	1|0	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	1|0
+12	129444588	rs470477	T	C	100	PASS	AC=3387	GT	1|1	0|0	1|0	1|1	1|1	1|1	1|0	1|1	0|1	0|0	1|1	1|1	1|0	1|1	0|0	1|1	1|0	1|0	0|1	0|0	1|0	1|1	1|1	0|1	0|0	1|1
+0	0	rs0	C	T	100	PASS	AC=2373	GT	1|1	1|0	1|1	1|1	1|0	0|0	0|1	1|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	1|0	0|0	0|0	0|1	0|1	0|0	0|1	1|0
+13	20464188	rs9506392	G	A	100	PASS	AC=3697	GT	1|1	1|1	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|0	1|1	1|1	1|1	1|0	1|1	0|0	0|1	0|1	1|0	1|1
+0	0	rs0	A	G	100	PASS	AC=535	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+13	24499249	rs2147990	C	T	100	PASS	AC=2379	GT	1|1	1|1	1|0	1|1	0|0	1|1	1|0	1|0	1|0	1|0	1|0	0|0	0|0	0|0	1|1	1|1	1|1	1|1	1|1	0|0	0|1	0|0	1|1	0|0	0|1	1|0
+0	0	rs0	A	G	100	PASS	AC=1740	GT	0|0	0|1	0|1	1|1	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|1	0|1	1|0	0|0	0|1	0|0	1|0	0|0	1|0	1|1	0|1	1|1	0|0	0|1	0|1
+13	29101681	rs9550377	C	T	100	PASS	AC=757	GT	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=2969	GT	0|1	0|1	1|1	0|0	1|0	1|1	1|1	0|0	1|0	1|0	0|0	1|1	1|1	1|1	0|0	0|1	0|0	1|1	0|1	1|1	1|0	1|0	0|0	1|1	1|1	0|1
+13	33541005	rs9568690	C	A	100	PASS	AC=996	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|1	0|0	1|1	0|1	1|1	0|1	0|1	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1998	GT	1|1	0|1	1|0	1|1	1|1	0|1	1|0	1|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	1|1	1|1	0|1	1|0	0|0	0|0	0|0	1|1	1|1	1|1	1|0
+13	38070549	rs4941870	G	A	100	PASS	AC=1344	GT	0|1	0|1	0|0	1|1	0|1	1|0	0|1	1|0	0|1	1|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=2499	GT	0|0	1|1	1|1	0|1	1|1	0|1	0|0	0|1	1|1	1|1	1|0	0|0	0|1	0|0	1|0	1|0	1|1	1|1	0|1	0|1	1|1	0|1	1|1	0|1	1|0	0|0
+13	43097466	rs9315924	A	G	100	PASS	AC=3557	GT	1|1	1|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	0|0	0|0	1|0	1|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	1|0	1|1	1|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2093	GT	0|0	1|0	1|1	0|1	0|1	1|1	0|0	1|0	1|0	0|1	1|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	0|1
+13	47853899	rs9526301	G	A	100	PASS	AC=1938	GT	1|0	1|1	0|1	0|0	1|0	0|0	0|1	0|0	1|0	1|0	0|0	0|1	0|0	0|1	1|0	1|0	1|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1162	GT	0|0	0|0	1|1	1|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0
+13	53860655	rs9536381	C	T	100	PASS	AC=987	GT	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3167	GT	1|1	0|1	1|1	0|0	1|1	0|1	1|1	1|1	1|0	1|0	1|1	1|0	0|0	1|0	1|1	1|1	1|0	1|0	1|1	0|0	1|0	0|0	1|1	1|1	1|1	1|0
+13	60255244	rs7333989	A	G	100	PASS	AC=1186	GT	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	1|1	1|0	1|1	1|0	1|0	0|1	0|1	0|1
+0	0	rs0	G	A	100	PASS	AC=2740	GT	1|0	0|0	1|1	0|0	0|1	1|0	1|0	1|0	1|0	1|1	0|0	1|0	1|1	0|1	0|1	0|1	1|0	1|0	1|1	1|0	1|1	0|0	0|1	0|0	1|0	0|1
+13	66974706	rs4883777	T	C	100	PASS	AC=2146	GT	1|1	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|1	1|0	1|1	1|1	0|0	0|0	0|1	0|0	1|0	1|1	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=1761	GT	0|0	0|0	0|0	1|1	0|0	1|0	0|1	0|0	1|1	1|1	0|0	0|0	0|1	1|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	0|0	0|0	1|1	0|0	1|0
+13	72768709	rs4083578	T	G	100	PASS	AC=2604	GT	1|1	1|1	0|0	1|1	1|1	1|1	1|1	0|1	0|0	0|0	1|1	1|0	1|1	1|1	1|1	1|0	1|1	1|0	0|0	0|1	1|0	0|0	1|0	1|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=2797	GT	1|1	0|1	0|1	0|1	1|0	0|0	1|0	1|0	0|1	1|1	0|0	0|1	1|1	0|0	1|1	1|1	1|0	1|1	0|1	0|0	1|1	0|1	0|1	1|0	1|1	0|1
+13	77259994	rs9600757	G	T	100	PASS	AC=2173	GT	1|1	0|0	0|1	1|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	1|1	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|1
+0	0	rs0	T	C	100	PASS	AC=3442	GT	1|0	1|1	1|1	1|0	1|0	1|1	1|0	1|1	1|0	0|1	0|0	0|0	0|1	0|1	1|1	0|1	1|0	1|1	0|1	1|1	0|1	1|1	1|1	1|0	1|1	1|1
+13	82981685	rs2026167	C	T	100	PASS	AC=1643	GT	1|1	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	1|0	0|0	1|1	1|0	1|1	0|1	1|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	1|0	1|0
+0	0	rs0	A	C	100	PASS	AC=3248	GT	1|0	1|1	1|1	1|0	1|0	0|0	0|1	0|0	1|1	1|1	0|1	1|0	0|1	0|0	1|1	0|0	0|1	0|0	1|1	0|0	1|1	0|0	1|1	0|1	1|1	0|1
+13	90129913	rs3736408	A	G	100	PASS	AC=2030	GT	0|1	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	1|1	1|1	1|0	0|1	1|0	1|0	0|1	0|1	0|0	1|1	0|1	0|1	0|0	1|0	0|0	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1649	GT	1|0	0|1	0|0	1|0	0|1	0|0	1|1	1|1	0|0	1|0	0|0	1|0	0|1	1|1	1|0	1|0	0|0	0|1	0|0	0|1	0|0	0|1	0|0	1|0	1|0	1|0
+13	95178317	rs7336995	T	G	100	PASS	AC=2515	GT	1|0	1|0	1|0	1|1	0|0	0|0	0|0	1|1	0|1	1|0	0|0	0|0	1|0	0|0	0|0	0|0	1|1	0|0	0|1	0|1	1|0	1|1	1|0	0|0	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1918	GT	1|0	0|0	0|1	0|1	0|0	1|1	0|0	1|1	1|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	1|1	1|1	0|1	0|0	0|1	0|1	1|1	1|0	0|1	0|0
+13	99952021	rs9557193	A	G	100	PASS	AC=785	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1388	GT	1|0	0|0	0|1	0|0	0|1	1|0	0|0	1|1	0|0	0|0	0|1	0|1	0|1	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	1|1	0|0	1|0
+13	103905091	rs4132332	T	C	100	PASS	AC=3642	GT	1|1	0|1	0|1	1|1	1|0	0|0	0|1	0|0	0|1	0|1	1|1	1|1	0|1	0|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	0|0	0|0	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1591	GT	1|0	0|0	0|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0
+13	107948122	rs2224904	T	C	100	PASS	AC=1252	GT	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	1|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2337	GT	1|1	1|1	0|0	1|1	1|1	0|0	1|1	0|0	0|0	1|1	1|1	1|0	0|0	1|0	1|0	1|0	0|0	0|0	0|0	1|1	1|0	1|1	0|1	0|0	1|1	0|0
+13	111973789	rs4773353	G	T	100	PASS	AC=1452	GT	0|1	0|0	1|1	0|0	0|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	1|1	0|1	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=987	GT	0|1	0|1	0|0	0|0	0|1	0|1	1|0	1|1	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+14	21994936	rs2242529	C	T	100	PASS	AC=1239	GT	0|0	0|0	0|0	1|1	0|0	1|0	0|1	0|1	0|0	0|0	1|1	0|0	0|0	0|0	1|0	0|1	1|0	0|1	0|1	0|0	0|1	0|0	0|0	1|1	0|0	1|0
+0	0	rs0	A	G	100	PASS	AC=1352	GT	0|1	1|0	1|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	0|1	1|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	1|1	0|1	0|0
+14	26396076	rs12880493	G	A	100	PASS	AC=2341	GT	1|0	0|0	1|1	1|1	1|0	1|1	1|1	1|0	1|1	1|0	1|0	0|0	0|0	0|1	1|1	0|1	1|0	1|0	0|1	1|0	1|1	0|0	1|1	0|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=2381	GT	1|0	0|1	1|1	1|0	1|1	1|1	1|1	1|0	0|1	1|1	0|0	0|1	0|1	1|0	0|1	1|1	1|0	0|0	0|0	0|0	1|0	0|1	1|1	0|0	0|0	1|0
+14	32318537	rs10129419	G	A	100	PASS	AC=1787	GT	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|1	1|1	0|0	0|1	0|0	1|0	1|0	1|0	1|1	0|1	0|0	0|0	1|1	1|0	1|0	0|0	0|1	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=2621	GT	1|0	1|1	0|1	1|0	1|0	0|1	0|0	0|1	1|0	0|1	1|0	0|1	0|0	1|0	1|1	1|0	0|1	0|0	0|1	1|1	0|1	1|1	0|0	1|0	0|0	0|0
+14	37044193	rs8010068	G	A	100	PASS	AC=3116	GT	1|0	0|1	1|1	1|0	0|0	1|0	1|0	1|1	1|1	1|0	1|0	0|0	0|1	1|1	1|0	1|1	0|0	1|1	1|1	1|0	1|1	0|0	1|1	1|1	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1101	GT	0|0	1|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|1	1|1	0|0	0|0	0|0	0|1	1|1	0|0	1|0	0|1	0|0	0|0	0|0	0|1	0|1	0|1	0|0
+14	42987086	rs931687	G	A	100	PASS	AC=3826	GT	1|1	1|1	0|1	0|0	1|1	0|0	0|1	0|1	0|1	1|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|0	0|1	1|0	1|1	0|0	1|1	1|1	1|1
+0	0	rs0	T	C	100	PASS	AC=934	GT	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|1	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0
+14	49681229	rs2353654	A	G	100	PASS	AC=3707	GT	1|0	1|0	1|0	1|0	0|1	1|1	0|1	1|1	1|0	0|0	0|1	1|1	1|1	1|1	0|0	1|1	0|0	0|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1	0|1
+0	0	rs0	A	C	100	PASS	AC=1628	GT	0|1	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|0	1|0	0|1	0|1	0|1	1|1	1|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0
+14	54659207	rs8008441	C	T	100	PASS	AC=3689	GT	0|1	1|1	0|1	0|0	0|1	1|1	0|0	1|1	1|1	1|0	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|1	1|1	1|0	1|1	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1866	GT	1|0	1|0	1|1	0|1	1|0	0|0	1|0	0|0	1|0	0|0	0|1	1|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	1|1	0|1	0|1	1|1	0|1	0|1	0|1
+14	59447000	rs1950666	A	G	100	PASS	AC=3135	GT	1|0	0|1	0|1	1|0	1|1	1|0	1|1	1|1	0|1	1|0	0|0	1|1	0|0	0|1	0|1	0|0	1|1	1|1	1|1	1|0	1|0	1|0	1|1	1|1	1|1	0|1
+0	0	rs0	C	T	100	PASS	AC=1641	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|1	1|1	1|1	1|1	0|0	0|1	0|0	0|0	0|0	1|1	1|0	1|1	0|0	1|0	0|0	0|1
+14	65149227	rs4902307	A	C	100	PASS	AC=2009	GT	1|1	0|0	1|1	0|1	1|0	1|1	1|0	1|1	1|1	0|0	0|1	0|0	0|0	0|0	1|1	0|1	1|1	1|0	1|1	0|0	1|0	0|0	0|0	1|0	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=851	GT	1|1	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	1|0	0|0	1|0	0|0	1|0	1|0	0|0	0|1	1|0
+14	70752646	rs4899343	A	G	100	PASS	AC=3895	GT	1|0	1|1	1|1	1|1	0|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	0|1	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=3076	GT	0|1	1|1	1|1	1|1	0|0	0|1	1|1	1|1	1|1	1|1	1|1	1|0	1|0	1|0	0|0	1|1	1|0	1|1	1|1	0|0	1|1	1|0	1|1	1|0	0|1	1|1
+14	75923621	rs7146899	T	C	100	PASS	AC=2522	GT	0|0	0|0	1|1	0|0	0|1	0|1	0|0	0|0	1|0	0|1	0|1	1|0	1|0	1|1	1|1	0|0	0|1	1|0	1|0	1|1	0|1	1|1	0|0	0|0	0|0	1|1
+0	0	rs0	A	G	100	PASS	AC=2408	GT	1|0	0|0	0|1	0|1	0|0	1|1	0|1	0|0	0|1	1|1	0|0	1|0	0|0	0|0	0|0	1|1	0|0	1|0	1|0	0|1	0|0	1|1	0|1	1|1	0|0	1|1
+14	80561521	rs8007693	T	C	100	PASS	AC=2306	GT	1|0	0|1	0|1	1|0	0|1	0|1	1|0	1|1	0|1	1|1	0|1	0|0	1|0	0|0	0|1	1|1	1|0	0|1	1|0	1|0	0|0	1|1	0|0	1|0	0|1	1|1
+0	0	rs0	C	A	100	PASS	AC=1170	GT	0|1	1|1	0|0	0|1	0|1	1|1	0|1	0|1	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1
+14	86048187	rs1473706	G	A	100	PASS	AC=863	GT	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|1	1|1	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=593	GT	0|0	0|0	1|0	1|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+14	90947230	rs2401890	T	C	100	PASS	AC=2533	GT	0|0	0|0	0|0	0|1	0|1	1|1	1|0	1|1	0|0	0|1	0|1	0|0	0|0	1|0	1|1	0|1	0|1	0|1	1|0	1|0	0|1	1|0	0|1	0|0	0|1	1|0
+0	0	rs0	G	A	100	PASS	AC=769	GT	0|0	0|0	1|0	0|0	0|0	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+14	95264902	rs1950771	G	A	100	PASS	AC=4119	GT	0|1	1|1	1|1	1|1	0|1	1|0	1|0	1|1	1|1	0|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|0	0|0	1|0	1|1
+0	0	rs0	C	T	100	PASS	AC=2087	GT	1|0	0|0	1|1	0|1	0|0	1|1	0|0	1|0	1|1	1|1	0|1	0|1	0|0	0|1	1|0	1|0	1|0	0|0	1|1	0|0	1|1	1|0	1|0	1|1	1|0	0|0
+14	99339897	rs1956885	T	C	100	PASS	AC=2985	GT	1|0	1|0	0|0	0|1	0|1	1|0	1|0	1|1	1|1	1|0	0|0	0|1	1|1	1|1	1|0	1|0	1|0	0|1	1|1	1|1	1|1	1|1	0|1	0|1	1|0	0|0
+0	0	rs0	A	G	100	PASS	AC=1651	GT	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|1	0|0	1|1	0|1	0|1	0|0	0|0	0|0
+14	104350756	rs8018649	G	A	100	PASS	AC=1438	GT	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|1	0|0	1|0	1|0	0|1	1|1	1|0	0|1	1|0	1|0	1|1	1|0	1|0	1|0	0|0	0|0	0|1	0|0
+0	0	rs0	A	C	100	PASS	AC=2480	GT	1|1	1|1	0|1	1|0	0|0	1|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	1|0	0|1	1|1	0|0	1|1	1|0	0|0	0|1	1|0	0|0	1|1	1|0
+15	26746446	rs1593609	C	T	100	PASS	AC=1686	GT	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1	1|1	1|1	0|0	0|1	0|0	0|0	0|1	0|1	1|0	0|1	1|1	0|1	0|0	0|0	0|1	0|1	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2848	GT	0|1	1|0	1|0	1|1	0|0	1|1	0|0	0|0	1|1	1|1	0|1	1|1	1|0	1|1	0|1	1|0	0|0	1|0	0|1	1|0	1|0	1|0	1|1	1|0	0|1	0|1
+15	32514341	rs2611583	A	G	100	PASS	AC=3790	GT	1|0	1|1	1|1	1|0	1|1	0|0	1|1	1|1	1|1	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	0|1	0|0	1|1	1|1	1|1	1|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=2017	GT	0|0	0|0	0|1	1|1	0|0	0|1	0|0	1|1	1|0	0|1	1|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	1|1	0|0	1|0	1|0	0|1	1|0	0|1	1|0
+15	37342602	rs8041675	T	C	100	PASS	AC=2270	GT	1|0	1|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|1	0|0	0|0	1|1	0|1	0|1	0|1	0|0	1|0	0|0	1|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1535	GT	1|1	0|1	0|0	1|1	0|1	0|1	1|1	0|0	0|0	0|0	1|0	1|1	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	1|0	0|1
+15	42194217	rs1113333	T	C	100	PASS	AC=2706	GT	1|0	0|0	0|0	0|1	1|0	1|0	1|0	0|0	0|0	1|1	1|0	1|1	1|1	1|1	1|0	1|0	0|0	1|0	1|0	1|1	0|0	1|1	0|0	0|1	1|1	0|1
+0	0	rs0	G	A	100	PASS	AC=1107	GT	0|1	0|1	1|0	0|0	1|1	1|0	0|0	0|0	0|1	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|1	0|1	0|0
+15	49162953	rs10519193	T	C	100	PASS	AC=2651	GT	1|1	1|1	0|0	1|1	0|1	0|1	0|1	0|1	0|0	1|0	1|1	0|0	0|0	1|0	1|0	0|0	0|1	1|1	0|1	0|0	0|0	1|0	1|0	1|1	1|1	1|1
+0	0	rs0	T	G	100	PASS	AC=2906	GT	1|0	0|1	1|1	1|1	0|1	0|1	1|1	0|1	1|0	1|0	0|1	1|1	1|1	1|1	1|1	0|0	0|0	1|1	1|0	1|1	0|1	1|0	1|0	1|0	1|0	0|0
+15	54476135	rs8036265	G	A	100	PASS	AC=1654	GT	1|1	0|1	1|0	1|0	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|1	0|1	1|1	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|1	0|0	0|0	1|0	0|0
+0	0	rs0	C	A	100	PASS	AC=912	GT	0|0	0|0	0|0	1|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|0	0|1	0|1	0|0	1|0	1|0
+15	59712427	rs6494110	G	A	100	PASS	AC=1838	GT	1|0	0|1	0|0	0|0	0|0	0|0	1|0	1|1	1|0	1|0	0|1	1|1	1|1	1|1	1|0	1|1	0|1	0|1	0|0	0|0	0|1	1|1	0|1	0|1	1|1	0|0
+0	0	rs0	A	G	100	PASS	AC=1408	GT	1|0	1|0	1|1	1|0	1|1	1|0	0|0	1|1	1|1	1|1	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|1	0|0	1|0	0|0	0|0	1|0	0|0	0|0
+15	63713349	rs289806	A	G	100	PASS	AC=753	GT	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|1	0|0	0|1	0|0	0|0
+0	0	rs0	A	C	100	PASS	AC=1797	GT	1|1	0|1	0|0	0|1	0|0	1|0	0|1	1|0	0|0	0|0	0|1	0|0	0|1	1|1	1|1	1|0	1|0	1|1	0|0	1|0	0|0	0|0	0|1	1|0	0|1	0|1
+15	69830008	rs12593658	C	T	100	PASS	AC=1273	GT	0|0	0|0	1|1	0|0	0|0	1|0	0|0	1|0	1|0	1|0	0|0	1|1	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	0|1	0|0	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=3846	GT	1|0	0|0	1|1	1|1	0|1	1|0	0|1	0|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1
+15	75133220	rs881536	C	A	100	PASS	AC=895	GT	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=3360	GT	1|1	1|1	0|1	1|0	0|0	1|1	1|1	1|1	1|1	1|0	1|1	1|1	0|0	1|0	1|0	1|1	1|1	0|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1
+15	80956407	rs8031550	G	A	100	PASS	AC=1871	GT	0|1	0|0	0|0	1|1	0|0	0|1	0|0	1|1	0|0	0|0	0|1	1|1	0|0	0|1	0|1	1|0	0|0	0|0	1|0	1|0	0|0	0|1	0|1	0|1	1|1	1|0
+0	0	rs0	C	T	100	PASS	AC=3668	GT	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	0|1	1|0	1|1	1|1	1|1	0|0	1|1	0|0	1|1	0|1	1|1	0|1	0|1	1|1	0|1	1|1	1|1
+15	86903044	rs10220773	C	T	100	PASS	AC=1992	GT	0|1	1|1	0|0	0|1	0|1	0|0	1|1	0|0	1|1	0|1	1|0	0|0	1|0	0|0	0|0	0|0	1|1	1|1	0|1	0|0	0|0	0|0	1|0	1|0	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=1919	GT	0|0	0|1	1|0	0|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	1|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0
+15	91614718	rs11073977	C	A	100	PASS	AC=2722	GT	0|0	0|1	0|0	1|1	0|0	0|0	1|0	1|1	1|1	1|0	1|0	0|1	0|0	1|1	1|1	0|1	0|1	1|0	0|1	0|0	1|1	0|1	1|0	0|0	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1121	GT	0|1	0|0	0|0	1|1	0|0	0|0	0|0	1|0	0|0	1|0	1|1	0|0	0|0	0|1	1|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+15	95335856	rs11073390	T	C	100	PASS	AC=2061	GT	1|1	0|0	0|1	0|0	0|0	1|1	1|0	1|0	0|1	0|1	0|1	0|0	0|1	0|0	0|1	0|1	0|1	1|1	0|1	0|0	1|1	0|0	0|0	1|0	0|1	0|1
+0	0	rs0	C	T	100	PASS	AC=2288	GT	0|1	1|0	1|1	0|0	1|0	0|1	0|0	1|1	0|1	0|1	0|0	0|0	1|1	1|1	0|1	0|0	0|0	0|0	1|0	1|1	1|0	1|1	0|0	0|0	1|1	1|0
+15	99550237	rs2654976	G	A	100	PASS	AC=2915	GT	0|1	1|1	0|0	0|1	1|1	1|1	0|1	0|0	0|1	0|1	1|0	1|0	0|0	0|1	0|1	1|0	1|1	1|0	0|1	0|0	1|0	1|1	0|1	1|1	1|1	1|1
+0	0	rs0	C	T	100	PASS	AC=2258	GT	0|1	1|1	0|1	0|1	0|0	0|0	1|1	1|0	0|1	1|1	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	1|1	0|1	0|1	0|1	1|0	0|0	0|0
+16	1959619	rs1742398	T	C	100	PASS	AC=3156	GT	0|0	1|0	0|0	1|1	0|1	1|0	0|0	1|0	0|1	0|0	0|1	1|0	1|0	1|1	0|1	1|1	1|1	1|1	0|0	1|1	0|0	1|1	0|0	0|1	0|0	1|0
+0	0	rs0	G	A	100	PASS	AC=598	GT	1|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	1|1	1|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0
+16	6767300	rs2160039	G	A	100	PASS	AC=2033	GT	0|1	1|0	0|1	1|0	1|0	1|0	1|0	0|0	0|0	1|0	1|0	0|1	1|1	0|0	1|0	1|1	1|1	1|1	1|0	0|0	0|0	1|0	0|0	1|1	1|1	1|0
+0	0	rs0	A	C	100	PASS	AC=3336	GT	1|0	0|0	0|1	0|0	0|0	1|1	0|1	1|1	1|1	1|1	0|1	1|0	1|1	0|0	1|1	0|0	1|1	1|1	1|1	0|1	1|0	0|0	1|1	1|1	1|1	1|1
+16	10575824	rs1970817	C	A	100	PASS	AC=2334	GT	1|0	0|0	1|1	0|1	1|1	0|1	1|1	1|1	0|0	0|1	0|1	0|0	0|1	0|1	1|1	0|0	0|1	0|0	1|0	0|0	0|1	0|1	1|0	1|0	1|1	1|0
+0	0	rs0	C	T	100	PASS	AC=3536	GT	1|1	0|0	1|1	0|1	0|0	1|0	0|0	1|1	1|1	1|0	1|1	0|1	0|1	0|1	0|1	0|0	0|0	0|0	1|1	1|0	1|1	1|0	1|0	1|1	0|1	1|0
+16	15831212	rs2272555	G	A	100	PASS	AC=2627	GT	0|0	1|0	1|1	0|0	1|0	0|1	1|0	0|0	1|1	0|1	0|1	1|1	1|1	0|1	0|0	0|1	1|0	1|1	1|1	1|1	0|1	1|1	0|1	1|1	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=1449	GT	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	1|1	0|1	1|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|0	1|0	0|0	0|0
+16	22282150	rs8059570	G	A	100	PASS	AC=883	GT	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=1718	GT	0|0	1|1	0|1	0|0	0|1	1|1	0|1	0|1	1|0	1|1	0|0	0|0	1|0	1|0	1|1	1|0	1|0	1|0	0|0	0|1	1|0	1|0	0|1	1|1	0|0	1|1
+16	27364806	rs3024619	G	A	100	PASS	AC=1789	GT	1|0	1|1	0|1	1|0	1|0	0|1	0|0	0|1	0|0	0|1	0|0	0|0	0|1	0|0	1|1	1|1	0|1	0|0	0|0	0|0	0|1	0|0	1|1	0|0	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=3589	GT	1|1	1|1	0|1	1|1	0|1	1|0	0|1	0|0	0|1	1|0	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|1	0|1	0|1	1|1
+16	49941230	rs10521193	T	C	100	PASS	AC=2378	GT	0|0	1|0	1|0	1|0	0|1	0|1	1|0	0|0	0|0	1|1	1|0	1|1	1|1	1|1	0|1	0|1	0|0	1|1	0|0	1|0	0|0	1|0	1|1	0|0	0|1	0|0
+0	0	rs0	A	G	100	PASS	AC=2020	GT	0|1	0|1	1|0	1|0	0|0	0|1	0|1	1|1	1|0	1|0	0|1	0|0	0|1	0|1	0|0	0|0	0|1	0|1	1|1	0|0	1|1	0|1	1|0	1|1	1|1	1|0
+16	54667698	rs1493897	C	A	100	PASS	AC=1663	GT	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|1	0|1	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|1	0|0	1|1	0|0	1|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1039	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|0	0|0	0|1	0|1	1|1	0|0	0|0	1|0	0|0	0|1	0|0	0|1
+16	59543339	rs12709027	A	G	100	PASS	AC=3016	GT	1|0	1|1	0|0	0|1	1|0	0|1	1|0	1|1	0|0	1|1	0|1	0|1	1|1	1|1	1|0	0|0	0|1	0|1	1|1	1|1	1|0	0|1	1|1	0|0	0|1	1|1
+0	0	rs0	C	T	100	PASS	AC=2846	GT	1|0	1|1	1|0	0|0	1|0	1|1	1|1	1|1	1|0	0|1	0|1	0|1	1|1	1|1	1|1	0|0	1|0	0|0	1|1	1|1	1|0	1|1	1|1	0|0	0|0	1|0
+16	65274433	rs1423791	A	C	100	PASS	AC=2162	GT	1|1	1|1	1|0	0|1	1|1	0|0	0|1	0|0	1|0	0|0	1|1	1|1	0|1	1|0	0|1	0|1	1|0	1|1	1|0	1|0	0|0	1|0	0|0	0|1	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=2885	GT	1|0	0|1	0|0	1|0	1|1	0|0	1|1	0|0	0|0	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	0|0	1|1	1|0	1|1	1|0	0|1	0|1	0|1
+16	72527247	rs212175	C	T	100	PASS	AC=2347	GT	1|1	0|1	0|0	1|1	1|1	0|0	1|1	0|0	1|0	0|0	0|1	0|1	1|0	0|0	1|1	1|1	1|1	0|1	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0
+0	0	rs0	C	T	100	PASS	AC=4220	GT	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1
+16	77628285	rs157469	G	A	100	PASS	AC=661	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=2336	GT	1|0	1|1	0|1	1|0	1|0	1|1	1|0	0|0	0|1	1|1	1|0	1|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	1|0	0|0	1|0	0|0	1|0	0|1
+16	81189510	rs1563073	G	A	100	PASS	AC=3180	GT	0|1	1|1	1|0	0|1	1|0	1|0	1|1	1|0	0|1	1|1	1|0	1|1	1|0	0|0	1|1	1|1	1|1	1|0	0|1	0|0	1|0	0|0	0|1	0|1	1|1	1|1
+0	0	rs0	A	C	100	PASS	AC=3184	GT	1|1	0|1	1|1	1|0	0|1	1|0	1|0	1|1	1|1	1|1	1|0	1|0	1|1	0|0	0|1	1|1	0|0	1|1	1|1	0|0	1|1	1|0	1|1	1|1	0|1	0|1
+16	84558163	rs4783001	G	T	100	PASS	AC=603	GT	1|0	0|0	1|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=3741	GT	1|0	0|1	1|1	0|1	1|1	1|1	1|1	1|1	1|0	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	0|1	1|1	0|1	0|0	1|1	1|1	1|1	1|1	1|1
+16	88331640	rs9938149	C	A	100	PASS	AC=3690	GT	1|1	1|1	1|1	1|1	0|0	0|1	0|0	1|1	1|1	1|1	1|0	1|1	0|1	1|0	1|1	0|1	1|1	1|0	1|1	1|0	1|1	1|1	1|1	0|0	1|0	1|0
+0	0	rs0	G	A	100	PASS	AC=2616	GT	0|0	0|1	0|1	1|1	1|1	0|1	1|0	1|0	1|1	0|0	0|1	0|0	0|0	1|1	1|1	0|0	0|0	1|1	1|1	0|0	0|1	0|1	1|1	1|1	1|0	0|0
+17	3006485	rs4790427	G	A	100	PASS	AC=1296	GT	1|1	0|0	0|1	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	1|1
+0	0	rs0	T	C	100	PASS	AC=1801	GT	0|1	1|1	0|0	0|1	1|0	1|1	1|1	1|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|1	0|1
+17	6987160	rs314224	C	T	100	PASS	AC=3886	GT	0|1	0|1	1|1	1|1	0|1	0|0	1|1	0|1	1|1	1|0	0|1	1|1	1|1	1|1	0|1	0|1	1|0	1|1	0|1	1|1	0|1	1|1	0|1	1|1	1|1	0|1
+0	0	rs0	G	A	100	PASS	AC=2324	GT	0|0	1|0	1|1	0|0	0|1	1|1	1|1	1|0	0|1	1|1	1|0	0|0	1|0	0|1	0|0	1|1	0|0	0|0	0|1	1|1	1|1	0|0	1|0	0|1	0|1	0|0
+17	11224354	rs7502432	T	C	100	PASS	AC=1010	GT	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=2599	GT	1|0	0|1	0|0	1|0	1|0	0|0	1|1	0|0	0|1	0|0	1|0	0|0	0|0	0|1	0|0	1|0	0|0	1|1	1|0	0|0	0|0	1|0	1|0	1|1	1|1	0|1
+17	15120356	rs1006978	T	C	100	PASS	AC=2503	GT	1|1	1|0	0|1	1|0	1|1	0|0	0|1	1|0	1|1	0|1	1|0	0|1	0|1	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|0	1|1	0|0	1|0	1|1
+0	0	rs0	G	A	100	PASS	AC=1160	GT	1|1	0|0	0|0	0|0	1|0	0|0	1|1	1|0	0|0	0|0	0|1	0|0	1|0	1|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0
+17	26144284	rs2531869	A	G	100	PASS	AC=3836	GT	1|0	0|1	1|1	1|0	1|0	0|0	1|1	1|1	1|1	1|1	0|0	1|0	1|0	1|1	1|1	1|1	1|1	0|0	1|1	0|0	1|1	1|0	1|1	1|1	1|0	1|1
+0	0	rs0	C	T	100	PASS	AC=3301	GT	1|1	1|1	0|0	1|0	0|1	0|1	1|1	1|1	0|1	0|0	1|1	1|0	1|0	1|1	0|1	0|1	1|1	0|1	0|1	1|0	1|1	1|1	0|1	0|1	1|1	1|1
+17	32999635	rs7502462	G	A	100	PASS	AC=3074	GT	0|0	0|1	0|1	1|0	0|1	0|0	0|0	1|0	0|0	1|0	1|1	1|0	1|1	1|1	1|1	0|0	1|1	0|1	1|1	1|0	0|1	1|1	0|1	1|1	1|1	1|0
+0	0	rs0	T	C	100	PASS	AC=3176	GT	0|0	0|0	1|1	1|1	0|1	1|1	0|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	0|1	0|1	0|1	1|1	1|1	1|0	1|1	0|1	1|0	1|0	1|1	1|1
+17	39599926	rs3760524	T	C	100	PASS	AC=3229	GT	1|1	0|1	1|0	1|1	0|1	1|1	0|1	1|1	0|1	1|1	1|0	0|0	0|0	0|0	1|1	0|0	1|0	1|1	1|1	0|0	1|1	1|0	1|0	0|1	0|1	1|0
+0	0	rs0	C	T	100	PASS	AC=1122	GT	0|1	0|0	1|0	0|0	1|0	0|0	1|0	0|0	0|1	1|0	1|1	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|1	1|0	1|0	1|1
+17	47210506	rs7207403	C	A	100	PASS	AC=2159	GT	1|0	1|0	1|0	1|0	1|0	1|1	0|1	0|0	0|0	0|0	1|1	0|1	1|1	1|0	1|1	1|0	1|0	1|0	0|0	1|1	0|0	0|1	0|1	1|1	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1890	GT	0|0	0|0	1|0	0|0	0|0	0|1	0|1	1|0	0|0	0|1	1|1	0|0	0|0	0|0	1|0	1|1	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|1	1|1
+17	52975892	rs2958915	T	G	100	PASS	AC=2106	GT	1|1	0|1	0|0	0|0	1|0	1|0	0|1	0|0	0|1	0|0	1|0	1|1	0|0	0|0	1|0	0|0	1|1	0|1	0|0	0|1	0|0	1|0	1|0	1|0	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=3590	GT	1|0	0|1	1|0	0|0	1|1	1|1	1|0	1|1	1|1	1|0	0|1	1|1	1|1	1|1	1|1	0|0	0|1	0|1	1|0	1|1	1|1	1|1	0|0	1|1	1|1	0|1
+17	58325868	rs237969	A	G	100	PASS	AC=1808	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	1|1	0|1	1|1	1|1	1|0	0|0	0|0	0|1	1|1	0|0	1|1	0|0	0|1	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=1105	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	1|1	0|0	0|0
+17	64874615	rs1002327	T	C	100	PASS	AC=2611	GT	1|1	1|0	1|0	0|0	0|1	1|0	1|1	0|0	0|0	1|0	0|0	0|1	1|1	1|1	1|1	0|0	1|0	1|0	1|0	0|1	0|0	1|0	0|1	0|0	1|0	0|0
+0	0	rs0	C	A	100	PASS	AC=4015	GT	1|1	1|1	1|1	1|0	1|0	1|0	1|0	0|1	1|0	1|1	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1
+17	69512099	rs10512572	G	A	100	PASS	AC=1421	GT	0|1	0|0	0|1	0|1	0|0	0|0	0|0	1|0	1|0	1|1	0|1	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|0	0|0	1|1	0|0	1|0	0|0	0|1	0|0
+0	0	rs0	T	G	100	PASS	AC=1177	GT	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|1	0|0
+17	73328989	rs16967789	G	A	100	PASS	AC=814	GT	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1708	GT	1|0	0|0	0|0	1|0	1|0	0|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|1	0|0	1|1	0|1	0|0	0|0	0|0	0|0	0|0
+17	78022245	rs2289529	G	A	100	PASS	AC=1617	GT	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|1	1|1	1|1	0|0	0|0	0|0	0|0	0|0	1|1	1|0	1|1	0|0	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2410	GT	1|1	1|0	1|1	0|0	0|0	0|0	0|0	0|1	1|0	1|1	0|0	1|1	0|1	1|1	0|0	1|0	0|0	0|1	0|0	1|1	1|0	1|1	0|0	0|0	1|0	1|0
+18	2521602	rs12455606	C	T	100	PASS	AC=1161	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	0|1	0|0	0|0
+0	0	rs0	C	A	100	PASS	AC=757	GT	0|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+18	6851557	rs11660743	C	T	100	PASS	AC=2374	GT	1|1	1|0	1|0	0|1	1|1	1|0	1|1	1|0	1|0	1|1	1|1	0|1	0|0	0|0	1|1	1|0	1|1	0|0	0|0	1|0	0|1	1|1	1|0	0|1	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=2318	GT	1|0	0|1	1|1	1|1	1|1	1|0	0|1	0|1	0|1	0|1	1|0	1|0	1|0	1|1	1|1	0|0	1|1	0|1	1|1	0|0	1|0	0|0	1|0	0|1	1|1	1|0
+18	10752045	rs7233628	G	A	100	PASS	AC=3218	GT	0|1	1|0	1|1	0|0	1|1	0|0	1|0	1|0	1|0	0|1	0|0	1|1	1|1	1|1	0|0	1|1	1|0	1|1	0|1	1|1	1|0	1|1	0|0	0|1	0|0	1|1
+0	0	rs0	A	G	100	PASS	AC=2156	GT	1|0	1|1	1|0	1|0	0|0	0|0	0|1	0|0	1|0	1|1	0|0	0|0	0|1	0|0	0|1	0|1	0|0	1|1	0|0	0|0	1|0	1|1	1|0	0|0	1|0	1|1
+18	20309232	rs299235	T	C	100	PASS	AC=1795	GT	0|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	1|0	1|1	1|0	0|1	0|1	0|1	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|1	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=1428	GT	0|0	0|0	0|0	0|0	1|0	0|1	1|0	0|0	1|1	1|0	0|0	0|1	0|0	0|0	1|0	0|0	1|1	0|1	1|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+18	25167945	rs1420956	T	C	100	PASS	AC=2982	GT	1|1	1|0	1|0	1|0	1|0	1|1	0|1	0|1	1|0	1|0	0|1	1|1	1|1	0|1	0|1	0|1	1|1	1|0	0|1	0|1	1|0	1|1	1|1	0|0	1|1	1|0
+0	0	rs0	A	G	100	PASS	AC=1647	GT	0|0	0|0	0|1	0|0	0|0	1|0	1|1	1|1	0|0	0|0	1|0	1|1	0|1	1|0	0|0	0|0	1|0	0|0	0|1	0|0	0|0	1|1	0|0	0|1	0|0	0|0
+18	30249433	rs1511036	T	C	100	PASS	AC=1646	GT	0|0	0|0	1|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	1|0	0|1	0|1	1|1	1|0	0|1	1|0	1|0	0|0	1|1	0|0	1|1	0|0	1|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=511	GT	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0
+18	36106229	rs1593578	T	C	100	PASS	AC=3753	GT	1|0	1|1	0|1	0|1	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|0	1|1	0|1
+0	0	rs0	A	G	100	PASS	AC=1769	GT	0|0	1|1	1|1	0|0	0|0	1|1	0|0	0|0	0|0	1|1	1|0	1|0	1|0	1|0	0|0	1|0	0|0	0|0	1|1	0|1	0|1	1|1	1|0	0|0	0|1	1|0
+18	42102847	rs1511771	G	A	100	PASS	AC=1567	GT	0|1	0|1	1|1	0|0	0|0	1|0	0|0	1|0	1|0	0|0	1|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	1|0	1|0	1|0	0|0	0|1	0|0	1|0	0|0
+0	0	rs0	G	A	100	PASS	AC=625	GT	0|0	0|0	0|1	0|0	0|0	0|1	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0
+18	46608260	rs833497	T	C	100	PASS	AC=974	GT	0|0	0|0	0|1	0|0	0|0	0|0	1|0	1|1	0|1	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	T	G	100	PASS	AC=3680	GT	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	0|0	1|1	0|1	1|0	1|1	1|1	1|1	1|1	0|1	0|1	0|0	1|1	1|1	1|1	1|1
+18	51701427	rs676800	C	A	100	PASS	AC=2378	GT	0|0	1|0	0|1	0|0	1|1	0|1	0|0	0|1	0|1	0|0	1|1	1|1	1|1	0|0	1|1	1|1	0|1	1|1	0|0	0|0	0|1	0|0	0|1	0|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=3433	GT	1|1	1|0	1|1	0|1	1|0	0|1	0|0	1|1	1|0	1|1	0|0	0|0	0|0	1|0	1|0	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1
+18	56610006	rs4940779	A	G	100	PASS	AC=1687	GT	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|1	1|0	1|1	0|1	1|0	0|1	0|1	1|1	0|1	1|0	0|0	1|1	0|0	1|0	1|0	0|0	0|0	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=2042	GT	0|0	1|1	0|0	1|1	0|1	0|0	0|1	0|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|0	0|0	1|0	1|1	1|1	1|0	0|0
+18	61371440	rs1464556	C	T	100	PASS	AC=2260	GT	1|0	0|0	1|1	1|1	1|0	0|1	0|0	0|1	0|1	1|1	1|0	0|1	1|1	1|1	0|0	0|1	0|1	1|0	0|1	1|1	1|0	1|0	1|0	0|0	0|0	1|0
+0	0	rs0	T	G	100	PASS	AC=3870	GT	0|1	0|0	1|0	0|0	0|0	1|0	0|0	0|1	1|1	1|1	0|1	1|0	1|1	1|1	1|1	1|0	0|0	1|0	1|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1
+18	66251235	rs979317	A	G	100	PASS	AC=2448	GT	0|0	0|0	1|0	1|1	1|0	1|1	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|0	1|1	1|1	1|1	1|1	0|0	0|0	0|1	0|1	1|0	1|0	1|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1928	GT	0|1	1|0	0|0	0|1	0|1	1|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|1	0|1	1|0	1|0	0|1	0|0	1|1
+18	70901449	rs8093463	G	A	100	PASS	AC=823	GT	0|0	0|0	0|0	0|0	1|0	0|0	0|1	1|0	0|0	0|1	0|0	1|0	0|0	0|1	1|0	0|1	0|0	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=926	GT	0|0	0|1	0|0	0|1	1|0	1|1	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|0	1|0	0|0	1|1	1|1	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|1
+18	74968327	rs2717162	T	C	100	PASS	AC=1894	GT	0|0	0|0	1|1	1|0	0|1	0|0	0|0	1|0	1|1	0|1	1|0	0|0	0|0	0|0	0|1	0|0	1|0	1|0	0|1	1|0	1|0	0|0	1|0	0|1	0|0	0|1
+0	0	rs0	G	A	100	PASS	AC=1370	GT	0|0	0|1	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	1|0
+19	2505737	rs10416524	C	T	100	PASS	AC=3949	GT	1|1	0|0	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	0|0	1|1	1|1	1|1	0|1	1|1	0|1	1|1	1|1	1|1	1|1	0|1	1|1
+0	0	rs0	T	C	100	PASS	AC=1991	GT	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	1|1	0|1	1|1	0|0	0|0	0|0	1|0	0|1	1|0	1|0	0|0	0|1
+19	6951434	rs422318	A	C	100	PASS	AC=3403	GT	1|1	0|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	0|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	0|0	1|1	1|0
+0	0	rs0	G	A	100	PASS	AC=1600	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	1|1	1|1	1|1	1|0	1|0	1|0	0|0	0|1	0|1	0|0	1|1	0|0	0|0	0|0	0|0
+19	12278736	rs166601	T	C	100	PASS	AC=1422	GT	0|0	0|0	1|1	0|0	0|0	1|0	0|0	0|0	0|1	1|0	1|0	1|1	0|1	1|1	0|1	0|0	1|0	0|1	1|0	1|0	0|0	1|0	0|1	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=1512	GT	0|0	0|0	0|1	1|0	1|0	0|0	0|0	0|0	1|1	1|0	0|0	1|0	0|0	0|0	0|0	0|1	0|0	1|0	0|1	1|0	0|0	0|1	0|0	0|0	0|0	0|0
+19	17622391	rs879142	A	G	100	PASS	AC=1742	GT	0|1	1|1	0|1	1|0	0|1	1|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|1	1|0	1|1	0|1	0|1	1|1	1|1	1|1
+0	0	rs0	T	G	100	PASS	AC=1057	GT	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	1|0	0|1	0|0	1|1	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0
+19	29376565	rs4805292	T	C	100	PASS	AC=4210	GT	1|0	1|0	1|1	1|0	1|0	1|0	1|1	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|1	1|0	0|0	1|1	1|0	1|1	0|0	1|1	1|1	1|1
+0	0	rs0	G	A	100	PASS	AC=1715	GT	0|0	0|0	0|0	1|0	0|0	0|0	1|1	1|1	0|1	1|0	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|1	0|1	1|1	0|0	1|0	1|0	0|0	0|1	1|0
+19	34122429	rs8112179	A	G	100	PASS	AC=1264	GT	1|0	0|0	0|1	1|0	0|1	1|0	1|1	1|0	0|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	1|1	0|1	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=2439	GT	0|0	1|0	1|0	0|0	0|0	1|1	0|0	1|1	1|0	0|0	0|1	1|1	1|0	1|1	0|1	0|0	1|0	1|0	1|0	1|0	0|1	1|1	0|0	1|0	1|0	0|0
+19	39979966	rs4802033	G	A	100	PASS	AC=1651	GT	0|0	0|1	1|0	1|0	0|0	0|1	1|0	0|0	0|0	1|0	0|1	0|0	1|1	1|1	0|0	0|0	0|0	0|1	1|1	1|1	0|1	1|0	1|0	0|0	0|0	0|0
+0	0	rs0	C	G,T	100	PASS	AC=4,906	GT	0|0	0|0	0|0	2|0	0|0	0|0	0|2	2|0	0|0	0|0	0|0	0|2	0|0	2|2	0|0	0|0	0|0	0|0	0|0	2|0	0|0	0|2	0|0	0|0	2|0	0|0
+19	45933493	rs11882642	T	C	100	PASS	AC=3315	GT	0|0	0|0	1|0	1|0	0|0	0|0	0|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|0	0|1	1|1	0|1	1|1	1|1	0|0	1|1	1|1	0|0	1|0	0|0
+0	0	rs0	C	T	100	PASS	AC=2091	GT	0|0	1|0	1|1	0|0	1|0	0|0	1|0	0|1	1|1	0|0	0|1	1|0	1|0	0|0	0|1	0|0	1|1	1|0	1|1	0|0	1|1	1|1	0|0	0|1	1|0	0|0
+19	51365952	rs8112276	G	A	100	PASS	AC=1888	GT	1|1	1|1	0|0	0|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|1	1|1	1|1	1|0
+0	0	rs0	G	A	100	PASS	AC=4010	GT	1|1	0|1	1|0	1|0	1|1	1|0	1|1	1|1	1|1	1|0	1|0	1|1	1|1	1|1	1|0	0|1	1|1	1|0	1|1	1|1	1|1	1|1	1|1	0|1	1|0	1|1
+19	55396900	rs1865096	A	G	100	PASS	AC=3703	GT	1|1	1|0	1|1	1|1	1|1	1|0	1|1	0|0	1|1	1|1	0|1	1|1	1|1	1|1	0|1	0|1	0|1	0|1	1|0	1|1	1|1	1|1	0|1	1|1	0|1	1|1
+0	0	rs0	G	A	100	PASS	AC=1020	GT	0|0	0|0	1|0	0|0	1|0	1|1	0|0	0|1	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0
+20	519697	rs6107514	T	C	100	PASS	AC=808	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	C	A	100	PASS	AC=3719	GT	1|1	1|1	1|1	1|1	1|1	1|0	1|1	1|1	1|1	0|1	1|1	0|0	0|1	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	1|1	0|1	1|1	1|1
+20	4392917	rs172470	C	A	100	PASS	AC=1432	GT	0|0	0|1	1|0	1|0	0|0	0|0	1|0	0|0	1|0	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	1|1	0|0	0|0	1|0	1|0	0|1	0|1	0|1	0|1
+0	0	rs0	C	A	100	PASS	AC=1690	GT	0|0	0|0	0|0	0|0	1|1	0|0	1|0	0|1	1|0	0|1	0|1	0|0	1|1	0|0	0|0	0|0	0|1	1|1	1|0	0|1	0|0	0|0	1|0	1|1	1|1	1|0
+20	8502586	rs2423361	C	A	100	PASS	AC=1410	GT	1|0	1|1	0|0	0|1	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|1	0|0
+0	0	rs0	G	A	100	PASS	AC=890	GT	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0
+20	12857733	rs6041692	A	G	100	PASS	AC=1384	GT	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|0	0|0	0|1	0|0	0|0	1|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	1|0	1|1
+0	0	rs0	A	C	100	PASS	AC=1587	GT	0|0	1|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|1	1|1	0|0	0|0	0|1	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	1|0
+20	17110620	rs6044641	G	A	100	PASS	AC=1874	GT	0|0	0|0	1|1	0|0	0|1	0|1	0|0	0|0	1|1	1|1	0|0	1|0	0|1	0|0	0|0	0|0	1|0	0|0	1|0	0|0	1|1	0|1	0|0	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=2643	GT	1|1	1|0	1|1	0|0	0|0	0|0	1|0	1|0	1|1	1|1	0|1	0|0	1|1	1|0	0|0	1|1	0|0	0|1	1|0	1|0	0|0	1|0	1|1	1|0	0|0	0|0
+20	21218023	rs6137297	C	T	100	PASS	AC=2924	GT	1|1	1|1	1|0	0|1	0|1	0|0	1|0	1|1	0|0	0|1	1|1	1|0	0|1	0|0	1|1	0|1	0|1	0|0	1|1	0|1	0|0	0|0	0|0	1|0	1|0	0|1
+0	0	rs0	G	A	100	PASS	AC=3519	GT	1|1	0|0	1|0	0|1	1|1	1|1	1|1	0|1	1|0	1|1	0|0	1|1	1|1	1|1	1|0	0|1	1|0	0|1	1|1	1|1	1|1	0|1	0|1	1|0	1|1	1|1
+20	31246662	rs6141772	A	C	100	PASS	AC=765	GT	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1883	GT	0|0	1|0	0|0	1|1	1|1	1|0	0|0	0|0	0|0	0|0	0|1	0|1	1|1	1|1	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|0	1|1	1|1	0|0
+20	38301516	rs6028599	A	G	100	PASS	AC=3189	GT	0|1	1|1	0|1	1|1	1|1	1|1	1|0	0|0	1|1	1|0	1|1	1|1	1|1	1|0	1|0	1|1	1|1	1|1	0|1	1|1	1|1	1|1	1|0	1|0	1|0	0|1
+0	0	rs0	T	C	100	PASS	AC=1088	GT	0|0	1|0	1|0	1|1	0|0	0|0	0|1	1|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|1	1|0	0|0	0|0	1|0	0|0
+20	43383832	rs6031782	G	A	100	PASS	AC=2936	GT	1|0	1|0	1|0	0|1	1|1	1|0	1|1	0|1	0|0	1|1	1|1	1|0	1|1	1|1	1|1	0|0	1|0	1|0	1|1	1|1	0|0	1|1	0|1	0|0	1|0	1|0
+0	0	rs0	T	C	100	PASS	AC=2866	GT	1|1	1|1	0|1	1|1	1|1	1|0	1|1	0|0	0|0	1|0	0|1	0|0	0|0	0|0	1|1	1|1	1|1	1|1	0|0	0|1	0|0	0|1	1|0	1|1	1|0	0|1
+20	47603241	rs1569750	A	G	100	PASS	AC=1387	GT	0|0	1|0	0|0	1|0	0|1	0|1	1|0	0|0	0|0	0|0	0|0	0|0	0|1	1|0	0|1	0|0	0|0	1|1	1|0	0|1	0|1	0|1	1|0	0|0	0|0	0|0
+0	0	rs0	T	C	100	PASS	AC=1089	GT	1|0	0|1	1|1	0|0	0|0	1|1	0|0	1|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	0|1	0|0	0|0	0|0	1|1	0|0	0|0	0|0
+20	51977947	rs465580	C	T	100	PASS	AC=2051	GT	1|0	1|1	0|1	1|0	0|1	0|1	1|0	0|0	0|0	1|0	0|1	0|1	1|0	1|0	1|1	0|0	0|0	1|0	0|0	1|0	0|0	0|1	0|0	1|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=1635	GT	0|1	0|1	0|0	0|0	0|0	0|0	0|1	1|0	1|0	1|1	1|1	0|0	0|0	0|0	1|1	1|1	1|0	0|1	0|0	0|0	0|0	0|0	1|0	1|0	0|0	1|0
+20	56435341	rs6128206	T	C	100	PASS	AC=2358	GT	0|0	0|0	1|1	1|0	1|0	0|0	0|0	1|0	1|1	1|1	1|0	0|1	1|0	1|0	0|1	1|1	1|0	0|0	0|1	1|1	1|0	1|1	0|0	0|0	1|0	0|1
+0	0	rs0	G	A	100	PASS	AC=902	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	1|0	0|0	1|1	0|0	0|0	1|0	0|0	0|1
+20	60362267	rs1891574	C	T	100	PASS	AC=4136	GT	0|1	1|1	1|1	0|1	1|0	1|0	0|0	1|1	1|1	1|1	1|0	0|0	1|1	1|1	0|1	1|1	1|1	1|0	1|1	1|1	1|1	1|1	0|1	0|0	0|1	1|1
+0	0	rs0	A	G	100	PASS	AC=3204	GT	0|1	0|1	0|0	1|1	1|1	1|1	0|1	1|1	0|1	0|1	0|0	1|1	1|1	1|0	1|0	1|0	0|0	1|1	1|0	1|1	1|0	1|1	0|0	1|0	1|0	1|1
+21	17961544	rs7279730	A	G	100	PASS	AC=1499	GT	0|0	0|0	0|0	0|1	1|0	1|0	0|0	0|1	0|0	0|0	0|0	1|0	0|1	1|1	0|0	1|1	0|1	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|1	0|0
+0	0	rs0	C	T	100	PASS	AC=680	GT	0|0	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	1|1	0|0	0|0	1|0	0|0
+21	22518097	rs12483298	G	A	100	PASS	AC=1454	GT	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|1	0|1	0|0	0|0	0|0	1|1	0|1	0|0	1|1	0|0	1|0	0|0	0|0	0|1	0|0	0|1
+0	0	rs0	A	C	100	PASS	AC=3039	GT	1|0	0|0	1|1	1|1	0|0	0|1	1|1	1|0	1|1	1|1	1|0	1|0	1|0	0|1	1|0	1|0	1|1	1|0	1|0	1|1	1|1	0|1	1|0	0|1	0|0	0|1
+21	27195389	rs2829919	C	T	100	PASS	AC=3380	GT	0|1	0|0	0|1	1|1	0|0	1|1	1|0	1|1	0|1	0|0	0|0	1|0	1|0	1|1	1|1	0|1	1|0	0|0	1|1	0|1	0|0	0|1	0|1	0|0	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1119	GT	1|0	1|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|1	0|1	1|1	0|1	0|0	0|0	0|0	0|1	0|0	0|1	0|0	1|0	0|1
+21	31763618	rs9636832	C	A	100	PASS	AC=1228	GT	0|0	0|0	1|1	1|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+0	0	rs0	G	A	100	PASS	AC=1618	GT	1|1	1|1	0|0	0|0	0|0	0|1	0|1	0|0	1|0	1|0	1|1	1|1	1|1	0|0	1|0	1|1	0|0	0|0	1|1	1|1	0|0	1|1	0|0	0|0	0|0	0|0
+21	36299665	rs764967	G	T	100	PASS	AC=3890	GT	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|1	1|0	1|1	0|1	0|0	0|0	1|1	1|1	1|1	1|1	1|1	0|1	1|1	1|1	0|1	1|1	1|1	1|1
+0	0	rs0	A	G	100	PASS	AC=1412	GT	0|1	0|0	1|0	1|1	0|1	0|1	0|1	0|1	0|0	0|0	0|1	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	0|1	0|1	0|0
+21	41016873	rs498027	C	T	100	PASS	AC=1616	GT	1|0	0|0	0|0	0|0	0|1	1|0	0|1	0|0	1|0	0|0	1|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=662	GT	0|0	0|0	0|1	0|0	0|0	1|0	0|0	0|0	1|0	0|0	0|0	1|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|1	0|0	1|1	0|0	0|0	1|0	0|0
+21	44744540	rs10084596	C	T	100	PASS	AC=1208	GT	0|0	0|0	1|0	0|0	0|0	0|0	1|1	1|0	0|0	0|0	1|0	0|0	0|0	0|0	1|0	0|0	1|0	0|0	0|0	0|1	1|0	0|0	1|1	0|0	0|0	0|1
+0	0	rs0	C	T	100	PASS	AC=3817	GT	1|1	1|0	1|0	1|1	0|1	1|1	1|1	1|1	1|1	1|0	1|1	1|0	1|1	1|0	1|1	1|0	1|1	1|1	1|0	1|0	1|1	0|1	1|0	0|1	1|1	1|1
+22	18640300	rs2252257	G	A	100	PASS	AC=1960	GT	0|0	0|1	1|1	0|0	1|0	1|0	1|0	0|1	1|1	1|1	0|0	0|0	0|1	1|1	0|0	0|0	0|0	0|1	1|1	1|0	0|1	0|0	0|0	1|0	1|1	0|0
+0	0	rs0	T	C	100	PASS	AC=2102	GT	1|1	0|0	0|0	0|1	0|1	0|0	0|0	0|0	0|0	1|0	1|1	0|0	1|1	0|1	0|0	1|0	1|0	1|1	0|0	0|0	0|1	1|1	0|1	0|0	0|1	0|1
+22	25473134	rs726133	G	A	100	PASS	AC=2199	GT	0|1	0|0	0|0	1|1	0|0	0|1	0|0	1|0	0|0	0|0	0|0	0|0	1|1	0|1	1|1	1|1	1|1	0|1	1|0	1|0	0|0	1|0	0|0	1|0	0|0	1|1
+0	0	rs0	G	A	100	PASS	AC=2488	GT	0|0	0|0	1|0	1|1	1|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	1|1	0|1	1|0	0|0	0|1	1|1	1|0	1|1	0|0	0|1	1|1	1|0	1|0	0|1
+22	29669693	rs4820804	T	C	100	PASS	AC=1691	GT	0|0	0|0	0|0	1|1	0|1	1|1	1|1	1|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	1|0	0|1	0|1	0|0	0|0	0|0	1|1	0|0	0|1	0|1
+0	0	rs0	T	C	100	PASS	AC=1252	GT	0|0	1|0	0|0	0|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	1|1	1|1	0|0	0|1	1|0	1|0	1|0	0|0	1|0	0|0	0|0	0|0	0|0	0|0	0|0
+22	34600013	rs390647	C	T	100	PASS	AC=1780	GT	0|1	0|1	1|0	0|0	0|0	0|0	0|0	1|1	1|1	1|0	0|1	1|0	0|1	0|1	0|0	0|0	0|0	0|0	0|0	0|1	0|1	0|1	0|0	0|0	1|0	0|1
+0	0	rs0	A	G	100	PASS	AC=1126	GT	1|0	1|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	1|0	0|1	0|0	0|0	1|1	1|0	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|1
+22	39874790	rs760712	A	G	100	PASS	AC=2626	GT	1|0	1|0	1|1	1|1	0|1	1|0	0|1	1|1	1|1	1|1	0|0	1|0	1|0	0|1	0|0	0|0	1|1	0|0	1|1	0|0	1|1	0|0	0|1	0|0	1|0	0|0
+0	0	rs0	G	A	100	PASS	AC=607	GT	0|0	0|0	0|0	0|0	1|0	1|1	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|1	0|0	0|0	0|0	0|0
+22	45174712	rs9614922	G	A	100	PASS	AC=1043	GT	1|0	0|0	1|0	0|0	0|0	0|1	0|0	0|0	0|0	0|1	0|0	1|1	1|0	0|1	0|0	0|0	0|0	0|1	0|0	1|1	0|0	1|1	1|0	0|0	0|0	0|0
+0	0	rs0	C	T	100	PASS	AC=719	GT	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|0	1|0	1|0	0|1	0|0	0|0	0|0	0|0	0|0	1|0	0|0	0|0	0|0	0|0
+22	49215890	rs9628576	T	C	100	PASS	AC=774	GT	0|0	0|0	0|0	0|0	0|1	0|0	0|1	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	0|0	1|0	0|1	1|1	1|1	0|0	0|0	0|0

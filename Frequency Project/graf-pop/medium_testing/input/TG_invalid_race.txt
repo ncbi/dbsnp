@@ -1,0 +1,2 @@
+Invalid race file for testing
+No rows with two columns
