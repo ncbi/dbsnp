@@ -1,5 +1,5 @@
-"# GrafPop package includes a C++ program grafpop, three auxiliary Perl programs and some data files for testing the software."			
-"# The test genotype data were extracted from the sequence data of 1000 Genome Project (the prefix TGP in filenames stands for Thousand Genome Project), including only the ~100,000 SNPs used by GrafPop. "			
+# GrafPop package includes a C++ program grafpop, three auxiliary Perl programs and some data files for testing the software.			
+# The test genotype data were extracted from the sequence data of 1000 Genome Project (the prefix TGP in filenames stands for Thousand Genome Project), including only the ~100,000 SNPs used by GrafPop. 			
 			
 File	Description	Location	Date created
 grafpop	The C++ program	https://github.com/ncbi/dbsnp/tree/graf-pop-test/Frequency%20Project/graf-pop/grafpop	10/8/2021
@@ -21,10 +21,10 @@ TGP_anc_geno.fam	The .fam file of the test genotype data in PLINK binary format	
 TG_2smps_chr4.vcf	The test data with two samples and SNPs from chromosome 4 in VCF format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2smps_chr4.vcf	10/8/2021
 TG_2smps_chr9.vcf	The test data with two samples and SNPs from chromosome 9 in VCF format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2smps_chr9.vcf	10/8/2021
 TG_2smps_chr13.vcf	The test data with two samples and SNPs from chromosome 13 in VCF format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2smps_chr13.vcf	10/8/2021
-TG_2_zip_chr2.vcf.gz	"The test data with two samples and SNPs from chromosome 2 in VCF format, zipped"	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr2.vcf.gz	10/8/2021
-TG_2_zip_chr16.vcf.gz	"The test data with two samples and SNPs from chromosome 16 in VCF format, zipped"	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr16.vcf.gz	10/8/2021
-TG_2_zip_chr17.vcf.gz	"The test data with two samples and SNPs from chromosome 17 in VCF format, zipped"	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr17.vcf.gz	10/8/2021
-TG_2_zip_chr22.vcf.gz	"The test data with two samples and SNPs from chromosome 22 in VCF format, zipped"	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr22.vcf.gz	10/8/2021
+TG_2_zip_chr2.vcf.gz	The test data with two samples and SNPs from chromosome 2 in VCF format, zipped	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr2.vcf.gz	10/8/2021
+TG_2_zip_chr16.vcf.gz	The test data with two samples and SNPs from chromosome 16 in VCF format, zipped	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr16.vcf.gz	10/8/2021
+TG_2_zip_chr17.vcf.gz	The test data with two samples and SNPs from chromosome 17 in VCF format, zipped	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr17.vcf.gz	10/8/2021
+TG_2_zip_chr22.vcf.gz	The test data with two samples and SNPs from chromosome 22 in VCF format, zipped	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_2_zip_chr22.vcf.gz	10/8/2021
 TG_10_1000_g38.bed	The.bed file of the test data with 10 samples and 1000 SNPs in GRCh38 assembly and PLINK binary format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_10_1000_g38.bed	10/8/2021
 TG_10_1000_g38.bim	The.bim file of the test data with 10 samples and 1000 SNPs in GRCh38 assembly and PLINK binary format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_10_1000_g38.bim	10/8/2021
 TG_10_1000_g38.fam	The.fam file of the test data with 10 samples and 1000 SNPs in GRCh38 assembly and PLINK binary format	https://ftp.ncbi.nlm.nih.gov/dbgap/GrafPop/data/TG_10_1000_g38.fam	10/8/2021
