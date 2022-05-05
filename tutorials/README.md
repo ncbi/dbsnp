@@ -8,6 +8,8 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     .
     ├── Variation Services                   # Tutorial for working with SPDI Variation Service
     ├── eUtils.ipynb                         # Sample dbSNP eUtils query 
+    ├── extract_flank.sh                     # Script using eUtils to get rs flanking sequences 
+    ├── MafGraph.ipynb                       # eUtils query and MAF parsing and graphing
     ├── hadoop_json_annotation.py            # parse dbSNP RS JSON object and extract the rs annotation using Hadoop
     ├── hadoop_json_clinical.py              # parse dbSNP RS JSON object and extract clinical rs data using Hadoop
     ├── hadoop_json_merge.py                 # parse dbSNP RS JSON object and extract rs merge history using Hadoop
@@ -24,6 +26,7 @@ dbSNP build release JSON files are available on the FTP site ([ftp://ftp.ncbi.ni
     
 ## Run and explore notebook interactively on Binder server.  It may take a few minutes for Binder server to start up.
 
-|Notebook|Binder|
-|---|---|
-|eUtils.ipynb|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
+|Notebook|Description|Binder|
+|---|---|---|
+|eUtils.ipynb|dbSNP eUtils query|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FeUtils.ipynb)|
+|MafGraph.ipynb|eUtils query and MAF parsing and graphing|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ncbi/dbsnp/master?filepath=%2Ftutorials%2FMafGraph.ipynb)|
