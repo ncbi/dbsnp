@@ -2,6 +2,7 @@
 
 GrafPop source code includes C++ programs and Perl scripts. See xxx (to be added) for GrafPop software documentation.
 
+
 ### Make C++ binary `grafpop`
 Under the root directory, execute:
 ```sh
@@ -23,3 +24,9 @@ Test scripts and test cases are placed under medium_testing directory. Test case
 1. If source code is updated, update `test_manifest.txt` to add new test cases or modify existing cases, and execute `test_grafpop.pl test_manifest.txt 1` to update the baseline.
 1. Check the baseline files and make sure they are all correct, then execute `test_grafpop.pl test_manifest.txt` (without the second parameter) again.
 1. Make sure all test cases pass. 
+
+
+# References
+Jin Y, SchÄffer AA, Sherry ST, and Feolo M (2017). Quickly identifying identical and closely related subjects in large databases using genotype data. PLoS One. 12(6):e0179106.
+
+Jin Y, SchÄffer AA, Feolo M, Holmes JB and Kattman BL (2019). GRAF-pop: A Fast Distance-based Method to Infer Subject Ancestry from Multiple Genotype Datasets without Principal Components Analysis. G3: Genes | Genomes | Genetics. August 1, 2019 vol. 9 no. 8 2447-2461.
