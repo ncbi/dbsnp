@@ -6,7 +6,7 @@ GrafAnc
 
 GrafAnc is a software tool that infers genetic ancestry at both continental and subcontinental levels quickly and reliably. GrafAnc source code includes C++ programs and Perl scripts. See [GrafAnc documentation](https://github.com/jimmy-penn/grafanc/tree/master/GrafAncDocumentation.md) for software documentation.
 
-Developer: [Yumi (Jimmy) Jin, PhD](mailto:Jimmy.Jin@Pennmedicine.upenn.edu).
+Developer: [Yumi (Jimmy) Jin, PhD](mailto:yumijin@hotmail.com).
 
 ### Required libraries and files
 
