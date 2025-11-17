@@ -1,0 +1,246 @@
+##fileformat=VCFv4.1
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20150218
+##reference=ftp://ftp.1000genomes.ebi.ac.uk//vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
+##source=1000GenomesPhase3Pipeline
+##contig=<ID=1,assembly=b37,length=249250621>
+##contig=<ID=2,assembly=b37,length=243199373>
+##contig=<ID=3,assembly=b37,length=198022430>
+##contig=<ID=4,assembly=b37,length=191154276>
+##contig=<ID=5,assembly=b37,length=180915260>
+##contig=<ID=6,assembly=b37,length=171115067>
+##contig=<ID=7,assembly=b37,length=159138663>
+##contig=<ID=8,assembly=b37,length=146364022>
+##contig=<ID=9,assembly=b37,length=141213431>
+##contig=<ID=10,assembly=b37,length=135534747>
+##contig=<ID=11,assembly=b37,length=135006516>
+##contig=<ID=12,assembly=b37,length=133851895>
+##contig=<ID=13,assembly=b37,length=115169878>
+##contig=<ID=14,assembly=b37,length=107349540>
+##contig=<ID=15,assembly=b37,length=102531392>
+##contig=<ID=16,assembly=b37,length=90354753>
+##contig=<ID=17,assembly=b37,length=81195210>
+##contig=<ID=18,assembly=b37,length=78077248>
+##contig=<ID=19,assembly=b37,length=59128983>
+##contig=<ID=20,assembly=b37,length=63025520>
+##contig=<ID=21,assembly=b37,length=48129895>
+##contig=<ID=22,assembly=b37,length=51304566>
+##contig=<ID=GL000191.1,assembly=b37,length=106433>
+##contig=<ID=GL000192.1,assembly=b37,length=547496>
+##contig=<ID=GL000193.1,assembly=b37,length=189789>
+##contig=<ID=GL000194.1,assembly=b37,length=191469>
+##contig=<ID=GL000195.1,assembly=b37,length=182896>
+##contig=<ID=GL000196.1,assembly=b37,length=38914>
+##contig=<ID=GL000197.1,assembly=b37,length=37175>
+##contig=<ID=GL000198.1,assembly=b37,length=90085>
+##contig=<ID=GL000199.1,assembly=b37,length=169874>
+##contig=<ID=GL000200.1,assembly=b37,length=187035>
+##contig=<ID=GL000201.1,assembly=b37,length=36148>
+##contig=<ID=GL000202.1,assembly=b37,length=40103>
+##contig=<ID=GL000203.1,assembly=b37,length=37498>
+##contig=<ID=GL000204.1,assembly=b37,length=81310>
+##contig=<ID=GL000205.1,assembly=b37,length=174588>
+##contig=<ID=GL000206.1,assembly=b37,length=41001>
+##contig=<ID=GL000207.1,assembly=b37,length=4262>
+##contig=<ID=GL000208.1,assembly=b37,length=92689>
+##contig=<ID=GL000209.1,assembly=b37,length=159169>
+##contig=<ID=GL000210.1,assembly=b37,length=27682>
+##contig=<ID=GL000211.1,assembly=b37,length=166566>
+##contig=<ID=GL000212.1,assembly=b37,length=186858>
+##contig=<ID=GL000213.1,assembly=b37,length=164239>
+##contig=<ID=GL000214.1,assembly=b37,length=137718>
+##contig=<ID=GL000215.1,assembly=b37,length=172545>
+##contig=<ID=GL000216.1,assembly=b37,length=172294>
+##contig=<ID=GL000217.1,assembly=b37,length=172149>
+##contig=<ID=GL000218.1,assembly=b37,length=161147>
+##contig=<ID=GL000219.1,assembly=b37,length=179198>
+##contig=<ID=GL000220.1,assembly=b37,length=161802>
+##contig=<ID=GL000221.1,assembly=b37,length=155397>
+##contig=<ID=GL000222.1,assembly=b37,length=186861>
+##contig=<ID=GL000223.1,assembly=b37,length=180455>
+##contig=<ID=GL000224.1,assembly=b37,length=179693>
+##contig=<ID=GL000225.1,assembly=b37,length=211173>
+##contig=<ID=GL000226.1,assembly=b37,length=15008>
+##contig=<ID=GL000227.1,assembly=b37,length=128374>
+##contig=<ID=GL000228.1,assembly=b37,length=129120>
+##contig=<ID=GL000229.1,assembly=b37,length=19913>
+##contig=<ID=GL000230.1,assembly=b37,length=43691>
+##contig=<ID=GL000231.1,assembly=b37,length=27386>
+##contig=<ID=GL000232.1,assembly=b37,length=40652>
+##contig=<ID=GL000233.1,assembly=b37,length=45941>
+##contig=<ID=GL000234.1,assembly=b37,length=40531>
+##contig=<ID=GL000235.1,assembly=b37,length=34474>
+##contig=<ID=GL000236.1,assembly=b37,length=41934>
+##contig=<ID=GL000237.1,assembly=b37,length=45867>
+##contig=<ID=GL000238.1,assembly=b37,length=39939>
+##contig=<ID=GL000239.1,assembly=b37,length=33824>
+##contig=<ID=GL000240.1,assembly=b37,length=41933>
+##contig=<ID=GL000241.1,assembly=b37,length=42152>
+##contig=<ID=GL000242.1,assembly=b37,length=43523>
+##contig=<ID=GL000243.1,assembly=b37,length=43341>
+##contig=<ID=GL000244.1,assembly=b37,length=39929>
+##contig=<ID=GL000245.1,assembly=b37,length=36651>
+##contig=<ID=GL000246.1,assembly=b37,length=38154>
+##contig=<ID=GL000247.1,assembly=b37,length=36422>
+##contig=<ID=GL000248.1,assembly=b37,length=39786>
+##contig=<ID=GL000249.1,assembly=b37,length=38502>
+##contig=<ID=MT,assembly=b37,length=16569>
+##contig=<ID=NC_007605,assembly=b37,length=171823>
+##contig=<ID=X,assembly=b37,length=155270560>
+##contig=<ID=Y,assembly=b37,length=59373566>
+##contig=<ID=hs37d5,assembly=b37,length=35477943>
+##ALT=<ID=CNV,Description="Copy Number Polymorphism">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=CIEND,Number=2,Type=Integer,Description="Confidence interval around END for imprecise variants">
+##INFO=<ID=CIPOS,Number=2,Type=Integer,Description="Confidence interval around POS for imprecise variants">
+##INFO=<ID=CS,Number=1,Type=String,Description="Source call set.">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End coordinate of this variant">
+##INFO=<ID=IMPRECISE,Number=0,Type=Flag,Description="Imprecise structural variation">
+##INFO=<ID=MC,Number=.,Type=String,Description="Merged calls.">
+##INFO=<ID=MEINFO,Number=4,Type=String,Description="Mobile element info of the form NAME,START,END<POLARITY; If there is only 5' OR 3' support for this call, will be NULL NULL for START and END">
+##INFO=<ID=MEND,Number=1,Type=Integer,Description="Mitochondrial end coordinate of inserted sequence">
+##INFO=<ID=MLEN,Number=1,Type=Integer,Description="Estimated length of mitochondrial insert">
+##INFO=<ID=MSTART,Number=1,Type=Integer,Description="Mitochondrial start coordinate of inserted sequence">
+##INFO=<ID=SVLEN,Number=.,Type=Integer,Description="SV length. It is only calculated for structural variation MEIs. For other types of SVs; one may calculate the SV length by INFO:END-START+1, or by finding the difference between lengthes of REF and ALT alleles">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=TSD,Number=1,Type=String,Description="Precise Target Site Duplication for bases, if unknown, value will be NULL">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Total number of alternate alleles in called genotypes">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Estimated allele frequency in the range (0,1)">
+##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of samples with data">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=EAS_AF,Number=A,Type=Float,Description="Allele frequency in the EAS populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=EUR_AF,Number=A,Type=Float,Description="Allele frequency in the EUR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=AFR_AF,Number=A,Type=Float,Description="Allele frequency in the AFR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=AMR_AF,Number=A,Type=Float,Description="Allele frequency in the AMR populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=SAS_AF,Number=A,Type=Float,Description="Allele frequency in the SAS populations calculated from AC and AN, in the range (0,1)">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth; only low coverage data were counted towards the DP, exome data were not used">
+##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele. Format: AA|REF|ALT|IndelType. AA: Ancestral allele, REF:Reference Allele, ALT:Alternate Allele, IndelType:Type of Indel (REF, ALT and IndelType are only defined for indels)">
+##INFO=<ID=VT,Number=.,Type=String,Description="indicates what type of variant the line represents">
+##INFO=<ID=EX_TARGET,Number=0,Type=Flag,Description="indicates whether a variant is within the exon pull down target boundaries">
+##INFO=<ID=MULTI_ALLELIC,Number=0,Type=Flag,Description="indicates whether a site is multi-allelic">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	HG00096	HG00097
+23	443798	ss205898	A	G	100	PASS	AC=2702	GT	1|1	0|1
+23	758268	ss16992102	T	C	100	PASS	AC=986	GT	0|0	0|0
+23	1054137	ss6087091	C	T	100	PASS	AC=898	GT	1|0	0|1
+23	1395793	ss8124053	A	C	100	PASS	AC=2648	GT	1|1	1|0
+23	1877150	ss1884565	A	G	100	PASS	AC=3281	GT	0|0	1|0
+23	2217357	ss874502	C	T	100	PASS	AC=3299	GT	1|1	1|1
+23	2584013	ss6027081	T	C	100	PASS	AC=2464	GT	0|0	1|1
+23	2904781	ss6128952	A	G	100	PASS	AC=1153	GT	0|0	0|0
+23	3439472	ss6122042	G	A	100	PASS	AC=1185	GT	0|1	0|0
+23	3965054	ss998132	G	A	100	PASS	AC=1520	GT	1|0	1|0
+23	4328509	ss636293	T	C	100	PASS	AC=4039	GT	1|1	1|1
+23	4637168	ss6116466	C	T	100	PASS	AC=1789	GT	1|1	1|1
+23	5017720	ss6052046	G	A	100	PASS	AC=1070	GT	0|0	0|1
+23	5519097	ss2295270	A	G	100	PASS	AC=1446	GT	0|0	0|1
+23	5918288	ss183535	C	T	100	PASS	AC=2158	GT	0|0	1|0
+23	6337184	ss6076985	G	A	100	PASS	AC=1953	GT	1|0	0|0
+23	6746498	ss1980499	C	T	100	PASS	AC=3517	GT	0|0	0|0
+23	7041513	ss2225265	T	C	100	PASS	AC=2846	GT	0|1	1|0
+23	7614902	ss2206394	G	T	100	PASS	AC=3228	GT	1|1	1|1
+23	8018157	ss6133529	T	C	100	PASS	AC=774	GT	0|0	1|0
+23	8438742	ss6086458	T	C	100	PASS	AC=1196	GT	1|0	0|1
+23	8816218	ss6056198	T	G	100	PASS	AC=2975	GT	0|1	1|1
+23	9312954	ss6056552	T	G	100	PASS	AC=1362	GT	0|1	0|0
+23	9661775	ss2422412	T	C	100	PASS	AC=2478	GT	1|0	1|1
+23	10090970	ss671426	T	C	100	PASS	AC=1407	GT	0|1	0|0
+23	10418801	ss6074138	G	A	100	PASS	AC=2781	GT	0|1	0|1
+23	10879336	ss4346455	C	T	100	PASS	AC=2927	GT	1|1	1|1
+23	11194225	ss2327345	A	G	100	PASS	AC=4122	GT	1|1	0|0
+23	11758999	ss3848732	T	C	100	PASS	AC=2871	GT	1|1	1|1
+23	12269828	ss4813081	A	C	100	PASS	AC=1639	GT	0|1	1|0
+23	12772478	ss845575	G	A	100	PASS	AC=3354	GT	1|1	1|1
+23	13192095	ss1923346	A	C	100	PASS	AC=1056	GT	0|0	0|0
+23	13661977	ss6033803	T	G	100	PASS	AC=2840	GT	1|0	0|0
+23	14377814	ss6110271	A	G	100	PASS	AC=739	GT	0|1	0|0
+23	14826713	ss407097	C	T	100	PASS	AC=2327	GT	0|0	0|1
+23	15193062	ss6079706	A	G	100	PASS	AC=834	GT	0|0	1|0
+23	15509729	ss6043347	A	G	100	PASS	AC=2344	GT	0|0	0|0
+23	15807441	ss6135562	T	C	100	PASS	AC=1125	GT	0|0	1|0
+23	16160141	ss1329820	G	A	100	PASS	AC=2150	GT	0|0	0|0
+23	16578583	ss6044158	T	C	100	PASS	AC=406	GT	0|0	0|0
+23	16986159	ss6044565	G	A	100	PASS	AC=3453	GT	1|1	0|1
+23	17337879	ss6126079	A	G	100	PASS	AC=819	GT	0|0	0|0
+23	17682641	ss6126169	C	T	100	PASS	AC=3038	GT	1|1	0|0
+23	17977549	ss11087239	T	C	100	PASS	AC=2493	GT	0|0	0|0
+23	18369864	ss17722124	G	A	100	PASS	AC=1495	GT	1|1	1|0
+23	18838902	ss2206876	A	G	100	PASS	AC=1761	GT	1|1	0|0
+23	19304077	ss3790181	T	G	100	PASS	AC=2861	GT	0|0	0|0
+23	19657745	ss733270	T	G	100	PASS	AC=1322	GT	0|0	0|1
+23	20007325	ss200177	T	G	100	PASS	AC=3802	GT	1|1	0|1
+23	20386153	ss6106244	T	C	100	PASS	AC=2017	GT	0|0	1|0
+23	21134799	ss6047273	T	C	100	PASS	AC=2958	GT	1|1	1|0
+23	21985498	ss6047798	G	A	100	PASS	AC=3010	GT	1|0	0|1
+23	22462490	ss950519	C	T	100	PASS	AC=844	GT	0|0	0|0
+23	22966362	ss4290724	C	A	100	PASS	AC=2284	GT	0|0	1|1
+23	23387816	ss2253834	T	C	100	PASS	AC=3345	GT	0|0	1|1
+23	24027895	ss3905230	A	G	100	PASS	AC=3181	GT	1|1	1|0
+23	24475213	ss16986675	C	T	100	PASS	AC=572	GT	0|1	0|0
+23	25011423	ss6050259	T	C	100	PASS	AC=1115	GT	0|0	1|0
+23	25595868	ss11700338	G	A	100	PASS	AC=1010	GT	0|0	0|0
+23	30530306	ss6061042	T	C	100	PASS	AC=2128	GT	0|0	0|1
+23	31195351	ss6087948	G	A	100	PASS	AC=985	GT	0|0	0|1
+23	31627291	ss4911287	A	G	100	PASS	AC=3037	GT	0|1	0|1
+23	32212690	ss3803939	C	T	100	PASS	AC=3351	GT	0|1	1|1
+23	32782620	ss6059709	T	C	100	PASS	AC=1739	GT	0|0	0|1
+23	33740055	ss6060270	G	T	100	PASS	AC=987	GT	0|1	0|0
+23	34571846	ss6058388	T	C	100	PASS	AC=1803	GT	0|0	0|0
+23	35490400	ss1146261	C	A	100	PASS	AC=1642	GT	0|1	1|1
+23	36203622	ss11906556	A	G	100	PASS	AC=1702	GT	0|1	0|0
+23	36788191	ss4811529	A	G	100	PASS	AC=928	GT	0|0	0|0
+23	37517753	ss12624956	A	G	100	PASS	AC=868	GT	1|0	0|0
+23	38172218	ss6129259	G	A	100	PASS	AC=1249	GT	1|0	0|0
+23	38666455	ss6028809	T	C	100	PASS	AC=3051	GT	1|0	1|0
+23	39288490	ss6072090	G	A	100	PASS	AC=1666	GT	1|0	0|0
+23	39986085	ss12625565	A	C	100	PASS	AC=1816	GT	0|0	1|0
+23	40573522	ss6102592	C	T	100	PASS	AC=1775	GT	0|0	1|0
+23	41043711	ss4812595	A	G	100	PASS	AC=1889	GT	0|1	1|0
+23	41419696	ss208249	T	C	100	PASS	AC=828	GT	0|0	0|0
+23	41851935	ss7269069	G	A	100	PASS	AC=1276	GT	0|0	0|1
+23	42383192	ss6103442	G	T	100	PASS	AC=1640	GT	0|0	0|0
+23	42793293	ss2425628	T	C	100	PASS	AC=2986	GT	0|1	1|1
+23	43321498	ss6072519	A	G	100	PASS	AC=1457	GT	1|1	0|1
+23	43744229	ss6124690	C	T	100	PASS	AC=1955	GT	0|1	1|0
+23	44372304	ss462654	C	A	100	PASS	AC=610	GT	0|0	0|1
+23	44742064	ss1569723	C	A	100	PASS	AC=3867	GT	1|0	1|0
+23	45193325	ss861025	G	A	100	PASS	AC=1042	GT	0|0	0|0
+23	45546172	ss6018168	A	G	100	PASS	AC=1121	GT	0|0	0|0
+23	45867852	ss2275801	A	G	100	PASS	AC=1640	GT	0|0	0|0
+23	46403588	ss6094836	T	C	100	PASS	AC=1847	GT	0|0	0|0
+23	46784019	ss162082	T	C	100	PASS	AC=2348	GT	0|0	0|0
+23	47119981	ss6125345	T	C	100	PASS	AC=1012	GT	0|0	0|1
+23	47517794	ss2024594	A	G	100	PASS	AC=2473	GT	0|0	1|1
+23	48057448	ss237477	C	T	100	PASS	AC=3859	GT	1|1	0|1
+23	48557911	ss2028127	A	G	100	PASS	AC=865	GT	0|0	1|0
+23	49053871	ss6067448	C	A	100	PASS	AC=1937	GT	0|1	0|0
+23	49561044	ss6096199	C	T	100	PASS	AC=550	GT	0|0	0|0
+23	49915967	ss726222	T	C	100	PASS	AC=1545	GT	1|0	0|0
+23	50250990	ss6021222	C	T	100	PASS	AC=1159	GT	1|0	0|0
+23	50558565	ss1012466	G	A	100	PASS	AC=793	GT	0|0	1|0
+23	51025381	ss1033662	A	G	100	PASS	AC=2343	GT	1|0	0|0
+23	51576258	ss6013581	G	T	100	PASS	AC=2596	GT	1|1	0|1
+23	51888122	ss1877430	A	G	100	PASS	AC=1915	GT	0|0	0|0
+23	52483482	ss6068695	A	G	100	PASS	AC=1872	GT	1|0	1|0
+23	52766807	ss8124792	G	A	100	PASS	AC=651	GT	0|0	0|0
+23	53340366	ss6098196	C	T	100	PASS	AC=1054	GT	0|0	0|0
+23	53883417	ss6069223	C	T	100	PASS	AC=2571	GT	0|1	1|1
+23	54365702	ss6092176	G	A	100	PASS	AC=1859	GT	1|0	0|0
+23	54801215	ss4811680	A	G	100	PASS	AC=4202	GT	1|1	1|1
+23	55255054	ss6127813	C	T	100	PASS	AC=1469	GT	0|0	1|1
+23	55624143	ss221605	C	T	100	PASS	AC=3356	GT	0|0	1|0
+23	56045284	ss767528	G	A	100	PASS	AC=1114	GT	0|0	0|0
+23	56371190	ss205785	T	C	100	PASS	AC=3520	GT	1|1	1|1
+23	56711482	ss6026069	C	T	100	PASS	AC=3978	GT	1|1	1|1
+23	57154805	ss8115229	T	C	100	PASS	AC=2069	GT	1|1	0|0
+23	57514197	ss234613	G	A	100	PASS	AC=3386	GT	0|1	1|1
+23	57980909	ss748543	C	A	100	PASS	AC=2236	GT	0|1	1|1
+23	58316191	ss6027069	C	T	100	PASS	AC=1095	GT	0|0	0|0
+23	58748891	ss2206708	G	A	100	PASS	AC=1350	GT	1|1	0|0
+23	59071916	ss4625972	A	G	100	PASS	AC=1975	GT	0|0	0|1
+23	59535190	ss1015199	A	G	100	PASS	AC=1211	GT	0|0	0|0
+23	59889393	ss6028102	C	T	100	PASS	AC=3484	GT	0|1	1|0
+23	60296734	ss6089491	G	T	100	PASS	AC=1541	GT	0|0	0|0
+23	60826804	ss6143006	T	C	100	PASS	AC=2056	GT	1|1	1|0
+23	61424077	ss6122279	C	T	100	PASS	AC=824	GT	0|0	0|0
+23	61970176	ss4809538	G	A	100	PASS	AC=1379	GT	0|1	0|0
+23	62535594	ss817377	A	C	100	PASS	AC=2289	GT	1|0	0|0

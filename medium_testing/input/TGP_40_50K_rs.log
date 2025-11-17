@@ -1,0 +1,29 @@
+PLINK v1.90b7 64-bit (16 Jan 2023)
+Options in effect:
+  --make-bed
+  --out input/TGP_40_50K_rs
+  --tfile input/TGP_40_50K_rs
+
+Hostname: niagads-node01
+Working directory: /home/jinjim/grafsrc/grafanc/medium_testing
+Start time: Thu Jan  9 19:58:55 2025
+
+Random number seed: 1736470735
+63047 MB RAM detected; reserving 31523 MB for main workspace.
+Allocated 7479 MB successfully, after larger attempt(s) failed.
+Processing .tped file.
+input/TGP_40_50K_rs-temporary.bed + input/TGP_40_50K_rs-temporary.bim +
+input/TGP_40_50K_rs-temporary.fam written.
+50002 variants loaded from .bim file.
+40 people (0 males, 0 females, 40 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to input/TGP_40_50K_rs.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 40 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is exactly 1.
+50002 variants and 40 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to input/TGP_40_50K_rs.bed + input/TGP_40_50K_rs.bim +
+input/TGP_40_50K_rs.fam ... done.
+
+End time: Thu Jan  9 19:58:55 2025
